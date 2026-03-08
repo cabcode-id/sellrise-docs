@@ -141,6 +141,7 @@
 **Technical Notes/Dependencies:**
 - **Endpoints:** `POST /v1/domains`, `GET /v1/domains`, `PATCH /v1/domains/{id}`, `DELETE /v1/domains/{id}`
 - **Table:** `Domains` (domain_id, workspace_id FK, domain_name, branding_config JSONB, dev_mode_enabled)
+- `dev_mode_enabled` is a per-domain boolean flag, set via `PATCH /v1/domains/{id}`
 - Depends on: US-1.1 (Workspace Creation)
 
 ### Out of Scope
@@ -150,7 +151,6 @@
 
 ### Open Questions
 - Should there be a limit on domains per workspace in MVP?
-- How is `dev_mode_enabled` toggled — per-domain or workspace-level?
 
 ---
 
@@ -516,8 +516,8 @@
 
 **Technical Notes/Dependencies:**
 - **Step Types (9):** `message`, `question_text`, `question_choice`, `form`, `conditional_branch`, `kb_search`, `handoff_booking_link`, `handoff_operator`, `end`
-- **Backend:** `StepProcessor` (`app/services/step_processor.py`)
-- **Frontend:** `StepRenderer` (`src/components/StepRenderer.jsx`) — 413 lines, renders all 9 types
+- **Backend:** Requires a `StepProcessor` service to execute all step types, validate inputs, and manage state
+- **Frontend:** Requires a universal `StepRenderer` component that renders all 9 step types with validation
 - **Endpoints:** `POST /v1/steps/init`, `POST /v1/steps/execute`, `POST /v1/steps/process`
 - Ref: `STEP_TYPES_IMPLEMENTATION.md` for complete implementation details
 - Depends on: US-4.2 (Published Scenario), US-3.3 (Widget Session)
@@ -586,7 +586,7 @@
 - **Endpoints:** `POST /v1/widget/message`, `GET /v1/conversations`, `GET /v1/conversations/{id}`, `PATCH /v1/conversations/{id}`, `GET /v1/conversations/{id}/messages`
 - **Tables:** `Conversations` (conversation_id, workspace_id, lead_id, scenario_id, channel, status, current_stage_id, context JSONB, last_message_at), `Messages` (message_id, conversation_id, role, content, metadata JSONB, is_delivered, is_read, created_at)
 - Channels: `web`, `whatsapp`, `telegram`, `instagram`, `messenger`, `email`
-- **Status:** DB migration pending (`alembic revision --autogenerate -m "add_conversations_and_messages"`)
+- Requires database migration for `Conversations` and `Messages` tables
 - Ref: `CONVERSATION_SYSTEM_ARCHITECTURE.md` for full schema and API design
 - Depends on: US-4.2 (Published Scenario), US-5.1 (Lead Creation)
 
@@ -598,8 +598,7 @@
 - `handoff_operator` step type (live chat takeover — 🟢 Post-MVP)
 
 ### Open Questions
-- Define `chat_started` event trigger consistently — is it when the first step displays or when the user takes their first action?
-- Should the scenario simulator (§4.2, ✅ implemented) be accessible to Agents, or Admin-only?
+- Should the scenario simulator (§4.2) be accessible to Agents, or Admin-only?
 - How should the system handle a published scenario being unpublished while active sessions exist?
 
 ---
