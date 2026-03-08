@@ -79,8 +79,6 @@
 - Comprehensive architecture documentation
 
 **Status**: Database migration pending (`alembic revision --autogenerate -m "add_conversations_and_messages"`)
-- Real-time operator chat takeover
-- Advanced automations (sequences, drip campaigns)
 
 ---
 
@@ -1362,13 +1360,18 @@ Widget responses strictly from KB, no LLM free-form answers.
 
 ## 7. Scenario/Bot Builder
 
+**Note:** JSON-based scenario configuration is currently implemented (see Section 4.1). This section describes future visual enhancements.
+
 ### 7.1 Bot Builder UI (Visual Flow Editor)
 
 **Priority:** 🟢 Post-MVP  
 **Category:** Bot Builder (Frontend)
 
 **Description:**  
-Visual interface for designing conversation flows.
+Visual interface for designing conversation flows (future enhancement to the current JSON editor).
+
+**Current Implementation:**  
+JSON-based scenario configuration with AI enhancement is available in Section 4.1. This visual builder would complement the existing JSON editor with a drag-and-drop interface.
 
 **Layout:**
 - **Left Sidebar**: Stage tree (collapsible)
