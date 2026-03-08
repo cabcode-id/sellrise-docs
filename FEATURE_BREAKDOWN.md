@@ -639,6 +639,8 @@ Stage-based AI dialogue system with LLM integration for dynamic responses.
 
 ## 5. Lead Management (Mini-CRM)
 
+Detailed PRDs for each CRM functionality are available in `docs/crm-prds/README.md`.
+
 ### 5.1 Lead Creation & Deduplication
 
 **Priority:** 🔴 MVP Phase 1  
