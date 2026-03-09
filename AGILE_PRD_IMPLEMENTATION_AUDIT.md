@@ -11,9 +11,9 @@ Audit scope:
 ## Status Summary
 
 - Total user stories: **35**
-- **Implemented**: 23
-- **Partial**: 11
-- **Missing**: 1
+- **Implemented**: 26
+- **Partial**: 9
+- **Missing**: 0
 
 > Definitions:
 > - **Implemented**: available end-to-end for core requirements.
@@ -37,7 +37,7 @@ Audit scope:
 | US-3.2 | Widget Display Modes | ✅ | ✅ | **Implemented** | Bubble + inline modes are available in FE preview/settings. |
 | US-3.3 | Widget Session Handshake | ✅ | ✅ | **Implemented** | `/v1/widget/session` is available and used for widget initialization. |
 | US-3.4 | Widget Fallback on API Failure | ✅ | ✅ | **Implemented** | Fallback form + `/v1/widget/fallback-lead` are implemented. |
-| US-4.1 | Scenario CRUD (Draft Editing) | ✅ | ⚠️ | **Partial** | Create/list/get/patch exist; delete is still missing in BE although FE already prepares delete calls. |
+| US-4.1 | Scenario CRUD (Draft Editing) | ✅ | ✅ | **Implemented** | Create/list/get/patch/delete exist; DELETE endpoint now prevents deletion of published scenarios. |
 | US-4.2 | Scenario Publishing | ✅ | ✅ | **Implemented** | Publish endpoint exists with unpublish-others + version bump behavior. |
 | US-4.3 | Step Execution (Conversation Flow) | ⚠️ | ⚠️ | **Partial** | BE now has `/v1/steps/*` execution APIs, but FE still calls `/v1/scenarios/{id}/simulate` and the flow is not yet fully wired end-to-end. |
 | US-4.4 | Event Logging | ✅ | ✅ | **Implemented** | `/v1/widget/event` and lead/session event persistence are implemented. |
@@ -56,8 +56,8 @@ Audit scope:
 | US-6.4 | KB-Only Answer Mode | ⚠️ | ⚠️ | **Partial** | KB search endpoint exists, but strict “KB-only” answer enforcement in conversation engine is still incomplete. |
 | US-7.1 | Funnel Metrics Dashboard | ✅ | ⚠️ | **Partial** | Summary dashboard exists; aggregation is still basic and not fully aligned with PRD time dimensions. |
 | US-7.2 | CSV Export | ✅ | ✅ | **Implemented** | FE already exports CSV client-side and BE now also provides `/v1/analytics/export` for server-side export. |
-| US-8.1 | Hot Lead Email Notification | ⚠️ | ⚠️ | **Partial** | Notification trigger exists, but service is still stub-like / SMTP-config dependent. |
-| US-8.2 | Notification Event Logging | ❌ | ❌ | **Missing** | No structured notification event logs yet (sent/failed/retry). |
+| US-8.1 | Hot Lead Email Notification | ✅ | ✅ | **Implemented** | Email notification service now includes retry logic, exponential backoff, and proper event logging. |
+| US-8.2 | Notification Event Logging | ✅ | ✅ | **Implemented** | `notification_sent` and `notification_failed` event types now logged to LeadEvents after email attempts. |
 | US-9.1 | Workspace Settings | ⚠️ | ⚠️ | **Partial** | Workspace update API exists and notification settings endpoints are added, but the full PRD settings model is not fully standardized yet. |
 | US-9.2 | Team Management | ✅ | ✅ | **Implemented** | FE team management (invite/role/deactivate) and BE `/v1/users` management endpoints are now available. |
 | US-10.1 | Booking Link Handoff | ⚠️ | ⚠️ | **Partial** | `booking_links` are passed from scenario, but booking token/handoff endpoint flow is still incomplete. |
@@ -70,12 +70,9 @@ Audit scope:
    Align FE with current BE conversation execution APIs (`/v1/steps/*` or provide `/v1/scenarios/{id}/simulate` compatibility), then complete deterministic end-to-end runtime.
 
 2. **US-6.4 (strict KB-only enforcement)**  
-   Implement `/v1/scenarios/{id}/simulate` + deterministic conversation engine + strict KB-only mode enforcement.
+   Implement deterministic conversation engine with strict KB-only mode enforcement.
 
-3. **US-8.2 + US-8.1 hardening**  
-   Add notification event logs (sent, failed, retry) and notification observability.
-
-4. **US-10.1**  
+3. **US-10.1**  
    Complete end-to-end booking handoff (token generation, token consumption endpoint, lead status update).
 
 ---
