@@ -406,3 +406,199 @@ Metrics dashboard should include:
   - `docs/CONVERSATION_SYSTEM_ARCHITECTURE.md`
   - `docs/STEP_TYPES_IMPLEMENTATION.md`
   - this PRD (`docs/AI_WIDGET_CHATBOT_PRD.md`)
+
+---
+
+## 16. Implementation Audit — 2026-03-10
+
+This section records the current implementation status against this PRD so the next engineer can quickly understand what is already live, what is partially implemented, and what still blocks the intended CRM/widget behavior.
+
+### 16.1 Already aligned with this PRD
+
+The following items are already implemented and broadly aligned with the target architecture:
+
+- `POST /v1/widget/message` is already wired to a backend orchestrator service and no longer returns a static placeholder response.
+- `SellriseBE/app/services/widget_message_orchestrator.py` already performs:
+  - published scenario loading
+  - deterministic stage/task resolution
+  - KB retrieval
+  - prompt assembly
+  - OpenRouter-backed LLM execution
+  - structured output validation
+  - deterministic fallback handling
+  - action dispatch invocation
+- `SellriseBE/app/services/llm_service.py` already defaults widget runtime inference to OpenRouter with DeepSeek (`deepseek/deepseek-chat`) and supports a server-side fallback model.
+- `SellriseBE/app/api/v1/llm.py` already uses the backend OpenRouter configuration and defaults to the configured DeepSeek model.
+- `SellriseBE/app/services/conversation_service.py` already persists assistant message metadata including `stage_id`, `task_id`, and `slots_update` into conversation context.
+- `SellriseBE/app/services/action_dispatcher.py` exists and enforces action allowlisting against `actions_catalog`.
+- `SellriseBE/app/services/followup_scheduler.py` exists and can schedule/cancel follow-up messages with `is_followup=true` metadata.
+- Integration tests already exist for the major runtime AI path (`tests/test_widget_message.py`) including success path, fallback path, KB strict mode, and action allowlist enforcement.
+
+### 16.2 Partially aligned / still missing
+
+The following areas are not yet fully aligned with the intent of this PRD:
+
+1. **Lead enrichment from runtime conversation is incomplete**
+  - The orchestrator stores `slots_update` only in conversation context / message metadata.
+  - There is currently no backend step that maps extracted slots such as `procedure`, `budget_range`, `timeframe`, `preferred_channel`, or `timezone` back into the `leads` table after chat messages are processed.
+
+2. **Frontend widget does not submit qualification fields when creating a lead**
+  - The browser widget currently sends only minimal contact payload (`name`, `email`, `phone`, `consent_given`) to `POST /v1/widget/lead`.
+  - Backend schema/service support richer lead fields, but the widget client is not sending them.
+
+3. **Scenario defaults do not target CRM qualification fields**
+  - The default scenario configuration in frontend authoring currently focuses on slots such as `industry`, `role`, and `interest_trigger`.
+  - It does not default to CRM-oriented slots like `procedure`, `budget_range`, `timeframe`, or `preferred_channel`, so runtime extraction is not naturally optimized for the lead table.
+
+4. **Lead scoring is only partially fed by runtime chat**
+  - Current score calculation can use `lead.procedure` / `lead.budget_range`, but runtime chat is not consistently writing those values back to the lead record.
+  - The widget frontend also does not currently emit structured `answer_given` events for each qualification answer, so event-based scoring remains weaker than intended.
+
+5. **Session-to-lead source propagation is incomplete**
+  - The widget session endpoint captures source context such as domain, page URL, UTM, and timezone.
+  - That context is not consistently propagated into the later lead creation payload, so some lead records can still end up with null source fields.
+
+### 16.3 Root cause analysis — why lead fields are still null in CRM
+
+Observed issue: lead rows are still not populating values such as `procedure`, `budget_range`, `timeframe`, `preferred_channel`, and related qualification data.
+
+This happens because of a flow gap across multiple layers, not because the database schema is missing.
+
+#### Root cause A — backend supports the fields, but widget lead creation does not send them
+
+`WidgetLeadRequest` and `get_or_create_lead(...)` already support:
+
+- `timezone`
+- `preferred_channel`
+- `procedure`
+- `budget_range`
+- `timeframe`
+
+However, the current embeddable widget only submits:
+
+- `workspace_id`
+- `session_id`
+- `name`
+- `email`
+- `phone`
+- `consent_given`
+
+As a result, `POST /v1/widget/lead` usually creates the lead without qualification fields, even though the backend would accept them.
+
+#### Root cause B — runtime AI stores extracted slots only in conversation context
+
+The runtime orchestrator already accepts `slots_update` from structured LLM output and merges it into `conversation.context.slots`.
+
+But after that merge, there is no synchronization step that says:
+
+- if `slots_update.procedure` exists, write it to `lead.procedure`
+- if `slots_update.budget_range` exists, write it to `lead.budget_range`
+- if `slots_update.timeframe` exists, write it to `lead.timeframe`
+- if `slots_update.preferred_channel` exists, write it to `lead.preferred_channel`
+- if `slots_update.timezone` exists, write it to `lead.timezone`
+
+So the conversation can become richer while the CRM lead row remains null.
+
+#### Root cause C — default scenario slot schema is not aligned to lead qualification columns
+
+The default scenario authoring config currently defaults to slots such as:
+
+- `industry`
+- `role`
+- `interest_trigger`
+- `acquisition_channels`
+- `meeting_datetime_candidate`
+
+This means the default AI/runtime flow is biased toward generic discovery, not CRM lead qualification fields. Even if chat works well, the extracted data may not correspond to the columns displayed in lead management.
+
+#### Root cause D — no integration test currently protects this requirement end-to-end
+
+Current tests validate AI response, fallback behavior, KB strict mode, and action allowlist behavior.
+
+There is not yet a dedicated integration test asserting this full sequence:
+
+1. user answers qualification questions in widget chat
+2. orchestrator extracts `procedure` / `budget_range` / `timeframe`
+3. lead row is updated in `leads`
+4. score is recomputed from the updated lead data and/or emitted answer events
+
+Because that regression test is missing, this gap can remain unnoticed while runtime chat itself appears healthy.
+
+### 16.4 Required fixes
+
+The following fixes should be treated as implementation work required to fulfill the CRM outcome expected by this PRD.
+
+#### Fix 1 — add lead synchronization after `slots_update`
+
+Add a backend synchronization step in `SellriseBE/app/services/widget_message_orchestrator.py` (or a dedicated helper/service) that:
+
+- loads the current lead by `lead_id` and `workspace_id`
+- maps known slot keys to lead columns
+- updates only allowed lead fields
+- recomputes lead score after qualification updates
+- optionally logs `answer_given` or equivalent qualification events for observability
+
+Recommended mapping for MVP:
+
+| Slot key | Lead column |
+|---|---|
+| `procedure` | `lead.procedure` |
+| `budget_range` | `lead.budget_range` |
+| `timeframe` | `lead.timeframe` |
+| `preferred_channel` | `lead.preferred_channel` |
+| `timezone` | `lead.timezone` |
+| `email` | `lead.email` (only if valid / empty or explicitly allowed) |
+
+#### Fix 2 — expand widget client payload for lead creation
+
+Update the embeddable widget client so `POST /v1/widget/lead` can submit:
+
+- `timezone`
+- `preferred_channel`
+- `procedure`
+- `budget_range`
+- `timeframe`
+- `domain`
+- `page_url`
+- `utm_source`
+- `utm_medium`
+- `utm_campaign`
+
+At minimum, `timezone`, `domain`, `page_url`, and UTM fields should come from browser/session context even before the AI extraction path is completed.
+
+#### Fix 3 — align default scenario slots with CRM requirements
+
+Update the default scenario template / scenario authoring defaults so CRM-focused projects can collect the following slots by default when lead qualification is desired:
+
+- `procedure`
+- `budget_range`
+- `timeframe`
+- `preferred_channel`
+- `timezone`
+
+This does not mean removing `industry` / `role` / `interest_trigger`, but the lead qualification slots must be first-class if the CRM is expected to show them.
+
+#### Fix 4 — add regression tests for lead field population
+
+Add automated tests covering:
+
+- `POST /v1/widget/lead` persists qualification fields when they are present in the request
+- widget message runtime with `slots_update` writes mapped values into `leads`
+- lead score changes after `procedure` / `budget_range` are captured
+- source context (`domain`, `page_url`, `utm_*`, `timezone`) is preserved from widget session / lead submission
+
+#### Fix 5 — keep documentation and implementation terminology consistent
+
+Normalize naming between browser payload, backend schema, and runtime context. Current examples use both `session_id` and `session_token`; future implementation should standardize one canonical field name and document how session data is attached to lead creation/update.
+
+### 16.5 Current conclusion for maintainers
+
+Current runtime AI/chatbot work is **partially implemented and already much closer to the PRD than the original baseline text suggests**.
+
+However, the CRM symptom in production/testing is expected today because:
+
+- the widget frontend is not sending qualification/source fields during lead creation,
+- runtime AI extraction is not syncing captured slots back into the `leads` table,
+- and default scenario slots are not yet optimized for CRM qualification columns.
+
+If future engineers only inspect the UI or only inspect the database schema, this issue is easy to miss. The real problem is the missing bridge between **conversation slot capture** and **persistent lead enrichment**.
