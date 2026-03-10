@@ -27,8 +27,8 @@ Audit scope:
 | US | Title | FE | BE | Status | Notes |
 |---|---|---|---|---|---|
 | US-1.1 | Workspace Creation | ✅ | ✅ | **Implemented** | BE `POST /v1/workspaces` now enforces `name`, initializes default `settings` JSON, and returns `workspace_id` + standard workspace fields; creator is assigned `ADMIN`. |
-| US-1.2 | Workspace Data Isolation | ⚠️ | ✅ | **Implemented** | Most BE queries already enforce `workspace_id`; 404 cross-workspace behavior is applied in core data endpoints. |
-| US-1.3 | Domain Registration | ✅ | ✅ | **Implemented** | Domain CRUD is fully implemented in `domains.py` with branding overrides (`brand_name`, `brand_logo_url`, `brand_primary_color`). |
+| US-1.2 | Workspace Data Isolation | ⚠️ | ✅ | **Implemented** | Fully enforced: `/v1/steps/*` endpoints now scope all conversation and scenario lookups by `workspace_id`. All authenticated admin/CRM endpoints return 404 on cross-workspace access. Rule R1 compliance verified. |
+| US-1.3 | Domain Registration | ✅ | ✅ | **Implemented** | Domain CRUD is fully implemented in `domains.py` with branding overrides (`brand_name`, `brand_logo_url`, `brand_primary_color`); widget session handshake rejects unregistered/inactive domains with `403` per PRD. |
 | US-2.1 | User Login (JWT) | ✅ | ✅ | **Implemented** | Login, refresh rotation, logout, and me endpoints are available. |
 | US-2.2 | RBAC | ✅ | ✅ | **Implemented** | RBAC is enforced across all modules (Admin/Agent/Viewer) using `require_admin`/`require_agent` dependencies; workspace isolation is strictly applied. |
 | US-2.3 | User Invitation | ✅ | ✅ | **Implemented** | BE user creation now enforces email uniqueness per-workspace (not global), preserving `409` only for duplicates in the same workspace. |
@@ -36,7 +36,7 @@ Audit scope:
 | US-3.1 | Widget Embed Code Generation | ✅ | ✅ | **Implemented** | FE can generate embed snippets; BE public widget endpoints are available. |
 | US-3.2 | Widget Display Modes | ✅ | ✅ | **Implemented** | Bubble + inline modes are available in FE preview/settings. |
 | US-3.3 | Widget Session Handshake | ✅ | ✅ | **Implemented** | `/v1/widget/session` is available and used for widget initialization. |
-| US-3.4 | Widget Fallback on API Failure | ✅ | ✅ | **Implemented** | FE fallback form renders on session timeout/failure; BE `POST /v1/widget/fallback-lead` now creates a deduped lead from fallback form with domain-based workspace resolution, event logging (`fallback_lead_submitted`), and hot-lead notification. |
+| US-3.4 | Widget Fallback on API Failure | ✅ | ✅ | **Implemented** | FE fallback form renders on session timeout/failure; BE `POST /v1/widget/fallback-lead` now enforces strict domain-based workspace resolution (no first-workspace fallback), creates deduped leads, logs `fallback_lead_submitted`, and triggers hot-lead notification when applicable. |
 | US-4.1 | Scenario CRUD (Draft Editing) | ✅ | ✅ | **Implemented** | Create/list/get/patch/delete exist; DELETE endpoint now prevents deletion of published scenarios. |
 | US-4.2 | Scenario Publishing | ✅ | ✅ | **Implemented** | Publish endpoint exists with unpublish-others + version bump behavior. |
 | US-4.3 | Step Execution (Conversation Flow) | ✅ | ✅ | **Implemented** | BE now has both `/v1/steps/*` execution APIs and `POST /v1/scenarios/{id}/simulate` (LLM-powered, reads scenario config/rules/stages/slots, calls OpenRouter). FE `ScenarioSimulator.jsx` calls simulate endpoint and receives `{ reply, slots, stage_id }`. |
@@ -56,7 +56,7 @@ Audit scope:
 | US-6.4 | KB-Only Answer Mode | ✅ | ✅ | **Implemented** | `LLMService.enhance_kb_answer` now supports `strict=True` mode; enabled via `kb_only` in scenario config. Replaces general assistant fallback with strict "I don't know" when context is missing. |
 | US-7.1 | Funnel Metrics Dashboard | ✅ | ✅ | **Implemented** | FE Analytics wiring complete: `analyticsService.js` now calls all BE endpoints (summary, funnel, sources, dropoff). |
 | US-7.2 | CSV Export | ✅ | ✅ | **Implemented** | FE already exports CSV client-side and BE now also provides `/v1/analytics/export` for server-side export. |
-| US-8.1 | Hot Lead Email Notification | ✅ | ✅ | **Implemented** | Email notification service now includes retry logic, exponential backoff, and proper event logging. |
+| US-8.1 | Hot Lead Email Notification | ✅ | ✅ | **Implemented** | Email notification service includes retry logic, exponential backoff, and proper event logging; lead fetch is now workspace-scoped (`lead_id` + `workspace_id`) for tenant safety. |
 | US-8.2 | Notification Event Logging | ✅ | ✅ | **Implemented** | `notification_sent` and `notification_failed` event types now logged to LeadEvents after email attempts. |
 | US-9.1 | Workspace Settings | ✅ | ✅ | **Implemented** | Workspace CRUD and Notification Settings (`hot_lead_recipients`, etc.) are now fully available in `workspaces.py` and `notification_settings.py`. |
 | US-9.2 | Team Management | ✅ | ✅ | **Implemented** | FE team management (invite/role/deactivate) and BE `/v1/users` management endpoints are now available. |
