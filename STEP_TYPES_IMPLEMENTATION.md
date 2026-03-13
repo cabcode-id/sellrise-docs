@@ -425,14 +425,12 @@ Terminate the conversation.
 
 ### Environment Variables
 
-Set one of the following:
+Runtime default is OpenRouter. Configure at least:
 
 ```bash
-# OpenAI
-OPENAI_API_KEY=sk-...
-
-# Anthropic (Claude)
-ANTHROPIC_API_KEY=sk-ant-...
+OPENROUTER_API_KEY=...
+OPENROUTER_MODEL=deepseek/deepseek-chat
+OPENROUTER_FALLBACK_MODEL=anthropic/claude-3.5-sonnet
 ```
 
 ### Enable LLM in Scenario
@@ -442,20 +440,22 @@ Add to scenario config:
 ```json
 {
   "use_llm": true,
-  "prompts": {
+  "system_prompts": {
     "main": "You are a helpful assistant for lead qualification...",
     "qualification": "Your goal is to efficiently qualify leads...",
     "meeting_booking": "When booking meetings, be specific..."
   },
-  "global_rules": {
-    "max_questions_per_message": 1,
-    "max_sentences_per_message": 2,
-    "max_char_limit": 420,
-    "no_emojis": true,
+  "rules": {
+    "one_question_rule": true,
+    "max_sentences": 2,
+    "max_chars": { "default": 420 },
+    "emoji": { "allowed": false },
     "facts_only": true
   }
 }
 ```
+
+Compatibility note: backend runtime still accepts legacy keys (`prompts`, `global_rules`) for older scenarios.
 
 ### LLM Usage Examples
 
@@ -614,7 +614,7 @@ async def test_full_conversation_flow(client, db_session):
 
 **Issue: LLM responses are too long**
 - Adjust `max_tokens` parameter
-- Add character limits to `global_rules`
+- Add character limits to `rules.max_chars`
 - Use structured output for consistency
 
 **Issue: Conversation context lost**

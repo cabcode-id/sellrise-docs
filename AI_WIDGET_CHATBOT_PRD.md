@@ -77,8 +77,10 @@ Deliver a reliable widget chatbot that:
 - `POST /v1/widget/message`
   - gets/creates conversation
   - stores user message
-  - currently returns placeholder bot response
-  - TODO exists for scenario processor + LLM wiring
+  - calls `process_widget_message(...)` orchestrator
+  - builds prompt package via `app/utils/scenario_helpers.py::build_prompt_package`
+  - calls `LLMService.generate_widget_runtime_response(...)`
+  - validates structured output and applies deterministic fallback when needed
 
 This PRD upgrades only the runtime AI path for widget messages without changing the external API contract shape.
 
@@ -88,12 +90,12 @@ This PRD upgrades only the runtime AI path for widget messages without changing 
 
 | Capability | Type | Where Implemented | Notes |
 |---|---|---|---|
-| Scenario stage/task routing | Deterministic automation | `app/services/step_processor.py` + new orchestrator | Keep deterministic selection before generation |
+| Scenario stage/task routing | Deterministic automation | `app/utils/scenario_helpers.py` + `app/services/widget_message_orchestrator.py` | Deterministic selection is executed before generation |
 | Response generation | LLM | `app/services/llm_service.py` via OpenRouter | Runtime model: DeepSeek via OpenRouter |
 | Prompt enhancement for admins | LLM (authoring time) | `app/api/v1/llm.py` | Already implemented |
 | KB grounding | Retrieval + optional LLM synthesis | `widget.py` + `llm_service.py` | Honor strict KB-only mode |
-| Slot extraction and context update | Structured LLM + validation | new orchestrator + `conversation_service.py` | Must validate schema before write |
-| Action trigger emission | Automation | new action dispatcher service | Tags: `#product_request`, `#New_meeting_time`, `#stop_script`, `#handover` |
+| Slot extraction and context update | Structured LLM + validation | `app/services/widget_message_orchestrator.py` + `conversation_service.py` | Validated before DB write |
+| Action trigger emission | Automation | `app/services/action_dispatcher.py` | Tags: `#product_request`, `#New_meeting_time`, `#stop_script`, `#handover` |
 | Follow-up messages | Automation | scheduler/job module | Triggered by silence windows in scenario config |
 | Lead score and notifications | Automation | existing lead scoring + notification services | Reuse existing hot-lead pipeline |
 

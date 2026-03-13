@@ -5,17 +5,17 @@
   "use_llm": false,
   "entry_step_id": "welcome",
   
-  "prompts": {
+  "system_prompts": {
     "main": "You are a professional assistant for lead qualification. Be concise and helpful.",
     "qualification": "Your goal is to collect key information: name, email, inquiry type, and budget.",
     "meeting_booking": "When booking, provide clear next steps and confirmation."
   },
   
-  "global_rules": {
-    "max_questions_per_message": 1,
-    "max_sentences_per_message": 2,
-    "max_char_limit": 420,
-    "no_emojis": true,
+  "rules": {
+    "one_question_rule": true,
+    "max_sentences": 2,
+    "max_chars": { "default": 420 },
+    "emoji": { "allowed": false },
     "facts_only": true
   },
   

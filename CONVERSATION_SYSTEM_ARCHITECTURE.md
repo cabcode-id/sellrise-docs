@@ -123,13 +123,14 @@ class Message:
    - Updates conversation.last_user_message_at
    - Increments conversation.message_count
    ↓
-5. Process through scenario (TODO: Implement full router)
-   - Load scenario config from conversation.scenario_id
-   - Load conversation context (slots, stage, task)
-   - Run router algorithm (see config script template.md)
-   - Call LLM with proper system prompts + context
-   - Extract actions (book meeting, send products, etc.)
-   - Update slots and conversation state
+5. Process through scenario orchestrator (implemented)
+  - Load published scenario config for workspace
+  - Load conversation context (slots, stage, task)
+  - Resolve deterministic stage/task via `resolve_stage_and_task(...)`
+  - Build prompt package via `build_prompt_package(...)`
+  - Call LLM using `generate_widget_runtime_response(...)`
+  - Validate structured output and enforce action/tag allowlist
+  - Update slots and conversation state
    ↓
 6. add_message() - Bot response
    - Saves assistant message with metadata
@@ -318,24 +319,20 @@ await fetch('/v1/widget/message', {
 })
 ```
 
-### Step 3: Implement Scenario Processor
+### Step 3: Runtime Processor (Current)
 ```python
-# TODO: In /app/services/scenario_processor.py
-async def process_message(
-    conversation: Conversation,
-    user_message: str
-) -> Dict[str, Any]:
-    """
-    1. Load scenario config
-    2. Load conversation context
-    3. Run router algorithm (select stage + task)
-    4. Build LLM prompt with system prompts + context
-    5. Call LLM
-    6. Parse response
-    7. Execute actions
-    8. Return bot reply + updated context
-    """
-    pass
+# Implemented in /app/services/widget_message_orchestrator.py
+result = await process_widget_message(
+  db=db,
+  conversation=conversation,
+  user_message=body.message,
+  workspace_id=body.workspace_id,
+  lead_id=body.lead_id,
+  session_id=body.session_id,
+)
+
+# Prompt assembly is centralized in /app/utils/scenario_helpers.py
+system_prompt, user_prompt = build_prompt_package(...)
 ```
 
 ## Benefits

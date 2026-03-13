@@ -237,7 +237,16 @@ The default template uses a **stage-based, task-driven** conversation flow (see 
 - **Slots**: Data fields to collect from leads
 - **Actions**: Backend triggers (booking meetings, sending products, stopping automation)
 - **Approved Phrases**: Template messages that comply with rules
-- **Follow-ups**: Automated messages triggered by user silenceFor legacy/simple scenarios, you can still use the step-based format:
+- **Follow-ups**: Automated messages triggered by user silence
+
+### Config Key Compatibility
+
+- Preferred keys for current frontend and runtime: `system_prompts`, `rules`, `stages`, `actions_catalog`.
+- Runtime prompt builder supports both prompt keys: `prompts` and `system_prompts`.
+- Runtime rules parser supports both rule keys: `rules` and `global_rules` (plus `settings` fallback in orchestrator path).
+- Recommendation: for new scenarios, always use `system_prompts` and `rules` to match the Scenario Configuration UI defaults.
+
+For legacy/simple scenarios, you can still use the step-based format:
 
 ```json
 {
