@@ -76,6 +76,7 @@ nav:
       - Chatbot Behavior Investigation: AI_CHATBOT_ROBOTIC_BEHAVIOR_INVESTIGATION.md
   - Scenario System:
       - Configuration Guide: SCENARIO_CONFIGURATION_GUIDE.md
+      - Chatbot Scenario Tutorial: CHATBOT_SCENARIO_BUILDING_TUTORIAL.md
       - Step Types - Implementation: STEP_TYPES_IMPLEMENTATION.md
       - Step Types - Summary: STEP_TYPES_SUMMARY.md
       - Default Template: DEFAULT_SCENARIO_TEMPLATE.md

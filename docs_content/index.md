@@ -2,6 +2,8 @@
 
 Welcome to the Sellrise platform documentation. Use the navigation to browse through the different sections.
 
+[Read the Chatbot Scenario Build Tutorial](./tutorials/chatbot-scenario-build)
+
 ## Sections
 
 | Section | Description |
