@@ -1,0 +1,99 @@
+site_name: Sellrise Docs
+site_url: https://cabcode-id.github.io/sellrise-docs/
+site_description: Documentation for Sellrise Platform
+site_author: Cabcode
+
+repo_name: cabcode-id/sellrise-docs
+repo_url: https://github.com/cabcode-id/sellrise-docs
+
+docs_dir: docs_content
+
+theme:
+  name: material
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - toc.follow
+  icon:
+    repo: fontawesome/brands/github
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - tables
+  - toc:
+      permalink: true
+  - attr_list
+  - md_in_html
+
+nav:
+  - Home: index.md
+  - Product Requirements:
+      - Agile PRD: AGILE_PRD.md
+      - AI Widget Chatbot PRD: AI_WIDGET_CHATBOT_PRD.md
+      - Feature Breakdown: FEATURE_BREAKDOWN.md
+      - MVP 1 Status Review: analisis-p1.md
+  - AI Conversation Engine:
+      - Technical Specification: AI Conversation Engine – Technical Specification/AI Conversation Engine – Technical spec.md
+      - Flow Diagram: AI Conversation Engine – Technical Specification/Flow Diagram.md
+      - System Architecture: CONVERSATION_SYSTEM_ARCHITECTURE.md
+      - Chatbot Behavior Investigation: AI_CHATBOT_ROBOTIC_BEHAVIOR_INVESTIGATION.md
+  - Scenario System:
+      - Configuration Guide: SCENARIO_CONFIGURATION_GUIDE.md
+      - Step Types - Implementation: STEP_TYPES_IMPLEMENTATION.md
+      - Step Types - Summary: STEP_TYPES_SUMMARY.md
+      - Default Template: DEFAULT_SCENARIO_TEMPLATE.md
+  - CRM:
+      - Overview: crm-prds/README.md
+      - Lead Creation & Deduplication: crm-prds/01-lead-creation-and-deduplication.md
+      - Lead Inbox: crm-prds/02-lead-inbox-new-unassigned.md
+      - Pipeline Kanban View: crm-prds/03-pipeline-kanban-view.md
+      - Lead Detail View: crm-prds/04-lead-detail-view.md
+      - Lead Search & Filters: crm-prds/05-lead-search-and-filters.md
+      - Lead Notes: crm-prds/06-lead-notes.md
+      - Lead Assignment: crm-prds/07-lead-assignment.md
+      - Lead Scoring: crm-prds/08-lead-scoring.md
+  - Implementation:
+      - Event Logging: EVENT_LOGGING_IMPLEMENTATION.md
+      - PRD Implementation Audit: AGILE_PRD_IMPLEMENTATION_AUDIT.md
+  - Testing:
+      - Integration Testing (EN): integration_testing_guide_en.md
+      - Integration Testing (ID): integration_testing_guide.md
+  - New Features:
+      - Scenario Generator: new_feats/scenario_generator.md
