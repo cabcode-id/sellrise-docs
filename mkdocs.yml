@@ -98,5 +98,15 @@ nav:
       - Integration Testing (ID): integration_testing_guide.md
   - Phase 1 – Post-MVP:
       - Scenario Generator: phase-1-post-mvp/scenario_generator.md
+  - Phase 2 – Plasthic Additions:
+      - PRD 1 - Patient Service: phase-2-plasthic-additions/PRD_1_Patient_Service.md
+      - PRD 2 - Webhook Pipeline: phase-2-plasthic-additions/PRD_2_Webhook_Pipeline.md
+      - PRD 3 - Photo Management: phase-2-plasthic-additions/PRD_3_Photo_Management.md
+      - PRD 4 - CRM Dashboard: phase-2-plasthic-additions/PRD_4_CRM_Dashboard.md
+      - PRD 5 - Compliance: phase-2-plasthic-additions/PRD_5_Compliance.md
+      - PRD 6 - Cabinet Auth Onboarding: phase-2-plasthic-additions/PRD_6_Cabinet_Auth_Onboarding.md
+      - PRD 7 - Dashboard Journey: phase-2-plasthic-additions/PRD_7_Dashboard_Journey.md
+      - PRD 8 - Staff Services Reviews: phase-2-plasthic-additions/PRD_8_Staff_Services_Reviews.md
+      - PRD 9 - Rewards Community: phase-2-plasthic-additions/PRD_9_Rewards_Community.md
   - Phase 2 – Pre-Consultation Engagement:
       - Chatbot Photo Collection: phase-2-pre-consultation-engagement/chatbot-photo-collection.md

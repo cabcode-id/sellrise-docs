@@ -14,7 +14,9 @@ Welcome to the Sellrise platform documentation. Use the navigation to browse thr
 | **CRM** | Lead management PRDs (creation, inbox, pipeline, scoring, etc.) |
 | **Implementation** | Event logging and implementation audit details |
 | **Testing** | Integration testing guides (English & Indonesian) |
-| **New Features** | Upcoming features like the AI Scenario Generator |
+| **Phase 1 – Post-MVP** | Post-MVP feature requests such as the AI Scenario Generator |
+| **Phase 2 – Plasthic Additions** | Plasthic-specific PRDs covering patient service, webhook pipeline, photo management, CRM dashboard, compliance, onboarding, dashboard journey, reviews, and rewards |
+| **Phase 2 – Pre-Consultation Engagement** | Consultation funnel enhancements such as chatbot photo collection |
 
 
 Addendum: Scope of Work Addition
