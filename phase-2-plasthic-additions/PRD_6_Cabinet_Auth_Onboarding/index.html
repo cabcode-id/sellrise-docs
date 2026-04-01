@@ -1,0 +1,3102 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for Sellrise Platform">
+      
+      
+        <meta name="author" content="Cabcode">
+      
+      
+        <link rel="canonical" href="https://cabcode-id.github.io/sellrise-docs/phase-2-plasthic-additions/PRD_6_Cabinet_Auth_Onboarding/">
+      
+      
+        <link rel="prev" href="../PRD_5_Compliance/">
+      
+      
+        <link rel="next" href="../PRD_7_Dashboard_Journey/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>PRD 6 - Cabinet Auth Onboarding - Sellrise Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#prd-6-patient-cabinet-authentication-onboarding" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Sellrise Docs" class="md-header__button md-logo" aria-label="Sellrise Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Sellrise Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              PRD 6 - Cabinet Auth Onboarding
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/cabcode-id/sellrise-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    cabcode-id/sellrise-docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Sellrise Docs" class="md-nav__button md-logo" aria-label="Sellrise Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Sellrise Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/cabcode-id/sellrise-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    cabcode-id/sellrise-docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Product Requirements
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Product Requirements
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AGILE_PRD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agile PRD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AI_WIDGET_CHATBOT_PRD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Widget Chatbot PRD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FEATURE_BREAKDOWN/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Feature Breakdown
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analisis-p1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MVP 1 Status Review
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Conversation Engine
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AI Conversation Engine
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AI%20Conversation%20Engine%20%E2%80%93%20Technical%20Specification/AI%20Conversation%20Engine%20%E2%80%93%20Technical%20spec/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical Specification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AI%20Conversation%20Engine%20%E2%80%93%20Technical%20Specification/Flow%20Diagram/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flow Diagram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CONVERSATION_SYSTEM_ARCHITECTURE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AI_CHATBOT_ROBOTIC_BEHAVIOR_INVESTIGATION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chatbot Behavior Investigation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scenario System
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Scenario System
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SCENARIO_CONFIGURATION_GUIDE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CHATBOT_SCENARIO_BUILDING_TUTORIAL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chatbot Scenario Tutorial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../STEP_TYPES_IMPLEMENTATION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Step Types - Implementation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../STEP_TYPES_SUMMARY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Step Types - Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DEFAULT_SCENARIO_TEMPLATE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Default Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CRM
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CRM
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../crm-prds/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../crm-prds/01-lead-creation-and-deduplication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lead Creation & Deduplication
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../crm-prds/02-lead-inbox-new-unassigned/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lead Inbox
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../crm-prds/03-pipeline-kanban-view/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pipeline Kanban View
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../crm-prds/04-lead-detail-view/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lead Detail View
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../crm-prds/05-lead-search-and-filters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lead Search & Filters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../crm-prds/06-lead-notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lead Notes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../crm-prds/07-lead-assignment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lead Assignment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../crm-prds/08-lead-scoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lead Scoring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Implementation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Implementation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../EVENT_LOGGING_IMPLEMENTATION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Event Logging
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AGILE_PRD_IMPLEMENTATION_AUDIT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PRD Implementation Audit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Testing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integration_testing_guide_en/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integration Testing (EN)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integration_testing_guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integration Testing (ID)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phase 1 – Post-MVP
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Phase 1 – Post-MVP
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../phase-1-post-mvp/scenario_generator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scenario Generator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phase 2 – Plasthic Additions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Phase 2 – Plasthic Additions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MASTER_PRD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Master PRD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PRD_1_Patient_Service/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PRD 1 - Patient Service
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PRD_2_Webhook_Pipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PRD 2 - Webhook Pipeline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PRD_3_Photo_Management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PRD 3 - Photo Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PRD_4_CRM_Dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PRD 4 - CRM Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PRD_5_Compliance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PRD 5 - Compliance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PRD 6 - Cabinet Auth Onboarding
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PRD 6 - Cabinet Auth Onboarding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#module-6-contract-automation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Module 6: Contract Automation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Module 6: Contract Automation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-to-build-after-template-received" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What to Build (after template received)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#module-7-patient-cabinet-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Module 7: Patient Cabinet Authentication
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Module 7: Patient Cabinet Authentication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#goal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Goal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#71-invite-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 — Invite Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-create-account-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 — Create Account Page
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-sign-in-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 — Sign In Page
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#74-forgot-password" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4 — Forgot Password
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#75-jwt-token-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.5 — JWT Token Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#module-7-acceptance-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Module 7 Acceptance Tests
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#module-8-onboarding-wizard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Module 8: Onboarding Wizard
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Module 8: Onboarding Wizard">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#goal_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Goal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Layout
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-1-welcome" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1 — Welcome
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-personal-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2 — Personal Details
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-location-contact" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3 — Location &amp; Contact
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-medical-interest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4 — Medical Interest
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-photo-upload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5 — Photo Upload
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-6-preferences" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 6 — Preferences
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-7-confirmation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 7 — Confirmation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#progress-saving" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Progress Saving
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#module-8-acceptance-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Module 8 Acceptance Tests
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PRD_7_Dashboard_Journey/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PRD 7 - Dashboard Journey
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PRD_8_Staff_Services_Reviews/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PRD 8 - Staff Services Reviews
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PRD_9_Rewards_Community/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PRD 9 - Rewards Community
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPRINT_PLAN/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint Plan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phase 2 – Pre-Consultation Engagement
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Phase 2 – Pre-Consultation Engagement
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../phase-2-pre-consultation-engagement/chatbot-photo-collection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chatbot Photo Collection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#module-6-contract-automation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Module 6: Contract Automation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Module 6: Contract Automation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-to-build-after-template-received" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What to Build (after template received)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#module-7-patient-cabinet-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Module 7: Patient Cabinet Authentication
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Module 7: Patient Cabinet Authentication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#goal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Goal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#71-invite-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 — Invite Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-create-account-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 — Create Account Page
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-sign-in-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 — Sign In Page
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#74-forgot-password" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4 — Forgot Password
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#75-jwt-token-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.5 — JWT Token Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#module-7-acceptance-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Module 7 Acceptance Tests
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#module-8-onboarding-wizard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Module 8: Onboarding Wizard
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Module 8: Onboarding Wizard">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#goal_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Goal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Layout
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-1-welcome" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1 — Welcome
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-personal-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2 — Personal Details
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-location-contact" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3 — Location &amp; Contact
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-medical-interest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4 — Medical Interest
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-photo-upload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5 — Photo Upload
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-6-preferences" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 6 — Preferences
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-7-confirmation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 7 — Confirmation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#progress-saving" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Progress Saving
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#module-8-acceptance-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Module 8 Acceptance Tests
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="prd-6-patient-cabinet-authentication-onboarding">PRD 6: Patient Cabinet — Authentication &amp; Onboarding<a class="headerlink" href="#prd-6-patient-cabinet-authentication-onboarding" title="Permanent link">&para;</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Modules</strong></td>
+<td>6 (Contract Automation — BLOCKED) + 7 (Cabinet Auth) + 8 (Onboarding Wizard)</td>
+</tr>
+<tr>
+<td><strong>System</strong></td>
+<td>System 2: Phlastic Patient Service + Cabinet Frontend</td>
+</tr>
+<tr>
+<td><strong>Owner</strong></td>
+<td>Iga Narendra (CV Diantha)</td>
+</tr>
+<tr>
+<td><strong>Estimate</strong></td>
+<td>6–8 days (Modules 7 + 8 combined; Module 6 blocked pending contract template)</td>
+</tr>
+<tr>
+<td><strong>Dependencies</strong></td>
+<td>Module 1 (patient DB with auth fields); Module 7 prerequisite for Module 8</td>
+</tr>
+<tr>
+<td><strong>Priority</strong></td>
+<td>P1 — Core patient-facing experience</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="module-6-contract-automation">Module 6: Contract Automation<a class="headerlink" href="#module-6-contract-automation" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>⚠️ <strong>BLOCKED</strong> — Waiting on Daria/Avi to provide:
+1. Contract template (Word or PDF with placeholder fields)
+2. Which data fields to insert into the contract
+3. Signature format: e-sign (DocuSign/similar) or PDF download + wet signature
+4. At which pipeline stage the contract is generated
+5. Who initiates generation (doctor? admin? automatic?)</p>
+</blockquote>
+<h3 id="what-to-build-after-template-received">What to Build (after template received)<a class="headerlink" href="#what-to-build-after-template-received" title="Permanent link">&para;</a></h3>
+<p><strong>New endpoints on Phlastic Patient Service:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>POST   /api/v1/patients/:id/contracts       Generate contract PDF
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>GET    /api/v1/patients/:id/contracts/:cid  Download contract PDF
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>PATCH  /api/v1/patients/:id/contracts/:cid  Update status (sent/signed)
+</code></pre></div>
+<p><strong>Table: <code>contracts</code></strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>UUID</td>
+<td>Primary key</td>
+</tr>
+<tr>
+<td>patient_id</td>
+<td>UUID</td>
+<td>FK → patients</td>
+</tr>
+<tr>
+<td>template_version</td>
+<td>string</td>
+<td>Which template version was used</td>
+</tr>
+<tr>
+<td>generated_pdf_path</td>
+<td>string</td>
+<td>File path to generated PDF</td>
+</tr>
+<tr>
+<td>variables_used</td>
+<td>jsonb</td>
+<td>Snapshot of all variables inserted at generation time</td>
+</tr>
+<tr>
+<td>status</td>
+<td>enum</td>
+<td><code>generated</code> → <code>sent</code> → <code>viewed</code> → <code>signed</code></td>
+</tr>
+<tr>
+<td>sent_at</td>
+<td>datetime</td>
+<td>When emailed to patient</td>
+</tr>
+<tr>
+<td>signed_at</td>
+<td>datetime</td>
+<td>When marked as signed</td>
+</tr>
+<tr>
+<td>created_by</td>
+<td>string</td>
+<td>Who generated it</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>datetime</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Template variables (preliminary — confirm with Daria):</strong></p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>{{patient_name}}</code></td>
+<td>From patient record</td>
+</tr>
+<tr>
+<td><code>{{patient_email}}</code></td>
+<td>From patient record</td>
+</tr>
+<tr>
+<td><code>{{patient_phone}}</code></td>
+<td>From patient record</td>
+</tr>
+<tr>
+<td><code>{{procedure_name}}</code></td>
+<td>From <code>procedure_interest</code> array</td>
+</tr>
+<tr>
+<td><code>{{procedure_price}}</code></td>
+<td>TBD (needs pricing data)</td>
+</tr>
+<tr>
+<td><code>{{procedure_date}}</code></td>
+<td>TBD (needs scheduling)</td>
+</tr>
+<tr>
+<td><code>{{clinic_name}}</code></td>
+<td><code>"Phlastic"</code></td>
+</tr>
+<tr>
+<td><code>{{clinic_address}}</code></td>
+<td>From config</td>
+</tr>
+<tr>
+<td><code>{{doctor_name}}</code></td>
+<td>From config or assigned doctor</td>
+</tr>
+<tr>
+<td><code>{{today_date}}</code></td>
+<td>Generation date</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Sellrise CRM changes:</strong>
+- "Generate Contract" button on lead detail page (visible only when <code>stage &gt;= doctor_reviewed</code>)
+- Clicking generates PDF → shows download link in CRM
+- Contract status visible in timeline (<code>generated → sent → signed</code>)
+- "Send to Patient" button → emails PDF to patient
+- "Mark as Signed" → updates <code>contract.status=signed</code> + moves patient to <code>contract_signed</code> stage</p>
+<p><strong>Module 6 Acceptance Tests</strong> (after template received):</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> "Generate Contract" button visible when <code>stage &gt;= doctor_reviewed</code></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Clicking generates PDF with patient data correctly inserted</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> PDF downloadable from CRM</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> "Send to Patient" sends PDF to patient email</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Event <code>contract_generated</code> created in <code>patient_events</code></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Event <code>contract_sent</code> created when emailed</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> "Mark as Signed" → <code>contract.status=signed</code> + <code>patient.stage=contract_signed</code> + event</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Contract PDF stored on Phlastic service (NOT in Sellrise)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Multiple contracts possible per patient (e.g., revised contract)</li>
+</ul>
+<hr />
+<h2 id="module-7-patient-cabinet-authentication">Module 7: Patient Cabinet Authentication<a class="headerlink" href="#module-7-patient-cabinet-authentication" title="Permanent link">&para;</a></h2>
+<h3 id="goal">Goal<a class="headerlink" href="#goal" title="Permanent link">&para;</a></h3>
+<p>Patient-facing authentication system. Patients receive an invite from staff, create their account, and log in to their personal cabinet.</p>
+<p><strong>Tech stack:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Choice</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Frontend</td>
+<td>React / Next.js / any SPA framework</td>
+</tr>
+<tr>
+<td>Served from</td>
+<td><code>https://cabinet.phlastic.com.au</code></td>
+</tr>
+<tr>
+<td>API calls</td>
+<td>Phlastic REST API (<code>/auth/*</code> and <code>/cabinet/*</code> endpoints)</td>
+</tr>
+<tr>
+<td>Auth tokens</td>
+<td>JWT: access token (15 min) + refresh token (30 days, <code>httpOnly</code> cookie)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="71-invite-flow">7.1 — Invite Flow<a class="headerlink" href="#71-invite-flow" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>1. Staff clicks &quot;Send Cabinet Invite&quot; in Sellrise CRM (Module 4.7)
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>2. CRM calls POST /auth/invite { patient_id }
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>3. Phlastic service:
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>   a. Generates unique invite_token (UUID, single-use, expires in 7 days)
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>   b. Saves invite_token + invite_sent_at on patient record
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>   c. Sends email to patient:
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>        Subject: &quot;Welcome to Phlastic — Set Up Your Account&quot;
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>        Body: Link to https://cabinet.phlastic.com.au/register?token={invite_token}
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>   d. Creates event: invite_sent
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>4. Returns 200 { &quot;invite_sent&quot;: true, &quot;expires_at&quot;: &quot;2026-04-07T14:22:00Z&quot; }
+</code></pre></div>
+<hr />
+<h3 id="72-create-account-page">7.2 — Create Account Page<a class="headerlink" href="#72-create-account-page" title="Permanent link">&para;</a></h3>
+<p><strong>URL:</strong> <code>/register?token={invite_token}</code></p>
+<p><strong>Layout:</strong> Split-screen
+- Left: Full-bleed Phlastic branding photo
+- Right: Registration form (562 px wide)</p>
+<p><strong>UI:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Welcome to the Aesthetic
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>We are glad to welcome you to our platform.
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>Please create your password to access your personal cabinet.
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>[Password]          — min 8 chars, show/hide toggle
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>[Confirm Password]  — must match
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>[Create Account]    — disabled until valid
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>Already have an account? [Sign In]
+</code></pre></div></p>
+<p><strong>Logic:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>1. Page loads → validate invite_token via GET /auth/validate-token?token=xxx
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>2. If invalid/expired → error: &quot;This invite link has expired. Please contact Phlastic.&quot;
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>3. If valid → show form, pre-fill patient name from API response
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>4. On submit:
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>   a. POST /auth/register { invite_token, password }
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>   b. Backend: hash password (bcrypt), save to patient.password_hash
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>   c. Backend: set account_created=true
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>   d. Backend: invalidate invite_token (single-use — clear after use)
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>   e. Backend: create event: account_created { method: &quot;invite_link&quot; }
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>   f. Backend: return JWT access + refresh tokens
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>   g. Frontend: auto-login, redirect to onboarding wizard
+</code></pre></div></p>
+<p><strong>Password requirements:</strong>
+- Minimum 8 characters
+- At least 1 letter + 1 number
+- Validated client-side AND server-side</p>
+<hr />
+<h3 id="73-sign-in-page">7.3 — Sign In Page<a class="headerlink" href="#73-sign-in-page" title="Permanent link">&para;</a></h3>
+<p><strong>URL:</strong> <code>/login</code></p>
+<p><strong>Layout:</strong> Split-screen (matches Figma)</p>
+<p><strong>UI:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Welcome back
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>Please enter your details
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>[Email]
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>[Password]      — show/hide toggle
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>[Sign In]
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>[Forgot password?]
+</code></pre></div></p>
+<p><strong>Logic:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>1. POST /auth/login { email, password }
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>2. Success → JWT tokens returned
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>   - If onboarding_completed=true  → redirect to /dashboard
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>   - If onboarding_completed=false → redirect to onboarding wizard
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>3. Wrong credentials → &quot;Invalid email or password&quot; (don&#39;t reveal which is wrong)
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>4. Account not created → &quot;Account not found. Check your email for an invite link.&quot;
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>5. Rate limiting: max 5 attempts per email per 15 minutes
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>   - 6th attempt → blocked with message: &quot;Too many attempts. Try again in 15 minutes.&quot;
+</code></pre></div></p>
+<hr />
+<h3 id="74-forgot-password">7.4 — Forgot Password<a class="headerlink" href="#74-forgot-password" title="Permanent link">&para;</a></h3>
+<p><strong>URL:</strong> <code>/forgot-password</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>1. User enters email
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>2. POST /auth/forgot-password { email }
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>3. If email exists + account_created=true → send password reset email:
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>   - Token expires in 1 hour
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>   - Reset link: https://cabinet.phlastic.com.au/reset-password?token={reset_token}
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>4. Always show: &quot;If this email exists, we sent a reset link.&quot; (don&#39;t reveal if email exists)
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>Reset page (/reset-password?token=xxx):
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>1. Validate token
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>2. Show new password + confirm password form
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>3. POST /auth/reset-password { token, password }
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>4. Success → redirect to login
+</code></pre></div>
+<hr />
+<h3 id="75-jwt-token-management">7.5 — JWT Token Management<a class="headerlink" href="#75-jwt-token-management" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Token</th>
+<th>Expiry</th>
+<th>Storage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Access token</td>
+<td>15 minutes</td>
+<td>Memory / localStorage</td>
+</tr>
+<tr>
+<td>Refresh token</td>
+<td>30 days</td>
+<td><code>httpOnly</code> cookie</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Auto-refresh logic:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>1. On any 401 response → try refresh (POST /auth/refresh)
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>2. If refresh succeeds → retry original request with new access token
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>3. If refresh fails (token expired) → redirect to /login
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>4. POST /auth/logout → invalidate refresh token server-side
+</code></pre></div></p>
+<hr />
+<h3 id="module-7-acceptance-tests">Module 7 Acceptance Tests<a class="headerlink" href="#module-7-acceptance-tests" title="Permanent link">&para;</a></h3>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Invite email sent with correct link when staff clicks "Send Cabinet Invite"</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>/register</code> page loads with valid token, shows patient name pre-filled</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>/register</code> page shows error with invalid or expired token</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Password validation: min 8 chars, at least 1 letter + 1 number (client + server)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Password mismatch shows validation error</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Successful registration → auto-login → redirect to onboarding wizard</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Invite token is single-use (second use → error message)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Sign in with correct credentials → redirect to dashboard (or onboarding if not completed)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Sign in with wrong credentials → generic error message (not revealing which field is wrong)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Rate limiting: 6th attempt within 15 min → blocked with clear message</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Forgot password sends reset email (response doesn't reveal if email exists)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Password reset works with valid token</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Password reset token expires after 1 hour</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> JWT access token expires after 15 min, refresh automatically works</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Logout invalidates refresh token (subsequent refresh → redirect to login)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> All auth pages are mobile responsive</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Split-screen layout matches Figma design</li>
+</ul>
+<hr />
+<h2 id="module-8-onboarding-wizard">Module 8: Onboarding Wizard<a class="headerlink" href="#module-8-onboarding-wizard" title="Permanent link">&para;</a></h2>
+<h3 id="goal_1">Goal<a class="headerlink" href="#goal_1" title="Permanent link">&para;</a></h3>
+<p>Step-by-step data collection wizard shown automatically on first login. Collects patient info not captured during chatbot interaction.</p>
+<p><strong>Trigger:</strong> Shown automatically after registration, OR on subsequent logins when <code>onboarding_completed = false</code>.</p>
+<h3 id="layout">Layout<a class="headerlink" href="#layout" title="Permanent link">&para;</a></h3>
+<p>Modal overlay:
+- Desktop: 1144 px wide
+- Mobile: Full-screen
+- Left sidebar: Step numbers with progress indicator (✅ completed, 🔵 current, ⚫ future)
+- Right content area: Step-specific form
+- Top right: X button to close (saves progress, resumes on next login)</p>
+<hr />
+<h3 id="step-1-welcome">Step 1 — Welcome<a class="headerlink" href="#step-1-welcome" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>Welcome to Phlastic!
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>We&#39;d love to learn more about you to provide the best possible experience.
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>This will only take a few minutes.
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>[Let&#39;s Start]
+</code></pre></div>
+<p>No data collected. Introduction only.</p>
+<hr />
+<h3 id="step-2-personal-details">Step 2 — Personal Details<a class="headerlink" href="#step-2-personal-details" title="Permanent link">&para;</a></h3>
+<p><strong>Fields:</strong>
+- Full name (first + last)
+- Date of birth (<code>DD / MM / YYYY</code>)
+- Gender (dropdown: Male / Female / Other / Prefer not to say)
+- Phone (<code>+61 ...</code>)</p>
+<p><strong>Saves to:</strong> <code>patients.name</code>, <code>patients.date_of_birth</code>, <code>patients.gender</code>, <code>patients.phone</code></p>
+<hr />
+<h3 id="step-3-location-contact">Step 3 — Location &amp; Contact<a class="headerlink" href="#step-3-location-contact" title="Permanent link">&para;</a></h3>
+<p><strong>Fields:</strong>
+- Country (searchable dropdown)
+- City (text input)
+- Preferred contact method (radio: Email / Phone / WhatsApp)</p>
+<p><strong>Saves to:</strong> <code>patients.location</code> (composed from country + city)</p>
+<hr />
+<h3 id="step-4-medical-interest">Step 4 — Medical Interest<a class="headerlink" href="#step-4-medical-interest" title="Permanent link">&para;</a></h3>
+<p><strong>Fields:</strong>
+- Procedures interested in (checkbox grid):
+  - Rhinoplasty, Facelift, Breast Augmentation, Liposuction, Tummy Tuck, Eyelid Surgery, Hair Transplant, Botox/Fillers, Other (free text)
+- Approximate budget (dropdown: Under $5k / $5–10k / $10–20k / $20–50k / $50k+)
+- Timeline (dropdown: ASAP / 1–3 months / 3–6 months / 6–12 months / Just exploring)
+- Previous surgeries or medical conditions (textarea — optional)</p>
+<p><strong>Saves to:</strong> <code>patients.procedure_interest</code>, <code>patients.budget_range</code>, <code>patients.timeframe</code>, <code>patients.medical_notes</code></p>
+<p><strong>Pre-fill:</strong> Chatbot data pre-fills overlapping fields if already collected.</p>
+<hr />
+<h3 id="step-5-photo-upload">Step 5 — Photo Upload<a class="headerlink" href="#step-5-photo-upload" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Upload photos for your consultation
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>Our doctor will review these before your appointment.
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>Photos help us give you the most accurate assessment.
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>[Drag &amp; drop or click to upload]
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>Recommended photos:
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>• Front face        → [Upload slot]
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>• Side profile      → [Upload slot]
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>• 45° angle         → [Upload slot]
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>• Area of interest  → [Upload slot]
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>☐ I consent to sharing these photos with the Phlastic medical team
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>  for consultation purposes only.
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>[Upload]    [Skip for now]
+</code></pre></div>
+<p><strong>Saves to:</strong> <code>POST /patients/:id/photos</code> for each file (same API as chatbot upload, but <code>uploaded_via=cabinet</code>)</p>
+<p><strong>Photo consent required</strong> before upload is active. "Skip for now" always available.</p>
+<hr />
+<h3 id="step-6-preferences">Step 6 — Preferences<a class="headerlink" href="#step-6-preferences" title="Permanent link">&para;</a></h3>
+<p><strong>Fields:</strong>
+- How did you hear about Phlastic? (dropdown: Google / Social Media / Friend/Family / Doctor referral / Other)
+- Receive updates about new services/offers? (Yes / No) → creates <code>marketing</code> consent record
+- Preferred appointment times (checkboxes: Morning 8–12 / Afternoon 12–5 / Evening 5–8 / Weekends)</p>
+<p><strong>Saves to:</strong> <code>patients.qualification_data</code> JSON (or additional patient fields)</p>
+<hr />
+<h3 id="step-7-confirmation">Step 7 — Confirmation<a class="headerlink" href="#step-7-confirmation" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>Thank you, {name}! 🎉
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>Your profile is set up. Here&#39;s what happens next:
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>1. Our team will review your information
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>2. A specialist will contact you to schedule a consultation
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>3. You can track everything in your dashboard
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>[Go to Dashboard]
+</code></pre></div>
+<p><strong>On completion:</strong>
+- Set <code>onboarding_completed = true</code>, <code>onboarding_step = 7</code>
+- Create event: <code>onboarding_completed { steps_completed: 7, time_spent_seconds: N }</code>
+- Award <strong>50 reward points</strong> (creates entry in <code>rewards</code> table + <code>reward_earned</code> event)
+- Redirect to <code>/dashboard</code></p>
+<hr />
+<h3 id="progress-saving">Progress Saving<a class="headerlink" href="#progress-saving" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Each step saves data immediately on "Next" click (not only at wizard completion)</li>
+<li>API call: <code>POST /cabinet/onboarding/{step_number}</code> with step-specific data</li>
+<li>If user closes wizard mid-way → <code>onboarding_step</code> records last completed step number</li>
+<li>On next login → wizard resumes from last incomplete step</li>
+<li>Data from chatbot pre-fills overlapping fields (no duplicate entry for existing fields)</li>
+</ul>
+<hr />
+<h3 id="module-8-acceptance-tests">Module 8 Acceptance Tests<a class="headerlink" href="#module-8-acceptance-tests" title="Permanent link">&para;</a></h3>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Wizard shows automatically after first login / registration</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Wizard shows on subsequent logins if <code>onboarding_completed=false</code></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Step progress indicator shows correct state for each step (completed/current/future)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Each step saves data to patient record via API on "Next"</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Closing wizard mid-way saves progress (<code>onboarding_step</code> updated)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Re-opening wizard resumes from last incomplete step (not from beginning)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Pre-fill from chatbot data works (procedure interest, budget, timeframe already filled)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Photo upload in step 5 works (same flow as chatbot, but <code>uploaded_via=cabinet</code>)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Photo consent required before upload button is active</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> "Skip for now" works on photo step — proceeds to step 6</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Step 7 completion sets <code>onboarding_completed=true</code> and <code>onboarding_step=7</code></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 50 reward points awarded on completion (visible in <code>/rewards</code>)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> After completion, redirect to <code>/dashboard</code> and wizard does NOT show again</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Full wizard is mobile responsive (full-screen on mobile)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Sidebar step navigation visually matches Figma (numbered steps with progress indicators)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Marketing consent (step 6 Yes/No) creates correct <code>consent_record</code> with <code>type=marketing</code></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "navigation.expand", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,4595 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for Sellrise Platform">
+      
+      
+        <meta name="author" content="Cabcode">
+      
+      
+        <link rel="canonical" href="https://cabcode-id.github.io/sellrise-docs/phase-2-plasthic-additions/PRD_1_Patient_Service/">
+      
+      
+        <link rel="prev" href="../MASTER_PRD/">
+      
+      
+        <link rel="next" href="../PRD_2_Webhook_Pipeline/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>PRD 1 - Patient Service - Sellrise Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#prd-1-phlastic-patient-service-core-engine" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Sellrise Docs" class="md-header__button md-logo" aria-label="Sellrise Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Sellrise Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              PRD 1 - Patient Service
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/cabcode-id/sellrise-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    cabcode-id/sellrise-docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Sellrise Docs" class="md-nav__button md-logo" aria-label="Sellrise Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Sellrise Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/cabcode-id/sellrise-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    cabcode-id/sellrise-docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Product Requirements
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Product Requirements
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AGILE_PRD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agile PRD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AI_WIDGET_CHATBOT_PRD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Widget Chatbot PRD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FEATURE_BREAKDOWN/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Feature Breakdown
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analisis-p1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MVP 1 Status Review
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Conversation Engine
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AI Conversation Engine
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AI%20Conversation%20Engine%20%E2%80%93%20Technical%20Specification/AI%20Conversation%20Engine%20%E2%80%93%20Technical%20spec/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical Specification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AI%20Conversation%20Engine%20%E2%80%93%20Technical%20Specification/Flow%20Diagram/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flow Diagram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CONVERSATION_SYSTEM_ARCHITECTURE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AI_CHATBOT_ROBOTIC_BEHAVIOR_INVESTIGATION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chatbot Behavior Investigation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scenario System
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Scenario System
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SCENARIO_CONFIGURATION_GUIDE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CHATBOT_SCENARIO_BUILDING_TUTORIAL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chatbot Scenario Tutorial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../STEP_TYPES_IMPLEMENTATION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Step Types - Implementation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../STEP_TYPES_SUMMARY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Step Types - Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DEFAULT_SCENARIO_TEMPLATE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Default Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CRM
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CRM
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../crm-prds/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../crm-prds/01-lead-creation-and-deduplication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lead Creation & Deduplication
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../crm-prds/02-lead-inbox-new-unassigned/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lead Inbox
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../crm-prds/03-pipeline-kanban-view/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pipeline Kanban View
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../crm-prds/04-lead-detail-view/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lead Detail View
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../crm-prds/05-lead-search-and-filters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lead Search & Filters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../crm-prds/06-lead-notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lead Notes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../crm-prds/07-lead-assignment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lead Assignment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../crm-prds/08-lead-scoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lead Scoring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Implementation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Implementation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../EVENT_LOGGING_IMPLEMENTATION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Event Logging
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AGILE_PRD_IMPLEMENTATION_AUDIT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PRD Implementation Audit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Testing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integration_testing_guide_en/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integration Testing (EN)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integration_testing_guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integration Testing (ID)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phase 1 – Post-MVP
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Phase 1 – Post-MVP
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../phase-1-post-mvp/scenario_generator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scenario Generator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phase 2 – Plasthic Additions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Phase 2 – Plasthic Additions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MASTER_PRD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Master PRD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PRD 1 - Patient Service
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PRD 1 - Patient Service
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#goal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Goal
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture Context
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#infrastructure-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Infrastructure Requirements
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tech-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tech Stack
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#database-schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Database Schema
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Database Schema">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#table-patients" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table: patients
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#table-patient_events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table: patient_events
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#table-photos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table: photos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#table-consent_records" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table: consent_records
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#table-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table: services
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#table-staff" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table: staff
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#table-reviews" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table: reviews
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#table-rewards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table: rewards
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#table-journey_entries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table: journey_entries
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#table-community_groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table: community_groups
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#table-community_posts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table: community_posts
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-specification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Specification
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="API Specification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authentication
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cors-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CORS Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#full-endpoint-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Full Endpoint List
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#endpoint-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Endpoint Details
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Endpoint Details">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#post-patients-create-patient" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /patients — Create patient
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-patients-list-patients" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /patients — List patients
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-patientsid-single-patient-full-detail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /patients/:id — Single patient (full detail)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patch-patientsidstage-change-stage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PATCH /patients/:id/stage — Change stage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-patientsidnotes-add-note" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /patients/:id/notes — Add note
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-patientsidphotos-upload-photo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /patients/:id/photos — Upload photo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-patientsidphotospid-download-photo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /patients/:id/photos/:pid — Download photo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-patientsid-soft-delete" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DELETE /patients/:id — Soft delete
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-patientsidhard-delete-permanent-deletion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /patients/:id/hard-delete — Permanent deletion
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-patientsidexport-full-data-export" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /patients/:id/export — Full data export
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-health-health-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /health — Health check
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-response-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Error Response Format
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#australian-privacy-act-1988-compliance-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Australian Privacy Act 1988 — Compliance Requirements
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acceptance-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Acceptance Tests
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PRD_2_Webhook_Pipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PRD 2 - Webhook Pipeline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PRD_3_Photo_Management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PRD 3 - Photo Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PRD_4_CRM_Dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PRD 4 - CRM Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PRD_5_Compliance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PRD 5 - Compliance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PRD_6_Cabinet_Auth_Onboarding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PRD 6 - Cabinet Auth Onboarding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PRD_7_Dashboard_Journey/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PRD 7 - Dashboard Journey
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PRD_8_Staff_Services_Reviews/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PRD 8 - Staff Services Reviews
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PRD_9_Rewards_Community/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PRD 9 - Rewards Community
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPRINT_PLAN/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint Plan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phase 2 – Pre-Consultation Engagement
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Phase 2 – Pre-Consultation Engagement
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../phase-2-pre-consultation-engagement/chatbot-photo-collection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chatbot Photo Collection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#goal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Goal
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture Context
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#infrastructure-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Infrastructure Requirements
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tech-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tech Stack
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#database-schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Database Schema
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Database Schema">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#table-patients" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table: patients
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#table-patient_events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table: patient_events
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#table-photos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table: photos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#table-consent_records" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table: consent_records
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#table-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table: services
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#table-staff" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table: staff
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#table-reviews" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table: reviews
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#table-rewards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table: rewards
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#table-journey_entries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table: journey_entries
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#table-community_groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table: community_groups
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#table-community_posts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table: community_posts
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-specification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Specification
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="API Specification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authentication
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cors-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CORS Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#full-endpoint-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Full Endpoint List
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#endpoint-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Endpoint Details
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Endpoint Details">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#post-patients-create-patient" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /patients — Create patient
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-patients-list-patients" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /patients — List patients
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-patientsid-single-patient-full-detail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /patients/:id — Single patient (full detail)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patch-patientsidstage-change-stage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PATCH /patients/:id/stage — Change stage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-patientsidnotes-add-note" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /patients/:id/notes — Add note
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-patientsidphotos-upload-photo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /patients/:id/photos — Upload photo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-patientsidphotospid-download-photo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /patients/:id/photos/:pid — Download photo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-patientsid-soft-delete" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DELETE /patients/:id — Soft delete
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-patientsidhard-delete-permanent-deletion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /patients/:id/hard-delete — Permanent deletion
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-patientsidexport-full-data-export" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /patients/:id/export — Full data export
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-health-health-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /health — Health check
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-response-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Error Response Format
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#australian-privacy-act-1988-compliance-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Australian Privacy Act 1988 — Compliance Requirements
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acceptance-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Acceptance Tests
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="prd-1-phlastic-patient-service-core-engine">PRD 1: Phlastic Patient Service (Core Engine)<a class="headerlink" href="#prd-1-phlastic-patient-service-core-engine" title="Permanent link">&para;</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Module</strong></td>
+<td>1 — Patient Service (Core Engine)</td>
+</tr>
+<tr>
+<td><strong>System</strong></td>
+<td>System 2: Phlastic Patient Service (NEW — separate VPS, AU region)</td>
+</tr>
+<tr>
+<td><strong>Owner</strong></td>
+<td>Iga Narendra (CV Diantha)</td>
+</tr>
+<tr>
+<td><strong>Estimate</strong></td>
+<td>3–4 days</td>
+</tr>
+<tr>
+<td><strong>Dependencies</strong></td>
+<td>VPS access from Ivan</td>
+</tr>
+<tr>
+<td><strong>Priority</strong></td>
+<td>P0 — Foundation for all other modules</td>
+</tr>
+</tbody>
+</table>
+<h2 id="goal">Goal<a class="headerlink" href="#goal" title="Permanent link">&para;</a></h2>
+<p>Build a standalone, AU-compliant microservice to manage all patient PII and medical data, completely isolated from the Sellrise CRM database. This service is the foundation of the entire Phlastic system — every other module connects to it.</p>
+<h2 id="architecture-context">Architecture Context<a class="headerlink" href="#architecture-context" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>SYSTEM 2: PHLASTIC PATIENT SERVICE (NEW — separate VPS, AU region)
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── Patient DB: all patient PII, photos, medical data, consent records
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├── REST API: CRUD patients, photos, compliance endpoints
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>├── File storage: patient photos (encrypted)
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>├── Patient Cabinet: web app for patients (auth, onboarding, dashboard)
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>└── Compliance: Australian Privacy Act 1988
+</code></pre></div>
+<p><strong>Core rule:</strong> Zero patient PII in Sellrise DB. Sellrise stores only a <code>external_patient_id</code> reference. All PII lives exclusively in Phlastic Patient Service.</p>
+<hr />
+<h2 id="infrastructure-requirements">Infrastructure Requirements<a class="headerlink" href="#infrastructure-requirements" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Requirement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cloud provider</td>
+<td>DigitalOcean / AWS / Vultr (AU region required)</td>
+</tr>
+<tr>
+<td>Region</td>
+<td><strong>Sydney (AU)</strong> — preferred. Singapore only as fallback.</td>
+</tr>
+<tr>
+<td>Minimum specs</td>
+<td>2 vCPU, 4 GB RAM, 50 GB SSD</td>
+</tr>
+<tr>
+<td>OS</td>
+<td>Ubuntu 22.04 LTS</td>
+</tr>
+<tr>
+<td>Domain (API)</td>
+<td><code>patients.phlastic.com.au</code></td>
+</tr>
+<tr>
+<td>Domain (Cabinet)</td>
+<td><code>cabinet.phlastic.com.au</code></td>
+</tr>
+<tr>
+<td>SSL</td>
+<td>Let's Encrypt — auto-renew via certbot</td>
+</tr>
+<tr>
+<td>Backup</td>
+<td>Daily automated DB backup, 30-day retention</td>
+</tr>
+<tr>
+<td>Firewall</td>
+<td>Port 443 (HTTPS) open; port 80 redirects to HTTPS</td>
+</tr>
+<tr>
+<td>SSH</td>
+<td>Key-based auth only — no password login</td>
+</tr>
+<tr>
+<td>Email service</td>
+<td>Resend / SendGrid / AWS SES (for invites and notifications)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="tech-stack">Tech Stack<a class="headerlink" href="#tech-stack" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Requirement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>API framework</td>
+<td>Node.js / Python / Go (developer's choice)</td>
+</tr>
+<tr>
+<td>Database</td>
+<td>PostgreSQL or MySQL — <strong>encrypted at rest</strong></td>
+</tr>
+<tr>
+<td>File storage</td>
+<td>Local encrypted disk (<code>/data/photos/</code>) or S3-compatible in AU region</td>
+</tr>
+<tr>
+<td>Auth (staff/API)</td>
+<td>API Key (<code>X-API-Key</code> header) — min 32 chars, one key per Sellrise workspace</td>
+</tr>
+<tr>
+<td>Auth (patient)</td>
+<td>JWT tokens (access 15 min + refresh 30 days, httpOnly cookie)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="database-schema">Database Schema<a class="headerlink" href="#database-schema" title="Permanent link">&para;</a></h2>
+<h3 id="table-patients">Table: <code>patients</code><a class="headerlink" href="#table-patients" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>UUID</td>
+<td>yes</td>
+<td>auto</td>
+<td>Primary key</td>
+</tr>
+<tr>
+<td>sellrise_lead_id</td>
+<td>string</td>
+<td>yes</td>
+<td>—</td>
+<td>Reference to Sellrise lead</td>
+</tr>
+<tr>
+<td>sellrise_workspace_id</td>
+<td>string</td>
+<td>yes</td>
+<td>—</td>
+<td>Workspace isolation key</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>yes</td>
+<td>—</td>
+<td>Patient full name</td>
+</tr>
+<tr>
+<td>email</td>
+<td>string</td>
+<td>yes</td>
+<td>—</td>
+<td>Normalized: lowercase, trimmed</td>
+</tr>
+<tr>
+<td>email_status</td>
+<td>enum</td>
+<td>yes</td>
+<td><code>unknown</code></td>
+<td><code>valid</code> / <code>invalid</code> / <code>unknown</code></td>
+</tr>
+<tr>
+<td>phone</td>
+<td>string</td>
+<td>no</td>
+<td>null</td>
+<td>Phone number</td>
+</tr>
+<tr>
+<td>date_of_birth</td>
+<td>date</td>
+<td>no</td>
+<td>null</td>
+<td>Date of birth</td>
+</tr>
+<tr>
+<td>gender</td>
+<td>string</td>
+<td>no</td>
+<td>null</td>
+<td></td>
+</tr>
+<tr>
+<td>location</td>
+<td>string</td>
+<td>no</td>
+<td>null</td>
+<td>City / country</td>
+</tr>
+<tr>
+<td>procedure_interest</td>
+<td>jsonb</td>
+<td>yes</td>
+<td>—</td>
+<td>Array of desired procedures, e.g. <code>["rhinoplasty", "facelift"]</code></td>
+</tr>
+<tr>
+<td>budget_range</td>
+<td>string</td>
+<td>no</td>
+<td>null</td>
+<td>Patient's budget</td>
+</tr>
+<tr>
+<td>timeframe</td>
+<td>string</td>
+<td>no</td>
+<td>null</td>
+<td>When they want the procedure</td>
+</tr>
+<tr>
+<td>medical_notes</td>
+<td>text</td>
+<td>no</td>
+<td>null</td>
+<td>Medical info from chat or doctor</td>
+</tr>
+<tr>
+<td>qualification_score</td>
+<td>integer</td>
+<td>no</td>
+<td>null</td>
+<td>Score from Sellrise (0–100)</td>
+</tr>
+<tr>
+<td>qualification_data</td>
+<td>jsonb</td>
+<td>no</td>
+<td>null</td>
+<td>Raw chatbot answers (full JSON)</td>
+</tr>
+<tr>
+<td>consent_given</td>
+<td>boolean</td>
+<td>yes</td>
+<td>—</td>
+<td>MUST be <code>true</code> before storing. If <code>false</code> → reject with 400</td>
+</tr>
+<tr>
+<td>consent_text_version</td>
+<td>string</td>
+<td>yes</td>
+<td>—</td>
+<td>Version string of consent text shown to patient</td>
+</tr>
+<tr>
+<td>consent_timestamp</td>
+<td>datetime</td>
+<td>yes</td>
+<td>—</td>
+<td>Exact time consent was given</td>
+</tr>
+<tr>
+<td>consent_ip</td>
+<td>string</td>
+<td>no</td>
+<td>null</td>
+<td>IP address at time of consent</td>
+</tr>
+<tr>
+<td>stage</td>
+<td>enum</td>
+<td>yes</td>
+<td><code>new</code></td>
+<td>Pipeline stage (see enum below)</td>
+</tr>
+<tr>
+<td>owner</td>
+<td>string</td>
+<td>no</td>
+<td>null</td>
+<td>Assigned staff member</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>jsonb</td>
+<td>no</td>
+<td><code>[]</code></td>
+<td>Array of string tags</td>
+</tr>
+<tr>
+<td>source_url</td>
+<td>string</td>
+<td>no</td>
+<td>null</td>
+<td>Page URL where lead came from</td>
+</tr>
+<tr>
+<td>referrer</td>
+<td>string</td>
+<td>no</td>
+<td>null</td>
+<td>HTTP referrer</td>
+</tr>
+<tr>
+<td>utm_source</td>
+<td>string</td>
+<td>no</td>
+<td>null</td>
+<td>UTM parameter</td>
+</tr>
+<tr>
+<td>utm_medium</td>
+<td>string</td>
+<td>no</td>
+<td>null</td>
+<td>UTM parameter</td>
+</tr>
+<tr>
+<td>utm_campaign</td>
+<td>string</td>
+<td>no</td>
+<td>null</td>
+<td>UTM parameter</td>
+</tr>
+<tr>
+<td>password_hash</td>
+<td>string</td>
+<td>no</td>
+<td>null</td>
+<td>Hashed password for cabinet login</td>
+</tr>
+<tr>
+<td>invite_token</td>
+<td>string</td>
+<td>no</td>
+<td>null</td>
+<td>One-time token for account creation</td>
+</tr>
+<tr>
+<td>invite_sent_at</td>
+<td>datetime</td>
+<td>no</td>
+<td>null</td>
+<td>When invite email was sent</td>
+</tr>
+<tr>
+<td>account_created</td>
+<td>boolean</td>
+<td>no</td>
+<td><code>false</code></td>
+<td>Whether patient has created cabinet account</td>
+</tr>
+<tr>
+<td>onboarding_completed</td>
+<td>boolean</td>
+<td>no</td>
+<td><code>false</code></td>
+<td>Whether onboarding wizard is done</td>
+</tr>
+<tr>
+<td>onboarding_step</td>
+<td>integer</td>
+<td>no</td>
+<td><code>0</code></td>
+<td>Current wizard step (0 = not started)</td>
+</tr>
+<tr>
+<td>avatar_url</td>
+<td>string</td>
+<td>no</td>
+<td>null</td>
+<td>Profile photo path</td>
+</tr>
+<tr>
+<td>points</td>
+<td>integer</td>
+<td>no</td>
+<td><code>0</code></td>
+<td>Reward points balance</td>
+</tr>
+<tr>
+<td>last_login_at</td>
+<td>datetime</td>
+<td>no</td>
+<td>null</td>
+<td>Last cabinet login timestamp</td>
+</tr>
+<tr>
+<td>is_deleted</td>
+<td>boolean</td>
+<td>no</td>
+<td><code>false</code></td>
+<td>Soft delete flag</td>
+</tr>
+<tr>
+<td>deleted_at</td>
+<td>datetime</td>
+<td>no</td>
+<td>null</td>
+<td>When soft-deleted</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>datetime</td>
+<td>yes</td>
+<td><code>now()</code></td>
+<td></td>
+</tr>
+<tr>
+<td>updated_at</td>
+<td>datetime</td>
+<td>yes</td>
+<td><code>now()</code></td>
+<td>Auto-updated on every change</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Pipeline stages enum:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>new → qualified → consultation_booked → photos_received → doctor_reviewed → contract_signed → procedure_done → lost
+</code></pre></div></p>
+<hr />
+<h3 id="table-patient_events">Table: <code>patient_events</code><a class="headerlink" href="#table-patient_events" title="Permanent link">&para;</a></h3>
+<p>Audit trail for everything that happens to a patient.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>UUID</td>
+<td>yes</td>
+<td>Primary key</td>
+</tr>
+<tr>
+<td>patient_id</td>
+<td>UUID</td>
+<td>yes</td>
+<td>FK → patients.id (CASCADE on delete for hard-delete)</td>
+</tr>
+<tr>
+<td>event_type</td>
+<td>enum</td>
+<td>yes</td>
+<td>See full enum below</td>
+</tr>
+<tr>
+<td>event_data</td>
+<td>jsonb</td>
+<td>yes</td>
+<td>Event-specific data payload</td>
+</tr>
+<tr>
+<td>created_by</td>
+<td>string</td>
+<td>yes</td>
+<td>User ID, <code>"system"</code>, <code>"webhook"</code>, or <code>"patient"</code></td>
+</tr>
+<tr>
+<td>ip_address</td>
+<td>string</td>
+<td>no</td>
+<td>For audit trail</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>datetime</td>
+<td>yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong><code>event_type</code> enum:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>stage_changed | note_added | photo_uploaded | photo_deleted |
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>contract_generated | contract_sent | contract_signed |
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>email_sent | owner_changed | data_exported | data_deleted |
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>patient_updated | account_created | onboarding_completed |
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>login | invite_sent | reward_earned | review_submitted
+</code></pre></div></p>
+<p><strong>Event data examples:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1">// stage_changed</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="p">{</span><span class="nt">&quot;from&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;new&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;to&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;qualified&quot;</span><span class="p">}</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1">// note_added</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="p">{</span><span class="nt">&quot;note&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Patient prefers morning appointments&quot;</span><span class="p">}</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="c1">// photo_uploaded</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="p">{</span><span class="nt">&quot;photo_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uuid&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;face_front&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uploaded_via&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;chatbot&quot;</span><span class="p">}</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="c1">// owner_changed</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="p">{</span><span class="nt">&quot;from&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;to&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;dr_smith&quot;</span><span class="p">}</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="c1">// patient_updated</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="p">{</span><span class="nt">&quot;fields_changed&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;phone&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;location&quot;</span><span class="p">],</span><span class="w"> </span><span class="nt">&quot;changed_by&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;admin_user_1&quot;</span><span class="p">}</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="c1">// account_created</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="p">{</span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;invite_link&quot;</span><span class="p">}</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="c1">// onboarding_completed</span>
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="p">{</span><span class="nt">&quot;steps_completed&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;time_spent_seconds&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">340</span><span class="p">}</span>
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="c1">// reward_earned</span>
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="p">{</span><span class="nt">&quot;points&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;reason&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;onboarding_completed&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;new_balance&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">}</span>
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>
+<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a><span class="c1">// review_submitted</span>
+<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a><span class="p">{</span><span class="nt">&quot;review_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uuid&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;rating&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">}</span>
+</code></pre></div></p>
+<hr />
+<h3 id="table-photos">Table: <code>photos</code><a class="headerlink" href="#table-photos" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>UUID</td>
+<td>yes</td>
+<td>Primary key</td>
+</tr>
+<tr>
+<td>patient_id</td>
+<td>UUID</td>
+<td>yes</td>
+<td>FK → patients.id</td>
+</tr>
+<tr>
+<td>file_path</td>
+<td>string</td>
+<td>yes</td>
+<td>Disk path or S3 key — <strong>never exposed to client</strong></td>
+</tr>
+<tr>
+<td>original_filename</td>
+<td>string</td>
+<td>yes</td>
+<td>Original file name from upload</td>
+</tr>
+<tr>
+<td>file_size</td>
+<td>integer</td>
+<td>yes</td>
+<td>Size in bytes</td>
+</tr>
+<tr>
+<td>mime_type</td>
+<td>string</td>
+<td>yes</td>
+<td><code>image/jpeg</code>, <code>image/png</code>, <code>image/heic</code></td>
+</tr>
+<tr>
+<td>type</td>
+<td>enum</td>
+<td>yes</td>
+<td><code>face_front</code>, <code>face_side</code>, <code>face_45</code>, <code>body</code>, <code>other</code>, <code>avatar</code></td>
+</tr>
+<tr>
+<td>uploaded_via</td>
+<td>enum</td>
+<td>yes</td>
+<td><code>chatbot</code>, <code>crm</code>, <code>cabinet</code></td>
+</tr>
+<tr>
+<td>consent_given</td>
+<td>boolean</td>
+<td>yes</td>
+<td>Photo-specific consent</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>datetime</td>
+<td>yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Photo storage rules:</strong>
+- Files stored at <code>/data/photos/{patient_id}/{photo_id}.{ext}</code> or equivalent S3 path
+- Directory <strong>must NOT be web-accessible</strong> — served only via authenticated API
+- File names are UUIDs (no PII in file paths)</p>
+<hr />
+<h3 id="table-consent_records">Table: <code>consent_records</code><a class="headerlink" href="#table-consent_records" title="Permanent link">&para;</a></h3>
+<p>Immutable legal audit trail — <strong>NEVER deleted</strong>, even on patient hard-delete.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>UUID</td>
+<td>yes</td>
+<td>Primary key</td>
+</tr>
+<tr>
+<td>patient_id</td>
+<td>UUID</td>
+<td>yes</td>
+<td>FK → patients.id — <strong>NO cascade delete</strong></td>
+</tr>
+<tr>
+<td>consent_type</td>
+<td>enum</td>
+<td>yes</td>
+<td><code>data_processing</code>, <code>photo_sharing</code>, <code>marketing</code></td>
+</tr>
+<tr>
+<td>consent_text</td>
+<td>text</td>
+<td>yes</td>
+<td>Full text patient agreed to (not just a reference)</td>
+</tr>
+<tr>
+<td>consent_version</td>
+<td>string</td>
+<td>yes</td>
+<td>Version identifier (e.g. <code>"phlastic_v1"</code>)</td>
+</tr>
+<tr>
+<td>given</td>
+<td>boolean</td>
+<td>yes</td>
+<td><code>true</code> = consented, <code>false</code> = withdrawn</td>
+</tr>
+<tr>
+<td>ip_address</td>
+<td>string</td>
+<td>no</td>
+<td></td>
+</tr>
+<tr>
+<td>user_agent</td>
+<td>string</td>
+<td>no</td>
+<td>Browser user agent</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>datetime</td>
+<td>yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="table-services">Table: <code>services</code><a class="headerlink" href="#table-services" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>UUID</td>
+<td>yes</td>
+<td>Primary key</td>
+</tr>
+<tr>
+<td>patient_id</td>
+<td>UUID</td>
+<td>yes</td>
+<td>FK → patients.id</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>yes</td>
+<td>Service/procedure name</td>
+</tr>
+<tr>
+<td>description</td>
+<td>text</td>
+<td>no</td>
+<td>Details</td>
+</tr>
+<tr>
+<td>status</td>
+<td>enum</td>
+<td>yes</td>
+<td><code>planned</code>, <code>scheduled</code>, <code>in_progress</code>, <code>completed</code>, <code>cancelled</code></td>
+</tr>
+<tr>
+<td>scheduled_date</td>
+<td>datetime</td>
+<td>no</td>
+<td>When scheduled</td>
+</tr>
+<tr>
+<td>completed_date</td>
+<td>datetime</td>
+<td>no</td>
+<td>When completed</td>
+</tr>
+<tr>
+<td>doctor_id</td>
+<td>UUID</td>
+<td>no</td>
+<td>FK → staff.id</td>
+</tr>
+<tr>
+<td>price</td>
+<td>decimal</td>
+<td>no</td>
+<td>Cost</td>
+</tr>
+<tr>
+<td>notes</td>
+<td>text</td>
+<td>no</td>
+<td>Internal notes</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>datetime</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>updated_at</td>
+<td>datetime</td>
+<td>yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="table-staff">Table: <code>staff</code><a class="headerlink" href="#table-staff" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>UUID</td>
+<td>yes</td>
+<td>—</td>
+<td>Primary key</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>yes</td>
+<td>—</td>
+<td>Full name</td>
+</tr>
+<tr>
+<td>role</td>
+<td>enum</td>
+<td>yes</td>
+<td>—</td>
+<td><code>doctor</code>, <code>nurse</code>, <code>tour_operator</code>, <code>admin</code></td>
+</tr>
+<tr>
+<td>specialization</td>
+<td>string</td>
+<td>no</td>
+<td>null</td>
+<td>Area of expertise</td>
+</tr>
+<tr>
+<td>bio</td>
+<td>text</td>
+<td>no</td>
+<td>null</td>
+<td>Professional bio</td>
+</tr>
+<tr>
+<td>photo_url</td>
+<td>string</td>
+<td>no</td>
+<td>null</td>
+<td>Profile photo path</td>
+</tr>
+<tr>
+<td>rating</td>
+<td>decimal</td>
+<td>no</td>
+<td>null</td>
+<td>Average rating (1–5)</td>
+</tr>
+<tr>
+<td>review_count</td>
+<td>integer</td>
+<td>no</td>
+<td><code>0</code></td>
+<td>Number of reviews</td>
+</tr>
+<tr>
+<td>is_active</td>
+<td>boolean</td>
+<td>yes</td>
+<td><code>true</code></td>
+<td>Whether currently active</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>datetime</td>
+<td>yes</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>updated_at</td>
+<td>datetime</td>
+<td>yes</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="table-reviews">Table: <code>reviews</code><a class="headerlink" href="#table-reviews" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>UUID</td>
+<td>yes</td>
+<td>—</td>
+<td>Primary key</td>
+</tr>
+<tr>
+<td>patient_id</td>
+<td>UUID</td>
+<td>yes</td>
+<td>—</td>
+<td>FK → patients.id</td>
+</tr>
+<tr>
+<td>staff_id</td>
+<td>UUID</td>
+<td>no</td>
+<td>null</td>
+<td>FK → staff.id</td>
+</tr>
+<tr>
+<td>service_id</td>
+<td>UUID</td>
+<td>no</td>
+<td>null</td>
+<td>FK → services.id</td>
+</tr>
+<tr>
+<td>rating</td>
+<td>integer</td>
+<td>yes</td>
+<td>—</td>
+<td>1–5 stars</td>
+</tr>
+<tr>
+<td>title</td>
+<td>string</td>
+<td>no</td>
+<td>null</td>
+<td>Review title</td>
+</tr>
+<tr>
+<td>text</td>
+<td>text</td>
+<td>no</td>
+<td>null</td>
+<td>Review body</td>
+</tr>
+<tr>
+<td>is_public</td>
+<td>boolean</td>
+<td>yes</td>
+<td><code>false</code></td>
+<td>Visible to other patients</td>
+</tr>
+<tr>
+<td>status</td>
+<td>enum</td>
+<td>yes</td>
+<td><code>pending</code></td>
+<td><code>pending</code>, <code>approved</code>, <code>rejected</code></td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>datetime</td>
+<td>yes</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="table-rewards">Table: <code>rewards</code><a class="headerlink" href="#table-rewards" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>UUID</td>
+<td>yes</td>
+<td>Primary key</td>
+</tr>
+<tr>
+<td>patient_id</td>
+<td>UUID</td>
+<td>yes</td>
+<td>FK → patients.id</td>
+</tr>
+<tr>
+<td>points</td>
+<td>integer</td>
+<td>yes</td>
+<td>Points earned (positive) or spent (negative)</td>
+</tr>
+<tr>
+<td>reason</td>
+<td>string</td>
+<td>yes</td>
+<td>Why points were awarded/spent</td>
+</tr>
+<tr>
+<td>reference_type</td>
+<td>string</td>
+<td>no</td>
+<td><code>review</code>, <code>referral</code>, <code>service</code>, <code>onboarding</code></td>
+</tr>
+<tr>
+<td>reference_id</td>
+<td>UUID</td>
+<td>no</td>
+<td>ID of related entity</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>datetime</td>
+<td>yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="table-journey_entries">Table: <code>journey_entries</code><a class="headerlink" href="#table-journey_entries" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>UUID</td>
+<td>yes</td>
+<td>Primary key</td>
+</tr>
+<tr>
+<td>patient_id</td>
+<td>UUID</td>
+<td>yes</td>
+<td>FK → patients.id</td>
+</tr>
+<tr>
+<td>title</td>
+<td>string</td>
+<td>yes</td>
+<td>Entry title</td>
+</tr>
+<tr>
+<td>description</td>
+<td>text</td>
+<td>no</td>
+<td>Details</td>
+</tr>
+<tr>
+<td>entry_type</td>
+<td>enum</td>
+<td>yes</td>
+<td><code>milestone</code>, <code>appointment</code>, <code>procedure</code>, <code>follow_up</code>, <code>note</code></td>
+</tr>
+<tr>
+<td>date</td>
+<td>datetime</td>
+<td>yes</td>
+<td>When this happened/will happen</td>
+</tr>
+<tr>
+<td>status</td>
+<td>enum</td>
+<td>yes</td>
+<td><code>upcoming</code>, <code>completed</code>, <code>cancelled</code></td>
+</tr>
+<tr>
+<td>staff_id</td>
+<td>UUID</td>
+<td>no</td>
+<td>FK → staff.id</td>
+</tr>
+<tr>
+<td>service_id</td>
+<td>UUID</td>
+<td>no</td>
+<td>FK → services.id</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>datetime</td>
+<td>yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="table-community_groups">Table: <code>community_groups</code><a class="headerlink" href="#table-community_groups" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>UUID</td>
+<td>yes</td>
+<td>—</td>
+<td>Primary key</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>yes</td>
+<td>—</td>
+<td>Group name</td>
+</tr>
+<tr>
+<td>description</td>
+<td>text</td>
+<td>no</td>
+<td>null</td>
+<td>Group description</td>
+</tr>
+<tr>
+<td>cover_image_url</td>
+<td>string</td>
+<td>no</td>
+<td>null</td>
+<td>Cover photo path</td>
+</tr>
+<tr>
+<td>member_count</td>
+<td>integer</td>
+<td>no</td>
+<td><code>0</code></td>
+<td>Number of members</td>
+</tr>
+<tr>
+<td>is_public</td>
+<td>boolean</td>
+<td>yes</td>
+<td><code>true</code></td>
+<td>Public or invite-only</td>
+</tr>
+<tr>
+<td>created_by</td>
+<td>UUID</td>
+<td>no</td>
+<td>null</td>
+<td>FK → patients.id or staff.id</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>datetime</td>
+<td>yes</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="table-community_posts">Table: <code>community_posts</code><a class="headerlink" href="#table-community_posts" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>UUID</td>
+<td>yes</td>
+<td>—</td>
+<td>Primary key</td>
+</tr>
+<tr>
+<td>group_id</td>
+<td>UUID</td>
+<td>yes</td>
+<td>—</td>
+<td>FK → community_groups.id</td>
+</tr>
+<tr>
+<td>author_id</td>
+<td>UUID</td>
+<td>yes</td>
+<td>—</td>
+<td>FK → patients.id</td>
+</tr>
+<tr>
+<td>content</td>
+<td>text</td>
+<td>yes</td>
+<td>—</td>
+<td>Post content</td>
+</tr>
+<tr>
+<td>image_url</td>
+<td>string</td>
+<td>no</td>
+<td>null</td>
+<td>Attached image</td>
+</tr>
+<tr>
+<td>like_count</td>
+<td>integer</td>
+<td>no</td>
+<td><code>0</code></td>
+<td></td>
+</tr>
+<tr>
+<td>comment_count</td>
+<td>integer</td>
+<td>no</td>
+<td><code>0</code></td>
+<td></td>
+</tr>
+<tr>
+<td>status</td>
+<td>enum</td>
+<td>yes</td>
+<td><code>active</code></td>
+<td><code>active</code>, <code>hidden</code>, <code>reported</code></td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>datetime</td>
+<td>yes</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="api-specification">API Specification<a class="headerlink" href="#api-specification" title="Permanent link">&para;</a></h2>
+<h3 id="authentication">Authentication<a class="headerlink" href="#authentication" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Context</th>
+<th>Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Staff / Sellrise CRM</td>
+<td><code>X-API-Key</code> header — min 32 chars, one key per workspace</td>
+</tr>
+<tr>
+<td>Patient Cabinet</td>
+<td><code>Authorization: Bearer {jwt}</code> — access token (15 min expiry)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Base URL:</strong> <code>https://patients.phlastic.com.au/api/v1</code></p>
+<h3 id="cors-configuration">CORS Configuration<a class="headerlink" href="#cors-configuration" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Access-Control-Allow-Origin: https://app.sellrise.ai, https://cabinet.phlastic.com.au
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>Access-Control-Allow-Headers: Content-Type, X-API-Key, Authorization
+</code></pre></div>
+<blockquote>
+<p><strong>Not <code>*</code></strong> — only the two specific domains above.</p>
+</blockquote>
+<hr />
+<h3 id="full-endpoint-list">Full Endpoint List<a class="headerlink" href="#full-endpoint-list" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>PATIENTS
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>────────
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>GET    /patients                         List patients (paginated, filtered)
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>GET    /patients/:id                     Single patient with events + photos metadata
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>POST   /patients                         Create patient (requires consent_given=true)
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>PUT    /patients/:id                     Update patient fields
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>PATCH  /patients/:id/stage               Change pipeline stage
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>POST   /patients/:id/notes               Add a note
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>PHOTOS
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>──────
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>POST   /patients/:id/photos              Upload photo (multipart/form-data)
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>GET    /patients/:id/photos/:pid         Download photo binary (authenticated)
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>DELETE /patients/:id/photos/:pid         Delete a photo
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>COMPLIANCE
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>──────────
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>GET    /patients/:id/export              Export ALL patient data as JSON
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>POST   /patients/:id/hard-delete         Permanently delete all data + photos
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>DELETE /patients/:id                     Soft delete (set is_deleted=true, anonymize PII)
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>GET    /audit-log?patient_id=:id         Access log for specific patient
+<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>
+<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>CONTRACTS
+<a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>────────────────────
+<a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a>POST   /patients/:id/contracts           Generate contract PDF
+<a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a>GET    /patients/:id/contracts/:cid      Download contract PDF
+<a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a>PATCH  /patients/:id/contracts/:cid      Update contract status (sent/signed)
+<a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a>
+<a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a>EXPORT
+<a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a>──────
+<a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a>GET    /patients/export/csv              Bulk CSV export (same filters as GET /patients)
+<a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a>
+<a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a>HEALTH
+<a id="__codelineno-5-34" name="__codelineno-5-34" href="#__codelineno-5-34"></a>──────
+<a id="__codelineno-5-35" name="__codelineno-5-35" href="#__codelineno-5-35"></a>GET    /health                           Service health check
+<a id="__codelineno-5-36" name="__codelineno-5-36" href="#__codelineno-5-36"></a>
+<a id="__codelineno-5-37" name="__codelineno-5-37" href="#__codelineno-5-37"></a>PATIENT CABINET AUTH
+<a id="__codelineno-5-38" name="__codelineno-5-38" href="#__codelineno-5-38"></a>─────────────────────────────────────
+<a id="__codelineno-5-39" name="__codelineno-5-39" href="#__codelineno-5-39"></a>POST   /auth/invite                      Generate invite token + send invite email
+<a id="__codelineno-5-40" name="__codelineno-5-40" href="#__codelineno-5-40"></a>POST   /auth/register                    Create account (invite_token + password)
+<a id="__codelineno-5-41" name="__codelineno-5-41" href="#__codelineno-5-41"></a>POST   /auth/login                       Login (email + password → JWT)
+<a id="__codelineno-5-42" name="__codelineno-5-42" href="#__codelineno-5-42"></a>POST   /auth/refresh                     Refresh JWT token
+<a id="__codelineno-5-43" name="__codelineno-5-43" href="#__codelineno-5-43"></a>POST   /auth/logout                      Invalidate JWT
+<a id="__codelineno-5-44" name="__codelineno-5-44" href="#__codelineno-5-44"></a>POST   /auth/forgot-password             Send password reset email
+<a id="__codelineno-5-45" name="__codelineno-5-45" href="#__codelineno-5-45"></a>POST   /auth/reset-password              Reset password with token
+<a id="__codelineno-5-46" name="__codelineno-5-46" href="#__codelineno-5-46"></a>GET    /auth/validate-token              Validate invite or reset token
+<a id="__codelineno-5-47" name="__codelineno-5-47" href="#__codelineno-5-47"></a>
+<a id="__codelineno-5-48" name="__codelineno-5-48" href="#__codelineno-5-48"></a>PATIENT CABINET — PROFILE
+<a id="__codelineno-5-49" name="__codelineno-5-49" href="#__codelineno-5-49"></a>─────────────────────────────────────────────
+<a id="__codelineno-5-50" name="__codelineno-5-50" href="#__codelineno-5-50"></a>GET    /cabinet/me                        Get current patient profile
+<a id="__codelineno-5-51" name="__codelineno-5-51" href="#__codelineno-5-51"></a>PUT    /cabinet/me                        Update own profile
+<a id="__codelineno-5-52" name="__codelineno-5-52" href="#__codelineno-5-52"></a>POST   /cabinet/me/avatar                Upload avatar photo
+<a id="__codelineno-5-53" name="__codelineno-5-53" href="#__codelineno-5-53"></a>GET    /cabinet/onboarding               Get current onboarding state
+<a id="__codelineno-5-54" name="__codelineno-5-54" href="#__codelineno-5-54"></a>POST   /cabinet/onboarding/:step         Submit onboarding step data
+<a id="__codelineno-5-55" name="__codelineno-5-55" href="#__codelineno-5-55"></a>POST   /cabinet/onboarding/complete      Mark onboarding as done
+<a id="__codelineno-5-56" name="__codelineno-5-56" href="#__codelineno-5-56"></a>
+<a id="__codelineno-5-57" name="__codelineno-5-57" href="#__codelineno-5-57"></a>PATIENT CABINET — SERVICES
+<a id="__codelineno-5-58" name="__codelineno-5-58" href="#__codelineno-5-58"></a>─────────────────────────────────────────────
+<a id="__codelineno-5-59" name="__codelineno-5-59" href="#__codelineno-5-59"></a>GET    /cabinet/services                 List patient&#39;s services/procedures
+<a id="__codelineno-5-60" name="__codelineno-5-60" href="#__codelineno-5-60"></a>GET    /cabinet/services/:id             Service detail
+<a id="__codelineno-5-61" name="__codelineno-5-61" href="#__codelineno-5-61"></a>
+<a id="__codelineno-5-62" name="__codelineno-5-62" href="#__codelineno-5-62"></a>PATIENT CABINET — JOURNEY
+<a id="__codelineno-5-63" name="__codelineno-5-63" href="#__codelineno-5-63"></a>────────────────────────────────────────────
+<a id="__codelineno-5-64" name="__codelineno-5-64" href="#__codelineno-5-64"></a>GET    /cabinet/journey                  Get patient journey timeline
+<a id="__codelineno-5-65" name="__codelineno-5-65" href="#__codelineno-5-65"></a>
+<a id="__codelineno-5-66" name="__codelineno-5-66" href="#__codelineno-5-66"></a>PATIENT CABINET — STAFF
+<a id="__codelineno-5-67" name="__codelineno-5-67" href="#__codelineno-5-67"></a>─────────────────────────────────────────
+<a id="__codelineno-5-68" name="__codelineno-5-68" href="#__codelineno-5-68"></a>GET    /cabinet/staff                    List staff (doctors, nurses, tour ops)
+<a id="__codelineno-5-69" name="__codelineno-5-69" href="#__codelineno-5-69"></a>GET    /cabinet/staff/:id                Staff profile detail
+<a id="__codelineno-5-70" name="__codelineno-5-70" href="#__codelineno-5-70"></a>
+<a id="__codelineno-5-71" name="__codelineno-5-71" href="#__codelineno-5-71"></a>PATIENT CABINET — REVIEWS
+<a id="__codelineno-5-72" name="__codelineno-5-72" href="#__codelineno-5-72"></a>────────────────────────────────────────────
+<a id="__codelineno-5-73" name="__codelineno-5-73" href="#__codelineno-5-73"></a>GET    /cabinet/reviews                  List patient&#39;s own reviews
+<a id="__codelineno-5-74" name="__codelineno-5-74" href="#__codelineno-5-74"></a>POST   /cabinet/reviews                  Submit a review
+<a id="__codelineno-5-75" name="__codelineno-5-75" href="#__codelineno-5-75"></a>PUT    /cabinet/reviews/:id              Edit own review (if status=pending)
+<a id="__codelineno-5-76" name="__codelineno-5-76" href="#__codelineno-5-76"></a>
+<a id="__codelineno-5-77" name="__codelineno-5-77" href="#__codelineno-5-77"></a>PATIENT CABINET — REWARDS
+<a id="__codelineno-5-78" name="__codelineno-5-78" href="#__codelineno-5-78"></a>────────────────────────────────────────────
+<a id="__codelineno-5-79" name="__codelineno-5-79" href="#__codelineno-5-79"></a>GET    /cabinet/rewards                  Get rewards balance + history
+<a id="__codelineno-5-80" name="__codelineno-5-80" href="#__codelineno-5-80"></a>GET    /cabinet/rewards/history          Paginated rewards transactions
+<a id="__codelineno-5-81" name="__codelineno-5-81" href="#__codelineno-5-81"></a>
+<a id="__codelineno-5-82" name="__codelineno-5-82" href="#__codelineno-5-82"></a>PATIENT CABINET — COMMUNITY
+<a id="__codelineno-5-83" name="__codelineno-5-83" href="#__codelineno-5-83"></a>──────────────────────────────────────────────
+<a id="__codelineno-5-84" name="__codelineno-5-84" href="#__codelineno-5-84"></a>GET    /cabinet/community/groups         List available groups
+<a id="__codelineno-5-85" name="__codelineno-5-85" href="#__codelineno-5-85"></a>GET    /cabinet/community/groups/:id     Group detail + posts
+<a id="__codelineno-5-86" name="__codelineno-5-86" href="#__codelineno-5-86"></a>POST   /cabinet/community/groups/:id/join   Join a group
+<a id="__codelineno-5-87" name="__codelineno-5-87" href="#__codelineno-5-87"></a>POST   /cabinet/community/groups/:id/leave  Leave a group
+<a id="__codelineno-5-88" name="__codelineno-5-88" href="#__codelineno-5-88"></a>GET    /cabinet/community/posts          Feed (posts from joined groups)
+<a id="__codelineno-5-89" name="__codelineno-5-89" href="#__codelineno-5-89"></a>POST   /cabinet/community/posts          Create a post
+<a id="__codelineno-5-90" name="__codelineno-5-90" href="#__codelineno-5-90"></a>GET    /cabinet/community/users/:id      Public user profile
+<a id="__codelineno-5-91" name="__codelineno-5-91" href="#__codelineno-5-91"></a>POST   /cabinet/community/posts/:id/like    Like a post
+<a id="__codelineno-5-92" name="__codelineno-5-92" href="#__codelineno-5-92"></a>POST   /cabinet/community/posts/:id/report  Report a post
+</code></pre></div>
+<hr />
+<h3 id="endpoint-details">Endpoint Details<a class="headerlink" href="#endpoint-details" title="Permanent link">&para;</a></h3>
+<h4 id="post-patients-create-patient"><code>POST /patients</code> — Create patient<a class="headerlink" href="#post-patients-create-patient" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1">// Request body</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="p">{</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span><span class="nt">&quot;sellrise_lead_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;lead_abc123&quot;</span><span class="p">,</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">  </span><span class="nt">&quot;sellrise_workspace_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ws_xxx&quot;</span><span class="p">,</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;John Smith&quot;</span><span class="p">,</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">  </span><span class="nt">&quot;email&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;john@example.com&quot;</span><span class="p">,</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">  </span><span class="nt">&quot;phone&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;+61412345678&quot;</span><span class="p">,</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">  </span><span class="nt">&quot;procedure_interest&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;rhinoplasty&quot;</span><span class="p">],</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">  </span><span class="nt">&quot;budget_range&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;$10,000-15,000&quot;</span><span class="p">,</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">  </span><span class="nt">&quot;timeframe&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3-6 months&quot;</span><span class="p">,</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">  </span><span class="nt">&quot;location&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Sydney, Australia&quot;</span><span class="p">,</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="w">  </span><span class="nt">&quot;qualification_score&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">85</span><span class="p">,</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="w">  </span><span class="nt">&quot;qualification_data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;...&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;raw chatbot answers&quot;</span><span class="w"> </span><span class="p">},</span>
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="w">  </span><span class="nt">&quot;consent_given&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="w">  </span><span class="nt">&quot;consent_text_version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;phlastic_v1&quot;</span><span class="p">,</span>
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="w">  </span><span class="nt">&quot;consent_timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-03-30T14:22:00Z&quot;</span><span class="p">,</span>
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="w">  </span><span class="nt">&quot;consent_ip&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;203.0.113.42&quot;</span><span class="p">,</span>
+<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="w">  </span><span class="nt">&quot;source_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://phlastic.com/rhino&quot;</span><span class="p">,</span>
+<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a><span class="w">  </span><span class="nt">&quot;referrer&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://google.com&quot;</span><span class="p">,</span>
+<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a><span class="w">  </span><span class="nt">&quot;utm_source&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;google&quot;</span><span class="p">,</span>
+<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a><span class="w">  </span><span class="nt">&quot;utm_medium&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cpc&quot;</span><span class="p">,</span>
+<a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a><span class="w">  </span><span class="nt">&quot;utm_campaign&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;rhino-au&quot;</span>
+<a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a><span class="p">}</span>
+<a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a>
+<a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a><span class="c1">// Response 201</span>
+<a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a><span class="p">{</span>
+<a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a><span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;patient-uuid&quot;</span><span class="p">,</span>
+<a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a><span class="w">  </span><span class="nt">&quot;sellrise_lead_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;lead_abc123&quot;</span><span class="p">,</span>
+<a id="__codelineno-6-29" name="__codelineno-6-29" href="#__codelineno-6-29"></a><span class="w">  </span><span class="nt">&quot;email_status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;unknown&quot;</span><span class="p">,</span>
+<a id="__codelineno-6-30" name="__codelineno-6-30" href="#__codelineno-6-30"></a><span class="w">  </span><span class="nt">&quot;stage&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;new&quot;</span><span class="p">,</span>
+<a id="__codelineno-6-31" name="__codelineno-6-31" href="#__codelineno-6-31"></a><span class="w">  </span><span class="nt">&quot;created_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-03-30T14:22:01Z&quot;</span>
+<a id="__codelineno-6-32" name="__codelineno-6-32" href="#__codelineno-6-32"></a><span class="p">}</span>
+</code></pre></div>
+<p><strong>Upsert logic:</strong> If a patient with same <code>email</code> + same <code>sellrise_workspace_id</code> already exists → UPDATE existing record (merge new data, don't overwrite non-null fields with null). Return <code>200</code> instead of <code>201</code>. Create <code>patient_updated</code> event.</p>
+<p><strong>Error cases:</strong>
+- <code>400</code> if <code>consent_given != true</code> → <code>{"error": "consent_required"}</code>
+- <code>400</code> if missing required fields → <code>{"error": "validation_failed", "fields": ["name", "email"]}</code>
+- <code>401</code> if no API key
+- <code>403</code> if invalid API key</p>
+<h4 id="get-patients-list-patients"><code>GET /patients</code> — List patients<a class="headerlink" href="#get-patients-list-patients" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Query parameters:
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>  ?page=1                        Default: 1
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>  ?per_page=50                   Default: 50, max: 100
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>  ?stage=qualified               Filter by stage
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>  ?email_status=valid            Filter by email validation status
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>  ?procedure_interest=rhinoplasty Filter (contains in array)
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>  ?created_after=2026-03-01      ISO date
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>  ?created_before=2026-04-01     ISO date
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>  ?owner=dr_smith                Filter by owner
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>  ?search=john                   Searches: name, email, phone (case-insensitive)
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>  ?sort=created_at               Sort field (default: created_at)
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>  ?order=desc                    asc or desc (default: desc)
+</code></pre></div>
+<ul>
+<li><code>is_deleted=true</code> patients excluded by default</li>
+<li>Results filtered by workspace (determined from API key)</li>
+</ul>
+<h4 id="get-patientsid-single-patient-full-detail"><code>GET /patients/:id</code> — Single patient (full detail)<a class="headerlink" href="#get-patientsid-single-patient-full-detail" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">{</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="nt">&quot;patient&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">&quot;...all patient fields...&quot;</span><span class="w"> </span><span class="p">},</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">  </span><span class="nt">&quot;photos&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;photo-uuid&quot;</span><span class="p">,</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;face_front&quot;</span><span class="p">,</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">      </span><span class="nt">&quot;original_filename&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;photo1.jpg&quot;</span><span class="p">,</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">      </span><span class="nt">&quot;file_size&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2048000</span><span class="p">,</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="w">      </span><span class="nt">&quot;mime_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;image/jpeg&quot;</span><span class="p">,</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="w">      </span><span class="nt">&quot;uploaded_via&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;chatbot&quot;</span><span class="p">,</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="w">      </span><span class="nt">&quot;created_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-03-30T15:00:00Z&quot;</span>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="w">  </span><span class="p">],</span>
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="w">  </span><span class="nt">&quot;events&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;event-uuid&quot;</span><span class="p">,</span>
+<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="w">      </span><span class="nt">&quot;event_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;stage_changed&quot;</span><span class="p">,</span>
+<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a><span class="w">      </span><span class="nt">&quot;event_data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;from&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;new&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;to&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;qualified&quot;</span><span class="p">},</span>
+<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a><span class="w">      </span><span class="nt">&quot;created_by&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;system&quot;</span><span class="p">,</span>
+<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a><span class="w">      </span><span class="nt">&quot;created_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-03-30T14:23:00Z&quot;</span>
+<a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a><span class="w">  </span><span class="p">]</span>
+<a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a><span class="p">}</span>
+</code></pre></div>
+<p>Note: <code>photos</code> contains metadata only. Use <code>GET /patients/:id/photos/:pid</code> to download the binary.</p>
+<h4 id="patch-patientsidstage-change-stage"><code>PATCH /patients/:id/stage</code> — Change stage<a class="headerlink" href="#patch-patientsidstage-change-stage" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1">// Request</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="p">{</span><span class="nt">&quot;stage&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;qualified&quot;</span><span class="p">}</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="c1">// Logic</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="c1">// 1. Validate new stage is valid enum value</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="c1">// 2. Update patient.stage</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="c1">// 3. Create patient_event: type=stage_changed, data={&quot;from&quot;:&quot;old&quot;,&quot;to&quot;:&quot;new&quot;}</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="c1">// 4. Update patient.updated_at</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="c1">// Response 200</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="p">{</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;...&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;stage&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;qualified&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;previous_stage&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;new&quot;</span><span class="p">}</span>
+</code></pre></div>
+<h4 id="post-patientsidnotes-add-note"><code>POST /patients/:id/notes</code> — Add note<a class="headerlink" href="#post-patientsidnotes-add-note" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1">// Request</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="p">{</span><span class="nt">&quot;note&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Patient prefers morning appointments&quot;</span><span class="p">}</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="c1">// Logic</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="c1">// 1. Create patient_event: type=note_added, data={&quot;note&quot;: &quot;...&quot;}</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="c1">// 2. Update patient.updated_at</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="c1">// Response 201</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="p">{</span><span class="nt">&quot;event_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;event-uuid&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;created_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;...&quot;</span><span class="p">}</span>
+</code></pre></div>
+<h4 id="post-patientsidphotos-upload-photo"><code>POST /patients/:id/photos</code> — Upload photo<a class="headerlink" href="#post-patientsidphotos-upload-photo" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>Content-Type: multipart/form-data
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>Fields:
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>  file          — the image file (required)
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>  type          — face_front|face_side|face_45|body|other|avatar (required)
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>  uploaded_via  — chatbot|crm|cabinet (required)
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>  consent_given — true (required)
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>Validation:
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>  - Max file size: 10 MB
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>  - Accepted MIME types: image/jpeg, image/png, image/heic
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>  - consent_given must be true
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1">// Response 201</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="p">{</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;photo-uuid&quot;</span><span class="p">,</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;face_front&quot;</span><span class="p">,</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">  </span><span class="nt">&quot;file_size&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2048000</span><span class="p">,</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">  </span><span class="nt">&quot;created_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-03-30T15:00:00Z&quot;</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="p">}</span>
+</code></pre></div>
+<p>Side effects:
+- Creates <code>photo_uploaded</code> event in <code>patient_events</code>
+- Creates consent record in <code>consent_records</code> (type: <code>photo_sharing</code>)</p>
+<h4 id="get-patientsidphotospid-download-photo"><code>GET /patients/:id/photos/:pid</code> — Download photo<a class="headerlink" href="#get-patientsidphotospid-download-photo" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Response: binary file with correct <code>Content-Type</code> header</li>
+<li>Requires valid <code>X-API-Key</code> or patient JWT — <strong>no public URLs</strong></li>
+</ul>
+<h4 id="delete-patientsid-soft-delete"><code>DELETE /patients/:id</code> — Soft delete<a class="headerlink" href="#delete-patientsid-soft-delete" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>Logic:
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>1. Set is_deleted=true, deleted_at=now()
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>2. Anonymize PII: name=&quot;[deleted]&quot;, email=&quot;deleted_{id}@deleted&quot;, phone=null, etc.
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>3. Keep consent_records intact
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>4. Create event: data_deleted
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>Response: 204 No Content
+</code></pre></div>
+<h4 id="post-patientsidhard-delete-permanent-deletion"><code>POST /patients/:id/hard-delete</code> — Permanent deletion<a class="headerlink" href="#post-patientsidhard-delete-permanent-deletion" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>Logic:
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>1. Delete all photos from disk/S3
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>2. Delete all records from: photos, patient_events, contracts
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>3. Delete patient record
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>4. DO NOT delete consent_records (legal requirement — kept forever)
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>5. Create one final consent_record: type=data_processing, given=false (withdrawal)
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>Response: 204 No Content
+</code></pre></div>
+<h4 id="get-patientsidexport-full-data-export"><code>GET /patients/:id/export</code> — Full data export<a class="headerlink" href="#get-patientsidexport-full-data-export" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="p">{</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">  </span><span class="nt">&quot;patient&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">&quot;...all fields...&quot;</span><span class="w"> </span><span class="p">},</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">  </span><span class="nt">&quot;photos&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">&quot;...metadata + base64 encoded files...&quot;</span><span class="w"> </span><span class="p">],</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">  </span><span class="nt">&quot;events&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">&quot;...all events...&quot;</span><span class="w"> </span><span class="p">],</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">  </span><span class="nt">&quot;consent_records&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">&quot;...all consent records...&quot;</span><span class="w"> </span><span class="p">],</span>
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="w">  </span><span class="nt">&quot;contracts&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">&quot;...all contracts metadata...&quot;</span><span class="w"> </span><span class="p">],</span>
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="w">  </span><span class="nt">&quot;exported_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-03-30T16:00:00Z&quot;</span>
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="p">}</span>
+</code></pre></div>
+<h4 id="get-health-health-check"><code>GET /health</code> — Health check<a class="headerlink" href="#get-health-health-check" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="p">{</span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ok&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;db&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;connected&quot;</span><span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="error-response-format">Error Response Format<a class="headerlink" href="#error-response-format" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="p">{</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">  </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;error_code&quot;</span><span class="p">,</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Human-readable description&quot;</span><span class="p">,</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">  </span><span class="nt">&quot;details&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">&quot;...optional additional info...&quot;</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="p">}</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>HTTP Status</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>consent_required</code></td>
+<td>400</td>
+<td><code>consent_given</code> was false or missing</td>
+</tr>
+<tr>
+<td><code>validation_failed</code></td>
+<td>400</td>
+<td>Required fields missing or invalid</td>
+</tr>
+<tr>
+<td><code>unauthorized</code></td>
+<td>401</td>
+<td>No API key / no JWT</td>
+</tr>
+<tr>
+<td><code>forbidden</code></td>
+<td>403</td>
+<td>Invalid API key / invalid JWT</td>
+</tr>
+<tr>
+<td><code>not_found</code></td>
+<td>404</td>
+<td>Patient/photo/contract not found</td>
+</tr>
+<tr>
+<td><code>conflict</code></td>
+<td>409</td>
+<td>Upsert scenario (informational)</td>
+</tr>
+<tr>
+<td><code>file_too_large</code></td>
+<td>413</td>
+<td>Photo exceeds 10 MB</td>
+</tr>
+<tr>
+<td><code>unsupported_type</code></td>
+<td>415</td>
+<td>Invalid file MIME type</td>
+</tr>
+<tr>
+<td><code>internal_error</code></td>
+<td>500</td>
+<td>Unexpected server error</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="australian-privacy-act-1988-compliance-requirements">Australian Privacy Act 1988 — Compliance Requirements<a class="headerlink" href="#australian-privacy-act-1988-compliance-requirements" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Principle</th>
+<th>Requirement</th>
+<th>Implementation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>APP 1 — Management</td>
+<td>Transparency about data handling</td>
+<td>Privacy notice shown before data collection</td>
+</tr>
+<tr>
+<td>APP 3 — Collection</td>
+<td>Only collect necessary data, with consent</td>
+<td>Consent checkbox + timestamp mandatory before ANY data storage</td>
+</tr>
+<tr>
+<td>APP 5 — Notification</td>
+<td>Tell patient what's collected and why</td>
+<td>Consent text explains: what, why, who sees it</td>
+</tr>
+<tr>
+<td>APP 6 — Use/Disclosure</td>
+<td>Use only for stated purpose</td>
+<td>Data used only for consultation process</td>
+</tr>
+<tr>
+<td>APP 8 — Cross-border</td>
+<td>Protect data if it leaves AU</td>
+<td>VPS in AU region</td>
+</tr>
+<tr>
+<td>APP 11 — Security</td>
+<td>Protect from misuse, loss, unauthorized access</td>
+<td>AES-256 at rest + TLS 1.2+ in transit + audit log</td>
+</tr>
+<tr>
+<td>APP 12 — Access</td>
+<td>Individual can request their data</td>
+<td><code>/patients/:id/export</code> endpoint</td>
+</tr>
+<tr>
+<td>APP 13 — Correction</td>
+<td>Individual can correct their data</td>
+<td><code>PUT /patients/:id</code> endpoint</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Technical compliance checklist:</strong></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> VPS in Australian region (DigitalOcean SYD / AWS ap-southeast-2)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Database encrypted at rest (AES-256)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> All API traffic over TLS 1.2+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Consent collected before ANY patient data stored (timestamp + IP + consent text version)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Access log: every read/write logged (who, when, what)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Data deletion endpoint: permanently delete patient + all associated data</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Data export endpoint: export all data for a single patient (JSON)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> No patient PII in Sellrise DB</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Photos stored encrypted, accessible only via authenticated API</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> API keys rotatable, minimum 32 characters</li>
+</ul>
+<hr />
+<h2 id="acceptance-tests">Acceptance Tests<a class="headerlink" href="#acceptance-tests" title="Permanent link">&para;</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Service runs on separate VPS (not on Sellrise server)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> VPS is in AU region (verify with <code>curl ifconfig.me</code> or hosting dashboard)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Database encrypted at rest</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> All API traffic over HTTPS (HTTP redirects to HTTPS)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>POST /patients</code> with <code>consent_given=false</code> → 400 error, patient NOT created</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>POST /patients</code> with <code>consent_given=true</code> + all required fields → 201, patient created</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>POST /patients</code> with same email + same workspace → 200, existing record updated (upsert)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>POST /patients</code> with same email + DIFFERENT workspace → 201, new record (workspace isolation)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>GET /patients</code> returns paginated list, default sort by <code>created_at</code> desc</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>GET /patients?stage=qualified</code> filters correctly</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>GET /patients?search=john</code> finds by name, email, or phone</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>GET /patients/:id</code> returns patient + photos metadata + events</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>PUT /patients/:id</code> updates fields, creates <code>patient_updated</code> event</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>PATCH /patients/:id/stage</code> changes stage, creates <code>stage_changed</code> event</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>POST /patients/:id/notes</code> creates <code>note_added</code> event</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>POST /patients/:id/photos</code> uploads file, returns 201 with photo metadata</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>POST /patients/:id/photos</code> with file &gt; 10 MB → 413 error</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>POST /patients/:id/photos</code> with invalid MIME type → 415 error</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>GET /patients/:id/photos/:pid</code> returns binary file with correct <code>Content-Type</code></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>GET /patients/:id/photos/:pid</code> WITHOUT API key → 401 (no public URLs)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>DELETE /patients/:id</code> soft-deletes (<code>is_deleted=true</code>, PII anonymized)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>POST /patients/:id/hard-delete</code> removes all data + files permanently</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>POST /patients/:id/hard-delete</code> does NOT delete <code>consent_records</code></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>GET /patients/:id/export</code> returns complete JSON with all data</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>GET /audit-log?patient_id=xxx</code> returns access events</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>consent_records</code> table has entry for every consent action</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Request without <code>X-API-Key</code> → 401</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Request with wrong <code>X-API-Key</code> → 403</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> CORS allows only Sellrise + Cabinet domains (not <code>*</code>)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>GET /health</code> returns <code>{"status":"ok","db":"connected"}</code></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> All new patient fields (<code>password_hash</code>, <code>invite_token</code>, <code>account_created</code>, <code>onboarding_completed</code>, etc.) created correctly in DB</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "navigation.expand", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

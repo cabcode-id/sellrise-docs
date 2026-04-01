@@ -1,0 +1,227 @@
+{
+  "name": "Lead Qualification Flow - Complete Example",
+  "version": "1.0",
+  "description": "Demonstrates all step types in a realistic conversation flow",
+  "use_llm": false,
+  "entry_step_id": "welcome",
+  
+  "system_prompts": {
+    "main": "You are a professional assistant for lead qualification. Be concise and helpful.",
+    "qualification": "Your goal is to collect key information: name, email, inquiry type, and budget.",
+    "meeting_booking": "When booking, provide clear next steps and confirmation."
+  },
+  
+  "rules": {
+    "one_question_rule": true,
+    "max_sentences": 2,
+    "max_chars": { "default": 420 },
+    "emoji": { "allowed": false },
+    "facts_only": true
+  },
+  
+  "steps": {
+    "welcome": {
+      "type": "message",
+      "content": "Welcome! I'm here to help you find the perfect solution for your business. This will only take 2 minutes.",
+      "next": "ask_inquiry_type"
+    },
+    
+    "ask_inquiry_type": {
+      "type": "question_choice",
+      "question": "What brings you here today?",
+      "choices": [
+        "Product Information",
+        "Book a Demo",
+        "Technical Support",
+        "Pricing Questions"
+      ],
+      "variable": "inquiry_type",
+      "next": {
+        "Product Information": "ask_product_interest",
+        "Book a Demo": "collect_contact_form",
+        "Technical Support": "kb_search_step",
+        "Pricing Questions": "ask_budget"
+      }
+    },
+    
+    "ask_product_interest": {
+      "type": "question_text",
+      "question": "Which product or service interests you most?",
+      "variable": "product_interest",
+      "validation": {
+        "required": true,
+        "min_length": 3,
+        "error_message": "Please tell us a bit more about your interest"
+      },
+      "next": "ask_budget"
+    },
+    
+    "ask_budget": {
+      "type": "question_choice",
+      "question": "What's your approximate budget range?",
+      "choices": [
+        "Under $1,000",
+        "$1,000 - $5,000",
+        "$5,000 - $10,000",
+        "Over $10,000"
+      ],
+      "variable": "budget",
+      "next": "budget_conditional"
+    },
+    
+    "budget_conditional": {
+      "type": "conditional_branch",
+      "conditions": [
+        {
+          "expression": "slots.budget == 'Over $10,000'",
+          "next": "high_value_message"
+        },
+        {
+          "expression": "slots.budget == '$5,000 - $10,000'",
+          "next": "medium_value_message"
+        }
+      ],
+      "default": "collect_contact_form"
+    },
+    
+    "high_value_message": {
+      "type": "message",
+      "content": "Excellent! Based on your budget, I'd like to connect you with one of our senior consultants who can provide a customized solution.",
+      "next": "collect_contact_form"
+    },
+    
+    "medium_value_message": {
+      "type": "message",
+      "content": "Great! We have several options that would be perfect for your budget. Let me collect your details so we can send you more information.",
+      "next": "collect_contact_form"
+    },
+    
+    "collect_contact_form": {
+      "type": "form",
+      "title": "Your Contact Information",
+      "fields": [
+        {
+          "name": "full_name",
+          "label": "Full Name",
+          "type": "text",
+          "required": true,
+          "placeholder": "John Doe"
+        },
+        {
+          "name": "email",
+          "label": "Email Address",
+          "type": "email",
+          "required": true,
+          "placeholder": "john@company.com",
+          "validation": {
+            "type": "email",
+            "error_message": "Please enter a valid business email"
+          }
+        },
+        {
+          "name": "phone",
+          "label": "Phone Number",
+          "type": "tel",
+          "required": false,
+          "placeholder": "+1 (555) 123-4567",
+          "validation": {
+            "type": "phone"
+          }
+        },
+        {
+          "name": "company",
+          "label": "Company Name",
+          "type": "text",
+          "required": false,
+          "placeholder": "Acme Corp"
+        }
+      ],
+      "next": "ask_timeframe"
+    },
+    
+    "ask_timeframe": {
+      "type": "question_choice",
+      "question": "When are you looking to get started?",
+      "choices": [
+        "Immediately",
+        "Within 1 month",
+        "1-3 months",
+        "Just exploring"
+      ],
+      "variable": "timeframe",
+      "next": "timeframe_conditional"
+    },
+    
+    "timeframe_conditional": {
+      "type": "conditional_branch",
+      "conditions": [
+        {
+          "expression": "slots.timeframe == 'Immediately'",
+          "next": "urgent_booking"
+        }
+      ],
+      "default": "offer_booking"
+    },
+    
+    "urgent_booking": {
+      "type": "message",
+      "content": "Perfect! Since you're ready to move quickly, let's schedule a call with our team as soon as possible.",
+      "next": "show_booking_link"
+    },
+    
+    "offer_booking": {
+      "type": "message",
+      "content": "Thank you! Would you like to schedule a quick 15-minute consultation to discuss your needs in detail?",
+      "next": "show_booking_link"
+    },
+    
+    "show_booking_link": {
+      "type": "handoff_booking_link",
+      "text": "Click below to choose a time that works for you:",
+      "button_label": "Schedule Consultation",
+      "booking_url": "https://calendly.com/your-company/consultation",
+      "next": "thank_you"
+    },
+    
+    "kb_search_step": {
+      "type": "kb_search",
+      "prompt": "What technical question can I help you with?",
+      "max_results": 3,
+      "next": "kb_helpful_check",
+      "no_results_next": "no_kb_results"
+    },
+    
+    "kb_helpful_check": {
+      "type": "question_choice",
+      "question": "Did that answer your question?",
+      "choices": [
+        "Yes, that helps!",
+        "I need more information",
+        "Speak to someone"
+      ],
+      "variable": "kb_helpful",
+      "next": {
+        "Yes, that helps!": "thank_you",
+        "I need more information": "collect_contact_form",
+        "Speak to someone": "handoff_to_operator"
+      }
+    },
+    
+    "no_kb_results": {
+      "type": "message",
+      "content": "I don't have a specific answer for that, but I can connect you with our support team who can help.",
+      "next": "collect_contact_form"
+    },
+    
+    "handoff_to_operator": {
+      "type": "handoff_operator",
+      "message": "Let me connect you with a team member who can assist you...",
+      "department": "support"
+    },
+    
+    "thank_you": {
+      "type": "end",
+      "message": "Thank you for your time! We'll be in touch shortly. Have a great day!"
+    }
+  }
+}

@@ -1,0 +1,5806 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for Sellrise Platform">
+      
+      
+        <meta name="author" content="Cabcode">
+      
+      
+        <link rel="canonical" href="https://cabcode-id.github.io/sellrise-docs/FEATURE_BREAKDOWN/">
+      
+      
+        <link rel="prev" href="../AI_WIDGET_CHATBOT_PRD/">
+      
+      
+        <link rel="next" href="../analisis-p1/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Feature Breakdown - Sellrise Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#sellrise-platform-complete-feature-breakdown" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Sellrise Docs" class="md-header__button md-logo" aria-label="Sellrise Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Sellrise Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Feature Breakdown
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/cabcode-id/sellrise-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    cabcode-id/sellrise-docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Sellrise Docs" class="md-nav__button md-logo" aria-label="Sellrise Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Sellrise Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/cabcode-id/sellrise-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    cabcode-id/sellrise-docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Product Requirements
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Product Requirements
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AGILE_PRD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agile PRD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AI_WIDGET_CHATBOT_PRD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Widget Chatbot PRD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Feature Breakdown
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Feature Breakdown
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feature-overview-priorities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Feature Overview &amp; Priorities
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Feature Overview &amp; Priorities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#priority-levels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Priority Levels
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mvp-scope-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MVP Scope Summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recently-implemented-features-march-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Recently Implemented Features (March 2026)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-core-platform-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Core Platform Features
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Core Platform Features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-multi-tenant-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Multi-Tenant Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-workspace-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Workspace Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-authentication-user-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Authentication &amp; User Management
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Authentication &amp; User Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-user-authentication-jwt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 User Authentication (JWT)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-role-based-access-control-rbac" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Role-Based Access Control (RBAC)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-password-reset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Password Reset
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-widget-embedding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Widget &amp; Embedding
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Widget &amp; Embedding">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-widget-embed-code-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Widget Embed Code Generation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-domain-registration-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Domain Registration &amp; Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-widget-display-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Widget Display Modes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-widget-session-handshake" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 Widget Session Handshake
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-widget-fallback-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5 Widget Fallback Handling
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-conversation-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Conversation Engine
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Conversation Engine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-scenario-configuration-draftpublish" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Scenario Configuration (Draft/Publish)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-scenario-simulatorpreview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Scenario Simulator/Preview
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-step-types-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Step Types Implementation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-event-logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 Event Logging
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-centralized-conversation-message-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5 Centralized Conversation &amp; Message System
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#46-ai-conversation-engine-llm-powered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.6 AI Conversation Engine (LLM-Powered)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-lead-management-mini-crm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Lead Management (Mini-CRM)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Lead Management (Mini-CRM)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-lead-creation-deduplication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Lead Creation &amp; Deduplication
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-lead-inbox-newunassigned" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Lead Inbox (New/Unassigned)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-pipeline-kanban-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 Pipeline (Kanban View)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-lead-detail-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4 Lead Detail View
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#55-lead-search-filters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.5 Lead Search &amp; Filters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#56-lead-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.6 Lead Notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#57-lead-assignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.7 Lead Assignment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#58-lead-scoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.8 Lead Scoring
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-knowledge-base" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Knowledge Base
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Knowledge Base">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-kb-articles-crud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 KB Articles (CRUD)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-kb-faqs-crud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 KB FAQs (CRUD)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-kb-search-full-text" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 KB Search (Full-Text)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-kb-only-answer-mode-mvp-constraint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4 KB-Only Answer Mode (MVP Constraint)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-scenariobot-builder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Scenario/Bot Builder
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Scenario/Bot Builder">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-bot-builder-ui-visual-flow-editor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 Bot Builder UI (Visual Flow Editor)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-stage-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 Stage Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-task-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 Task Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#74-action-catalog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4 Action Catalog
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#75-template-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.5 Template Library
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-analytics-reporting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Analytics &amp; Reporting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Analytics &amp; Reporting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-funnel-metrics-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 Funnel Metrics Dashboard
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-lead-source-analytics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 Lead Source Analytics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83-stage-drop-off-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3 Stage Drop-Off Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#84-csv-export" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.4 CSV Export
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-notifications-jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Notifications &amp; Jobs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Notifications &amp; Jobs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-hot-lead-email-notification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 Hot Lead Email Notification
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-lead-assignment-notification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2 Lead Assignment Notification
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#93-sla-reminder-optional-mvp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3 SLA Reminder (Optional MVP+)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-integrations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Integrations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Integrations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101-calendar-integration-future" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1 Calendar Integration (Future)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102-crm-integration-future" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2 CRM Integration (Future)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#103-messaging-channels-future" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3 Messaging Channels (Future)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-settings-administration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Settings &amp; Administration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Settings &amp; Administration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111-workspace-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.1 Workspace Settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112-team-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.2 Team Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#113-branding-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.3 Branding Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#114-notification-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.4 Notification Settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-booking-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Booking System
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12. Booking System">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#121-booking-link-handoff-mvp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.1 Booking Link Handoff (MVP)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#122-native-booking-calendar-post-mvp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.2 Native Booking Calendar (Post-MVP)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-roadmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation Roadmap
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation Roadmap">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-mvp-core-months-1-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1: MVP Core (Months 1-2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-mvp-polish-month-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2: MVP Polish (Month 3)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-advanced-features-months-4-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3: Advanced Features (Months 4-6)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-4-scale-expand-months-7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 4: Scale &amp; Expand (Months 7+)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technical-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technical Dependencies
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Technical Dependencies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#critical-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Critical Path
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parallel-tracks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parallel Tracks
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing Requirements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Testing Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mvp-test-suite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MVP Test Suite
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#success-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Success Metrics
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Success Metrics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#platform-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Platform Metrics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#business-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Business Metrics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#user-satisfaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Satisfaction
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#document-version-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Document Version History
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-documents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related Documents
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../analisis-p1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MVP 1 Status Review
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Conversation Engine
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AI Conversation Engine
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AI%20Conversation%20Engine%20%E2%80%93%20Technical%20Specification/AI%20Conversation%20Engine%20%E2%80%93%20Technical%20spec/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical Specification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AI%20Conversation%20Engine%20%E2%80%93%20Technical%20Specification/Flow%20Diagram/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flow Diagram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CONVERSATION_SYSTEM_ARCHITECTURE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AI_CHATBOT_ROBOTIC_BEHAVIOR_INVESTIGATION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chatbot Behavior Investigation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scenario System
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Scenario System
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SCENARIO_CONFIGURATION_GUIDE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CHATBOT_SCENARIO_BUILDING_TUTORIAL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chatbot Scenario Tutorial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../STEP_TYPES_IMPLEMENTATION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Step Types - Implementation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../STEP_TYPES_SUMMARY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Step Types - Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DEFAULT_SCENARIO_TEMPLATE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Default Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CRM
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CRM
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../crm-prds/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../crm-prds/01-lead-creation-and-deduplication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lead Creation & Deduplication
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../crm-prds/02-lead-inbox-new-unassigned/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lead Inbox
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../crm-prds/03-pipeline-kanban-view/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pipeline Kanban View
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../crm-prds/04-lead-detail-view/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lead Detail View
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../crm-prds/05-lead-search-and-filters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lead Search & Filters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../crm-prds/06-lead-notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lead Notes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../crm-prds/07-lead-assignment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lead Assignment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../crm-prds/08-lead-scoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lead Scoring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Implementation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Implementation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../EVENT_LOGGING_IMPLEMENTATION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Event Logging
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AGILE_PRD_IMPLEMENTATION_AUDIT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PRD Implementation Audit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Testing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../integration_testing_guide_en/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integration Testing (EN)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../integration_testing_guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integration Testing (ID)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phase 1 – Post-MVP
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Phase 1 – Post-MVP
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../phase-1-post-mvp/scenario_generator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scenario Generator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phase 2 – Plasthic Additions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Phase 2 – Plasthic Additions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../phase-2-plasthic-additions/MASTER_PRD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Master PRD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../phase-2-plasthic-additions/PRD_1_Patient_Service/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PRD 1 - Patient Service
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../phase-2-plasthic-additions/PRD_2_Webhook_Pipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PRD 2 - Webhook Pipeline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../phase-2-plasthic-additions/PRD_3_Photo_Management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PRD 3 - Photo Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../phase-2-plasthic-additions/PRD_4_CRM_Dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PRD 4 - CRM Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../phase-2-plasthic-additions/PRD_5_Compliance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PRD 5 - Compliance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../phase-2-plasthic-additions/PRD_6_Cabinet_Auth_Onboarding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PRD 6 - Cabinet Auth Onboarding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../phase-2-plasthic-additions/PRD_7_Dashboard_Journey/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PRD 7 - Dashboard Journey
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../phase-2-plasthic-additions/PRD_8_Staff_Services_Reviews/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PRD 8 - Staff Services Reviews
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../phase-2-plasthic-additions/PRD_9_Rewards_Community/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PRD 9 - Rewards Community
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../phase-2-plasthic-additions/SPRINT_PLAN/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint Plan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phase 2 – Pre-Consultation Engagement
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Phase 2 – Pre-Consultation Engagement
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../phase-2-pre-consultation-engagement/chatbot-photo-collection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chatbot Photo Collection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feature-overview-priorities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Feature Overview &amp; Priorities
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Feature Overview &amp; Priorities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#priority-levels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Priority Levels
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mvp-scope-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MVP Scope Summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recently-implemented-features-march-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Recently Implemented Features (March 2026)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-core-platform-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Core Platform Features
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Core Platform Features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-multi-tenant-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Multi-Tenant Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-workspace-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Workspace Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-authentication-user-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Authentication &amp; User Management
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Authentication &amp; User Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-user-authentication-jwt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 User Authentication (JWT)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-role-based-access-control-rbac" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Role-Based Access Control (RBAC)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-password-reset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Password Reset
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-widget-embedding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Widget &amp; Embedding
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Widget &amp; Embedding">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-widget-embed-code-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Widget Embed Code Generation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-domain-registration-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Domain Registration &amp; Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-widget-display-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Widget Display Modes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-widget-session-handshake" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 Widget Session Handshake
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-widget-fallback-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5 Widget Fallback Handling
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-conversation-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Conversation Engine
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Conversation Engine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-scenario-configuration-draftpublish" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Scenario Configuration (Draft/Publish)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-scenario-simulatorpreview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Scenario Simulator/Preview
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-step-types-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Step Types Implementation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-event-logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 Event Logging
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-centralized-conversation-message-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5 Centralized Conversation &amp; Message System
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#46-ai-conversation-engine-llm-powered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.6 AI Conversation Engine (LLM-Powered)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-lead-management-mini-crm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Lead Management (Mini-CRM)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Lead Management (Mini-CRM)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-lead-creation-deduplication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Lead Creation &amp; Deduplication
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-lead-inbox-newunassigned" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Lead Inbox (New/Unassigned)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-pipeline-kanban-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 Pipeline (Kanban View)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-lead-detail-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4 Lead Detail View
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#55-lead-search-filters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.5 Lead Search &amp; Filters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#56-lead-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.6 Lead Notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#57-lead-assignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.7 Lead Assignment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#58-lead-scoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.8 Lead Scoring
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-knowledge-base" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Knowledge Base
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Knowledge Base">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-kb-articles-crud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 KB Articles (CRUD)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-kb-faqs-crud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 KB FAQs (CRUD)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-kb-search-full-text" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 KB Search (Full-Text)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-kb-only-answer-mode-mvp-constraint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4 KB-Only Answer Mode (MVP Constraint)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-scenariobot-builder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Scenario/Bot Builder
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Scenario/Bot Builder">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-bot-builder-ui-visual-flow-editor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 Bot Builder UI (Visual Flow Editor)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-stage-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 Stage Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-task-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 Task Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#74-action-catalog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4 Action Catalog
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#75-template-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.5 Template Library
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-analytics-reporting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Analytics &amp; Reporting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Analytics &amp; Reporting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-funnel-metrics-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 Funnel Metrics Dashboard
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-lead-source-analytics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 Lead Source Analytics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83-stage-drop-off-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3 Stage Drop-Off Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#84-csv-export" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.4 CSV Export
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-notifications-jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Notifications &amp; Jobs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Notifications &amp; Jobs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-hot-lead-email-notification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 Hot Lead Email Notification
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-lead-assignment-notification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2 Lead Assignment Notification
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#93-sla-reminder-optional-mvp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3 SLA Reminder (Optional MVP+)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-integrations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Integrations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Integrations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101-calendar-integration-future" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1 Calendar Integration (Future)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102-crm-integration-future" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2 CRM Integration (Future)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#103-messaging-channels-future" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3 Messaging Channels (Future)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-settings-administration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Settings &amp; Administration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Settings &amp; Administration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111-workspace-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.1 Workspace Settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112-team-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.2 Team Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#113-branding-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.3 Branding Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#114-notification-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.4 Notification Settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-booking-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Booking System
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12. Booking System">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#121-booking-link-handoff-mvp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.1 Booking Link Handoff (MVP)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#122-native-booking-calendar-post-mvp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.2 Native Booking Calendar (Post-MVP)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-roadmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation Roadmap
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation Roadmap">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-mvp-core-months-1-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1: MVP Core (Months 1-2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-mvp-polish-month-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2: MVP Polish (Month 3)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-advanced-features-months-4-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3: Advanced Features (Months 4-6)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-4-scale-expand-months-7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 4: Scale &amp; Expand (Months 7+)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technical-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technical Dependencies
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Technical Dependencies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#critical-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Critical Path
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parallel-tracks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parallel Tracks
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing Requirements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Testing Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mvp-test-suite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MVP Test Suite
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#success-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Success Metrics
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Success Metrics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#platform-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Platform Metrics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#business-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Business Metrics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#user-satisfaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Satisfaction
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#document-version-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Document Version History
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-documents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related Documents
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="sellrise-platform-complete-feature-breakdown">Sellrise Platform — Complete Feature Breakdown<a class="headerlink" href="#sellrise-platform-complete-feature-breakdown" title="Permanent link">&para;</a></h1>
+<p><strong>Version:</strong> 1.0<br />
+<strong>Last Updated:</strong> March 8, 2026<br />
+<strong>Purpose:</strong> Organize all PRD requirements into clear, actionable feature specifications</p>
+<hr />
+<h2 id="table-of-contents">Table of Contents<a class="headerlink" href="#table-of-contents" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="#feature-overview--priorities">Feature Overview &amp; Priorities</a></li>
+<li><a href="#1-core-platform-features">Core Platform Features</a></li>
+<li><a href="#2-authentication--user-management">Authentication &amp; User Management</a></li>
+<li><a href="#3-widget--embedding">Widget &amp; Embedding</a></li>
+<li><a href="#4-conversation-engine">Conversation Engine</a></li>
+<li><a href="#5-lead-management-mini-crm">Lead Management (Mini-CRM)</a></li>
+<li><a href="#6-knowledge-base">Knowledge Base</a></li>
+<li><a href="#7-scenariobot-builder">Scenario/Bot Builder</a></li>
+<li><a href="#8-analytics--reporting">Analytics &amp; Reporting</a></li>
+<li><a href="#9-notifications--jobs">Notifications &amp; Jobs</a></li>
+<li><a href="#10-integrations">Integrations</a></li>
+<li><a href="#11-settings--administration">Settings &amp; Administration</a></li>
+<li><a href="#12-booking-system">Booking System</a></li>
+</ol>
+<hr />
+<h2 id="feature-overview-priorities">Feature Overview &amp; Priorities<a class="headerlink" href="#feature-overview-priorities" title="Permanent link">&para;</a></h2>
+<h3 id="priority-levels">Priority Levels<a class="headerlink" href="#priority-levels" title="Permanent link">&para;</a></h3>
+<ul>
+<li>🔴 <strong>MVP Phase 1</strong> (Core functionality, must-have for first release)</li>
+<li>🟡 <strong>MVP Phase 2</strong> (Important but can follow Phase 1)</li>
+<li>🟢 <strong>Post-MVP</strong> (Nice to have, future enhancements)</li>
+</ul>
+<h3 id="mvp-scope-summary">MVP Scope Summary<a class="headerlink" href="#mvp-scope-summary" title="Permanent link">&para;</a></h3>
+<p><strong>Included in MVP:</strong>
+- Multi-tenant workspace architecture
+- Web widget (bubble + inline)
+- Scenario engine (config-driven, deterministic)
+- Knowledge Base (articles + FAQs, search)
+- Mini-CRM (inbox, pipeline, lead detail, notes)
+- Link-based booking handoff
+- Email notifications
+- Basic analytics (funnel, CSV export)</p>
+<p><strong>Excluded from MVP:</strong>
+- Native booking calendar
+- Omnichannel (WhatsApp/Instagram/Facebook)
+- LLM free-form answers (KB-only in MVP)
+- Real-time operator chat takeover
+- Advanced automations (sequences, drip campaigns)</p>
+<h3 id="recently-implemented-features-march-2026">✅ Recently Implemented Features (March 2026)<a class="headerlink" href="#recently-implemented-features-march-2026" title="Permanent link">&para;</a></h3>
+<p><strong>Scenario Configuration &amp; AI Enhancement</strong> (Section 4.1)
+- Comprehensive admin UI for creating/managing AI conversation scenarios
+- LLM-enhanced editing via OpenRouter (Claude 3.5 Sonnet)
+- Three enhancement levels: prompt-level, JSON-level, full scenario
+- Default conversation engine template with 6 stages, 11 slots, 4 actions
+- System prompts editor with templates and individual enhancement
+- File attachment component for LLM grounding (PDF, TXT, MD, JSON, CSV, DOCX)
+- Interactive scenario preview simulator
+- Draft/publish workflow with validation
+- Frontend: 450+ line main page + 4 components
+- Backend: LLM endpoints, file upload with workspace isolation
+- Documentation: User guide + template reference</p>
+<p><strong>Centralized Conversation System</strong> (Section 4.5)
+- One AI "brain" per workspace handles all channels (web, WhatsApp, Telegram, Instagram, etc.)
+- Complete workspace isolation preventing context mixing between admins
+- Conversation and Message models with stateful context tracking
+- Service layer with workspace security enforcement
+- API endpoints for admin conversation management
+- Widget endpoint for public message sending
+- Channel-agnostic processing with consistent AI persona
+- Full audit trail of all messages
+- Database models ready for migration
+- Comprehensive architecture documentation</p>
+<p><strong>Status</strong>: Database migration pending (<code>alembic revision --autogenerate -m "add_conversations_and_messages"</code>)</p>
+<hr />
+<h2 id="1-core-platform-features">1. Core Platform Features<a class="headerlink" href="#1-core-platform-features" title="Permanent link">&para;</a></h2>
+<h3 id="11-multi-tenant-architecture">1.1 Multi-Tenant Architecture<a class="headerlink" href="#11-multi-tenant-architecture" title="Permanent link">&para;</a></h3>
+<p><strong>Priority:</strong> 🔴 MVP Phase 1<br />
+<strong>Category:</strong> Infrastructure</p>
+<p><strong>Description:</strong><br />
+Foundation for supporting multiple isolated workspaces under single Sellrise brand.</p>
+<p><strong>Requirements:</strong>
+- Hard data isolation between workspaces
+- All business tables include <code>workspace_id</code> foreign key
+- Every API request filtered by <code>workspace_id</code>
+- Return 404 (not 403) for unauthorized access to prevent data leakage</p>
+<p><strong>Acceptance Criteria:</strong>
+- ✅ User from Workspace A cannot see Workspace B data
+- ✅ All queries automatically filter by <code>workspace_id</code>
+- ✅ Database constraints prevent cross-workspace references
+- ✅ API responds with 404 for non-existent or unauthorized resources</p>
+<p><strong>Technical Notes:</strong>
+- Implement in ORM base model
+- Add database indexes on <code>workspace_id</code>
+- Middleware validates workspace context</p>
+<p><strong>Dependencies:</strong> None (foundational)</p>
+<hr />
+<h3 id="12-workspace-management">1.2 Workspace Management<a class="headerlink" href="#12-workspace-management" title="Permanent link">&para;</a></h3>
+<p><strong>Priority:</strong> 🔴 MVP Phase 1<br />
+<strong>Category:</strong> Infrastructure</p>
+<p><strong>Description:</strong><br />
+Create and manage isolated tenant workspaces.</p>
+<p><strong>User Story:</strong>  </p>
+<blockquote>
+<p><strong>As an Admin</strong>, I can create a workspace to manage a project/business.</p>
+</blockquote>
+<p><strong>Requirements:</strong>
+- Workspace creation with name
+- Creator automatically assigned admin role
+- Workspace settings (JSON config)
+- Allowed domains registration</p>
+<p><strong>Acceptance Criteria:</strong>
+- ✅ Admin creates workspace with unique name
+- ✅ Creator receives admin role automatically
+- ✅ Workspace ID generated (UUID)
+- ✅ Workspace isolated from others</p>
+<p><strong>API Endpoints:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>POST   /v1/workspaces
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>GET    /v1/workspaces/{id}
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>PATCH  /v1/workspaces/{id}
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>DELETE /v1/workspaces/{id}
+</code></pre></div></p>
+<p><strong>Dependencies:</strong> None (foundational)</p>
+<hr />
+<h2 id="2-authentication-user-management">2. Authentication &amp; User Management<a class="headerlink" href="#2-authentication-user-management" title="Permanent link">&para;</a></h2>
+<h3 id="21-user-authentication-jwt">2.1 User Authentication (JWT)<a class="headerlink" href="#21-user-authentication-jwt" title="Permanent link">&para;</a></h3>
+<p><strong>Priority:</strong> 🔴 MVP Phase 1<br />
+<strong>Category:</strong> Auth</p>
+<p><strong>Description:</strong><br />
+Secure login system with JWT access/refresh tokens.</p>
+<p><strong>User Story:</strong>  </p>
+<blockquote>
+<p><strong>As a User</strong>, I can log in to access the CRM/admin interface.</p>
+</blockquote>
+<p><strong>Requirements:</strong>
+- Email + password login
+- JWT access tokens (60 min expiry)
+- Refresh tokens (7 day expiry, stored as hash)
+- Token validation middleware
+- Logout (invalidate refresh token)</p>
+<p><strong>Acceptance Criteria:</strong>
+- ✅ User logs in with email/password
+- ✅ Returns access_token + refresh_token
+- ✅ Unauthorized requests return 401
+- ✅ Invalid/expired tokens return 401
+- ✅ Logout invalidates refresh token</p>
+<p><strong>API Endpoints:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>POST /v1/auth/login
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>POST /v1/auth/refresh
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>POST /v1/auth/logout
+</code></pre></div></p>
+<p><strong>Technical Notes:</strong>
+- Use bcrypt for password hashing
+- Store refresh tokens as HMAC-SHA256 hash
+- Access token includes: user_id, workspace_id, role</p>
+<p><strong>Dependencies:</strong> Workspace Management</p>
+<hr />
+<h3 id="22-role-based-access-control-rbac">2.2 Role-Based Access Control (RBAC)<a class="headerlink" href="#22-role-based-access-control-rbac" title="Permanent link">&para;</a></h3>
+<p><strong>Priority:</strong> 🔴 MVP Phase 1<br />
+<strong>Category:</strong> Auth</p>
+<p><strong>Description:</strong><br />
+Three-tier permission system for workspace users.</p>
+<p><strong>User Story:</strong>  </p>
+<blockquote>
+<p><strong>As an Admin</strong>, I can add users to my workspace and assign roles.</p>
+</blockquote>
+<p><strong>Roles:</strong>
+- <strong>ADMIN</strong>: Full access (scenarios, KB, users, settings)
+- <strong>AGENT</strong>: Lead management (update stage, owner, notes), cannot edit scenarios/KB
+- <strong>VIEWER</strong>: Read-only (leads, analytics)</p>
+<p><strong>Requirements:</strong>
+- User creation with role assignment
+- Email unique within workspace
+- Permission enforcement at API level
+- Role-based UI visibility</p>
+<p><strong>Acceptance Criteria:</strong>
+- ✅ Admin can create/invite users with roles
+- ✅ Viewer cannot modify leads/stages/KB
+- ✅ Agent cannot publish scenarios or edit KB
+- ✅ Admin has full access
+- ✅ API returns 403 for unauthorized role actions</p>
+<p><strong>API Endpoints:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>POST   /v1/users
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>GET    /v1/users
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>GET    /v1/users/{id}
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>PATCH  /v1/users/{id}
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>DELETE /v1/users/{id}
+</code></pre></div></p>
+<p><strong>Dependencies:</strong> User Authentication</p>
+<hr />
+<h3 id="23-password-reset">2.3 Password Reset<a class="headerlink" href="#23-password-reset" title="Permanent link">&para;</a></h3>
+<p><strong>Priority:</strong> 🟡 MVP Phase 2<br />
+<strong>Category:</strong> Auth</p>
+<p><strong>Description:</strong><br />
+Self-service password reset via email.</p>
+<p><strong>User Story:</strong>  </p>
+<blockquote>
+<p><strong>As a User</strong>, I can reset my password if I forget it.</p>
+</blockquote>
+<p><strong>Requirements:</strong>
+- Generate secure reset token (1-hour expiry)
+- Send reset email with link
+- Token validation on reset
+- Update password</p>
+<p><strong>Acceptance Criteria:</strong>
+- ✅ User requests reset with email
+- ✅ Receives email with reset link
+- ✅ Link expires after 1 hour
+- ✅ Token used only once
+- ✅ Password updated successfully</p>
+<p><strong>API Endpoints:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>POST /v1/auth/forgot-password
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>POST /v1/auth/reset-password
+</code></pre></div></p>
+<p><strong>Dependencies:</strong> User Authentication, Notifications</p>
+<hr />
+<h2 id="3-widget-embedding">3. Widget &amp; Embedding<a class="headerlink" href="#3-widget-embedding" title="Permanent link">&para;</a></h2>
+<h3 id="31-widget-embed-code-generation">3.1 Widget Embed Code Generation<a class="headerlink" href="#31-widget-embed-code-generation" title="Permanent link">&para;</a></h3>
+<p><strong>Priority:</strong> 🔴 MVP Phase 1<br />
+<strong>Category:</strong> Widget</p>
+<p><strong>Description:</strong><br />
+Generate JavaScript snippet for embedding widget on client websites.</p>
+<p><strong>User Story:</strong>  </p>
+<blockquote>
+<p><strong>As an Admin</strong>, I can copy a JS snippet to install the widget on my website.</p>
+</blockquote>
+<p><strong>Requirements:</strong>
+- Generate unique snippet per workspace
+- Include workspace public key
+- Load widget JS bundle
+- Configure domain restrictions</p>
+<p><strong>Acceptance Criteria:</strong>
+- ✅ Admin copies embed snippet from UI
+- ✅ Snippet loads widget JS bundle
+- ✅ Snippet passes workspace_public_key
+- ✅ Widget creates session successfully after installation</p>
+<p><strong>Example Snippet:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">w</span><span class="p">,</span><span class="nx">d</span><span class="p">,</span><span class="nx">s</span><span class="p">,</span><span class="nx">o</span><span class="p">,</span><span class="nx">f</span><span class="p">,</span><span class="nx">js</span><span class="p">,</span><span class="nx">fjs</span><span class="p">){</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="nx">w</span><span class="p">[</span><span class="s1">&#39;SellriseWidget&#39;</span><span class="p">]</span><span class="o">=</span><span class="nx">o</span><span class="p">;</span><span class="nx">w</span><span class="p">[</span><span class="nx">o</span><span class="p">]</span><span class="o">=</span><span class="nx">w</span><span class="p">[</span><span class="nx">o</span><span class="p">]</span><span class="o">||</span><span class="kd">function</span><span class="p">(){(</span><span class="nx">w</span><span class="p">[</span><span class="nx">o</span><span class="p">].</span><span class="nx">q</span><span class="o">=</span><span class="nx">w</span><span class="p">[</span><span class="nx">o</span><span class="p">].</span><span class="nx">q</span><span class="o">||</span><span class="p">[]).</span><span class="nx">push</span><span class="p">(</span><span class="nx">arguments</span><span class="p">)};</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="nx">js</span><span class="o">=</span><span class="nx">d</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="nx">s</span><span class="p">),</span><span class="nx">fjs</span><span class="o">=</span><span class="nx">d</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="nx">s</span><span class="p">)[</span><span class="mf">0</span><span class="p">];</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="nx">js</span><span class="p">.</span><span class="nx">id</span><span class="o">=</span><span class="nx">o</span><span class="p">;</span><span class="nx">js</span><span class="p">.</span><span class="nx">src</span><span class="o">=</span><span class="nx">f</span><span class="p">;</span><span class="nx">js</span><span class="p">.</span><span class="k">async</span><span class="o">=</span><span class="mf">1</span><span class="p">;</span><span class="nx">fjs</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">insertBefore</span><span class="p">(</span><span class="nx">js</span><span class="p">,</span><span class="nx">fjs</span><span class="p">);</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">  </span><span class="p">}(</span><span class="nb">window</span><span class="p">,</span><span class="nb">document</span><span class="p">,</span><span class="s1">&#39;script&#39;</span><span class="p">,</span><span class="s1">&#39;sellrise&#39;</span><span class="p">,</span><span class="s1">&#39;https://cdn.sellrise.ai/widget.js&#39;</span><span class="p">));</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">  </span><span class="nx">sellrise</span><span class="p">(</span><span class="s1">&#39;init&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">workspace</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;YOUR_WORKSPACE_KEY&#39;</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</code></pre></div></p>
+<p><strong>Dependencies:</strong> Workspace Management, Domain Registration</p>
+<hr />
+<h3 id="32-domain-registration-validation">3.2 Domain Registration &amp; Validation<a class="headerlink" href="#32-domain-registration-validation" title="Permanent link">&para;</a></h3>
+<p><strong>Priority:</strong> 🔴 MVP Phase 1<br />
+<strong>Category:</strong> Widget</p>
+<p><strong>Description:</strong><br />
+Register allowed domains to prevent unauthorized widget usage.</p>
+<p><strong>User Story:</strong>  </p>
+<blockquote>
+<p><strong>As an Admin</strong>, I can register a domain to allow widget sessions from that site.</p>
+</blockquote>
+<p><strong>Requirements:</strong>
+- Add/remove allowed domains
+- Validate domain on widget session creation
+- Support development mode (localhost)
+- Store branding config per domain</p>
+<p><strong>Acceptance Criteria:</strong>
+- ✅ Admin adds domain (e.g., example.com)
+- ✅ Widget session validates origin domain
+- ✅ Returns 403 if domain not allowed
+- ✅ Domain list is editable
+- ✅ Dev mode override for testing</p>
+<p><strong>API Endpoints:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>POST   /v1/domains
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>GET    /v1/domains
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>PATCH  /v1/domains/{id}
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>DELETE /v1/domains/{id}
+</code></pre></div></p>
+<p><strong>Dependencies:</strong> Workspace Management</p>
+<hr />
+<h3 id="33-widget-display-modes">3.3 Widget Display Modes<a class="headerlink" href="#33-widget-display-modes" title="Permanent link">&para;</a></h3>
+<p><strong>Priority:</strong> 🔴 MVP Phase 1<br />
+<strong>Category:</strong> Widget (Frontend)</p>
+<p><strong>Description:</strong><br />
+Multiple widget display options for different use cases.</p>
+<p><strong>Requirements:</strong>
+- <strong>Bubble mode</strong>: Floating button (bottom-right)
+- <strong>Inline mode</strong>: Embedded in page element
+- Configurable position, colors, logo
+- Mobile-responsive design
+- Lazy-load for performance (&lt;150-250KB bundle)</p>
+<p><strong>Acceptance Criteria:</strong>
+- ✅ Bubble widget appears bottom-right
+- ✅ Inline widget renders in container
+- ✅ Colors/logo configurable via admin
+- ✅ Mobile-optimized (touch-friendly)
+- ✅ Fast initial paint (&lt;3 sec)</p>
+<p><strong>Technical Notes:</strong>
+- Vite/Rollup build for widget
+- Shadow DOM to prevent CSS conflicts
+- Lazy-load images and heavy components</p>
+<p><strong>Dependencies:</strong> Widget Embed, Branding Config</p>
+<hr />
+<h3 id="34-widget-session-handshake">3.4 Widget Session Handshake<a class="headerlink" href="#34-widget-session-handshake" title="Permanent link">&para;</a></h3>
+<p><strong>Priority:</strong> 🔴 MVP Phase 1<br />
+<strong>Category:</strong> Widget (Backend)</p>
+<p><strong>Description:</strong><br />
+Initialize widget session and return configuration.</p>
+<p><strong>User Story:</strong>  </p>
+<blockquote>
+<p><strong>As a Visitor</strong>, when the widget loads it starts a session and receives config.</p>
+</blockquote>
+<p><strong>Requirements:</strong>
+- Create session on widget load
+- Return session_id, branding, scenario config
+- Track widget_opened event
+- Validate domain</p>
+<p><strong>Acceptance Criteria:</strong>
+- ✅ Widget calls POST /v1/widget/session
+- ✅ Returns session_id, branding, scenario config
+- ✅ Logs widget_opened event
+- ✅ Returns latest published scenario version
+- ✅ Fallback if no published scenario</p>
+<p><strong>API Endpoint:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>POST /v1/widget/session
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>Body: { domain, page_url, referrer, utm_*, timezone }
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>Response: { session_id, branding, scenario_version_id, scenario_json }
+</code></pre></div></p>
+<p><strong>Dependencies:</strong> Domain Validation, Scenario Publishing</p>
+<hr />
+<h3 id="35-widget-fallback-handling">3.5 Widget Fallback Handling<a class="headerlink" href="#35-widget-fallback-handling" title="Permanent link">&para;</a></h3>
+<p><strong>Priority:</strong> 🔴 MVP Phase 1<br />
+<strong>Category:</strong> Widget</p>
+<p><strong>Description:</strong><br />
+Graceful degradation if backend fails or scenario unavailable.</p>
+<p><strong>User Story:</strong>  </p>
+<blockquote>
+<p><strong>As a Visitor</strong>, if chat cannot run, I can still leave contact details.</p>
+</blockquote>
+<p><strong>Requirements:</strong>
+- Fallback contact form on session failure
+- Fallback on mid-flow timeout
+- Retry logic with exponential backoff
+- Log errors with correlation ID</p>
+<p><strong>Acceptance Criteria:</strong>
+- ✅ Session failure shows fallback form
+- ✅ Timeout shows "Please leave details" message
+- ✅ Submission reaches backend via dedicated endpoint
+- ✅ Errors logged with correlation ID</p>
+<p><strong>API Endpoint:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>POST /v1/widget/fallback-lead
+</code></pre></div></p>
+<p><strong>Dependencies:</strong> Widget Session, Lead Submission</p>
+<hr />
+<h2 id="4-conversation-engine">4. Conversation Engine<a class="headerlink" href="#4-conversation-engine" title="Permanent link">&para;</a></h2>
+<h3 id="41-scenario-configuration-draftpublish">4.1 Scenario Configuration (Draft/Publish)<a class="headerlink" href="#41-scenario-configuration-draftpublish" title="Permanent link">&para;</a></h3>
+<p><strong>Priority:</strong> 🔴 MVP Phase 1<br />
+<strong>Category:</strong> Scenario Engine<br />
+<strong>Status:</strong> ✅ <strong>IMPLEMENTED</strong></p>
+<p><strong>Description:</strong><br />
+Comprehensive admin interface for creating and managing LLM-powered conversation scenarios with AI-enhanced editing, system prompts, file attachments, and interactive preview.</p>
+<p><strong>User Story:</strong>  </p>
+<blockquote>
+<p><strong>As an Admin</strong>, I can create, edit, and publish AI conversation scenarios with LLM enhancement to improve prompts and configurations.</p>
+</blockquote>
+<p><strong>Features Implemented:</strong></p>
+<ol>
+<li><strong>Scenario JSON Editor</strong></li>
+<li>Visual JSON editor with real-time validation</li>
+<li>Format button for clean JSON output</li>
+<li>AI enhancement button for entire config improvement</li>
+<li>Error highlighting with specific messages</li>
+<li>
+<p>Draft/publish workflow</p>
+</li>
+<li>
+<p><strong>System Prompts Editor</strong></p>
+</li>
+<li>Manage multiple system prompts (main, qualification, outbound, meeting_booking, followup)</li>
+<li>Template library with pre-configured prompts</li>
+<li>Individual AI enhancement buttons per prompt</li>
+<li>Add/remove custom prompts</li>
+<li>
+<p>LLM-powered prompt improvement via OpenRouter (Claude 3.5 Sonnet)</p>
+</li>
+<li>
+<p><strong>File Attachment for LLM Grounding</strong></p>
+</li>
+<li>Upload documents (PDF, TXT, MD, JSON, CSV, DOCX)</li>
+<li>10MB file size limit per file</li>
+<li>Workspace-isolated file storage</li>
+<li>Drag-and-drop support</li>
+<li>
+<p>Files provide context to LLM during conversations</p>
+</li>
+<li>
+<p><strong>Default Template System</strong></p>
+</li>
+<li>Comprehensive conversation engine template auto-loaded for new scenarios</li>
+<li>6 conversation stages (outbound → start → qualification → full qualification → meeting booking → closure)</li>
+<li>11 data collection slots (industry, role, interest_trigger, email, etc.)</li>
+<li>4 action triggers (product_request, meeting booking, stop_script, handover)</li>
+<li>Strict communication rules (1 question/message, 2 sentences max, character limits)</li>
+<li>Follow-up sequences for silence handling</li>
+<li>
+<p>5 specialized system prompts</p>
+</li>
+<li>
+<p><strong>Interactive Scenario Preview</strong></p>
+</li>
+<li>Step-by-step conversation simulator</li>
+<li>Variable state tracking</li>
+<li>Supports multiple step types (message, question_text, question_choice, form, end)</li>
+<li>
+<p>Test scenarios before publishing</p>
+</li>
+<li>
+<p><strong>LLM Enhancement (3 Types)</strong></p>
+</li>
+<li><strong>Prompt-level</strong>: Individual system prompt enhancement</li>
+<li><strong>JSON-level</strong>: Entire configuration enhancement (structure, consistency, rules)</li>
+<li><strong>Full scenario</strong>: Holistic enhancement including prompts + config</li>
+</ol>
+<p><strong>Acceptance Criteria:</strong>
+- ✅ Admin creates scenario with name and description
+- ✅ Default comprehensive template auto-loaded
+- ✅ JSON editor with real-time validation (entry_step_id, steps, references)
+- ✅ System prompts editor with templates and AI enhancement
+- ✅ File upload component with workspace isolation
+- ✅ Interactive preview simulator
+- ✅ Three levels of AI enhancement via OpenRouter API
+- ✅ Save as draft functionality
+- ✅ Publish to make scenario active
+- ✅ Widget uses latest published scenario
+- ✅ Sidebar navigation integrated
+- ✅ Error handling and success notifications</p>
+<p><strong>Frontend Files:</strong>
+- Main page: <code>/src/pages/ScenarioConfiguration/ScenarioConfiguration.jsx</code> (450+ lines)
+- JSON editor: <code>/src/pages/ScenarioConfiguration/components/JsonEditor.jsx</code>
+- System prompts: <code>/src/pages/ScenarioConfiguration/components/SystemPromptEditor.jsx</code>
+- File attachment: <code>/src/pages/ScenarioConfiguration/components/FileAttachment.jsx</code>
+- Preview: <code>/src/pages/ScenarioConfiguration/components/ScenarioPreview.jsx</code>
+- API service: <code>/src/services/api.js</code> (updated with scenarios, KB, LLM, file endpoints)
+- Routing: <code>/src/App.jsx</code> (added /scenarios route)
+- Navigation: <code>/src/layout/Sidebar/Sidebar.jsx</code> (added Scenarios menu item)</p>
+<p><strong>Backend Files:</strong>
+- API endpoints: <code>/app/api/v1/scenarios.py</code> (list, create, get, update, publish)
+- LLM enhancement: <code>/app/api/v1/llm.py</code> (OpenRouter integration with 3 enhancement types)
+- File upload: <code>/app/api/v1/files.py</code> (upload with workspace isolation, delete)
+- Router registration: <code>/app/main.py</code> (llm and files routes registered)
+- Models: <code>/app/models/scenario.py</code> (existing)
+- Schemas: <code>/app/schemas/scenario.py</code> (existing)</p>
+<p><strong>Documentation:</strong>
+- User guide: <code>/docs/SCENARIO_CONFIGURATION_GUIDE.md</code>
+- Template reference: <code>/docs/DEFAULT_SCENARIO_TEMPLATE.md</code>
+- Technical spec: <code>/docs/AI Conversation Engine – Technical Specification/config script template.md</code></p>
+<p><strong>API Endpoints:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>POST   /v1/scenarios              - Create scenario
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>GET    /v1/scenarios              - List scenarios
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>GET    /v1/scenarios/{id}         - Get scenario details
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>PATCH  /v1/scenarios/{id}         - Update scenario
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>POST   /v1/scenarios/{id}/publish - Publish scenario
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>POST   /v1/llm/enhance            - Enhance prompt or config
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>POST   /v1/llm/generate-config    - Generate scenario from description
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>POST   /v1/files/upload           - Upload file
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>DELETE /v1/files/{id}             - Delete file
+</code></pre></div></p>
+<p><strong>Environment Variables Required:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a># Backend
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>OPENROUTER_API_KEY=your-openrouter-api-key
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>UPLOAD_DIR=./uploads
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a># Frontend
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>VITE_API_BASE_URL=http://localhost:8000
+</code></pre></div></p>
+<p><strong>Default Template Structure:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p">{</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">  </span><span class="nt">&quot;bot_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sellrise_conversation_engine&quot;</span><span class="p">,</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">  </span><span class="nt">&quot;rules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">    </span><span class="nt">&quot;one_question_rule&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">    </span><span class="nt">&quot;max_sentences&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">    </span><span class="nt">&quot;max_chars&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">420</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;outbound&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">520</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;followup&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">520</span><span class="w"> </span><span class="p">},</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="w">    </span><span class="nt">&quot;facts_only&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="w">    </span><span class="nt">&quot;forbid&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;I think&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;probably&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;maybe&quot;</span><span class="p">],</span>
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="w">    </span><span class="nt">&quot;emoji&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;allowed&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="w">  </span><span class="p">},</span>
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="w">  </span><span class="nt">&quot;slots_schema&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* 11 slots */</span><span class="w"> </span><span class="p">},</span>
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="w">  </span><span class="nt">&quot;actions_catalog&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* 4 actions */</span><span class="w"> </span><span class="p">},</span>
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="w">  </span><span class="nt">&quot;stages&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="cm">/* 6 stages with tasks */</span><span class="w"> </span><span class="p">],</span>
+<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a><span class="w">  </span><span class="nt">&quot;followups&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="cm">/* 2 followup sequences */</span><span class="w"> </span><span class="p">],</span>
+<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a><span class="w">  </span><span class="nt">&quot;system_prompts&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* 5 prompts */</span><span class="w"> </span><span class="p">},</span>
+<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a><span class="w">  </span><span class="nt">&quot;llm_config&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a><span class="w">    </span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;anthropic/claude-3.5-sonnet&quot;</span><span class="p">,</span>
+<a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a><span class="w">    </span><span class="nt">&quot;temperature&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.7</span><span class="p">,</span>
+<a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a><span class="w">    </span><span class="nt">&quot;max_tokens&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2000</span>
+<a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a><span class="p">}</span>
+</code></pre></div></p>
+<p><strong>Dependencies:</strong> Workspace Management, RBAC (Admin-only), OpenRouter API</p>
+<hr />
+<h3 id="42-scenario-simulatorpreview">4.2 Scenario Simulator/Preview<a class="headerlink" href="#42-scenario-simulatorpreview" title="Permanent link">&para;</a></h3>
+<p><strong>Priority:</strong> 🟡 MVP Phase 2<br />
+<strong>Category:</strong> Scenario Engine<br />
+<strong>Status:</strong> ✅ <strong>IMPLEMENTED</strong></p>
+<p><strong>Description:</strong><br />
+Interactive preview simulator to test scenario flow before publishing, integrated into the Scenario Configuration interface.</p>
+<p><strong>User Story:</strong>  </p>
+<blockquote>
+<p><strong>As an Admin</strong>, I can simulate a draft scenario to verify the flow works correctly before publishing.</p>
+</blockquote>
+<p><strong>Features Implemented:</strong>
+- Interactive conversation preview panel
+- Step-by-step execution through scenario
+- Variable state tracking and display
+- Supports multiple step types:
+  - <code>message</code>: Display bot messages
+  - <code>question_text</code>: Free-text input with validation
+  - <code>question_choice</code>: Multiple choice selection
+  - <code>form</code>: Multi-field forms
+  - <code>end</code>: Conversation termination
+- Real-time conversation history display
+- Variable inspector showing current state
+- Reset functionality to restart simulation</p>
+<p><strong>Acceptance Criteria:</strong>
+- ✅ Simulator integrated in scenario configuration page
+- ✅ Shows current step UI correctly
+- ✅ Displays conversation history
+- ✅ Tracks and displays variables/state
+- ✅ Admin provides inputs and advances through flow
+- ✅ Handles validation (required fields, formats)
+- ✅ Shows error messages for invalid inputs
+- ✅ Reset button restarts simulation
+- ✅ Uses same rendering logic as production widget</p>
+<p><strong>Implementation Details:</strong>
+- Component: <code>/src/pages/ScenarioConfiguration/components/ScenarioPreview.jsx</code>
+- Integrated in main scenario configuration page
+- Real-time preview as configuration is edited
+- No backend required (client-side simulation)
+- Compatible with both simple and stage-based scenarios</p>
+<p><strong>UI Components:</strong>
+- Simulator panel with conversation display
+- Current step renderer
+- Variable inspector sidebar
+- Input controls for each step type
+- Reset and navigation controls</p>
+<p><strong>Step Type Handling:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1">// Supported step types</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="o">-</span><span class="w"> </span><span class="nx">message</span><span class="o">:</span><span class="w"> </span><span class="nx">Display</span><span class="w"> </span><span class="nx">text</span><span class="p">,</span><span class="w"> </span><span class="nx">auto</span><span class="o">-</span><span class="nx">advance</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="o">-</span><span class="w"> </span><span class="nx">question_text</span><span class="o">:</span><span class="w"> </span><span class="nx">Text</span><span class="w"> </span><span class="nx">input</span><span class="w"> </span><span class="kd">with</span><span class="w"> </span><span class="nx">validation</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="o">-</span><span class="w"> </span><span class="nx">question_choice</span><span class="o">:</span><span class="w"> </span><span class="nx">Button</span><span class="w"> </span><span class="nx">choices</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="o">-</span><span class="w"> </span><span class="nx">form</span><span class="o">:</span><span class="w"> </span><span class="nx">Multi</span><span class="o">-</span><span class="nx">field</span><span class="w"> </span><span class="kd">with</span><span class="w"> </span><span class="nx">validation</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="o">-</span><span class="w"> </span><span class="nx">end</span><span class="o">:</span><span class="w"> </span><span class="nx">Show</span><span class="w"> </span><span class="nx">completion</span><span class="w"> </span><span class="nx">message</span>
+</code></pre></div></p>
+<p><strong>Dependencies:</strong> Scenario Configuration (4.1)</p>
+<hr />
+<h3 id="43-step-types-implementation">4.3 Step Types Implementation<a class="headerlink" href="#43-step-types-implementation" title="Permanent link">&para;</a></h3>
+<p><strong>Priority:</strong> 🔴 MVP Phase 1<br />
+<strong>Category:</strong> Scenario Engine (Frontend)</p>
+<p><strong>Description:</strong><br />
+Core step types for conversation flow.</p>
+<p><strong>Step Types:</strong>
+- <code>message</code>: Display text to visitor
+- <code>question_text</code>: Free-text input
+- <code>question_choice</code>: Multiple choice
+- <code>form</code>: Multi-field form
+- <code>conditional_branch</code>: Logic branching based on variables
+- <code>kb_search</code>: Knowledge base lookup
+- <code>handoff_booking_link</code>: Show booking CTA
+- <code>handoff_operator</code>: Transfer to human (future)
+- <code>end</code>: Terminate conversation</p>
+<p><strong>Requirements:</strong>
+- Render each step type in widget
+- Validate inputs (email, phone, required fields)
+- Store answers in session state
+- Progress to next step deterministically</p>
+<p><strong>Acceptance Criteria:</strong>
+- ✅ Each step type renders correctly
+- ✅ Validation prevents invalid progression
+- ✅ Answers stored and accessible
+- ✅ Same inputs → same next step (deterministic)</p>
+<p><strong>Dependencies:</strong> Widget Session, Scenario Configuration</p>
+<hr />
+<h3 id="44-event-logging">4.4 Event Logging<a class="headerlink" href="#44-event-logging" title="Permanent link">&para;</a></h3>
+<p><strong>Priority:</strong> 🔴 MVP Phase 1<br />
+<strong>Category:</strong> Scenario Engine (Backend)</p>
+<p><strong>Description:</strong><br />
+Append-only log of all conversation interactions.</p>
+<p><strong>User Story:</strong>  </p>
+<blockquote>
+<p><strong>As an Agent</strong>, I see a correct transcript in the CRM.</p>
+</blockquote>
+<p><strong>Event Types:</strong>
+- <code>widget_opened</code>
+- <code>chat_started</code>
+- <code>step_completed</code>
+- <code>lead_submitted</code>
+- <code>booking_link_shown</code>
+- <code>booking_link_clicked</code>
+- <code>stage_changed</code>
+- <code>owner_assigned</code>
+- <code>note_added</code></p>
+<p><strong>Requirements:</strong>
+- Log every significant interaction
+- Store in <code>lead_events</code> table
+- Include event_data (JSON payload)
+- Ordered by timestamp
+- Never delete (append-only)</p>
+<p><strong>Acceptance Criteria:</strong>
+- ✅ Widget logs events via API
+- ✅ Events include enough data to render transcript
+- ✅ Transcript rendered from events ordered by created_at
+- ✅ Deleting events (if ever) removes from transcript</p>
+<p><strong>API Endpoint:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>POST /v1/widget/event
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>Body: { session_id, event_type, event_data, ts_client }
+</code></pre></div></p>
+<p><strong>Dependencies:</strong> Widget Session</p>
+<hr />
+<h3 id="45-centralized-conversation-message-system">4.5 Centralized Conversation &amp; Message System<a class="headerlink" href="#45-centralized-conversation-message-system" title="Permanent link">&para;</a></h3>
+<p><strong>Priority:</strong> 🔴 MVP Phase 1<br />
+<strong>Category:</strong> Conversation Infrastructure<br />
+<strong>Status:</strong> ✅ <strong>IMPLEMENTED</strong></p>
+<p><strong>Description:</strong><br />
+Centralized conversation management system that ensures all lead conversations across all channels (web, WhatsApp, Telegram, Instagram, etc.) are processed by a single AI "brain" per workspace, with complete workspace isolation to prevent context mixing between admins.</p>
+<p><strong>User Story:</strong>  </p>
+<blockquote>
+<p><strong>As an Admin</strong>, I want all my lead conversations to be handled by one consistent AI persona, regardless of which channel they use, and I never want my conversations mixed with other admins' workspaces.</p>
+</blockquote>
+<p><strong>Architecture Principles:</strong></p>
+<ol>
+<li><strong>One Brain Per Project (Workspace)</strong></li>
+<li>Each workspace has ONE published scenario (the "brain")</li>
+<li>All conversations in that workspace use the same scenario</li>
+<li>
+<p>Consistent AI behavior across all channels</p>
+</li>
+<li>
+<p><strong>Workspace Isolation (Critical)</strong></p>
+</li>
+<li>Every conversation, message, and lead scoped to workspace_id</li>
+<li>Database queries enforce workspace checks</li>
+<li>Context cannot leak between workspaces</li>
+<li>
+<p>One admin's data never visible to another</p>
+</li>
+<li>
+<p><strong>Channel-Agnostic Processing</strong></p>
+</li>
+<li>Same AI handles web, WhatsApp, Telegram, Instagram, etc.</li>
+<li>Channel tracked but doesn't change logic</li>
+<li>
+<p>Consistent persona across all channels</p>
+</li>
+<li>
+<p><strong>Stateful Conversations</strong></p>
+</li>
+<li>Full context maintained (slots, stage, task, variables)</li>
+<li>State persists across messages</li>
+<li>No context lost between messages</li>
+</ol>
+<p><strong>Database Schema:</strong></p>
+<p>Conversations Table:
+- <code>workspace_id</code> (FK, indexed) - Workspace isolation
+- <code>lead_id</code> (FK, indexed) - Which lead
+- <code>scenario_id</code> (FK) - The "brain" processing this conversation
+- <code>channel</code> (indexed) - web, whatsapp, telegram, instagram, messenger, email
+- <code>channel_identifier</code> - Phone number, username, etc.
+- <code>status</code> (indexed) - active, snoozed, closed, handed_off
+- <code>current_stage_id</code> - Current stage in flow
+- <code>current_task_id</code> - Current task being executed
+- <code>context</code> (JSONB) - Full conversation state (slots, variables, used_phrases, etc.)
+- <code>last_message_at</code>, <code>last_user_message_at</code>, <code>last_bot_message_at</code> - Timestamps
+- <code>message_count</code> - Total messages in conversation</p>
+<p>Messages Table:
+- <code>conversation_id</code> (FK, indexed) - Parent conversation
+- <code>role</code> (indexed) - user, assistant, system
+- <code>content</code> - Message text
+- <code>external_message_id</code> - Channel-specific ID (WhatsApp/Telegram/etc.)
+- <code>metadata</code> (JSONB) - stage_id, task_id, actions, attachments, processing_time
+- <code>is_delivered</code>, <code>delivered_at</code>, <code>is_read</code>, <code>read_at</code> - Delivery tracking
+- <code>is_error</code>, <code>error_message</code> - Error handling</p>
+<p><strong>API Endpoints:</strong></p>
+<p>Public (Widget):
+- <code>POST /v1/widget/message</code> - Send message from lead, get bot response</p>
+<p>Admin (Authenticated):
+- <code>GET /v1/conversations</code> - List conversations (workspace-filtered)
+- <code>GET /v1/conversations/{id}</code> - Get conversation with messages
+- <code>PATCH /v1/conversations/{id}</code> - Update status or context
+- <code>GET /v1/conversations/{id}/messages</code> - Get all messages</p>
+<p><strong>Service Layer:</strong>
+- <code>get_or_create_conversation()</code> - One active conversation per lead+channel
+- <code>add_message()</code> - Add message and update conversation state
+- <code>get_conversation_messages()</code> - Retrieve messages with workspace check
+- <code>update_conversation_status()</code> - Close, snooze, hand off
+- <code>get_active_conversations()</code> - List for admin inbox</p>
+<p><strong>Security Features:</strong>
+- ✅ Workspace isolation enforced at database, service, and API layers
+- ✅ All queries include workspace_id checks
+- ✅ Lead verification before conversation creation
+- ✅ JWT tokens restrict to user's workspace
+- ✅ 404 responses prevent data leakage</p>
+<p><strong>Acceptance Criteria:</strong>
+- ✅ Models created: <code>Conversation</code>, <code>Message</code>
+- ✅ Relationships added to <code>Workspace</code>, <code>Lead</code> models
+- ✅ Service layer with workspace isolation
+- ✅ API endpoints with authentication
+- ✅ Widget endpoint for public message sending
+- ✅ Router registered in main.py
+- ✅ All conversations use workspace's published scenario
+- ✅ Context maintained across messages
+- ✅ Channel-agnostic processing (same brain for all channels)
+- ✅ Admin cannot see conversations from other workspaces</p>
+<p><strong>Files Implemented:</strong>
+- Models: <code>/app/models/conversation.py</code>, <code>/app/models/message.py</code>
+- Service: <code>/app/services/conversation_service.py</code>
+- API: <code>/app/api/v1/conversations.py</code> (admin), <code>/app/api/v1/widget.py</code> (updated)
+- Schemas: <code>/app/schemas/conversation.py</code>
+- Documentation: <code>/docs/CONVERSATION_SYSTEM_ARCHITECTURE.md</code></p>
+<p><strong>Next Steps:</strong>
+1. Create database migration: <code>alembic revision --autogenerate -m "add_conversations_and_messages"</code>
+2. Run migration: <code>alembic upgrade head</code>
+3. Implement scenario processor for full LLM integration
+4. Test multi-channel flows (web → WhatsApp → Telegram)
+5. Build admin conversation inbox UI</p>
+<p><strong>Dependencies:</strong> Workspace Management, Scenario Configuration, Lead Management</p>
+<hr />
+<h3 id="46-ai-conversation-engine-llm-powered">4.6 AI Conversation Engine (LLM-Powered)<a class="headerlink" href="#46-ai-conversation-engine-llm-powered" title="Permanent link">&para;</a></h3>
+<p><strong>Priority:</strong> 🟢 Post-MVP<br />
+<strong>Category:</strong> Scenario Engine (Advanced)</p>
+<p><strong>Description:</strong><br />
+Stage-based AI dialogue system with LLM integration for dynamic responses.</p>
+<p><strong>Architecture:</strong>
+1. Conversation State Store
+2. Stage &amp; Task Router
+3. Prompt Assembler
+4. LLM Executor
+5. Action Dispatcher</p>
+<p><strong>Stages:</strong>
+- Stage 0: Outbound Message
+- Stage 1: Conversation Start
+- Stage 2: Initial Qualification
+- Stage 3: Full Qualification
+- Stage 4: Meeting Booking
+- Stage 5: Closure</p>
+<p><strong>Requirements:</strong>
+- Config-driven stage/task definitions
+- LLM generates responses based on script
+- Structured JSON output from LLM
+- Action tags trigger backend integrations
+- Slot system stores conversation data
+- Facts-only responses (no hallucination)</p>
+<p><strong>Constraints:</strong>
+- One question per message
+- Max 2 sentences
+- Max character limits (420 default, 520 outbound/followup)
+- Approved phrases only
+- No emojis (configurable)</p>
+<p><strong>Technical Notes:</strong>
+- Separates routing logic (backend) from response generation (LLM)
+- Uses YAML config templates
+- See: <code>AI Conversation Engine – Technical Specification/</code></p>
+<p><strong>Dependencies:</strong> Scenario Engine (basic), Knowledge Base</p>
+<hr />
+<h2 id="5-lead-management-mini-crm">5. Lead Management (Mini-CRM)<a class="headerlink" href="#5-lead-management-mini-crm" title="Permanent link">&para;</a></h2>
+<p>Detailed PRDs for each CRM functionality are available in <code>docs/crm-prds/README.md</code>.</p>
+<h3 id="51-lead-creation-deduplication">5.1 Lead Creation &amp; Deduplication<a class="headerlink" href="#51-lead-creation-deduplication" title="Permanent link">&para;</a></h3>
+<p><strong>Priority:</strong> 🔴 MVP Phase 1<br />
+<strong>Category:</strong> CRM</p>
+<p><strong>Description:</strong><br />
+Create leads with idempotent deduplication logic.</p>
+<p><strong>User Story:</strong>  </p>
+<blockquote>
+<p><strong>As a Visitor</strong>, I submit my contact details and they appear in the CRM.</p>
+</blockquote>
+<p><strong>Dedup Rules:</strong>
+1. Normalize email (lowercase, trim) → <code>dedup_email</code>
+2. Normalize phone (E.164 format) → <code>dedup_phone</code>
+3. Match by <code>dedup_email</code> first, else <code>dedup_phone</code>, else create new</p>
+<p><strong>Requirements:</strong>
+- Lead fields: name, email, phone, consent
+- Qualification fields: procedure, budget, timeframe, location
+- Source tracking: page_url, referrer, utm_*
+- Auto-score on creation (HOT/WARM/COLD)</p>
+<p><strong>Acceptance Criteria:</strong>
+- ✅ Visitor submits contact via widget
+- ✅ Backend upserts lead by dedup rules
+- ✅ Existing lead updated if match found
+- ✅ New lead created if no match
+- ✅ DB constraint prevents duplicate <code>dedup_email</code> in workspace
+- ✅ Consent captured with timestamp</p>
+<p><strong>API Endpoint:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>POST /v1/widget/lead
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>Body: { session_id, name, email, phone, consent, qualification_data }
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>Response: { lead_id, score, stage }
+</code></pre></div></p>
+<p><strong>Dependencies:</strong> Widget Session, Event Logging</p>
+<hr />
+<h3 id="52-lead-inbox-newunassigned">5.2 Lead Inbox (New/Unassigned)<a class="headerlink" href="#52-lead-inbox-newunassigned" title="Permanent link">&para;</a></h3>
+<p><strong>Priority:</strong> 🔴 MVP Phase 1<br />
+<strong>Category:</strong> CRM (Frontend + Backend)</p>
+<p><strong>Description:</strong><br />
+Default view for new leads requiring attention.</p>
+<p><strong>User Story:</strong>  </p>
+<blockquote>
+<p><strong>As an Agent</strong>, I see new/unassigned leads to process.</p>
+</blockquote>
+<p><strong>Requirements:</strong>
+- Filter: stage='new' OR owner_id IS NULL
+- List view with key fields
+- Sorting by created_at (newest first)
+- Click to open lead detail</p>
+<p><strong>Display Fields:</strong>
+- Created date/time
+- Name, email, phone
+- Score badge (Hot/Warm/Cold)
+- Procedure/interest
+- Source (page_url or short domain)</p>
+<p><strong>Acceptance Criteria:</strong>
+- ✅ Inbox shows new/unassigned leads only
+- ✅ Sorted by newest first
+- ✅ Displays score, contact, procedure
+- ✅ Clicking row opens lead detail
+- ✅ Pagination supported</p>
+<p><strong>UI Design:</strong>
+- Table or card layout
+- Color-coded score badges
+- Quick actions (assign, view)</p>
+<p><strong>Dependencies:</strong> Lead Creation, Lead Detail</p>
+<hr />
+<h3 id="53-pipeline-kanban-view">5.3 Pipeline (Kanban View)<a class="headerlink" href="#53-pipeline-kanban-view" title="Permanent link">&para;</a></h3>
+<p><strong>Priority:</strong> 🔴 MVP Phase 1<br />
+<strong>Category:</strong> CRM (Frontend + Backend)</p>
+<p><strong>Description:</strong><br />
+Visual pipeline for managing leads by stage.</p>
+<p><strong>User Story:</strong>  </p>
+<blockquote>
+<p><strong>As an Agent</strong>, I manage leads by stage visually.</p>
+</blockquote>
+<p><strong>Stages (Columns):</strong>
+- NEW
+- QUALIFIED
+- CONTACTED
+- BOOKED
+- WON
+- LOST</p>
+<p><strong>Requirements:</strong>
+- Drag-and-drop to change stage
+- Dropdown stage selector (mobile)
+- Stage change logs event
+- Viewer role cannot change stage</p>
+<p><strong>Acceptance Criteria:</strong>
+- ✅ Stages displayed as vertical columns
+- ✅ Leads draggable between columns
+- ✅ Stage change updates lead.stage
+- ✅ Logs stage_changed event with old/new values
+- ✅ Viewer cannot change stage (403)</p>
+<p><strong>API Endpoint:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>PATCH /v1/leads/{id}
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>Body: { stage: &quot;qualified&quot; }
+</code></pre></div></p>
+<p><strong>Dependencies:</strong> Lead Creation, RBAC</p>
+<hr />
+<h3 id="54-lead-detail-view">5.4 Lead Detail View<a class="headerlink" href="#54-lead-detail-view" title="Permanent link">&para;</a></h3>
+<p><strong>Priority:</strong> 🔴 MVP Phase 1<br />
+<strong>Category:</strong> CRM (Frontend + Backend)</p>
+<p><strong>Description:</strong><br />
+Comprehensive view of individual lead with actions.</p>
+<p><strong>User Story:</strong>  </p>
+<blockquote>
+<p><strong>As an Agent</strong>, I review lead details and take actions.</p>
+</blockquote>
+<p><strong>Display Sections:</strong>
+1. <strong>Contact Card</strong>: Name, email, phone, preferred contact method, timezone
+2. <strong>Qualification</strong>: Procedure, budget, timeframe, location, score
+3. <strong>Pipeline</strong>: Current stage, owner
+4. <strong>Source</strong>: Page URL, referrer, UTM parameters
+5. <strong>Transcript</strong>: Conversation timeline from events
+6. <strong>Notes</strong>: Agent notes (chronological)
+7. <strong>Tags</strong>: Lead categorization</p>
+<p><strong>Actions:</strong>
+- Assign owner (self or other agent)
+- Change stage
+- Add note
+- Add/remove tags
+- Send follow-up (future)</p>
+<p><strong>Acceptance Criteria:</strong>
+- ✅ All lead data displayed
+- ✅ Transcript rendered from events (ordered)
+- ✅ Actions log appropriate events
+- ✅ Notes visible to all workspace users
+- ✅ Tags searchable</p>
+<p><strong>API Endpoints:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>GET    /v1/leads/{id}
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>PATCH  /v1/leads/{id}
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>POST   /v1/leads/{id}/notes
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>PATCH  /v1/leads/{id}/tags
+</code></pre></div></p>
+<p><strong>Dependencies:</strong> Lead Creation, Event Logging, Notes</p>
+<hr />
+<h3 id="55-lead-search-filters">5.5 Lead Search &amp; Filters<a class="headerlink" href="#55-lead-search-filters" title="Permanent link">&para;</a></h3>
+<p><strong>Priority:</strong> 🔴 MVP Phase 1<br />
+<strong>Category:</strong> CRM (Backend)</p>
+<p><strong>Description:</strong><br />
+Search and filter leads by multiple criteria.</p>
+<p><strong>User Story:</strong>  </p>
+<blockquote>
+<p><strong>As an Agent</strong>, I search/filter leads to find specific contacts.</p>
+</blockquote>
+<p><strong>Filters:</strong>
+- Stage (dropdown)
+- Score (dropdown: Hot/Warm/Cold)
+- Owner (dropdown: users)
+- Date range (created_at)
+- Procedure/category</p>
+<p><strong>Search:</strong>
+- Name (case-insensitive)
+- Email (case-insensitive)
+- Phone</p>
+<p><strong>Requirements:</strong>
+- Combine multiple filters (AND logic)
+- Pagination (offset/limit)
+- Performance for thousands of leads</p>
+<p><strong>Acceptance Criteria:</strong>
+- ✅ Filters applied via query params
+- ✅ Search matches name/email/phone
+- ✅ Results paginated
+- ✅ Fast queries (&lt;500ms for 10k leads)</p>
+<p><strong>API Endpoint:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>GET /v1/leads?stage=new&amp;score=hot&amp;owner=user_id&amp;search=john&amp;limit=20&amp;offset=0
+</code></pre></div></p>
+<p><strong>Dependencies:</strong> Lead Creation</p>
+<hr />
+<h3 id="56-lead-notes">5.6 Lead Notes<a class="headerlink" href="#56-lead-notes" title="Permanent link">&para;</a></h3>
+<p><strong>Priority:</strong> 🔴 MVP Phase 1<br />
+<strong>Category:</strong> CRM</p>
+<p><strong>Description:</strong><br />
+Agent annotations and follow-up notes on leads.</p>
+<p><strong>User Story:</strong>  </p>
+<blockquote>
+<p><strong>As an Agent</strong>, I add notes to track follow-ups and context.</p>
+</blockquote>
+<p><strong>Requirements:</strong>
+- Create note with text content
+- Display notes chronologically
+- Show author and timestamp
+- Edit/delete own notes (optional)</p>
+<p><strong>Acceptance Criteria:</strong>
+- ✅ Agent adds note to lead
+- ✅ Note shows author, timestamp, content
+- ✅ Notes listed in lead detail
+- ✅ Logs note_added event</p>
+<p><strong>API Endpoints:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>POST   /v1/leads/{id}/notes
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>GET    /v1/leads/{id}/notes
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>DELETE /v1/notes/{note_id}
+</code></pre></div></p>
+<p><strong>Dependencies:</strong> Lead Detail, RBAC</p>
+<hr />
+<h3 id="57-lead-assignment">5.7 Lead Assignment<a class="headerlink" href="#57-lead-assignment" title="Permanent link">&para;</a></h3>
+<p><strong>Priority:</strong> 🔴 MVP Phase 1<br />
+<strong>Category:</strong> CRM</p>
+<p><strong>Description:</strong><br />
+Assign leads to team members for ownership.</p>
+<p><strong>User Story:</strong>  </p>
+<blockquote>
+<p><strong>As an Agent</strong>, I assign leads to myself or other agents.</p>
+</blockquote>
+<p><strong>Requirements:</strong>
+- Assign owner (user_id)
+- Unassign (set owner_id to null)
+- Log owner_assigned event
+- Filter by assigned owner</p>
+<p><strong>Acceptance Criteria:</strong>
+- ✅ Agent assigns lead to user
+- ✅ Logs owner_assigned event with old/new owner
+- ✅ Lead detail shows current owner
+- ✅ Inbox filters by unassigned</p>
+<p><strong>API Endpoint:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>PATCH /v1/leads/{id}
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>Body: { owner_id: &quot;user_uuid&quot; }
+</code></pre></div></p>
+<p><strong>Dependencies:</strong> Lead Detail, Users</p>
+<hr />
+<h3 id="58-lead-scoring">5.8 Lead Scoring<a class="headerlink" href="#58-lead-scoring" title="Permanent link">&para;</a></h3>
+<p><strong>Priority:</strong> 🔴 MVP Phase 1<br />
+<strong>Category:</strong> CRM (Backend)</p>
+<p><strong>Description:</strong><br />
+Automated lead qualification scoring.</p>
+<p><strong>Scoring Logic:</strong>
+- <strong>HOT</strong>: High budget + urgent timeframe + clear need
+- <strong>WARM</strong>: Medium budget or longer timeframe
+- <strong>COLD</strong>: Low budget or no clear timeline</p>
+<p><strong>Requirements:</strong>
+- Score calculated on lead submission
+- Re-score when qualification data updated
+- Configurable scoring rules (future)</p>
+<p><strong>Acceptance Criteria:</strong>
+- ✅ Lead scored automatically on creation
+- ✅ Score stored in lead.score
+- ✅ Logs score_assigned event
+- ✅ Re-scoring when data changes</p>
+<p><strong>Technical Notes:</strong>
+- Rule-based logic in <code>lead_scoring.py</code>
+- Can be done via scenario conditional OR server-side service</p>
+<p><strong>Dependencies:</strong> Lead Creation</p>
+<hr />
+<h2 id="6-knowledge-base">6. Knowledge Base<a class="headerlink" href="#6-knowledge-base" title="Permanent link">&para;</a></h2>
+<h3 id="61-kb-articles-crud">6.1 KB Articles (CRUD)<a class="headerlink" href="#61-kb-articles-crud" title="Permanent link">&para;</a></h3>
+<p><strong>Priority:</strong> 🔴 MVP Phase 1<br />
+<strong>Category:</strong> Knowledge Base</p>
+<p><strong>Description:</strong><br />
+Create and manage help articles for AI responses.</p>
+<p><strong>User Story:</strong>  </p>
+<blockquote>
+<p><strong>As an Admin</strong>, I create/update articles for the knowledge base.</p>
+</blockquote>
+<p><strong>Fields:</strong>
+- Title
+- Body (Markdown)
+- Category
+- Tags (array)
+- Language (default: EN)
+- Updated_at, updated_by</p>
+<p><strong>Acceptance Criteria:</strong>
+- ✅ Admin creates article with title, body, category
+- ✅ Markdown rendering supported
+- ✅ Tags for categorization
+- ✅ Edit/delete supported
+- ✅ Only Admin can edit (RBAC)
+- ✅ Audit trail (updated_by, updated_at)</p>
+<p><strong>API Endpoints:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>POST   /v1/kb/articles
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>GET    /v1/kb/articles
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>GET    /v1/kb/articles/{id}
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>PATCH  /v1/kb/articles/{id}
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>DELETE /v1/kb/articles/{id}
+</code></pre></div></p>
+<p><strong>Dependencies:</strong> RBAC (Admin-only)</p>
+<hr />
+<h3 id="62-kb-faqs-crud">6.2 KB FAQs (CRUD)<a class="headerlink" href="#62-kb-faqs-crud" title="Permanent link">&para;</a></h3>
+<p><strong>Priority:</strong> 🔴 MVP Phase 1<br />
+<strong>Category:</strong> Knowledge Base</p>
+<p><strong>Description:</strong><br />
+Manage frequently asked questions.</p>
+<p><strong>User Story:</strong>  </p>
+<blockquote>
+<p><strong>As an Admin</strong>, I create/update FAQ items.</p>
+</blockquote>
+<p><strong>Fields:</strong>
+- Question
+- Answer
+- Category
+- Tags (array)
+- Language</p>
+<p><strong>Acceptance Criteria:</strong>
+- ✅ Admin creates FAQ with question/answer
+- ✅ Edit/delete supported
+- ✅ Tags for categorization
+- ✅ Only Admin can edit
+- ✅ Audit trail</p>
+<p><strong>API Endpoints:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>POST   /v1/kb/faq
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>GET    /v1/kb/faq
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>GET    /v1/kb/faq/{id}
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>PATCH  /v1/kb/faq/{id}
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>DELETE /v1/kb/faq/{id}
+</code></pre></div></p>
+<p><strong>Dependencies:</strong> RBAC (Admin-only)</p>
+<hr />
+<h3 id="63-kb-search-full-text">6.3 KB Search (Full-Text)<a class="headerlink" href="#63-kb-search-full-text" title="Permanent link">&para;</a></h3>
+<p><strong>Priority:</strong> 🔴 MVP Phase 1<br />
+<strong>Category:</strong> Knowledge Base (Backend)</p>
+<p><strong>Description:</strong><br />
+Search articles and FAQs for visitor queries.</p>
+<p><strong>User Story:</strong>  </p>
+<blockquote>
+<p><strong>As a Visitor</strong>, I get relevant answers from the knowledge base.</p>
+</blockquote>
+<p><strong>Requirements:</strong>
+- Full-text search across articles and FAQs
+- Ranking by relevance
+- Return type (article/faq), title/question, snippet
+- Empty result fallback: "Please leave contact details"</p>
+<p><strong>Acceptance Criteria:</strong>
+- ✅ Widget queries KB via API
+- ✅ Returns ranked results
+- ✅ Includes snippet/preview
+- ✅ Empty results return empty array
+- ✅ Widget shows fallback on empty</p>
+<p><strong>API Endpoint:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>GET /v1/widget/kb/search?q=cargo+bike+price&amp;limit=5
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>Response: [
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>  { type: &quot;article&quot;, id: &quot;...&quot;, title: &quot;...&quot;, snippet: &quot;...&quot; },
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>  { type: &quot;faq&quot;, id: &quot;...&quot;, question: &quot;...&quot;, answer_preview: &quot;...&quot; }
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>]
+</code></pre></div></p>
+<p><strong>Technical Notes:</strong>
+- PostgreSQL full-text search (MVP)
+- Use <code>ts_vector</code> and <code>ts_rank</code>
+- Future: Elasticsearch or vector embeddings</p>
+<p><strong>Dependencies:</strong> KB Articles, KB FAQs</p>
+<hr />
+<h3 id="64-kb-only-answer-mode-mvp-constraint">6.4 KB-Only Answer Mode (MVP Constraint)<a class="headerlink" href="#64-kb-only-answer-mode-mvp-constraint" title="Permanent link">&para;</a></h3>
+<p><strong>Priority:</strong> 🔴 MVP Phase 1<br />
+<strong>Category:</strong> Knowledge Base (Policy)</p>
+<p><strong>Description:</strong><br />
+Widget responses strictly from KB, no LLM free-form answers.</p>
+<p><strong>Requirements:</strong>
+- Widget step type <code>kb_search</code> queries KB API
+- Display search results as cards/links
+- No LLM-generated answers in MVP
+- Fallback to contact form if no results</p>
+<p><strong>Acceptance Criteria:</strong>
+- ✅ Widget uses KB search for answers
+- ✅ No free-form LLM responses
+- ✅ Empty results → fallback message
+- ✅ KB answers only (no hallucinations)</p>
+<p><strong>Dependencies:</strong> KB Search, Widget</p>
+<hr />
+<h2 id="7-scenariobot-builder">7. Scenario/Bot Builder<a class="headerlink" href="#7-scenariobot-builder" title="Permanent link">&para;</a></h2>
+<p><strong>Note:</strong> JSON-based scenario configuration is currently implemented (see Section 4.1). This section describes future visual enhancements.</p>
+<h3 id="71-bot-builder-ui-visual-flow-editor">7.1 Bot Builder UI (Visual Flow Editor)<a class="headerlink" href="#71-bot-builder-ui-visual-flow-editor" title="Permanent link">&para;</a></h3>
+<p><strong>Priority:</strong> 🟢 Post-MVP<br />
+<strong>Category:</strong> Bot Builder (Frontend)</p>
+<p><strong>Description:</strong><br />
+Visual interface for designing conversation flows (future enhancement to the current JSON editor).</p>
+<p><strong>Current Implementation:</strong><br />
+JSON-based scenario configuration with AI enhancement is available in Section 4.1. This visual builder would complement the existing JSON editor with a drag-and-drop interface.</p>
+<p><strong>Layout:</strong>
+- <strong>Left Sidebar</strong>: Stage tree (collapsible)
+- <strong>Center Canvas</strong>: Visual flow diagram
+- <strong>Right Panel</strong>: Properties/configuration
+- <strong>Bottom Console</strong>: Testing simulator</p>
+<p><strong>Features:</strong>
+- Drag-and-drop stages/tasks
+- Visual connections between steps
+- Inline configuration
+- Real-time validation
+- Testing console</p>
+<p><strong>UI Components:</strong>
+- Stage nodes
+- Task cards
+- Action triggers
+- Condition builders</p>
+<p><strong>Technical Notes:</strong>
+- Use React Flow or custom canvas
+- See: <code>Bot Builder — Pixel-Level UI Layout.md</code></p>
+<p><strong>Dependencies:</strong> Scenario Configuration, Scenario Simulator</p>
+<hr />
+<h3 id="72-stage-configuration">7.2 Stage Configuration<a class="headerlink" href="#72-stage-configuration" title="Permanent link">&para;</a></h3>
+<p><strong>Priority:</strong> 🟢 Post-MVP<br />
+<strong>Category:</strong> Bot Builder</p>
+<p><strong>Description:</strong><br />
+Configure conversation stages in visual editor.</p>
+<p><strong>Stage Properties:</strong>
+- Stage name
+- Stage description
+- Entry condition (when to enter this stage)
+- Required slots
+- Fallback behavior
+- Follow-up rules</p>
+<p><strong>Acceptance Criteria:</strong>
+- ✅ Admin configures stage via UI
+- ✅ Entry conditions validated
+- ✅ Required slots listed
+- ✅ Fallback defined</p>
+<p><strong>Dependencies:</strong> Bot Builder UI</p>
+<hr />
+<h3 id="73-task-configuration">7.3 Task Configuration<a class="headerlink" href="#73-task-configuration" title="Permanent link">&para;</a></h3>
+<p><strong>Priority:</strong> 🟢 Post-MVP<br />
+<strong>Category:</strong> Bot Builder</p>
+<p><strong>Description:</strong><br />
+Configure individual tasks within stages.</p>
+<p><strong>Task Properties:</strong>
+- Task name
+- Task criteria (when to execute)
+- Instruction (AI prompt)
+- Approved phrases (allowed responses)
+- Action tags (backend triggers)
+- Slot updates</p>
+<p><strong>Acceptance Criteria:</strong>
+- ✅ Admin configures task via UI
+- ✅ Criteria validated
+- ✅ Approved phrases listed
+- ✅ Actions selected from catalog</p>
+<p><strong>Dependencies:</strong> Bot Builder UI, Stage Configuration</p>
+<hr />
+<h3 id="74-action-catalog">7.4 Action Catalog<a class="headerlink" href="#74-action-catalog" title="Permanent link">&para;</a></h3>
+<p><strong>Priority:</strong> 🟢 Post-MVP<br />
+<strong>Category:</strong> Bot Builder</p>
+<p><strong>Description:</strong><br />
+Predefined backend actions triggered by conversation.</p>
+<p><strong>Actions:</strong>
+- <code>#product_request</code>: Send product cards
+- <code>#New_meeting_time</code>: Create calendar event
+- <code>#send_case</code>: Send case study
+- <code>#handover</code>: Transfer to human operator
+- <code>#stop_script</code>: Stop automation</p>
+<p><strong>Requirements:</strong>
+- Define action types and payloads
+- Map actions to backend handlers
+- Validate action payloads
+- Log action execution</p>
+<p><strong>Dependencies:</strong> Bot Builder UI, Action Dispatcher</p>
+<hr />
+<h3 id="75-template-library">7.5 Template Library<a class="headerlink" href="#75-template-library" title="Permanent link">&para;</a></h3>
+<p><strong>Priority:</strong> 🟢 Post-MVP<br />
+<strong>Category:</strong> Bot Builder</p>
+<p><strong>Description:</strong><br />
+Pre-built scenario templates for common use cases.</p>
+<p><strong>Templates:</strong>
+- Lead qualification
+- Product consultation
+- Customer support
+- Event registration
+- Demo booking</p>
+<p><strong>Requirements:</strong>
+- Admin selects template
+- Template populates scenario config
+- Customizable after import
+- Save custom templates</p>
+<p><strong>Dependencies:</strong> Bot Builder UI, Scenario Configuration</p>
+<hr />
+<h2 id="8-analytics-reporting">8. Analytics &amp; Reporting<a class="headerlink" href="#8-analytics-reporting" title="Permanent link">&para;</a></h2>
+<h3 id="81-funnel-metrics-dashboard">8.1 Funnel Metrics Dashboard<a class="headerlink" href="#81-funnel-metrics-dashboard" title="Permanent link">&para;</a></h3>
+<p><strong>Priority:</strong> 🔴 MVP Phase 1<br />
+<strong>Category:</strong> Analytics (Backend + Frontend)</p>
+<p><strong>Description:</strong><br />
+Conversion funnel visualization.</p>
+<p><strong>User Story:</strong>  </p>
+<blockquote>
+<p><strong>As an Admin</strong>, I see funnel metrics by date range.</p>
+</blockquote>
+<p><strong>Metrics:</strong>
+- Widget opened
+- Chat started
+- Lead submitted
+- Qualified (hot leads)
+- Booking link clicked</p>
+<p><strong>Requirements:</strong>
+- Date range filter (from/to)
+- Workspace-scoped counts
+- Conversion rates calculated in UI
+- Visual funnel chart</p>
+<p><strong>Acceptance Criteria:</strong>
+- ✅ Endpoint returns counts for date range
+- ✅ All counts workspace-scoped
+- ✅ UI calculates conversion rates
+- ✅ Funnel chart displays drop-offs</p>
+<p><strong>API Endpoint:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>GET /v1/analytics/funnel?from=2026-03-01&amp;to=2026-03-31
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>Response: {
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>  widget_opened: 1500,
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>  chat_started: 1200,
+<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>  lead_submitted: 450,
+<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>  qualified_hot: 180,
+<a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a>  booking_link_clicked: 90
+<a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a>}
+</code></pre></div></p>
+<p><strong>Dependencies:</strong> Event Logging</p>
+<hr />
+<h3 id="82-lead-source-analytics">8.2 Lead Source Analytics<a class="headerlink" href="#82-lead-source-analytics" title="Permanent link">&para;</a></h3>
+<p><strong>Priority:</strong> 🟡 MVP Phase 2<br />
+<strong>Category:</strong> Analytics</p>
+<p><strong>Description:</strong><br />
+Track lead volume by source.</p>
+<p><strong>Dimensions:</strong>
+- Page URL
+- Referrer
+- UTM source/medium/campaign
+- Domain</p>
+<p><strong>Requirements:</strong>
+- Group leads by source
+- Date range filter
+- Chart visualization</p>
+<p><strong>Acceptance Criteria:</strong>
+- ✅ Shows lead count by source
+- ✅ Supports date range
+- ✅ Visualized as bar/pie chart</p>
+<p><strong>Dependencies:</strong> Lead Creation, Analytics Dashboard</p>
+<hr />
+<h3 id="83-stage-drop-off-analysis">8.3 Stage Drop-Off Analysis<a class="headerlink" href="#83-stage-drop-off-analysis" title="Permanent link">&para;</a></h3>
+<p><strong>Priority:</strong> 🟡 MVP Phase 2<br />
+<strong>Category:</strong> Analytics</p>
+<p><strong>Description:</strong><br />
+Identify where conversations fail.</p>
+<p><strong>Requirements:</strong>
+- Count step completions
+- Calculate drop-off percentage per step
+- Visualize as funnel or bar chart</p>
+<p><strong>Acceptance Criteria:</strong>
+- ✅ Shows step completion rates
+- ✅ Highlights high drop-off steps
+- ✅ Helps optimize scenarios</p>
+<p><strong>Dependencies:</strong> Event Logging, Analytics Dashboard</p>
+<hr />
+<h3 id="84-csv-export">8.4 CSV Export<a class="headerlink" href="#84-csv-export" title="Permanent link">&para;</a></h3>
+<p><strong>Priority:</strong> 🔴 MVP Phase 1<br />
+<strong>Category:</strong> Analytics</p>
+<p><strong>Description:</strong><br />
+Export lead data for external analysis.</p>
+<p><strong>User Story:</strong>  </p>
+<blockquote>
+<p><strong>As an Admin</strong>, I export leads/funnel data to CSV.</p>
+</blockquote>
+<p><strong>Export Fields:</strong>
+- Created date
+- Name, email, phone
+- Procedure, timeframe, budget, score
+- Stage, owner
+- UTM parameters, referrer, page_url</p>
+<p><strong>Acceptance Criteria:</strong>
+- ✅ Export respects filters and date range
+- ✅ Workspace-scoped only
+- ✅ CSV formatted correctly
+- ✅ Download triggered via API</p>
+<p><strong>API Endpoint:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>GET /v1/leads/export?format=csv&amp;from=2026-03-01&amp;to=2026-03-31
+</code></pre></div></p>
+<p><strong>Dependencies:</strong> Lead Search &amp; Filters</p>
+<hr />
+<h2 id="9-notifications-jobs">9. Notifications &amp; Jobs<a class="headerlink" href="#9-notifications-jobs" title="Permanent link">&para;</a></h2>
+<h3 id="91-hot-lead-email-notification">9.1 Hot Lead Email Notification<a class="headerlink" href="#91-hot-lead-email-notification" title="Permanent link">&para;</a></h3>
+<p><strong>Priority:</strong> 🔴 MVP Phase 1<br />
+<strong>Category:</strong> Notifications</p>
+<p><strong>Description:</strong><br />
+Immediate email alert when hot lead submits.</p>
+<p><strong>User Story:</strong>  </p>
+<blockquote>
+<p><strong>As an Agent</strong>, I receive email notifications for hot leads.</p>
+</blockquote>
+<p><strong>Requirements:</strong>
+- Trigger on lead_submitted with score=hot
+- Send to configured recipients (workspace setting)
+- Include lead details and CRM link
+- Retry on failure (3 attempts, exponential backoff)</p>
+<p><strong>Email Content:</strong>
+- Lead name, email, phone
+- Procedure, timeframe, budget
+- Source (page_url)
+- Direct link to lead detail</p>
+<p><strong>Acceptance Criteria:</strong>
+- ✅ Email sent when hot lead submits
+- ✅ Email includes lead details and CRM link
+- ✅ Retry policy: 3 attempts with backoff
+- ✅ Logs notification_sent or notification_failed event</p>
+<p><strong>Technical Notes:</strong>
+- Use job queue (Redis + worker)
+- Email service: SendGrid, AWS SES, or SMTP</p>
+<p><strong>Dependencies:</strong> Lead Creation, Lead Scoring</p>
+<hr />
+<h3 id="92-lead-assignment-notification">9.2 Lead Assignment Notification<a class="headerlink" href="#92-lead-assignment-notification" title="Permanent link">&para;</a></h3>
+<p><strong>Priority:</strong> 🟡 MVP Phase 2<br />
+<strong>Category:</strong> Notifications</p>
+<p><strong>Description:</strong><br />
+Notify agent when lead assigned to them.</p>
+<p><strong>Requirements:</strong>
+- Trigger on owner_assigned event
+- Email to assigned agent
+- Include lead summary and link</p>
+<p><strong>Acceptance Criteria:</strong>
+- ✅ Agent receives email on assignment
+- ✅ Email includes lead details
+- ✅ Link to lead detail</p>
+<p><strong>Dependencies:</strong> Lead Assignment, Notifications</p>
+<hr />
+<h3 id="93-sla-reminder-optional-mvp">9.3 SLA Reminder (Optional MVP+)<a class="headerlink" href="#93-sla-reminder-optional-mvp" title="Permanent link">&para;</a></h3>
+<p><strong>Priority:</strong> 🟢 Post-MVP<br />
+<strong>Category:</strong> Notifications</p>
+<p><strong>Description:</strong><br />
+Alert if hot lead untouched for threshold period.</p>
+<p><strong>User Story:</strong>  </p>
+<blockquote>
+<p><strong>As the System</strong>, I remind operators if hot lead is untouched for X minutes.</p>
+</blockquote>
+<p><strong>Requirements:</strong>
+- Configurable threshold (default: 30 min)
+- "Untouched" = no operator events after lead creation
+- Send reminder email
+- Log sla_reminder event</p>
+<p><strong>Acceptance Criteria:</strong>
+- ✅ Threshold configurable per workspace
+- ✅ Reminder sent after threshold
+- ✅ Only if no operator actions taken
+- ✅ Logs event</p>
+<p><strong>Dependencies:</strong> Lead Creation, Notifications, Job Scheduler</p>
+<hr />
+<h2 id="10-integrations">10. Integrations<a class="headerlink" href="#10-integrations" title="Permanent link">&para;</a></h2>
+<h3 id="101-calendar-integration-future">10.1 Calendar Integration (Future)<a class="headerlink" href="#101-calendar-integration-future" title="Permanent link">&para;</a></h3>
+<p><strong>Priority:</strong> 🟢 Post-MVP<br />
+<strong>Category:</strong> Integrations</p>
+<p><strong>Description:</strong><br />
+Sync bookings with external calendars.</p>
+<p><strong>Providers:</strong>
+- Google Calendar
+- Microsoft Outlook
+- Calendly</p>
+<p><strong>Requirements:</strong>
+- OAuth authentication
+- Create/update/cancel events
+- ICS file generation
+- Two-way sync</p>
+<p><strong>Dependencies:</strong> Booking System (Native)</p>
+<hr />
+<h3 id="102-crm-integration-future">10.2 CRM Integration (Future)<a class="headerlink" href="#102-crm-integration-future" title="Permanent link">&para;</a></h3>
+<p><strong>Priority:</strong> 🟢 Post-MVP<br />
+<strong>Category:</strong> Integrations</p>
+<p><strong>Description:</strong><br />
+Sync leads with external CRMs.</p>
+<p><strong>Providers:</strong>
+- HubSpot
+- Salesforce
+- Pipedrive
+- Custom via API</p>
+<p><strong>Requirements:</strong>
+- OAuth or API key authentication
+- Lead push on submission
+- Field mapping configuration
+- Bi-directional sync (optional)</p>
+<p><strong>Dependencies:</strong> Lead Creation</p>
+<hr />
+<h3 id="103-messaging-channels-future">10.3 Messaging Channels (Future)<a class="headerlink" href="#103-messaging-channels-future" title="Permanent link">&para;</a></h3>
+<p><strong>Priority:</strong> 🟢 Post-MVP<br />
+<strong>Category:</strong> Integrations</p>
+<p><strong>Description:</strong><br />
+Omnichannel conversation support.</p>
+<p><strong>Channels:</strong>
+- WhatsApp
+- Instagram DM
+- Facebook Messenger
+- Telegram</p>
+<p><strong>Requirements:</strong>
+- Channel authentication
+- Unified conversation interface
+- Message routing
+- Channel-specific formatting</p>
+<p><strong>Dependencies:</strong> Conversation Engine</p>
+<hr />
+<h2 id="11-settings-administration">11. Settings &amp; Administration<a class="headerlink" href="#11-settings-administration" title="Permanent link">&para;</a></h2>
+<h3 id="111-workspace-settings">11.1 Workspace Settings<a class="headerlink" href="#111-workspace-settings" title="Permanent link">&para;</a></h3>
+<p><strong>Priority:</strong> 🔴 MVP Phase 1<br />
+<strong>Category:</strong> Settings</p>
+<p><strong>Description:</strong><br />
+Configure workspace-level settings.</p>
+<p><strong>Settings:</strong>
+- Workspace name
+- Branding (logo, colors)
+- Notification recipients
+- Timezone, language defaults
+- Booking links (per workspace or per procedure)</p>
+<p><strong>Acceptance Criteria:</strong>
+- ✅ Admin updates workspace settings
+- ✅ Settings persisted in JSON field
+- ✅ Changes reflected in widget/emails</p>
+<p><strong>API Endpoint:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>PATCH /v1/workspaces/{id}/settings
+</code></pre></div></p>
+<p><strong>Dependencies:</strong> Workspace Management</p>
+<hr />
+<h3 id="112-team-management">11.2 Team Management<a class="headerlink" href="#112-team-management" title="Permanent link">&para;</a></h3>
+<p><strong>Priority:</strong> 🔴 MVP Phase 1<br />
+<strong>Category:</strong> Settings</p>
+<p><strong>Description:</strong><br />
+Manage workspace users and roles.</p>
+<p><strong>Features:</strong>
+- Invite users (email invite)
+- Assign/change roles
+- Deactivate users
+- View user activity</p>
+<p><strong>Acceptance Criteria:</strong>
+- ✅ Admin invites users via email
+- ✅ Admin changes user roles
+- ✅ Admin deactivates users
+- ✅ User list shows roles and status</p>
+<p><strong>Dependencies:</strong> RBAC, User Management</p>
+<hr />
+<h3 id="113-branding-configuration">11.3 Branding Configuration<a class="headerlink" href="#113-branding-configuration" title="Permanent link">&para;</a></h3>
+<p><strong>Priority:</strong> 🟡 MVP Phase 2<br />
+<strong>Category:</strong> Settings</p>
+<p><strong>Description:</strong><br />
+Customize widget appearance per domain.</p>
+<p><strong>Settings:</strong>
+- Primary color
+- Logo (URL or upload)
+- Welcome message
+- Chat bubble icon
+- Position (bottom-right, bottom-left, etc.)</p>
+<p><strong>Acceptance Criteria:</strong>
+- ✅ Admin configures branding
+- ✅ Widget reflects branding settings
+- ✅ Per-domain customization</p>
+<p><strong>Dependencies:</strong> Domain Registration, Widget</p>
+<hr />
+<h3 id="114-notification-settings">11.4 Notification Settings<a class="headerlink" href="#114-notification-settings" title="Permanent link">&para;</a></h3>
+<p><strong>Priority:</strong> 🟡 MVP Phase 2<br />
+<strong>Category:</strong> Settings</p>
+<p><strong>Description:</strong><br />
+Configure notification preferences.</p>
+<p><strong>Settings:</strong>
+- Hot lead recipients (emails)
+- Notification channels (email, SMS, Slack)
+- Frequency (immediate, digest)
+- SLA thresholds</p>
+<p><strong>Acceptance Criteria:</strong>
+- ✅ Admin configures recipients
+- ✅ Notifications sent to configured emails
+- ✅ Channels enabled/disabled</p>
+<p><strong>Dependencies:</strong> Notifications</p>
+<hr />
+<h2 id="12-booking-system">12. Booking System<a class="headerlink" href="#12-booking-system" title="Permanent link">&para;</a></h2>
+<h3 id="121-booking-link-handoff-mvp">12.1 Booking Link Handoff (MVP)<a class="headerlink" href="#121-booking-link-handoff-mvp" title="Permanent link">&para;</a></h3>
+<p><strong>Priority:</strong> 🔴 MVP Phase 1<br />
+<strong>Category:</strong> Booking</p>
+<p><strong>Description:</strong><br />
+Simple CTA with external booking link.</p>
+<p><strong>User Story:</strong>  </p>
+<blockquote>
+<p><strong>As a Visitor</strong>, when I reach the booking step, I see a CTA button with link.</p>
+</blockquote>
+<p><strong>Requirements:</strong>
+- Step type: <code>handoff_booking_link</code>
+- Display text + button label (configurable)
+- URL resolved by booking_link_key
+- Log events: booking_link_shown, booking_link_clicked</p>
+<p><strong>Acceptance Criteria:</strong>
+- ✅ Widget displays booking CTA
+- ✅ Button opens external booking URL
+- ✅ Logs booking_link_shown when rendered
+- ✅ Logs booking_link_clicked when clicked
+- ✅ Fallback message if URL missing</p>
+<p><strong>Configuration Example:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="p">{</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;handoff_booking_link&quot;</span><span class="p">,</span>
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="w">  </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Ready to schedule a consultation?&quot;</span><span class="p">,</span>
+<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="w">  </span><span class="nt">&quot;button_label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Book Now&quot;</span><span class="p">,</span>
+<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="w">  </span><span class="nt">&quot;booking_link_key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;default_booking_link&quot;</span>
+<a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a><span class="p">}</span>
+</code></pre></div></p>
+<p><strong>Dependencies:</strong> Scenario Configuration, Event Logging</p>
+<hr />
+<h3 id="122-native-booking-calendar-post-mvp">12.2 Native Booking Calendar (Post-MVP)<a class="headerlink" href="#122-native-booking-calendar-post-mvp" title="Permanent link">&para;</a></h3>
+<p><strong>Priority:</strong> 🟢 Post-MVP<br />
+<strong>Category:</strong> Booking</p>
+<p><strong>Description:</strong><br />
+Internal calendar system with availability and slot booking.</p>
+<p><strong>Entities:</strong>
+- TeamMember (operators, timezone, working hours)
+- Service (consultation type, duration, buffers)
+- Availability rules + exceptions
+- Booking (lead_id, member_id, datetime, status, notes)
+- Tokenized links (reschedule/cancel)</p>
+<p><strong>Flow:</strong>
+1. Visitor selects timezone
+2. Shows available date/time slots
+3. Visitor confirms booking
+4. Slot locked (2-5 min)
+5. Confirmation email + ICS file
+6. Operator notification
+7. CRM updates stage to "Booked"</p>
+<p><strong>Requirements:</strong>
+- Availability management
+- Slot locking mechanism
+- Email confirmations with ICS
+- Reschedule/cancel via token link
+- Timezone conversion
+- Buffer time between bookings</p>
+<p><strong>Technical Notes:</strong>
+- Implement slot locking (Redis TTL)
+- ICS generation (RFC 5545)
+- Calendar sync (Google/Outlook)</p>
+<p><strong>Dependencies:</strong> Booking Link Handoff, Calendar Integration</p>
+<hr />
+<h2 id="implementation-roadmap">Implementation Roadmap<a class="headerlink" href="#implementation-roadmap" title="Permanent link">&para;</a></h2>
+<h3 id="phase-1-mvp-core-months-1-2">Phase 1: MVP Core (Months 1-2)<a class="headerlink" href="#phase-1-mvp-core-months-1-2" title="Permanent link">&para;</a></h3>
+<p><strong>Goal:</strong> Basic functional platform</p>
+<p><strong>Features:</strong>
+1. ✅ Multi-tenant architecture
+2. ✅ Authentication &amp; RBAC
+3. ✅ Widget embed + session
+4. ✅ Basic scenario engine (config-driven)
+5. ✅ Lead creation + deduplication
+6. ✅ Lead inbox + pipeline
+7. ✅ Lead detail view
+8. ✅ Knowledge Base (CRUD + search)
+9. ✅ Event logging
+10. ✅ Hot lead notifications
+11. ✅ Basic analytics (funnel)
+12. ✅ Booking link handoff</p>
+<h3 id="phase-2-mvp-polish-month-3">Phase 2: MVP Polish (Month 3)<a class="headerlink" href="#phase-2-mvp-polish-month-3" title="Permanent link">&para;</a></h3>
+<p><strong>Goal:</strong> Enhanced usability</p>
+<p><strong>Features:</strong>
+1. ✅ Scenario simulator/preview
+2. ✅ Lead search &amp; filters
+3. ✅ Password reset
+4. ✅ Branding configuration
+5. ✅ Source analytics
+6. ✅ Drop-off analysis
+7. ✅ Assignment notifications
+8. ✅ CSV export</p>
+<h3 id="phase-3-advanced-features-months-4-6">Phase 3: Advanced Features (Months 4-6)<a class="headerlink" href="#phase-3-advanced-features-months-4-6" title="Permanent link">&para;</a></h3>
+<p><strong>Goal:</strong> Competitive differentiation</p>
+<p><strong>Features:</strong>
+1. ✅ Bot Builder UI (visual flow editor)
+2. ✅ AI Conversation Engine (LLM-powered)
+3. ✅ Native booking calendar
+4. ✅ Template library
+5. ✅ CRM integrations
+6. ✅ Advanced analytics</p>
+<h3 id="phase-4-scale-expand-months-7">Phase 4: Scale &amp; Expand (Months 7+)<a class="headerlink" href="#phase-4-scale-expand-months-7" title="Permanent link">&para;</a></h3>
+<p><strong>Goal:</strong> Enterprise-ready</p>
+<p><strong>Features:</strong>
+1. ✅ Omnichannel (WhatsApp, Instagram)
+2. ✅ Real-time operator takeover
+3. ✅ Advanced automations
+4. ✅ A/B testing scenarios
+5. ✅ Custom reporting
+6. ✅ White-label option
+7. ✅ API marketplace</p>
+<hr />
+<h2 id="technical-dependencies">Technical Dependencies<a class="headerlink" href="#technical-dependencies" title="Permanent link">&para;</a></h2>
+<h3 id="critical-path">Critical Path<a class="headerlink" href="#critical-path" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>Workspace Management
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>  → User Authentication
+<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>    → RBAC
+<a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a>      → Domain Registration
+<a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a>        → Widget Session
+<a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a>          → Scenario Configuration
+<a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a>            → Lead Creation
+<a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a>              → Lead Inbox/Pipeline
+<a id="__codelineno-26-9" name="__codelineno-26-9" href="#__codelineno-26-9"></a>                → Lead Detail
+</code></pre></div>
+<h3 id="parallel-tracks">Parallel Tracks<a class="headerlink" href="#parallel-tracks" title="Permanent link">&para;</a></h3>
+<p><strong>Track 1: Core Platform</strong>
+- Authentication
+- RBAC
+- Workspace Management</p>
+<p><strong>Track 2: Widget</strong>
+- Widget Embed
+- Session Handshake
+- Event Logging</p>
+<p><strong>Track 3: CRM</strong>
+- Lead Creation
+- Inbox/Pipeline
+- Detail View
+- Search/Filters</p>
+<p><strong>Track 4: Content</strong>
+- Knowledge Base Articles
+- Knowledge Base FAQs
+- KB Search</p>
+<p><strong>Track 5: Intelligence</strong>
+- Scenario Configuration
+- AI Conversation Engine (future)
+- Lead Scoring</p>
+<hr />
+<h2 id="testing-requirements">Testing Requirements<a class="headerlink" href="#testing-requirements" title="Permanent link">&para;</a></h2>
+<h3 id="mvp-test-suite">MVP Test Suite<a class="headerlink" href="#mvp-test-suite" title="Permanent link">&para;</a></h3>
+<p><strong>Unit Tests:</strong>
+- Scenario validation
+- Lead deduplication logic
+- Scoring rules
+- KB search ranking
+- JWT token generation/validation</p>
+<p><strong>Integration Tests:</strong>
+- Widget session → events → lead creation
+- RBAC permission enforcement
+- Workspace isolation
+- KB search integration</p>
+<p><strong>End-to-End Tests:</strong>
+- Complete visitor flow (widget → lead submission)
+- Agent workflow (inbox → detail → pipeline)
+- Admin workflow (create scenario → publish)</p>
+<p><strong>Manual QA Checklist:</strong>
+- ✅ Embed widget on test page
+- ✅ Complete conversation flow
+- ✅ Lead appears in CRM with correct transcript
+- ✅ Hot lead triggers email
+- ✅ Booking link clicked logged
+- ✅ Workspace isolation verified
+- ✅ Mobile responsive
+- ✅ Cross-browser (Chrome, Safari, Firefox)</p>
+<hr />
+<h2 id="success-metrics">Success Metrics<a class="headerlink" href="#success-metrics" title="Permanent link">&para;</a></h2>
+<h3 id="platform-metrics">Platform Metrics<a class="headerlink" href="#platform-metrics" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Widget Load Time</strong>: &lt;3 sec</li>
+<li><strong>API Response Time</strong>: &lt;500ms (p95)</li>
+<li><strong>Uptime</strong>: 99.9%</li>
+<li><strong>Database Performance</strong>: &lt;100ms queries (p95)</li>
+</ul>
+<h3 id="business-metrics">Business Metrics<a class="headerlink" href="#business-metrics" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Widget Open Rate</strong>: &gt;15%</li>
+<li><strong>Conversation Start Rate</strong>: &gt;60%</li>
+<li><strong>Lead Submission Rate</strong>: &gt;30%</li>
+<li><strong>Hot Lead Rate</strong>: &gt;20%</li>
+<li><strong>Booking Click Rate</strong>: &gt;15%</li>
+</ul>
+<h3 id="user-satisfaction">User Satisfaction<a class="headerlink" href="#user-satisfaction" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Agent Time to Response</strong>: &lt;5 min (hot leads)</li>
+<li><strong>Admin Setup Time</strong>: &lt;30 min (first scenario)</li>
+<li><strong>Widget Mobile Experience</strong>: &gt;4.5/5 rating</li>
+</ul>
+<hr />
+<h2 id="document-version-history">Document Version History<a class="headerlink" href="#document-version-history" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>v1.0</strong> (2026-03-08): Initial comprehensive feature breakdown from all PRD sources</li>
+</ul>
+<hr />
+<h2 id="related-documents">Related Documents<a class="headerlink" href="#related-documents" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>sellrise.ai MVP — User Stories &amp; Acceptance Criteria (Final).md</code></li>
+<li><code>**Product Vision: All-in-One Lead Chat.md</code></li>
+<li><code>AI Conversation Engine – Technical Specification/</code></li>
+<li><code>Bot Builder — Pixel-Level UI Layout.md</code></li>
+<li><code>ai chatbot ui ux.md</code></li>
+<li><code>list of screens.md</code></li>
+<li><code>Sellrise-BackEnd/copilot-instructions.md</code></li>
+<li><code>Sellrise-Front-End/copilot-instructions.md</code></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "navigation.expand", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,5738 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for Sellrise Platform">
+      
+      
+        <meta name="author" content="Cabcode">
+      
+      
+        <link rel="canonical" href="https://cabcode-id.github.io/sellrise-docs/AGILE_PRD/">
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../AI_WIDGET_CHATBOT_PRD/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Agile PRD - Sellrise Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#sellrise-platform-agile-product-requirements-document-prd" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Sellrise Docs" class="md-header__button md-logo" aria-label="Sellrise Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Sellrise Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Agile PRD
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/cabcode-id/sellrise-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    cabcode-id/sellrise-docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Sellrise Docs" class="md-nav__button md-logo" aria-label="Sellrise Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Sellrise Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/cabcode-id/sellrise-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    cabcode-id/sellrise-docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Product Requirements
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Product Requirements
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agile PRD
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agile PRD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#priority-levels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Priority Levels
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#global-system-rules-non-negotiable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Global System Rules (Non-Negotiable)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#personas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Personas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#epic-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Epic Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#epic-1-core-platform-multi-tenancy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Epic 1: Core Platform &amp; Multi-Tenancy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Epic 1: Core Platform &amp; Multi-Tenancy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user-stories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Stories
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User Stories">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#us-11-workspace-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US-1.1: Workspace Creation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#us-12-workspace-data-isolation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US-1.2: Workspace Data Isolation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#us-13-domain-registration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US-1.3: Domain Registration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#out-of-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Out of Scope
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#open-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open Questions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#epic-2-authentication-user-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Epic 2: Authentication &amp; User Management
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Epic 2: Authentication &amp; User Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user-stories_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Stories
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User Stories">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#us-21-user-login-jwt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US-2.1: User Login (JWT)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#us-22-role-based-access-control-rbac" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US-2.2: Role-Based Access Control (RBAC)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#us-23-user-invitation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US-2.3: User Invitation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#us-24-logout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US-2.4: Logout
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#out-of-scope_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Out of Scope
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#open-questions_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open Questions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#epic-3-widget-embedding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Epic 3: Widget &amp; Embedding
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Epic 3: Widget &amp; Embedding">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user-stories_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Stories
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User Stories">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#us-31-widget-embed-code-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US-3.1: Widget Embed Code Generation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#us-32-widget-display-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US-3.2: Widget Display Modes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#us-33-widget-session-handshake" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US-3.3: Widget Session Handshake
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#us-34-widget-fallback-on-api-failure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US-3.4: Widget Fallback on API Failure
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#out-of-scope_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Out of Scope
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#open-questions_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open Questions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#epic-4-conversation-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Epic 4: Conversation Engine
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Epic 4: Conversation Engine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user-stories_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Stories
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User Stories">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#us-41-scenario-crud-draft-editing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US-4.1: Scenario CRUD (Draft Editing)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#us-42-scenario-publishing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US-4.2: Scenario Publishing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#us-43-step-execution-conversation-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US-4.3: Step Execution (Conversation Flow)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#us-44-event-logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US-4.4: Event Logging
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#us-45-centralized-conversation-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US-4.5: Centralized Conversation System
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#out-of-scope_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Out of Scope
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#open-questions_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open Questions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#epic-5-lead-management-mini-crm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Epic 5: Lead Management — Mini-CRM
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Epic 5: Lead Management — Mini-CRM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user-stories_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Stories
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User Stories">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#us-51-lead-creation-deduplication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US-5.1: Lead Creation &amp; Deduplication
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#us-52-lead-inbox-newunassigned" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US-5.2: Lead Inbox (New/Unassigned)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#us-53-pipeline-kanban-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US-5.3: Pipeline Kanban View
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#us-54-lead-detail-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US-5.4: Lead Detail View
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#us-55-lead-search-filters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US-5.5: Lead Search &amp; Filters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#us-56-lead-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US-5.6: Lead Notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#us-57-lead-assignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US-5.7: Lead Assignment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#us-58-lead-scoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US-5.8: Lead Scoring
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#out-of-scope_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Out of Scope
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#open-questions_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open Questions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#epic-6-knowledge-base" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Epic 6: Knowledge Base
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Epic 6: Knowledge Base">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user-stories_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Stories
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User Stories">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#us-61-kb-articles-crud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US-6.1: KB Articles CRUD
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#us-62-kb-faq-crud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US-6.2: KB FAQ CRUD
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#us-63-kb-full-text-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US-6.3: KB Full-Text Search
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#us-64-kb-only-answer-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US-6.4: KB-Only Answer Mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#out-of-scope_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Out of Scope
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#open-questions_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open Questions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#epic-7-analytics-reporting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Epic 7: Analytics &amp; Reporting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Epic 7: Analytics &amp; Reporting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user-stories_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Stories
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User Stories">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#us-71-funnel-metrics-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US-7.1: Funnel Metrics Dashboard
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#us-72-csv-export" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US-7.2: CSV Export
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#out-of-scope_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Out of Scope
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#open-questions_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open Questions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#epic-8-notifications-jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Epic 8: Notifications &amp; Jobs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Epic 8: Notifications &amp; Jobs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user-stories_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Stories
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User Stories">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#us-81-hot-lead-email-notification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US-8.1: Hot Lead Email Notification
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#us-82-notification-event-logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US-8.2: Notification Event Logging
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#out-of-scope_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Out of Scope
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#open-questions_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open Questions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#epic-9-settings-administration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Epic 9: Settings &amp; Administration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Epic 9: Settings &amp; Administration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user-stories_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Stories
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User Stories">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#us-91-workspace-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US-9.1: Workspace Settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#us-92-team-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US-9.2: Team Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#out-of-scope_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Out of Scope
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#open-questions_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open Questions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#epic-10-booking-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Epic 10: Booking System
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Epic 10: Booking System">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user-stories_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Stories
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User Stories">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#us-101-booking-link-handoff" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US-10.1: Booking Link Handoff
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#out-of-scope_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Out of Scope
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#open-questions_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open Questions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cross-epic-dependency-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cross-Epic Dependency Map
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cross-Epic Dependency Map">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#foundation-chain-must-be-built-first" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Foundation Chain (must be built first)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parallel-sprint-tracks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parallel Sprint Tracks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#suggested-sprint-sequence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Suggested Sprint Sequence
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#global-out-of-scope-all-epics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Global Out of Scope (All Epics)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#global-open-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Global Open Questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AI_WIDGET_CHATBOT_PRD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Widget Chatbot PRD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FEATURE_BREAKDOWN/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Feature Breakdown
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../analisis-p1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MVP 1 Status Review
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Conversation Engine
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AI Conversation Engine
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AI%20Conversation%20Engine%20%E2%80%93%20Technical%20Specification/AI%20Conversation%20Engine%20%E2%80%93%20Technical%20spec/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical Specification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AI%20Conversation%20Engine%20%E2%80%93%20Technical%20Specification/Flow%20Diagram/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flow Diagram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CONVERSATION_SYSTEM_ARCHITECTURE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AI_CHATBOT_ROBOTIC_BEHAVIOR_INVESTIGATION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chatbot Behavior Investigation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scenario System
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Scenario System
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SCENARIO_CONFIGURATION_GUIDE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CHATBOT_SCENARIO_BUILDING_TUTORIAL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chatbot Scenario Tutorial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../STEP_TYPES_IMPLEMENTATION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Step Types - Implementation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../STEP_TYPES_SUMMARY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Step Types - Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DEFAULT_SCENARIO_TEMPLATE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Default Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CRM
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CRM
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../crm-prds/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../crm-prds/01-lead-creation-and-deduplication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lead Creation & Deduplication
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../crm-prds/02-lead-inbox-new-unassigned/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lead Inbox
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../crm-prds/03-pipeline-kanban-view/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pipeline Kanban View
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../crm-prds/04-lead-detail-view/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lead Detail View
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../crm-prds/05-lead-search-and-filters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lead Search & Filters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../crm-prds/06-lead-notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lead Notes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../crm-prds/07-lead-assignment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lead Assignment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../crm-prds/08-lead-scoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lead Scoring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Implementation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Implementation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../EVENT_LOGGING_IMPLEMENTATION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Event Logging
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AGILE_PRD_IMPLEMENTATION_AUDIT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PRD Implementation Audit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Testing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../integration_testing_guide_en/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integration Testing (EN)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../integration_testing_guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integration Testing (ID)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phase 1 – Post-MVP
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Phase 1 – Post-MVP
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../phase-1-post-mvp/scenario_generator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scenario Generator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phase 2 – Plasthic Additions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Phase 2 – Plasthic Additions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../phase-2-plasthic-additions/MASTER_PRD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Master PRD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../phase-2-plasthic-additions/PRD_1_Patient_Service/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PRD 1 - Patient Service
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../phase-2-plasthic-additions/PRD_2_Webhook_Pipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PRD 2 - Webhook Pipeline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../phase-2-plasthic-additions/PRD_3_Photo_Management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PRD 3 - Photo Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../phase-2-plasthic-additions/PRD_4_CRM_Dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PRD 4 - CRM Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../phase-2-plasthic-additions/PRD_5_Compliance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PRD 5 - Compliance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../phase-2-plasthic-additions/PRD_6_Cabinet_Auth_Onboarding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PRD 6 - Cabinet Auth Onboarding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../phase-2-plasthic-additions/PRD_7_Dashboard_Journey/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PRD 7 - Dashboard Journey
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../phase-2-plasthic-additions/PRD_8_Staff_Services_Reviews/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PRD 8 - Staff Services Reviews
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../phase-2-plasthic-additions/PRD_9_Rewards_Community/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PRD 9 - Rewards Community
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../phase-2-plasthic-additions/SPRINT_PLAN/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint Plan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phase 2 – Pre-Consultation Engagement
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Phase 2 – Pre-Consultation Engagement
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../phase-2-pre-consultation-engagement/chatbot-photo-collection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chatbot Photo Collection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#priority-levels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Priority Levels
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#global-system-rules-non-negotiable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Global System Rules (Non-Negotiable)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#personas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Personas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#epic-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Epic Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#epic-1-core-platform-multi-tenancy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Epic 1: Core Platform &amp; Multi-Tenancy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Epic 1: Core Platform &amp; Multi-Tenancy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user-stories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Stories
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User Stories">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#us-11-workspace-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US-1.1: Workspace Creation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#us-12-workspace-data-isolation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US-1.2: Workspace Data Isolation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#us-13-domain-registration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US-1.3: Domain Registration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#out-of-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Out of Scope
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#open-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open Questions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#epic-2-authentication-user-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Epic 2: Authentication &amp; User Management
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Epic 2: Authentication &amp; User Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user-stories_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Stories
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User Stories">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#us-21-user-login-jwt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US-2.1: User Login (JWT)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#us-22-role-based-access-control-rbac" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US-2.2: Role-Based Access Control (RBAC)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#us-23-user-invitation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US-2.3: User Invitation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#us-24-logout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US-2.4: Logout
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#out-of-scope_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Out of Scope
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#open-questions_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open Questions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#epic-3-widget-embedding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Epic 3: Widget &amp; Embedding
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Epic 3: Widget &amp; Embedding">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user-stories_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Stories
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User Stories">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#us-31-widget-embed-code-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US-3.1: Widget Embed Code Generation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#us-32-widget-display-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US-3.2: Widget Display Modes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#us-33-widget-session-handshake" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US-3.3: Widget Session Handshake
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#us-34-widget-fallback-on-api-failure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US-3.4: Widget Fallback on API Failure
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#out-of-scope_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Out of Scope
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#open-questions_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open Questions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#epic-4-conversation-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Epic 4: Conversation Engine
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Epic 4: Conversation Engine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user-stories_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Stories
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User Stories">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#us-41-scenario-crud-draft-editing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US-4.1: Scenario CRUD (Draft Editing)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#us-42-scenario-publishing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US-4.2: Scenario Publishing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#us-43-step-execution-conversation-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US-4.3: Step Execution (Conversation Flow)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#us-44-event-logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US-4.4: Event Logging
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#us-45-centralized-conversation-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US-4.5: Centralized Conversation System
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#out-of-scope_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Out of Scope
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#open-questions_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open Questions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#epic-5-lead-management-mini-crm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Epic 5: Lead Management — Mini-CRM
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Epic 5: Lead Management — Mini-CRM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user-stories_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Stories
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User Stories">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#us-51-lead-creation-deduplication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US-5.1: Lead Creation &amp; Deduplication
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#us-52-lead-inbox-newunassigned" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US-5.2: Lead Inbox (New/Unassigned)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#us-53-pipeline-kanban-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US-5.3: Pipeline Kanban View
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#us-54-lead-detail-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US-5.4: Lead Detail View
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#us-55-lead-search-filters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US-5.5: Lead Search &amp; Filters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#us-56-lead-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US-5.6: Lead Notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#us-57-lead-assignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US-5.7: Lead Assignment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#us-58-lead-scoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US-5.8: Lead Scoring
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#out-of-scope_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Out of Scope
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#open-questions_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open Questions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#epic-6-knowledge-base" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Epic 6: Knowledge Base
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Epic 6: Knowledge Base">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user-stories_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Stories
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User Stories">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#us-61-kb-articles-crud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US-6.1: KB Articles CRUD
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#us-62-kb-faq-crud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US-6.2: KB FAQ CRUD
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#us-63-kb-full-text-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US-6.3: KB Full-Text Search
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#us-64-kb-only-answer-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US-6.4: KB-Only Answer Mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#out-of-scope_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Out of Scope
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#open-questions_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open Questions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#epic-7-analytics-reporting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Epic 7: Analytics &amp; Reporting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Epic 7: Analytics &amp; Reporting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user-stories_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Stories
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User Stories">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#us-71-funnel-metrics-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US-7.1: Funnel Metrics Dashboard
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#us-72-csv-export" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US-7.2: CSV Export
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#out-of-scope_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Out of Scope
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#open-questions_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open Questions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#epic-8-notifications-jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Epic 8: Notifications &amp; Jobs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Epic 8: Notifications &amp; Jobs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user-stories_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Stories
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User Stories">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#us-81-hot-lead-email-notification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US-8.1: Hot Lead Email Notification
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#us-82-notification-event-logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US-8.2: Notification Event Logging
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#out-of-scope_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Out of Scope
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#open-questions_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open Questions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#epic-9-settings-administration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Epic 9: Settings &amp; Administration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Epic 9: Settings &amp; Administration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user-stories_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Stories
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User Stories">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#us-91-workspace-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US-9.1: Workspace Settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#us-92-team-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US-9.2: Team Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#out-of-scope_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Out of Scope
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#open-questions_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open Questions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#epic-10-booking-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Epic 10: Booking System
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Epic 10: Booking System">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user-stories_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Stories
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User Stories">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#us-101-booking-link-handoff" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US-10.1: Booking Link Handoff
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#out-of-scope_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Out of Scope
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#open-questions_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open Questions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cross-epic-dependency-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cross-Epic Dependency Map
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cross-Epic Dependency Map">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#foundation-chain-must-be-built-first" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Foundation Chain (must be built first)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parallel-sprint-tracks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parallel Sprint Tracks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#suggested-sprint-sequence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Suggested Sprint Sequence
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#global-out-of-scope-all-epics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Global Out of Scope (All Epics)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#global-open-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Global Open Questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="sellrise-platform-agile-product-requirements-document-prd">Sellrise Platform — Agile Product Requirements Document (PRD)<a class="headerlink" href="#sellrise-platform-agile-product-requirements-document-prd" title="Permanent link">&para;</a></h1>
+<p><strong>Version:</strong> 1.0<br />
+<strong>Date:</strong> March 8, 2026<br />
+<strong>Author:</strong> Product Owner<br />
+<strong>Purpose:</strong> Translate the Feature Breakdown into Sprint-ready Epics and User Stories with BDD acceptance criteria, cross-referenced against repository documentation.</p>
+<hr />
+<h2 id="priority-levels">Priority Levels<a class="headerlink" href="#priority-levels" title="Permanent link">&para;</a></h2>
+<ul>
+<li>🔴 <strong>MVP Phase 1</strong> — Must-have for first release</li>
+<li>🟡 <strong>MVP Phase 2</strong> — Important, follows Phase 1</li>
+<li>🟢 <strong>Post-MVP</strong> — Future enhancements</li>
+</ul>
+<hr />
+<h2 id="global-system-rules-non-negotiable">Global System Rules (Non-Negotiable)<a class="headerlink" href="#global-system-rules-non-negotiable" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Rule</th>
+<th>Summary</th>
+<th>Reference</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>R1</strong></td>
+<td>Workspace isolation — every query enforces <code>workspace_id</code>; return 404 (not 403) on cross-workspace access</td>
+<td><code>sellrise.ai MVP — User Stories &amp; Acceptance Criteria (Final).md</code> §2</td>
+</tr>
+<tr>
+<td><strong>R2</strong></td>
+<td>Transcript derived from ordered <code>lead_events</code> only; no hidden sources</td>
+<td><code>EVENT_LOGGING_IMPLEMENTATION.md</code></td>
+</tr>
+<tr>
+<td><strong>R3</strong></td>
+<td>KB-only answers in MVP; no LLM free-form; fallback to contact form</td>
+<td><code>FEATURE_BREAKDOWN.md</code> §6.4</td>
+</tr>
+<tr>
+<td><strong>R4</strong></td>
+<td>Lead dedup by normalized email first, then phone; idempotent</td>
+<td><code>crm-prds/01-lead-creation-and-deduplication.md</code></td>
+</tr>
+<tr>
+<td><strong>R5</strong></td>
+<td>Deterministic scenario execution — same inputs produce same next step</td>
+<td><code>STEP_TYPES_IMPLEMENTATION.md</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="personas">Personas<a class="headerlink" href="#personas" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Visitor</strong></td>
+<td>Anonymous user interacting with the embedded widget</td>
+</tr>
+<tr>
+<td><strong>Agent</strong></td>
+<td>Operator managing leads in the CRM</td>
+</tr>
+<tr>
+<td><strong>Admin</strong></td>
+<td>Configures workspace, scenarios, KB, users, settings</td>
+</tr>
+<tr>
+<td><strong>Viewer</strong></td>
+<td>Read-only access for reporting</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="epic-overview">Epic Overview<a class="headerlink" href="#epic-overview" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Epic</th>
+<th>Priority</th>
+<th>Sprint Track</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Core Platform &amp; Multi-Tenancy</td>
+<td>🔴</td>
+<td>Foundation</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Authentication &amp; User Management</td>
+<td>🔴</td>
+<td>Foundation</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Widget &amp; Embedding</td>
+<td>🔴</td>
+<td>Widget</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Conversation Engine</td>
+<td>🔴</td>
+<td>Intelligence</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Lead Management — Mini-CRM</td>
+<td>🔴</td>
+<td>CRM</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Knowledge Base</td>
+<td>🔴</td>
+<td>Content</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Analytics &amp; Reporting</td>
+<td>🔴/🟡</td>
+<td>Insights</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Notifications &amp; Jobs</td>
+<td>🔴/🟡</td>
+<td>Ops</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Settings &amp; Administration</td>
+<td>🔴/🟡</td>
+<td>Platform</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Booking System</td>
+<td>🔴</td>
+<td>Conversion</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="epic-1-core-platform-multi-tenancy">Epic 1: Core Platform &amp; Multi-Tenancy<a class="headerlink" href="#epic-1-core-platform-multi-tenancy" title="Permanent link">&para;</a></h2>
+<p><strong>Business Value:</strong> Foundation for a multi-tenant SaaS platform where each customer operates in a fully isolated workspace, ensuring data security and scalability.</p>
+<p><strong>Repo Docs Reference:</strong>
+- <code>FEATURE_BREAKDOWN.md</code> §1 (Core Platform Features)
+- <code>CONVERSATION_SYSTEM_ARCHITECTURE.md</code> (Workspace Isolation)
+- <code>sellrise.ai MVP — User Stories &amp; Acceptance Criteria (Final).md</code> §EPIC A</p>
+<p><strong>Priority:</strong> 🔴 MVP Phase 1</p>
+<h3 id="user-stories">User Stories<a class="headerlink" href="#user-stories" title="Permanent link">&para;</a></h3>
+<h4 id="us-11-workspace-creation">US-1.1: Workspace Creation<a class="headerlink" href="#us-11-workspace-creation" title="Permanent link">&para;</a></h4>
+<p><strong>Description:</strong> As an Admin, I want to create a workspace so that I can manage my business leads and conversations in an isolated environment.</p>
+<p><strong>Acceptance Criteria (BDD):</strong></p>
+<ul>
+<li>
+<p><strong>Given</strong> an authenticated user with no existing workspace<br />
+<strong>When</strong> they <code>POST /v1/workspaces</code> with <code>{ "name": "My Clinic" }</code><br />
+<strong>Then</strong> a workspace is created with a unique <code>workspace_id</code> (UUID) and the creator is assigned the <code>ADMIN</code> role</p>
+</li>
+<li>
+<p><strong>Given</strong> an authenticated user<br />
+<strong>When</strong> they <code>POST /v1/workspaces</code> without a <code>name</code> field<br />
+<strong>Then</strong> the API returns <code>400 Bad Request</code> with a validation error message</p>
+</li>
+<li>
+<p><strong>Given</strong> a workspace is created<br />
+<strong>When</strong> the API returns the response<br />
+<strong>Then</strong> the response includes <code>workspace_id</code>, <code>name</code>, <code>settings</code> (default JSON), and <code>created_at</code></p>
+</li>
+</ul>
+<p><strong>Technical Notes/Dependencies:</strong>
+- <strong>Endpoint:</strong> <code>POST /v1/workspaces</code> → <code>{ workspace_id, name, settings, created_by }</code>
+- <strong>Tables:</strong> <code>Workspaces</code> (workspace_id UUID PK, name, settings JSONB, created_by FK)
+- <strong>Rule R1</strong> applies to all subsequent queries
+- No upstream dependencies (foundational)</p>
+<hr />
+<h4 id="us-12-workspace-data-isolation">US-1.2: Workspace Data Isolation<a class="headerlink" href="#us-12-workspace-data-isolation" title="Permanent link">&para;</a></h4>
+<p><strong>Description:</strong> As a platform operator, I want every data query to enforce workspace isolation so that tenants never access each other's data.</p>
+<p><strong>Acceptance Criteria (BDD):</strong></p>
+<ul>
+<li>
+<p><strong>Given</strong> a user authenticated in workspace W1<br />
+<strong>When</strong> they request a resource (lead, scenario, KB article) belonging to workspace W2 by its ID<br />
+<strong>Then</strong> the API returns <code>404 Not Found</code> (not <code>403 Forbidden</code>) to prevent data leakage</p>
+</li>
+<li>
+<p><strong>Given</strong> any API endpoint that returns business data<br />
+<strong>When</strong> a request is processed<br />
+<strong>Then</strong> the SQL query includes <code>WHERE workspace_id = :current_workspace_id</code></p>
+</li>
+<li>
+<p><strong>Given</strong> a database table containing business data<br />
+<strong>When</strong> the schema is inspected<br />
+<strong>Then</strong> the table includes a <code>workspace_id</code> foreign key column with a database index</p>
+</li>
+</ul>
+<p><strong>Technical Notes/Dependencies:</strong>
+- Enforced at middleware/ORM level across all endpoints
+- Database indexes on <code>workspace_id</code> for every business table
+- <strong>Rule R1</strong> is the governing constraint
+- Ref: <code>CONVERSATION_SYSTEM_ARCHITECTURE.md</code> — workspace security enforcement</p>
+<hr />
+<h4 id="us-13-domain-registration">US-1.3: Domain Registration<a class="headerlink" href="#us-13-domain-registration" title="Permanent link">&para;</a></h4>
+<p><strong>Description:</strong> As an Admin, I want to register allowed domains so that the widget only loads on authorized websites.</p>
+<p><strong>Acceptance Criteria (BDD):</strong></p>
+<ul>
+<li>
+<p><strong>Given</strong> an Admin authenticated in workspace W1<br />
+<strong>When</strong> they <code>POST /v1/domains</code> with <code>{ "domain_name": "example.com" }</code><br />
+<strong>Then</strong> the domain is registered for W1 and returned with <code>domain_id</code>, <code>branding_config</code> (defaults)</p>
+</li>
+<li>
+<p><strong>Given</strong> a registered domain "example.com" for workspace W1<br />
+<strong>When</strong> the widget attempts to start a session from "malicious-site.com"<br />
+<strong>Then</strong> the <code>POST /v1/widget/session</code> returns <code>403 Forbidden</code></p>
+</li>
+<li>
+<p><strong>Given</strong> an Admin configuring a domain<br />
+<strong>When</strong> they set <code>dev_mode_enabled: true</code><br />
+<strong>Then</strong> the widget also loads on <code>localhost</code> for development testing</p>
+</li>
+</ul>
+<p><strong>Technical Notes/Dependencies:</strong>
+- <strong>Endpoints:</strong> <code>POST /v1/domains</code>, <code>GET /v1/domains</code>, <code>PATCH /v1/domains/{id}</code>, <code>DELETE /v1/domains/{id}</code>
+- <strong>Table:</strong> <code>Domains</code> (domain_id, workspace_id FK, domain_name, branding_config JSONB, dev_mode_enabled)
+- <code>dev_mode_enabled</code> is a per-domain boolean flag, set via <code>PATCH /v1/domains/{id}</code>
+- Depends on: US-1.1 (Workspace Creation)</p>
+<h3 id="out-of-scope">Out of Scope<a class="headerlink" href="#out-of-scope" title="Permanent link">&para;</a></h3>
+<ul>
+<li>White-label branding (multi-brand under different domains)</li>
+<li>Custom subdomain provisioning</li>
+<li>Workspace deletion with cascade cleanup (Admin-only in future)</li>
+</ul>
+<h3 id="open-questions">Open Questions<a class="headerlink" href="#open-questions" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Should there be a limit on domains per workspace in MVP?</li>
+</ul>
+<hr />
+<h2 id="epic-2-authentication-user-management">Epic 2: Authentication &amp; User Management<a class="headerlink" href="#epic-2-authentication-user-management" title="Permanent link">&para;</a></h2>
+<p><strong>Business Value:</strong> Secure, role-based access control ensuring only authorized users can perform actions within their workspace.</p>
+<p><strong>Repo Docs Reference:</strong>
+- <code>FEATURE_BREAKDOWN.md</code> §2 (Authentication &amp; User Management)
+- <code>sellrise.ai MVP — User Stories &amp; Acceptance Criteria (Final).md</code> §EPIC A (US-A1, US-A2, US-A3)</p>
+<p><strong>Priority:</strong> 🔴 MVP Phase 1</p>
+<h3 id="user-stories_1">User Stories<a class="headerlink" href="#user-stories_1" title="Permanent link">&para;</a></h3>
+<h4 id="us-21-user-login-jwt">US-2.1: User Login (JWT)<a class="headerlink" href="#us-21-user-login-jwt" title="Permanent link">&para;</a></h4>
+<p><strong>Description:</strong> As a user, I want to log in with email and password so that I receive a secure access token for API requests.</p>
+<p><strong>Acceptance Criteria (BDD):</strong></p>
+<ul>
+<li>
+<p><strong>Given</strong> a registered user with valid credentials<br />
+<strong>When</strong> they <code>POST /v1/auth/login</code> with <code>{ "email": "admin@example.com", "password": "s3cret" }</code><br />
+<strong>Then</strong> the API returns <code>200 OK</code> with <code>access_token</code> (JWT, 60 min TTL) and <code>refresh_token</code> (7-day TTL)</p>
+</li>
+<li>
+<p><strong>Given</strong> a user with invalid credentials<br />
+<strong>When</strong> they <code>POST /v1/auth/login</code><br />
+<strong>Then</strong> the API returns <code>401 Unauthorized</code> with a generic error (no credential enumeration)</p>
+</li>
+<li>
+<p><strong>Given</strong> a valid <code>refresh_token</code><br />
+<strong>When</strong> the user <code>POST /v1/auth/refresh</code> with the token<br />
+<strong>Then</strong> a new <code>access_token</code> is issued and the old refresh token is rotated</p>
+</li>
+<li>
+<p><strong>Given</strong> an expired <code>refresh_token</code><br />
+<strong>When</strong> the user attempts to refresh<br />
+<strong>Then</strong> the API returns <code>401 Unauthorized</code> and the user must log in again</p>
+</li>
+</ul>
+<p><strong>Technical Notes/Dependencies:</strong>
+- <strong>Endpoints:</strong> <code>POST /v1/auth/login</code>, <code>POST /v1/auth/refresh</code>, <code>POST /v1/auth/logout</code>
+- <strong>Tables:</strong> <code>Users</code> (user_id, email, password_hash bcrypt), <code>RefreshTokens</code> (token_hash HMAC-SHA256, user_id, expires_at)
+- JWT payload includes <code>user_id</code>, <code>workspace_id</code>, <code>role</code>
+- Depends on: US-1.1 (Workspace exists)</p>
+<hr />
+<h4 id="us-22-role-based-access-control-rbac">US-2.2: Role-Based Access Control (RBAC)<a class="headerlink" href="#us-22-role-based-access-control-rbac" title="Permanent link">&para;</a></h4>
+<p><strong>Description:</strong> As an Admin, I want to assign roles to users so that each role has appropriate permissions within the workspace.</p>
+<p><strong>Acceptance Criteria (BDD):</strong></p>
+<ul>
+<li>
+<p><strong>Given</strong> a user with role <code>VIEWER</code><br />
+<strong>When</strong> they attempt to <code>PATCH /v1/leads/{id}</code> (modify a lead)<br />
+<strong>Then</strong> the API returns <code>403 Forbidden</code></p>
+</li>
+<li>
+<p><strong>Given</strong> a user with role <code>AGENT</code><br />
+<strong>When</strong> they attempt to <code>POST /v1/scenarios</code> (create a scenario)<br />
+<strong>Then</strong> the API returns <code>403 Forbidden</code> (scenarios are Admin-only)</p>
+</li>
+<li>
+<p><strong>Given</strong> a user with role <code>ADMIN</code><br />
+<strong>When</strong> they perform any CRUD operation on scenarios, KB, users, or settings<br />
+<strong>Then</strong> the API processes the request successfully</p>
+</li>
+<li>
+<p><strong>Given</strong> any authenticated API request<br />
+<strong>When</strong> the server decodes the JWT<br />
+<strong>Then</strong> the <code>role</code> claim is validated against the endpoint's permission requirements</p>
+</li>
+</ul>
+<p><strong>Technical Notes/Dependencies:</strong>
+- <strong>Roles:</strong> <code>ADMIN</code> (full access), <code>AGENT</code> (lead management), <code>VIEWER</code> (read-only)
+- <strong>Table:</strong> <code>Users</code> — role (enum: ADMIN, AGENT, VIEWER), email unique per workspace
+- Permission matrix enforced at API middleware level
+- Depends on: US-2.1 (Authentication)</p>
+<hr />
+<h4 id="us-23-user-invitation">US-2.3: User Invitation<a class="headerlink" href="#us-23-user-invitation" title="Permanent link">&para;</a></h4>
+<p><strong>Description:</strong> As an Admin, I want to create and invite users with specific roles so that my team can access the workspace.</p>
+<p><strong>Acceptance Criteria (BDD):</strong></p>
+<ul>
+<li>
+<p><strong>Given</strong> an Admin in workspace W1<br />
+<strong>When</strong> they <code>POST /v1/users</code> with <code>{ "email": "agent@clinic.com", "role": "AGENT" }</code><br />
+<strong>Then</strong> a new user is created in W1 with the specified role</p>
+</li>
+<li>
+<p><strong>Given</strong> a user already exists with the same email in workspace W1<br />
+<strong>When</strong> an Admin tries to create another user with the same email<br />
+<strong>Then</strong> the API returns <code>409 Conflict</code></p>
+</li>
+<li>
+<p><strong>Given</strong> a non-Admin user<br />
+<strong>When</strong> they attempt to <code>POST /v1/users</code><br />
+<strong>Then</strong> the API returns <code>403 Forbidden</code></p>
+</li>
+</ul>
+<p><strong>Technical Notes/Dependencies:</strong>
+- <strong>Endpoints:</strong> <code>POST /v1/users</code>, <code>GET /v1/users</code>, <code>GET /v1/users/{id}</code>, <code>PATCH /v1/users/{id}</code>, <code>DELETE /v1/users/{id}</code>
+- Email uniqueness enforced per-workspace (not globally)
+- Depends on: US-2.2 (RBAC), US-1.1 (Workspace)</p>
+<hr />
+<h4 id="us-24-logout">US-2.4: Logout<a class="headerlink" href="#us-24-logout" title="Permanent link">&para;</a></h4>
+<p><strong>Description:</strong> As a user, I want to log out so that my refresh token is invalidated and the session ends.</p>
+<p><strong>Acceptance Criteria (BDD):</strong></p>
+<ul>
+<li>
+<p><strong>Given</strong> an authenticated user with a valid refresh token<br />
+<strong>When</strong> they <code>POST /v1/auth/logout</code><br />
+<strong>Then</strong> the refresh token is invalidated (deleted/marked used) and the API returns <code>200 OK</code></p>
+</li>
+<li>
+<p><strong>Given</strong> a user who has logged out<br />
+<strong>When</strong> they attempt to use the old refresh token via <code>POST /v1/auth/refresh</code><br />
+<strong>Then</strong> the API returns <code>401 Unauthorized</code></p>
+</li>
+</ul>
+<p><strong>Technical Notes/Dependencies:</strong>
+- <strong>Endpoint:</strong> <code>POST /v1/auth/logout</code>
+- Refresh token removed from <code>RefreshTokens</code> table
+- Access token remains valid until its 60-min TTL expires (stateless JWT)
+- Depends on: US-2.1</p>
+<h3 id="out-of-scope_1">Out of Scope<a class="headerlink" href="#out-of-scope_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Password reset flow (🟡 Phase 2 — requires email sending)</li>
+<li>OAuth/SSO integration (Google, Microsoft)</li>
+<li>Multi-factor authentication (MFA)</li>
+<li>Session management UI (active sessions list)</li>
+</ul>
+<h3 id="open-questions_1">Open Questions<a class="headerlink" href="#open-questions_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Should Admin be able to force-logout another user?</li>
+<li>Is email verification required on user creation in MVP, or deferred to Phase 2?</li>
+</ul>
+<hr />
+<h2 id="epic-3-widget-embedding">Epic 3: Widget &amp; Embedding<a class="headerlink" href="#epic-3-widget-embedding" title="Permanent link">&para;</a></h2>
+<p><strong>Business Value:</strong> A lightweight, embeddable chat widget that loads on customer websites to capture and qualify leads in real-time.</p>
+<p><strong>Repo Docs Reference:</strong>
+- <code>FEATURE_BREAKDOWN.md</code> §3 (Widget &amp; Embedding)
+- <code>sellrise.ai MVP — User Stories &amp; Acceptance Criteria (Final).md</code> §EPIC B, §EPIC D (US-D1, US-D5)
+- <code>ai chatbot ui ux.md</code> (UI/UX specifications)</p>
+<p><strong>Priority:</strong> 🔴 MVP Phase 1</p>
+<h3 id="user-stories_2">User Stories<a class="headerlink" href="#user-stories_2" title="Permanent link">&para;</a></h3>
+<h4 id="us-31-widget-embed-code-generation">US-3.1: Widget Embed Code Generation<a class="headerlink" href="#us-31-widget-embed-code-generation" title="Permanent link">&para;</a></h4>
+<p><strong>Description:</strong> As an Admin, I want to copy a JS embed snippet so that I can install the widget on my website.</p>
+<p><strong>Acceptance Criteria (BDD):</strong></p>
+<ul>
+<li>
+<p><strong>Given</strong> an Admin with a registered domain<br />
+<strong>When</strong> they navigate to the widget installation page<br />
+<strong>Then</strong> a ready-to-copy <code>&lt;script&gt;</code> snippet is displayed containing the workspace public key</p>
+</li>
+<li>
+<p><strong>Given</strong> the embed snippet is pasted into a website's HTML<br />
+<strong>When</strong> the page loads<br />
+<strong>Then</strong> the widget JS bundle loads asynchronously (&lt; 250KB gzipped) without blocking page render</p>
+</li>
+</ul>
+<p><strong>Technical Notes/Dependencies:</strong>
+- Snippet includes workspace public key for session handshake
+- Widget bundle built with Vite/Rollup; iframe-safe
+- Depends on: US-1.3 (Domain Registration)</p>
+<hr />
+<h4 id="us-32-widget-display-modes">US-3.2: Widget Display Modes<a class="headerlink" href="#us-32-widget-display-modes" title="Permanent link">&para;</a></h4>
+<p><strong>Description:</strong> As a Visitor, I want the widget to display as a floating bubble or inline element so that it integrates naturally with the website.</p>
+<p><strong>Acceptance Criteria (BDD):</strong></p>
+<ul>
+<li>
+<p><strong>Given</strong> a website with bubble mode configured<br />
+<strong>When</strong> the page loads<br />
+<strong>Then</strong> a floating chat bubble appears at the configured position (default: bottom-right)</p>
+</li>
+<li>
+<p><strong>Given</strong> a website with inline mode configured<br />
+<strong>When</strong> the page loads<br />
+<strong>Then</strong> the widget renders inside the specified DOM container element</p>
+</li>
+<li>
+<p><strong>Given</strong> a mobile device viewport<br />
+<strong>When</strong> the widget is displayed<br />
+<strong>Then</strong> it is responsive and usable on screens ≥ 320px width</p>
+</li>
+</ul>
+<p><strong>Technical Notes/Dependencies:</strong>
+- Configurable: position, primary color, logo, welcome message
+- Branding stored in <code>Domains.branding_config</code> (JSONB)
+- Depends on: US-3.1 (Embed Code), US-1.3 (Domain config)</p>
+<hr />
+<h4 id="us-33-widget-session-handshake">US-3.3: Widget Session Handshake<a class="headerlink" href="#us-33-widget-session-handshake" title="Permanent link">&para;</a></h4>
+<p><strong>Description:</strong> As a Visitor, I want the widget to initialize a session automatically so that I can begin a conversation with the bot.</p>
+<p><strong>Acceptance Criteria (BDD):</strong></p>
+<ul>
+<li>
+<p><strong>Given</strong> a Visitor on a registered domain<br />
+<strong>When</strong> the widget loads and calls <code>POST /v1/widget/session</code> with <code>{ domain, page_url, referrer, utm_*, timezone }</code><br />
+<strong>Then</strong> the API returns <code>{ session_id, branding, scenario_version_id, scenario_json, booking_links }</code></p>
+</li>
+<li>
+<p><strong>Given</strong> the session is created<br />
+<strong>When</strong> the response is processed<br />
+<strong>Then</strong> a <code>widget_opened</code> event is logged in <code>LeadEvents</code></p>
+</li>
+<li>
+<p><strong>Given</strong> a Visitor on an unregistered domain<br />
+<strong>When</strong> the widget calls <code>POST /v1/widget/session</code><br />
+<strong>Then</strong> the API returns <code>403 Forbidden</code> and the widget does not render</p>
+</li>
+</ul>
+<p><strong>Technical Notes/Dependencies:</strong>
+- <strong>Endpoint:</strong> <code>POST /v1/widget/session</code>
+- <strong>Request:</strong> <code>{ domain, page_url, referrer, utm_source, utm_medium, utm_campaign, timezone }</code>
+- <strong>Response:</strong> <code>{ session_id, branding, scenario_version_id, scenario_json, booking_links }</code>
+- <strong>Table:</strong> <code>WidgetSessions</code> (session_id UUID, workspace_id, domain, page_url, referrer, utm_parameters, timezone, created_at)
+- Depends on: US-1.3 (Domain Validation), US-4.2 (Published Scenario)</p>
+<hr />
+<h4 id="us-34-widget-fallback-on-api-failure">US-3.4: Widget Fallback on API Failure<a class="headerlink" href="#us-34-widget-fallback-on-api-failure" title="Permanent link">&para;</a></h4>
+<p><strong>Description:</strong> As a Visitor, I want a fallback contact form when the widget API is unavailable so that I can still leave my details.</p>
+<p><strong>Acceptance Criteria (BDD):</strong></p>
+<ul>
+<li>
+<p><strong>Given</strong> the widget session handshake fails (network error or 5xx)<br />
+<strong>When</strong> the widget detects the failure after retry attempts (exponential backoff)<br />
+<strong>Then</strong> a static fallback contact form is displayed (name, email, phone, message)</p>
+</li>
+<li>
+<p><strong>Given</strong> a Visitor fills out the fallback form<br />
+<strong>When</strong> they submit it<br />
+<strong>Then</strong> the data is sent to <code>POST /v1/widget/fallback-lead</code> and a lead is created</p>
+</li>
+<li>
+<p><strong>Given</strong> a mid-conversation API timeout<br />
+<strong>When</strong> 3 retry attempts fail<br />
+<strong>Then</strong> the widget displays a friendly error message with the fallback form</p>
+</li>
+</ul>
+<p><strong>Technical Notes/Dependencies:</strong>
+- <strong>Endpoint:</strong> <code>POST /v1/widget/fallback-lead</code>
+- Retry: 3 attempts with exponential backoff
+- Errors logged with correlation ID for debugging
+- Depends on: US-3.3 (Session), US-5.1 (Lead Creation)</p>
+<h3 id="out-of-scope_2">Out of Scope<a class="headerlink" href="#out-of-scope_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Omnichannel widget (WhatsApp, Instagram, Facebook, Telegram)</li>
+<li>Real-time live chat takeover by operator</li>
+<li>A/B testing widget variants</li>
+<li>Widget analytics (heatmaps, click tracking)</li>
+</ul>
+<h3 id="open-questions_2">Open Questions<a class="headerlink" href="#open-questions_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Should the fallback form include a CAPTCHA to prevent spam?</li>
+<li>Maximum retry timeout before showing fallback — 10 seconds or configurable?</li>
+</ul>
+<hr />
+<h2 id="epic-4-conversation-engine">Epic 4: Conversation Engine<a class="headerlink" href="#epic-4-conversation-engine" title="Permanent link">&para;</a></h2>
+<p><strong>Business Value:</strong> A deterministic, config-driven conversation engine that qualifies leads through structured scenarios, ensuring consistent and predictable interactions across all channels.</p>
+<p><strong>Repo Docs Reference:</strong>
+- <code>FEATURE_BREAKDOWN.md</code> §4 (Conversation Engine)
+- <code>CONVERSATION_SYSTEM_ARCHITECTURE.md</code> (One-brain-per-workspace, channel-agnostic)
+- <code>STEP_TYPES_SUMMARY.md</code> (9 step types implementation)
+- <code>STEP_TYPES_IMPLEMENTATION.md</code> (Detailed backend/frontend specs)
+- <code>SCENARIO_CONFIGURATION_GUIDE.md</code> (Admin UI, LLM enhancement)
+- <code>DEFAULT_SCENARIO_TEMPLATE.md</code> (Default template: 6 stages, 11 slots, 4 actions)
+- <code>AI Conversation Engine – Technical Specification/</code> (Router algorithm, JSON schema)
+- <code>EVENT_LOGGING_IMPLEMENTATION.md</code> (Event types and logging)
+- <code>sellrise.ai MVP — User Stories &amp; Acceptance Criteria (Final).md</code> §EPIC C, §EPIC D</p>
+<p><strong>Priority:</strong> 🔴 MVP Phase 1</p>
+<h3 id="user-stories_3">User Stories<a class="headerlink" href="#user-stories_3" title="Permanent link">&para;</a></h3>
+<h4 id="us-41-scenario-crud-draft-editing">US-4.1: Scenario CRUD (Draft Editing)<a class="headerlink" href="#us-41-scenario-crud-draft-editing" title="Permanent link">&para;</a></h4>
+<p><strong>Description:</strong> As an Admin, I want to create and edit a scenario draft in JSON format so that I can configure the conversation flow for my workspace.</p>
+<p><strong>Acceptance Criteria (BDD):</strong></p>
+<ul>
+<li>
+<p><strong>Given</strong> an Admin authenticated in workspace W1<br />
+<strong>When</strong> they <code>POST /v1/scenarios</code> with <code>{ "name": "Lead Qualifier", "config": { ... } }</code><br />
+<strong>Then</strong> a scenario is created with <code>status: "draft"</code> and the full config is stored</p>
+</li>
+<li>
+<p><strong>Given</strong> an existing draft scenario<br />
+<strong>When</strong> the Admin <code>PATCH /v1/scenarios/{id}</code> with updated config JSON<br />
+<strong>Then</strong> the draft is updated and <code>updated_at</code> is refreshed</p>
+</li>
+<li>
+<p><strong>Given</strong> invalid scenario JSON (e.g., missing required <code>version</code> field)<br />
+<strong>When</strong> the Admin saves the scenario<br />
+<strong>Then</strong> the API returns <code>422 Unprocessable Entity</code> with specific validation errors</p>
+</li>
+<li>
+<p><strong>Given</strong> an Admin editing a scenario<br />
+<strong>When</strong> they <code>POST /v1/llm/enhance</code> with a prompt and the current config<br />
+<strong>Then</strong> the LLM returns an enhanced version of the config (via OpenRouter / Claude 3.5 Sonnet)</p>
+</li>
+</ul>
+<p><strong>Technical Notes/Dependencies:</strong>
+- <strong>Endpoints:</strong> <code>POST /v1/scenarios</code>, <code>GET /v1/scenarios</code>, <code>GET /v1/scenarios/{id}</code>, <code>PATCH /v1/scenarios/{id}</code>
+- <strong>LLM Endpoints:</strong> <code>POST /v1/llm/enhance</code>, <code>POST /v1/llm/generate-config</code>
+- <strong>File Endpoints:</strong> <code>POST /v1/files/upload</code>, <code>DELETE /v1/files/{id}</code> (LLM grounding files)
+- <strong>Tables:</strong> <code>Scenarios</code> (scenario_id, workspace_id, name, description, config JSONB, status, created_by, updated_by), <code>Files</code> (file_id, workspace_id, filename, storage_path, file_type, file_size)
+- Admin-only (RBAC enforced)
+- Depends on: US-2.2 (RBAC)
+- Ref: <code>SCENARIO_CONFIGURATION_GUIDE.md</code> for full admin UI spec</p>
+<hr />
+<h4 id="us-42-scenario-publishing">US-4.2: Scenario Publishing<a class="headerlink" href="#us-42-scenario-publishing" title="Permanent link">&para;</a></h4>
+<p><strong>Description:</strong> As an Admin, I want to publish a scenario so that it becomes the active, immutable version used by the widget.</p>
+<p><strong>Acceptance Criteria (BDD):</strong></p>
+<ul>
+<li>
+<p><strong>Given</strong> a valid draft scenario<br />
+<strong>When</strong> the Admin calls <code>POST /v1/scenarios/{id}/publish</code><br />
+<strong>Then</strong> an immutable <code>ScenarioVersion</code> is created with a snapshot of the config and <code>published_at</code> timestamp</p>
+</li>
+<li>
+<p><strong>Given</strong> a published scenario version<br />
+<strong>When</strong> the widget initiates a session<br />
+<strong>Then</strong> the latest published <code>scenario_json</code> is returned in the session handshake response</p>
+</li>
+<li>
+<p><strong>Given</strong> the Admin publishes a new version<br />
+<strong>When</strong> existing widget sessions are active<br />
+<strong>Then</strong> active sessions continue using their original scenario version (no mid-conversation changes)</p>
+</li>
+<li>
+<p><strong>Given</strong> a scenario with validation errors<br />
+<strong>When</strong> the Admin attempts to publish<br />
+<strong>Then</strong> the API returns <code>422 Unprocessable Entity</code> and the scenario remains in draft</p>
+</li>
+</ul>
+<p><strong>Technical Notes/Dependencies:</strong>
+- <strong>Endpoint:</strong> <code>POST /v1/scenarios/{id}/publish</code>
+- <strong>Table:</strong> <code>ScenarioVersions</code> (version_id, scenario_id, config JSONB, published_at)
+- One active published version per workspace at a time
+- <strong>Rule R5</strong> — deterministic execution guaranteed by immutable versions
+- Depends on: US-4.1 (Scenario CRUD)</p>
+<hr />
+<h4 id="us-43-step-execution-conversation-flow">US-4.3: Step Execution (Conversation Flow)<a class="headerlink" href="#us-43-step-execution-conversation-flow" title="Permanent link">&para;</a></h4>
+<p><strong>Description:</strong> As a Visitor, I want to complete conversation steps in the widget so that the bot qualifies me and routes me to the appropriate next step.</p>
+<p><strong>Acceptance Criteria (BDD):</strong></p>
+<ul>
+<li>
+<p><strong>Given</strong> a Visitor in an active widget session with a published scenario<br />
+<strong>When</strong> they complete a step (e.g., answer a <code>question_text</code> field)<br />
+<strong>Then</strong> the engine validates the input and returns the next step based on scenario config</p>
+</li>
+<li>
+<p><strong>Given</strong> a Visitor submits an invalid input (e.g., malformed email in a form step)<br />
+<strong>When</strong> the step processor validates the input<br />
+<strong>Then</strong> a validation error is returned and the Visitor remains on the current step</p>
+</li>
+<li>
+<p><strong>Given</strong> a <code>conditional_branch</code> step<br />
+<strong>When</strong> the branch condition evaluates against the current session variables<br />
+<strong>Then</strong> the engine routes to the correct branch deterministically (<strong>Rule R5</strong>)</p>
+</li>
+<li>
+<p><strong>Given</strong> a <code>kb_search</code> step<br />
+<strong>When</strong> the Visitor enters a search query<br />
+<strong>Then</strong> the engine queries the KB API and returns results from articles/FAQs only (<strong>Rule R3</strong>)</p>
+</li>
+<li>
+<p><strong>Given</strong> any step completion<br />
+<strong>When</strong> the answer is processed<br />
+<strong>Then</strong> the answer is stored in <code>conversation.context.slots</code> and a <code>step_completed</code> event is logged</p>
+</li>
+</ul>
+<p><strong>Technical Notes/Dependencies:</strong>
+- <strong>Step Types (9):</strong> <code>message</code>, <code>question_text</code>, <code>question_choice</code>, <code>form</code>, <code>conditional_branch</code>, <code>kb_search</code>, <code>handoff_booking_link</code>, <code>handoff_operator</code>, <code>end</code>
+- <strong>Backend:</strong> Requires a <code>StepProcessor</code> service to execute all step types, validate inputs, and manage state
+- <strong>Frontend:</strong> Requires a universal <code>StepRenderer</code> component that renders all 9 step types with validation
+- <strong>Endpoints:</strong> <code>POST /v1/steps/init</code>, <code>POST /v1/steps/execute</code>, <code>POST /v1/steps/process</code>
+- Ref: <code>STEP_TYPES_IMPLEMENTATION.md</code> for complete implementation details
+- Depends on: US-4.2 (Published Scenario), US-3.3 (Widget Session)</p>
+<hr />
+<h4 id="us-44-event-logging">US-4.4: Event Logging<a class="headerlink" href="#us-44-event-logging" title="Permanent link">&para;</a></h4>
+<p><strong>Description:</strong> As a platform operator, I want every widget interaction logged as an immutable event so that I can reconstruct the full conversation transcript.</p>
+<p><strong>Acceptance Criteria (BDD):</strong></p>
+<ul>
+<li>
+<p><strong>Given</strong> a Visitor opens the widget<br />
+<strong>When</strong> the session is created<br />
+<strong>Then</strong> a <code>widget_opened</code> event is logged with <code>{ domain, page_url, utm_* }</code></p>
+</li>
+<li>
+<p><strong>Given</strong> a Visitor submits the lead contact form<br />
+<strong>When</strong> the lead is created/upserted<br />
+<strong>Then</strong> a <code>lead_submitted</code> event is logged with <code>{ name, email, phone }</code></p>
+</li>
+<li>
+<p><strong>Given</strong> an Agent changes a lead's stage from "new" to "qualified"<br />
+<strong>When</strong> the <code>PATCH /v1/leads/{id}</code> request is processed<br />
+<strong>Then</strong> a <code>stage_changed</code> event is logged with <code>{ old_stage: "new", new_stage: "qualified" }</code></p>
+</li>
+<li>
+<p><strong>Given</strong> events exist for a lead<br />
+<strong>When</strong> the transcript is rendered in the CRM<br />
+<strong>Then</strong> events are ordered by <code>created_at</code> ascending (<strong>Rule R2</strong>)</p>
+</li>
+<li>
+<p><strong>Given</strong> an event is created<br />
+<strong>When</strong> any attempt is made to modify or delete it<br />
+<strong>Then</strong> the operation is rejected (events are append-only and immutable)</p>
+</li>
+</ul>
+<p><strong>Technical Notes/Dependencies:</strong>
+- <strong>Event Types:</strong> <code>widget_opened</code>, <code>chat_started</code>, <code>step_completed</code>, <code>lead_submitted</code>, <code>booking_link_shown</code>, <code>booking_link_clicked</code>, <code>stage_changed</code>, <code>owner_assigned</code>, <code>note_added</code>
+- <strong>Endpoint:</strong> <code>POST /v1/widget/event</code> — <code>{ session_id, event_type, event_data, ts_client }</code>
+- <strong>Table:</strong> <code>LeadEvents</code> (event_id, workspace_id, lead_id nullable, session_id, event_type, event_data JSONB, created_at)
+- <strong>Rule R2</strong> governs transcript rendering
+- Ref: <code>EVENT_LOGGING_IMPLEMENTATION.md</code> for auto-logging points
+- Depends on: US-3.3 (Widget Session)</p>
+<hr />
+<h4 id="us-45-centralized-conversation-system">US-4.5: Centralized Conversation System<a class="headerlink" href="#us-45-centralized-conversation-system" title="Permanent link">&para;</a></h4>
+<p><strong>Description:</strong> As a platform operator, I want one AI "brain" per workspace processing all conversations so that the AI persona is consistent across channels.</p>
+<p><strong>Acceptance Criteria (BDD):</strong></p>
+<ul>
+<li>
+<p><strong>Given</strong> a workspace with a published scenario<br />
+<strong>When</strong> a message arrives from any channel (web, WhatsApp, Telegram)<br />
+<strong>Then</strong> the same scenario processes the message with consistent behavior</p>
+</li>
+<li>
+<p><strong>Given</strong> a Visitor sends a message via <code>POST /v1/widget/message</code><br />
+<strong>When</strong> the message is processed<br />
+<strong>Then</strong> a <code>Message</code> record is created with <code>role: "user"</code> and a bot response with <code>role: "assistant"</code> is generated and stored</p>
+</li>
+<li>
+<p><strong>Given</strong> an active conversation<br />
+<strong>When</strong> the context is inspected<br />
+<strong>Then</strong> it contains full state: current stage, current task, filled slots, and variables (JSONB)</p>
+</li>
+<li>
+<p><strong>Given</strong> two leads in the same workspace on different channels<br />
+<strong>When</strong> both send messages simultaneously<br />
+<strong>Then</strong> each conversation maintains its own isolated context (no context mixing)</p>
+</li>
+</ul>
+<p><strong>Technical Notes/Dependencies:</strong>
+- <strong>Endpoints:</strong> <code>POST /v1/widget/message</code>, <code>GET /v1/conversations</code>, <code>GET /v1/conversations/{id}</code>, <code>PATCH /v1/conversations/{id}</code>, <code>GET /v1/conversations/{id}/messages</code>
+- <strong>Tables:</strong> <code>Conversations</code> (conversation_id, workspace_id, lead_id, scenario_id, channel, status, current_stage_id, context JSONB, last_message_at), <code>Messages</code> (message_id, conversation_id, role, content, metadata JSONB, is_delivered, is_read, created_at)
+- Channels: <code>web</code>, <code>whatsapp</code>, <code>telegram</code>, <code>instagram</code>, <code>messenger</code>, <code>email</code>
+- Requires database migration for <code>Conversations</code> and <code>Messages</code> tables
+- Ref: <code>CONVERSATION_SYSTEM_ARCHITECTURE.md</code> for full schema and API design
+- Depends on: US-4.2 (Published Scenario), US-5.1 (Lead Creation)</p>
+<h3 id="out-of-scope_3">Out of Scope<a class="headerlink" href="#out-of-scope_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>LLM-powered AI Conversation Engine with stage/task router (🟢 Post-MVP, §4.6)</li>
+<li>Visual Bot Builder / Flow Editor (🟢 Post-MVP, §7)</li>
+<li>A/B testing of scenarios</li>
+<li>Scenario templates library (🟢 Post-MVP, §7.5)</li>
+<li><code>handoff_operator</code> step type (live chat takeover — 🟢 Post-MVP)</li>
+</ul>
+<h3 id="open-questions_3">Open Questions<a class="headerlink" href="#open-questions_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Should the scenario simulator (§4.2) be accessible to Agents, or Admin-only?</li>
+<li>How should the system handle a published scenario being unpublished while active sessions exist?</li>
+</ul>
+<hr />
+<h2 id="epic-5-lead-management-mini-crm">Epic 5: Lead Management — Mini-CRM<a class="headerlink" href="#epic-5-lead-management-mini-crm" title="Permanent link">&para;</a></h2>
+<p><strong>Business Value:</strong> Lightweight CRM enabling operators to manage, qualify, track, and follow up on leads captured through the widget, increasing conversion rates.</p>
+<p><strong>Repo Docs Reference:</strong>
+- <code>FEATURE_BREAKDOWN.md</code> §5 (Lead Management Mini-CRM)
+- <code>crm-prds/01-lead-creation-and-deduplication.md</code>
+- <code>crm-prds/02-lead-inbox-new-unassigned.md</code>
+- <code>crm-prds/03-pipeline-kanban-view.md</code>
+- <code>crm-prds/04-lead-detail-view.md</code>
+- <code>crm-prds/05-lead-search-and-filters.md</code>
+- <code>crm-prds/06-lead-notes.md</code>
+- <code>crm-prds/07-lead-assignment.md</code>
+- <code>crm-prds/08-lead-scoring.md</code>
+- <code>sellrise.ai MVP — User Stories &amp; Acceptance Criteria (Final).md</code> §EPIC E, §EPIC F</p>
+<p><strong>Priority:</strong> 🔴 MVP Phase 1</p>
+<h3 id="user-stories_4">User Stories<a class="headerlink" href="#user-stories_4" title="Permanent link">&para;</a></h3>
+<h4 id="us-51-lead-creation-deduplication">US-5.1: Lead Creation &amp; Deduplication<a class="headerlink" href="#us-51-lead-creation-deduplication" title="Permanent link">&para;</a></h4>
+<p><strong>Description:</strong> As a Visitor, I want to submit my contact details through the widget so that a lead is created (or updated if I already exist) without duplication.</p>
+<p><strong>Acceptance Criteria (BDD):</strong></p>
+<ul>
+<li>
+<p><strong>Given</strong> a Visitor submits contact details <code>{ name, email, phone, consent: true }</code><br />
+<strong>When</strong> <code>POST /v1/widget/lead</code> is called<br />
+<strong>Then</strong> the system normalizes the email (lowercase, trim) and phone (E.164), checks for duplicates, and creates or upserts the lead</p>
+</li>
+<li>
+<p><strong>Given</strong> an existing lead with <code>dedup_email = "john@example.com"</code> in workspace W1<br />
+<strong>When</strong> a new submission arrives with email <code>"John@Example.com "</code><br />
+<strong>Then</strong> the existing lead is updated (upserted) — no duplicate is created</p>
+</li>
+<li>
+<p><strong>Given</strong> a submission with no matching email but matching <code>dedup_phone</code><br />
+<strong>When</strong> the dedup check runs<br />
+<strong>Then</strong> the lead is matched by phone and updated</p>
+</li>
+<li>
+<p><strong>Given</strong> a submission with no matching email or phone<br />
+<strong>When</strong> the dedup check runs<br />
+<strong>Then</strong> a new lead is created with auto-calculated score (HOT/WARM/COLD)</p>
+</li>
+<li>
+<p><strong>Given</strong> any lead submission<br />
+<strong>When</strong> the lead is created or updated<br />
+<strong>Then</strong> a <code>lead_submitted</code> event is logged, consent is recorded with timestamp, and the API returns <code>{ lead_id, score, stage }</code></p>
+</li>
+</ul>
+<p><strong>Technical Notes/Dependencies:</strong>
+- <strong>Endpoint:</strong> <code>POST /v1/widget/lead</code> — <code>{ session_id, name, email, phone, consent, qualification_data }</code>
+- <strong>Table:</strong> <code>Leads</code> (lead_id UUID, workspace_id, session_id, name, email, phone, dedup_email unique/workspace, dedup_phone, consent, consent_timestamp, procedure, budget, timeframe, location, source_data JSONB, score enum, stage enum, owner_id, tags array, created_at, updated_at)
+- <strong>Rule R4</strong> governs deduplication logic
+- Ref: <code>crm-prds/01-lead-creation-and-deduplication.md</code>
+- Depends on: US-3.3 (Widget Session), US-4.4 (Event Logging)</p>
+<hr />
+<h4 id="us-52-lead-inbox-newunassigned">US-5.2: Lead Inbox (New/Unassigned)<a class="headerlink" href="#us-52-lead-inbox-newunassigned" title="Permanent link">&para;</a></h4>
+<p><strong>Description:</strong> As an Agent, I want to see a list of new and unassigned leads so that I can quickly pick up leads that need attention.</p>
+<p><strong>Acceptance Criteria (BDD):</strong></p>
+<ul>
+<li>
+<p><strong>Given</strong> an Agent authenticated in workspace W1<br />
+<strong>When</strong> they navigate to the Inbox view<br />
+<strong>Then</strong> leads are displayed where <code>stage = 'new'</code> OR <code>owner_id IS NULL</code>, sorted by <code>created_at</code> DESC</p>
+</li>
+<li>
+<p><strong>Given</strong> leads in the inbox<br />
+<strong>When</strong> the list is rendered<br />
+<strong>Then</strong> each card shows: created date, name, email, phone, score badge (Hot/Warm/Cold), procedure, source domain</p>
+</li>
+<li>
+<p><strong>Given</strong> an Agent clicks on a lead card<br />
+<strong>When</strong> the click is processed<br />
+<strong>Then</strong> the Lead Detail View (US-5.4) opens</p>
+</li>
+</ul>
+<p><strong>Technical Notes/Dependencies:</strong>
+- <strong>Endpoint:</strong> <code>GET /v1/leads?stage=new&amp;owner_id=null&amp;sort=-created_at</code>
+- Uses <code>Leads</code> table with filters
+- Ref: <code>crm-prds/02-lead-inbox-new-unassigned.md</code>
+- Depends on: US-5.1 (Lead Creation)</p>
+<hr />
+<h4 id="us-53-pipeline-kanban-view">US-5.3: Pipeline Kanban View<a class="headerlink" href="#us-53-pipeline-kanban-view" title="Permanent link">&para;</a></h4>
+<p><strong>Description:</strong> As an Agent, I want to view leads in a Kanban board organized by stage so that I can manage my pipeline visually.</p>
+<p><strong>Acceptance Criteria (BDD):</strong></p>
+<ul>
+<li>
+<p><strong>Given</strong> an Agent opens the Pipeline view<br />
+<strong>When</strong> leads are loaded<br />
+<strong>Then</strong> leads are displayed in columns: NEW → QUALIFIED → CONTACTED → BOOKED → WON → LOST</p>
+</li>
+<li>
+<p><strong>Given</strong> an Agent drags a lead card from "NEW" to "QUALIFIED"<br />
+<strong>When</strong> the drop completes<br />
+<strong>Then</strong> <code>PATCH /v1/leads/{id}</code> is called with <code>{ "stage": "qualified" }</code> and a <code>stage_changed</code> event is logged</p>
+</li>
+<li>
+<p><strong>Given</strong> a user with role <code>VIEWER</code><br />
+<strong>When</strong> they attempt to drag a lead to another column<br />
+<strong>Then</strong> the drag is disabled (read-only access)</p>
+</li>
+<li>
+<p><strong>Given</strong> a mobile device<br />
+<strong>When</strong> the Pipeline is displayed<br />
+<strong>Then</strong> a dropdown stage selector replaces drag-and-drop</p>
+</li>
+</ul>
+<p><strong>Technical Notes/Dependencies:</strong>
+- <strong>Endpoint:</strong> <code>PATCH /v1/leads/{id}</code> — <code>{ stage }</code> triggers <code>stage_changed</code> event
+- <strong>Stages:</strong> <code>new</code>, <code>qualified</code>, <code>contacted</code>, <code>booked</code>, <code>won</code>, <code>lost</code>
+- RBAC: <code>VIEWER</code> cannot modify; <code>AGENT</code> and <code>ADMIN</code> can
+- Ref: <code>crm-prds/03-pipeline-kanban-view.md</code>
+- Depends on: US-5.1 (Lead Creation), US-2.2 (RBAC)</p>
+<hr />
+<h4 id="us-54-lead-detail-view">US-5.4: Lead Detail View<a class="headerlink" href="#us-54-lead-detail-view" title="Permanent link">&para;</a></h4>
+<p><strong>Description:</strong> As an Agent, I want to view a lead's full details — contact info, qualification, transcript, notes, and tags — so that I have complete context before reaching out.</p>
+<p><strong>Acceptance Criteria (BDD):</strong></p>
+<ul>
+<li>
+<p><strong>Given</strong> an Agent opens a lead's detail view<br />
+<strong>When</strong> <code>GET /v1/leads/{id}</code> returns the data<br />
+<strong>Then</strong> the view shows sections: Contact Card, Qualification, Pipeline stage, Source/UTM, Transcript (from events), Notes, Tags</p>
+</li>
+<li>
+<p><strong>Given</strong> a lead with logged events<br />
+<strong>When</strong> the Transcript section renders<br />
+<strong>Then</strong> events are displayed chronologically (ordered by <code>created_at</code>) as a timeline (<strong>Rule R2</strong>)</p>
+</li>
+<li>
+<p><strong>Given</strong> an Agent viewing a lead<br />
+<strong>When</strong> they assign themselves as owner via the UI<br />
+<strong>Then</strong> <code>PATCH /v1/leads/{id}</code> with <code>{ "owner_id": "&lt;user_id&gt;" }</code> is called and an <code>owner_assigned</code> event is logged</p>
+</li>
+</ul>
+<p><strong>Technical Notes/Dependencies:</strong>
+- <strong>Endpoints:</strong> <code>GET /v1/leads/{id}</code>, <code>PATCH /v1/leads/{id}</code>, <code>POST /v1/leads/{id}/notes</code>, <code>PATCH /v1/leads/{id}/tags</code>
+- Combines data from <code>Leads</code>, <code>LeadEvents</code>, <code>LeadNotes</code> tables
+- Ref: <code>crm-prds/04-lead-detail-view.md</code>
+- Depends on: US-5.1, US-5.6 (Notes), US-5.7 (Assignment), US-4.4 (Events)</p>
+<hr />
+<h4 id="us-55-lead-search-filters">US-5.5: Lead Search &amp; Filters<a class="headerlink" href="#us-55-lead-search-filters" title="Permanent link">&para;</a></h4>
+<p><strong>Description:</strong> As an Agent, I want to search and filter leads by multiple criteria so that I can quickly find specific leads.</p>
+<p><strong>Acceptance Criteria (BDD):</strong></p>
+<ul>
+<li>
+<p><strong>Given</strong> an Agent on the leads list<br />
+<strong>When</strong> they apply filters <code>{ stage: "qualified", score: "hot", owner: "&lt;user_id&gt;" }</code><br />
+<strong>Then</strong> only leads matching ALL criteria (AND logic) are returned</p>
+</li>
+<li>
+<p><strong>Given</strong> an Agent types "john" in the search box<br />
+<strong>When</strong> the search executes<br />
+<strong>Then</strong> leads matching name, email, or phone (case-insensitive) are returned</p>
+</li>
+<li>
+<p><strong>Given</strong> a large dataset (thousands of leads)<br />
+<strong>When</strong> <code>GET /v1/leads?limit=20&amp;offset=0</code> is called<br />
+<strong>Then</strong> results are paginated and the response includes total count</p>
+</li>
+<li>
+<p><strong>Given</strong> filters are applied<br />
+<strong>When</strong> the Agent changes the date range<br />
+<strong>Then</strong> the results update to include only leads created within the specified range</p>
+</li>
+</ul>
+<p><strong>Technical Notes/Dependencies:</strong>
+- <strong>Endpoint:</strong> <code>GET /v1/leads?stage=&amp;score=&amp;owner=&amp;search=&amp;from=&amp;to=&amp;limit=20&amp;offset=0</code>
+- Database indexes on <code>stage</code>, <code>score</code>, <code>owner_id</code>, <code>created_at</code> for performance
+- Ref: <code>crm-prds/05-lead-search-and-filters.md</code>
+- Depends on: US-5.1 (Lead Creation)</p>
+<hr />
+<h4 id="us-56-lead-notes">US-5.6: Lead Notes<a class="headerlink" href="#us-56-lead-notes" title="Permanent link">&para;</a></h4>
+<p><strong>Description:</strong> As an Agent, I want to add notes to a lead so that I can document follow-up actions and observations.</p>
+<p><strong>Acceptance Criteria (BDD):</strong></p>
+<ul>
+<li>
+<p><strong>Given</strong> an Agent viewing a lead's detail page<br />
+<strong>When</strong> they <code>POST /v1/leads/{id}/notes</code> with <code>{ "content": "Called, no answer. Will retry tomorrow." }</code><br />
+<strong>Then</strong> the note is saved with <code>author_id</code>, <code>created_at</code>, and a <code>note_added</code> event is logged</p>
+</li>
+<li>
+<p><strong>Given</strong> a lead with multiple notes<br />
+<strong>When</strong> <code>GET /v1/leads/{id}/notes</code> is called<br />
+<strong>Then</strong> notes are returned chronologically (newest last) with author name and timestamp</p>
+</li>
+<li>
+<p><strong>Given</strong> an Agent who authored a note<br />
+<strong>When</strong> they <code>DELETE /v1/notes/{note_id}</code><br />
+<strong>Then</strong> the note is deleted (only own notes, optional in MVP)</p>
+</li>
+</ul>
+<p><strong>Technical Notes/Dependencies:</strong>
+- <strong>Endpoints:</strong> <code>POST /v1/leads/{id}/notes</code>, <code>GET /v1/leads/{id}/notes</code>, <code>DELETE /v1/notes/{note_id}</code>
+- <strong>Table:</strong> <code>LeadNotes</code> (note_id UUID, lead_id FK, workspace_id FK, author_id FK, content TEXT, created_at, updated_at)
+- Ref: <code>crm-prds/06-lead-notes.md</code>
+- Depends on: US-5.4 (Lead Detail), US-2.2 (RBAC)</p>
+<hr />
+<h4 id="us-57-lead-assignment">US-5.7: Lead Assignment<a class="headerlink" href="#us-57-lead-assignment" title="Permanent link">&para;</a></h4>
+<p><strong>Description:</strong> As an Agent, I want to assign a lead to myself or another team member so that ownership and responsibility are clear.</p>
+<p><strong>Acceptance Criteria (BDD):</strong></p>
+<ul>
+<li>
+<p><strong>Given</strong> an unassigned lead<br />
+<strong>When</strong> an Agent <code>PATCH /v1/leads/{id}</code> with <code>{ "owner_id": "&lt;user_id&gt;" }</code><br />
+<strong>Then</strong> the lead's <code>owner_id</code> is updated and an <code>owner_assigned</code> event is logged with <code>{ old_owner_id: null, new_owner_id: "&lt;user_id&gt;" }</code></p>
+</li>
+<li>
+<p><strong>Given</strong> a lead assigned to Agent A<br />
+<strong>When</strong> Agent B reassigns it to themselves<br />
+<strong>Then</strong> the <code>owner_assigned</code> event logs both old and new owner IDs</p>
+</li>
+<li>
+<p><strong>Given</strong> an assigned lead<br />
+<strong>When</strong> an Agent sets <code>{ "owner_id": null }</code><br />
+<strong>Then</strong> the lead returns to the unassigned inbox</p>
+</li>
+</ul>
+<p><strong>Technical Notes/Dependencies:</strong>
+- <strong>Endpoint:</strong> <code>PATCH /v1/leads/{id}</code> — <code>{ owner_id }</code>
+- <code>owner_id</code> references <code>Users</code> table
+- Ref: <code>crm-prds/07-lead-assignment.md</code>
+- Depends on: US-5.1, US-2.3 (Users exist)</p>
+<hr />
+<h4 id="us-58-lead-scoring">US-5.8: Lead Scoring<a class="headerlink" href="#us-58-lead-scoring" title="Permanent link">&para;</a></h4>
+<p><strong>Description:</strong> As a platform operator, I want leads to be automatically scored (HOT/WARM/COLD) upon creation so that Agents can prioritize high-value leads.</p>
+<p><strong>Acceptance Criteria (BDD):</strong></p>
+<ul>
+<li>
+<p><strong>Given</strong> a lead submission with high budget + urgent timeframe + clear need<br />
+<strong>When</strong> the scoring logic runs<br />
+<strong>Then</strong> the lead is scored as <code>HOT</code></p>
+</li>
+<li>
+<p><strong>Given</strong> a lead submission with medium budget or longer timeframe<br />
+<strong>When</strong> the scoring logic runs<br />
+<strong>Then</strong> the lead is scored as <code>WARM</code></p>
+</li>
+<li>
+<p><strong>Given</strong> a lead submission with low budget or no clear timeline<br />
+<strong>When</strong> the scoring logic runs<br />
+<strong>Then</strong> the lead is scored as <code>COLD</code></p>
+</li>
+<li>
+<p><strong>Given</strong> an existing lead whose qualification data is updated<br />
+<strong>When</strong> <code>PATCH /v1/leads/{id}</code> includes new <code>budget</code> or <code>timeframe</code><br />
+<strong>Then</strong> the score is recalculated and a <code>score_assigned</code> event is logged</p>
+</li>
+</ul>
+<p><strong>Technical Notes/Dependencies:</strong>
+- Scoring runs automatically on <code>POST /v1/widget/lead</code> and <code>PATCH /v1/leads/{id}</code>
+- Score stored in <code>Leads.score</code> (enum: HOT, WARM, COLD)
+- Configurable scoring rules deferred to Post-MVP
+- Ref: <code>crm-prds/08-lead-scoring.md</code>
+- Depends on: US-5.1 (Lead Creation)</p>
+<h3 id="out-of-scope_4">Out of Scope<a class="headerlink" href="#out-of-scope_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Lead merge UI (manual merge of duplicates)</li>
+<li>Lead import/export (bulk CSV import)</li>
+<li>Lead activity automation (auto-assign rules, round-robin)</li>
+<li>CRM integration push (HubSpot, Salesforce — 🟢 Post-MVP, §10.2)</li>
+<li>Send follow-up email/SMS from lead detail</li>
+</ul>
+<h3 id="open-questions_4">Open Questions<a class="headerlink" href="#open-questions_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Should scoring use conditional logic (if/else rules) or a rules engine (weighted scoring)?</li>
+<li>Are pipeline stages editable per workspace, or fixed to the 6 predefined stages?</li>
+<li>Should <code>VIEWER</code> role see lead email/phone, or are those masked for privacy?</li>
+</ul>
+<hr />
+<h2 id="epic-6-knowledge-base">Epic 6: Knowledge Base<a class="headerlink" href="#epic-6-knowledge-base" title="Permanent link">&para;</a></h2>
+<p><strong>Business Value:</strong> A self-serve knowledge base that powers the widget's FAQ/search step, answering visitor questions from curated content without LLM hallucination.</p>
+<p><strong>Repo Docs Reference:</strong>
+- <code>FEATURE_BREAKDOWN.md</code> §6 (Knowledge Base)
+- <code>sellrise.ai MVP — User Stories &amp; Acceptance Criteria (Final).md</code> §EPIC G</p>
+<p><strong>Priority:</strong> 🔴 MVP Phase 1</p>
+<h3 id="user-stories_5">User Stories<a class="headerlink" href="#user-stories_5" title="Permanent link">&para;</a></h3>
+<h4 id="us-61-kb-articles-crud">US-6.1: KB Articles CRUD<a class="headerlink" href="#us-61-kb-articles-crud" title="Permanent link">&para;</a></h4>
+<p><strong>Description:</strong> As an Admin, I want to create, edit, and delete knowledge base articles so that the widget can provide accurate answers to visitor questions.</p>
+<p><strong>Acceptance Criteria (BDD):</strong></p>
+<ul>
+<li>
+<p><strong>Given</strong> an Admin in workspace W1<br />
+<strong>When</strong> they <code>POST /v1/kb/articles</code> with <code>{ "title": "Pricing", "body": "## Plans\n...", "category": "General", "tags": ["pricing"] }</code><br />
+<strong>Then</strong> the article is created with <code>article_id</code>, <code>created_by</code>, <code>created_at</code></p>
+</li>
+<li>
+<p><strong>Given</strong> an existing article<br />
+<strong>When</strong> the Admin <code>PATCH /v1/kb/articles/{id}</code> with updated body<br />
+<strong>Then</strong> the article is updated, <code>updated_at</code> and <code>updated_by</code> are set</p>
+</li>
+<li>
+<p><strong>Given</strong> an Agent (non-Admin) user<br />
+<strong>When</strong> they attempt to <code>POST /v1/kb/articles</code><br />
+<strong>Then</strong> the API returns <code>403 Forbidden</code> (Admin-only CRUD)</p>
+</li>
+<li>
+<p><strong>Given</strong> articles exist in a workspace<br />
+<strong>When</strong> <code>GET /v1/kb/articles</code> is called<br />
+<strong>Then</strong> all articles for the workspace are returned (workspace-scoped)</p>
+</li>
+</ul>
+<p><strong>Technical Notes/Dependencies:</strong>
+- <strong>Endpoints:</strong> <code>POST /v1/kb/articles</code>, <code>GET /v1/kb/articles</code>, <code>GET /v1/kb/articles/{id}</code>, <code>PATCH /v1/kb/articles/{id}</code>, <code>DELETE /v1/kb/articles/{id}</code>
+- <strong>Table:</strong> <code>KBArticles</code> (article_id UUID, workspace_id FK, title, body TEXT/Markdown, category, tags ARRAY, language default 'EN', created_by FK, updated_by FK, created_at, updated_at)
+- Depends on: US-2.2 (RBAC, Admin-only)</p>
+<hr />
+<h4 id="us-62-kb-faq-crud">US-6.2: KB FAQ CRUD<a class="headerlink" href="#us-62-kb-faq-crud" title="Permanent link">&para;</a></h4>
+<p><strong>Description:</strong> As an Admin, I want to manage FAQ entries (question-answer pairs) so that common visitor questions are answered instantly.</p>
+<p><strong>Acceptance Criteria (BDD):</strong></p>
+<ul>
+<li>
+<p><strong>Given</strong> an Admin<br />
+<strong>When</strong> they <code>POST /v1/kb/faq</code> with <code>{ "question": "What are your hours?", "answer": "Mon-Fri 9-5", "category": "General" }</code><br />
+<strong>Then</strong> the FAQ entry is created with a unique <code>faq_id</code></p>
+</li>
+<li>
+<p><strong>Given</strong> a FAQ entry exists<br />
+<strong>When</strong> the Admin <code>DELETE /v1/kb/faq/{id}</code><br />
+<strong>Then</strong> the FAQ is removed and no longer appears in search results</p>
+</li>
+<li>
+<p><strong>Given</strong> FAQ entries exist<br />
+<strong>When</strong> <code>GET /v1/kb/faq</code> is called<br />
+<strong>Then</strong> all FAQs for the workspace are returned with question, answer, category, and tags</p>
+</li>
+</ul>
+<p><strong>Technical Notes/Dependencies:</strong>
+- <strong>Endpoints:</strong> <code>POST /v1/kb/faq</code>, <code>GET /v1/kb/faq</code>, <code>GET /v1/kb/faq/{id}</code>, <code>PATCH /v1/kb/faq/{id}</code>, <code>DELETE /v1/kb/faq/{id}</code>
+- <strong>Table:</strong> <code>KBFAQs</code> (faq_id UUID, workspace_id FK, question, answer, category, tags ARRAY, language, created_by FK, updated_by FK, created_at, updated_at)
+- Depends on: US-2.2 (RBAC, Admin-only)</p>
+<hr />
+<h4 id="us-63-kb-full-text-search">US-6.3: KB Full-Text Search<a class="headerlink" href="#us-63-kb-full-text-search" title="Permanent link">&para;</a></h4>
+<p><strong>Description:</strong> As a Visitor, I want to search the knowledge base from the widget so that I get relevant answers to my questions.</p>
+<p><strong>Acceptance Criteria (BDD):</strong></p>
+<ul>
+<li>
+<p><strong>Given</strong> a Visitor in an active widget session at a <code>kb_search</code> step<br />
+<strong>When</strong> they enter a search query (e.g., "cargo bike price")<br />
+<strong>Then</strong> <code>GET /v1/widget/kb/search?q=cargo+bike+price&amp;limit=5</code> returns matching articles and FAQs ranked by relevance</p>
+</li>
+<li>
+<p><strong>Given</strong> search results are returned<br />
+<strong>When</strong> the widget renders them<br />
+<strong>Then</strong> each result shows <code>type</code> (article/faq), <code>title</code>/<code>question</code>, and a text snippet/preview</p>
+</li>
+<li>
+<p><strong>Given</strong> no search results match the query<br />
+<strong>When</strong> the API returns an empty array<br />
+<strong>Then</strong> the widget displays a fallback message: "No results found. Please leave your contact details." (<strong>Rule R3</strong>)</p>
+</li>
+<li>
+<p><strong>Given</strong> search is executed<br />
+<strong>When</strong> the Postgres query runs<br />
+<strong>Then</strong> it uses <code>ts_vector</code> and <code>ts_rank</code> for full-text ranking</p>
+</li>
+</ul>
+<p><strong>Technical Notes/Dependencies:</strong>
+- <strong>Endpoint:</strong> <code>GET /v1/widget/kb/search?q=&amp;limit=5</code>
+- <strong>Response:</strong> <code>[{ type, id, title/question, snippet/answer_preview }]</code>
+- PostgreSQL full-text search with <code>ts_vector</code> indexes on <code>articles.body</code> and <code>faqs.question</code>
+- <strong>Rule R3</strong> — KB-only answers, no LLM generation
+- Depends on: US-6.1 (Articles), US-6.2 (FAQs)</p>
+<hr />
+<h4 id="us-64-kb-only-answer-mode">US-6.4: KB-Only Answer Mode<a class="headerlink" href="#us-64-kb-only-answer-mode" title="Permanent link">&para;</a></h4>
+<p><strong>Description:</strong> As a platform operator, I want the widget to only surface verified KB content so that visitors never receive hallucinated or unverified answers.</p>
+<p><strong>Acceptance Criteria (BDD):</strong></p>
+<ul>
+<li>
+<p><strong>Given</strong> the <code>kb_search</code> step type is configured in a scenario<br />
+<strong>When</strong> the step executes<br />
+<strong>Then</strong> it queries only the KB Search API — no LLM-generated answers are included</p>
+</li>
+<li>
+<p><strong>Given</strong> a KB search returns zero results<br />
+<strong>When</strong> the fallback is triggered<br />
+<strong>Then</strong> the widget offers a contact form to capture the visitor's details</p>
+</li>
+<li>
+<p><strong>Given</strong> any widget response in MVP<br />
+<strong>When</strong> the response content is inspected<br />
+<strong>Then</strong> all answers trace back to a KB article or FAQ entry (auditable)</p>
+</li>
+</ul>
+<p><strong>Technical Notes/Dependencies:</strong>
+- Enforced at step processor level
+- No LLM free-form answers in MVP scope
+- <strong>Rule R3</strong> is the governing constraint
+- Depends on: US-6.3 (KB Search), US-4.3 (Step Execution)</p>
+<h3 id="out-of-scope_5">Out of Scope<a class="headerlink" href="#out-of-scope_5" title="Permanent link">&para;</a></h3>
+<ul>
+<li>LLM-enhanced KB answers (summarization, rephrasing — 🟢 Post-MVP)</li>
+<li>KB versioning and change history</li>
+<li>Multi-language KB (beyond default language field)</li>
+<li>KB analytics (most-searched queries, unanswered queries)</li>
+<li>Rich media in articles (images, videos)</li>
+</ul>
+<h3 id="open-questions_5">Open Questions<a class="headerlink" href="#open-questions_5" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Should KB search support fuzzy matching or synonyms in MVP?</li>
+<li>Is there a minimum number of articles/FAQs required before the <code>kb_search</code> step activates?</li>
+<li>Should the KB search endpoint be rate-limited for public widget access?</li>
+</ul>
+<hr />
+<h2 id="epic-7-analytics-reporting">Epic 7: Analytics &amp; Reporting<a class="headerlink" href="#epic-7-analytics-reporting" title="Permanent link">&para;</a></h2>
+<p><strong>Business Value:</strong> Data-driven insights into funnel conversion and lead quality, enabling Admins to optimize scenarios and Agents to focus on high-value leads.</p>
+<p><strong>Repo Docs Reference:</strong>
+- <code>FEATURE_BREAKDOWN.md</code> §8 (Analytics &amp; Reporting)
+- <code>sellrise.ai MVP — User Stories &amp; Acceptance Criteria (Final).md</code> §EPIC I</p>
+<p><strong>Priority:</strong> 🔴 MVP Phase 1 (Funnel + CSV), 🟡 Phase 2 (Source analytics, drop-off)</p>
+<h3 id="user-stories_6">User Stories<a class="headerlink" href="#user-stories_6" title="Permanent link">&para;</a></h3>
+<h4 id="us-71-funnel-metrics-dashboard">US-7.1: Funnel Metrics Dashboard<a class="headerlink" href="#us-71-funnel-metrics-dashboard" title="Permanent link">&para;</a></h4>
+<p><strong>Description:</strong> As an Admin, I want to see funnel metrics (widget opened → booking clicked) so that I can measure conversion rates and identify drop-off points.</p>
+<p><strong>Acceptance Criteria (BDD):</strong></p>
+<ul>
+<li>
+<p><strong>Given</strong> an Admin on the Analytics page<br />
+<strong>When</strong> they request funnel data with <code>GET /v1/analytics/funnel?from=2026-03-01&amp;to=2026-03-31</code><br />
+<strong>Then</strong> the API returns counts: <code>{ widget_opened, chat_started, lead_submitted, qualified_hot, booking_link_clicked }</code></p>
+</li>
+<li>
+<p><strong>Given</strong> funnel data is returned<br />
+<strong>When</strong> the dashboard renders<br />
+<strong>Then</strong> conversion rates between each stage are calculated and displayed (e.g., "30% of visitors submitted a lead")</p>
+</li>
+<li>
+<p><strong>Given</strong> no date range is specified<br />
+<strong>When</strong> the dashboard loads<br />
+<strong>Then</strong> default to the last 30 days</p>
+</li>
+<li>
+<p><strong>Given</strong> the funnel data query<br />
+<strong>When</strong> it executes<br />
+<strong>Then</strong> it is workspace-scoped (only counts events for the current workspace)</p>
+</li>
+</ul>
+<p><strong>Technical Notes/Dependencies:</strong>
+- <strong>Endpoint:</strong> <code>GET /v1/analytics/funnel?from=&amp;to=</code>
+- Queries <code>LeadEvents</code> table, counts by <code>event_type</code>
+- Conversion rates calculated in the frontend
+- Depends on: US-4.4 (Event Logging)</p>
+<hr />
+<h4 id="us-72-csv-export">US-7.2: CSV Export<a class="headerlink" href="#us-72-csv-export" title="Permanent link">&para;</a></h4>
+<p><strong>Description:</strong> As an Admin, I want to export leads as a CSV file so that I can analyze data externally or share with stakeholders.</p>
+<p><strong>Acceptance Criteria (BDD):</strong></p>
+<ul>
+<li>
+<p><strong>Given</strong> an Admin with leads in their workspace<br />
+<strong>When</strong> they call <code>GET /v1/leads/export?format=csv&amp;from=2026-03-01&amp;to=2026-03-31</code><br />
+<strong>Then</strong> a CSV file is downloaded containing: created_at, name, email, phone, procedure, timeframe, budget, score, stage, owner, utm_source, utm_medium, utm_campaign, referrer, page_url</p>
+</li>
+<li>
+<p><strong>Given</strong> filters are active (e.g., score=hot)<br />
+<strong>When</strong> the export is triggered<br />
+<strong>Then</strong> the CSV contains only leads matching the active filters</p>
+</li>
+<li>
+<p><strong>Given</strong> the export runs<br />
+<strong>When</strong> the CSV is generated<br />
+<strong>Then</strong> it is workspace-scoped (only includes leads from the current workspace)</p>
+</li>
+</ul>
+<p><strong>Technical Notes/Dependencies:</strong>
+- <strong>Endpoint:</strong> <code>GET /v1/leads/export?format=csv&amp;from=&amp;to=&amp;stage=&amp;score=</code>
+- Uses <code>Leads</code> table with same filter logic as US-5.5
+- Depends on: US-5.5 (Lead Search &amp; Filters)</p>
+<h3 id="out-of-scope_6">Out of Scope<a class="headerlink" href="#out-of-scope_6" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Lead source analytics breakdown (🟡 Phase 2, §8.2)</li>
+<li>Stage drop-off analysis by step (🟡 Phase 2, §8.3)</li>
+<li>Real-time dashboards / WebSocket updates</li>
+<li>Custom report builder</li>
+<li>Scheduled email reports</li>
+</ul>
+<h3 id="open-questions_6">Open Questions<a class="headerlink" href="#open-questions_6" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Should the CSV export have a row limit for performance (e.g., max 10,000 rows)?</li>
+<li>Is the funnel chart a bar chart, funnel shape, or configurable?</li>
+</ul>
+<hr />
+<h2 id="epic-8-notifications-jobs">Epic 8: Notifications &amp; Jobs<a class="headerlink" href="#epic-8-notifications-jobs" title="Permanent link">&para;</a></h2>
+<p><strong>Business Value:</strong> Timely email alerts ensure hot leads are followed up immediately, reducing response time and increasing conversion.</p>
+<p><strong>Repo Docs Reference:</strong>
+- <code>FEATURE_BREAKDOWN.md</code> §9 (Notifications &amp; Jobs)
+- <code>sellrise.ai MVP — User Stories &amp; Acceptance Criteria (Final).md</code> §EPIC H
+- <code>EVENT_LOGGING_IMPLEMENTATION.md</code> (notification events)</p>
+<p><strong>Priority:</strong> 🔴 MVP Phase 1 (Hot lead email), 🟡 Phase 2 (Assignment notifications)</p>
+<h3 id="user-stories_7">User Stories<a class="headerlink" href="#user-stories_7" title="Permanent link">&para;</a></h3>
+<h4 id="us-81-hot-lead-email-notification">US-8.1: Hot Lead Email Notification<a class="headerlink" href="#us-81-hot-lead-email-notification" title="Permanent link">&para;</a></h4>
+<p><strong>Description:</strong> As an Admin/Agent, I want to receive an email notification when a hot lead is submitted so that I can follow up immediately.</p>
+<p><strong>Acceptance Criteria (BDD):</strong></p>
+<ul>
+<li>
+<p><strong>Given</strong> a lead is submitted with <code>score = HOT</code><br />
+<strong>When</strong> the lead creation completes<br />
+<strong>Then</strong> an email notification is queued and sent to the configured recipients (workspace setting)</p>
+</li>
+<li>
+<p><strong>Given</strong> the email content<br />
+<strong>When</strong> it is rendered<br />
+<strong>Then</strong> it includes: lead name, email, phone, procedure, timeframe, budget, source page_url, and a direct link to the lead detail in the CRM</p>
+</li>
+<li>
+<p><strong>Given</strong> the email send fails<br />
+<strong>When</strong> the notification job retries<br />
+<strong>Then</strong> it retries up to 3 times with exponential backoff and logs <code>notification_failed</code> event on final failure</p>
+</li>
+<li>
+<p><strong>Given</strong> the email is sent successfully<br />
+<strong>When</strong> the job completes<br />
+<strong>Then</strong> a <code>notification_sent</code> event is logged for the lead</p>
+</li>
+</ul>
+<p><strong>Technical Notes/Dependencies:</strong>
+- <strong>Background Job:</strong> Redis + worker queue (Bull/Celery)
+- <strong>Table:</strong> <code>NotificationJobs</code> (job_id, workspace_id, lead_id, recipient_email, status, attempt_count, last_attempt_at, next_retry_at)
+- Recipients configured via workspace settings (<code>PATCH /v1/workspaces/{id}/settings</code>)
+- Depends on: US-5.1 (Lead Creation), US-5.8 (Lead Scoring), US-9.1 (Workspace Settings)</p>
+<hr />
+<h4 id="us-82-notification-event-logging">US-8.2: Notification Event Logging<a class="headerlink" href="#us-82-notification-event-logging" title="Permanent link">&para;</a></h4>
+<p><strong>Description:</strong> As a platform operator, I want notification delivery status logged as events so that I can audit notification reliability.</p>
+<p><strong>Acceptance Criteria (BDD):</strong></p>
+<ul>
+<li>
+<p><strong>Given</strong> a notification email is sent successfully<br />
+<strong>When</strong> the job completes<br />
+<strong>Then</strong> a <code>notification_sent</code> event is appended to the lead's event log</p>
+</li>
+<li>
+<p><strong>Given</strong> a notification fails after all retry attempts<br />
+<strong>When</strong> the final attempt fails<br />
+<strong>Then</strong> a <code>notification_failed</code> event is appended with error details</p>
+</li>
+</ul>
+<p><strong>Technical Notes/Dependencies:</strong>
+- Event types: <code>notification_sent</code>, <code>notification_failed</code>
+- Appended to <code>LeadEvents</code> table (immutable, <strong>Rule R2</strong>)
+- Depends on: US-8.1, US-4.4 (Event Logging)</p>
+<h3 id="out-of-scope_7">Out of Scope<a class="headerlink" href="#out-of-scope_7" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Lead assignment notification email (🟡 Phase 2, §9.2)</li>
+<li>SLA reminder notifications (🟢 Post-MVP, §9.3)</li>
+<li>SMS/Slack/webhook notification channels</li>
+<li>Notification preferences per user</li>
+<li>Digest emails (daily/weekly summary)</li>
+</ul>
+<h3 id="open-questions_7">Open Questions<a class="headerlink" href="#open-questions_7" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Should notification recipients be per-workspace or per-user preference?</li>
+<li>What email service provider will be used (SendGrid, SES, Resend)?</li>
+<li>Should the notification include a "claim this lead" button for agents?</li>
+</ul>
+<hr />
+<h2 id="epic-9-settings-administration">Epic 9: Settings &amp; Administration<a class="headerlink" href="#epic-9-settings-administration" title="Permanent link">&para;</a></h2>
+<p><strong>Business Value:</strong> Central configuration hub allowing Admins to customize their workspace — branding, team, notifications, and booking links — without developer intervention.</p>
+<p><strong>Repo Docs Reference:</strong>
+- <code>FEATURE_BREAKDOWN.md</code> §11 (Settings &amp; Administration)</p>
+<p><strong>Priority:</strong> 🔴 MVP Phase 1 (Workspace settings, Team), 🟡 Phase 2 (Branding, Notification config)</p>
+<h3 id="user-stories_8">User Stories<a class="headerlink" href="#user-stories_8" title="Permanent link">&para;</a></h3>
+<h4 id="us-91-workspace-settings">US-9.1: Workspace Settings<a class="headerlink" href="#us-91-workspace-settings" title="Permanent link">&para;</a></h4>
+<p><strong>Description:</strong> As an Admin, I want to configure workspace-level settings so that the platform behavior matches my business requirements.</p>
+<p><strong>Acceptance Criteria (BDD):</strong></p>
+<ul>
+<li>
+<p><strong>Given</strong> an Admin in workspace W1<br />
+<strong>When</strong> they <code>PATCH /v1/workspaces/{id}/settings</code> with <code>{ "timezone": "Asia/Jakarta", "notification_emails": ["ops@clinic.com"], "booking_links": { "default": "https://calendly.com/clinic" } }</code><br />
+<strong>Then</strong> the settings are saved in the workspace's <code>settings</code> (JSONB) column</p>
+</li>
+<li>
+<p><strong>Given</strong> workspace settings include a <code>booking_links</code> dictionary<br />
+<strong>When</strong> the widget encounters a <code>handoff_booking_link</code> step<br />
+<strong>Then</strong> the <code>booking_link_key</code> resolves to the correct URL from the settings</p>
+</li>
+<li>
+<p><strong>Given</strong> a non-Admin user<br />
+<strong>When</strong> they attempt to <code>PATCH /v1/workspaces/{id}/settings</code><br />
+<strong>Then</strong> the API returns <code>403 Forbidden</code></p>
+</li>
+</ul>
+<p><strong>Technical Notes/Dependencies:</strong>
+- <strong>Endpoint:</strong> <code>PATCH /v1/workspaces/{id}/settings</code>
+- <strong>Settings fields:</strong> workspace name, branding (logo, colors), timezone, language, notification_emails, booking_links
+- Stored in <code>Workspaces.settings</code> (JSONB)
+- Depends on: US-1.1 (Workspace), US-2.2 (RBAC)</p>
+<hr />
+<h4 id="us-92-team-management">US-9.2: Team Management<a class="headerlink" href="#us-92-team-management" title="Permanent link">&para;</a></h4>
+<p><strong>Description:</strong> As an Admin, I want to manage team members — invite, assign roles, and deactivate — so that the right people have the right access.</p>
+<p><strong>Acceptance Criteria (BDD):</strong></p>
+<ul>
+<li>
+<p><strong>Given</strong> an Admin in workspace W1<br />
+<strong>When</strong> they <code>POST /v1/users</code> with <code>{ "email": "new-agent@clinic.com", "role": "AGENT" }</code><br />
+<strong>Then</strong> a new user is created in the workspace (same as US-2.3)</p>
+</li>
+<li>
+<p><strong>Given</strong> an Admin viewing the team list<br />
+<strong>When</strong> they <code>PATCH /v1/users/{id}</code> with <code>{ "role": "VIEWER" }</code><br />
+<strong>Then</strong> the user's role is updated and their permissions change immediately</p>
+</li>
+<li>
+<p><strong>Given</strong> an Admin<br />
+<strong>When</strong> they <code>DELETE /v1/users/{id}</code> (deactivate)<br />
+<strong>Then</strong> the user is deactivated and can no longer log in; their assigned leads remain but <code>owner_id</code> is preserved for history</p>
+</li>
+</ul>
+<p><strong>Technical Notes/Dependencies:</strong>
+- <strong>Endpoints:</strong> <code>POST /v1/users</code>, <code>GET /v1/users</code>, <code>PATCH /v1/users/{id}</code>, <code>DELETE /v1/users/{id}</code>
+- Uses <code>Users</code> table
+- Depends on: US-2.2 (RBAC), US-2.3 (User Invitation)</p>
+<h3 id="out-of-scope_8">Out of Scope<a class="headerlink" href="#out-of-scope_8" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Per-domain branding customization (🟡 Phase 2, §11.3)</li>
+<li>Notification channel configuration (email/SMS/Slack — 🟡 Phase 2, §11.4)</li>
+<li>Audit log for settings changes</li>
+<li>Workspace billing and subscription management</li>
+</ul>
+<h3 id="open-questions_8">Open Questions<a class="headerlink" href="#open-questions_8" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Should deactivated users be soft-deleted or hard-deleted?</li>
+<li>Can an Admin change their own role (e.g., downgrade to Agent)?</li>
+<li>Are workspace settings changes versioned for rollback?</li>
+</ul>
+<hr />
+<h2 id="epic-10-booking-system">Epic 10: Booking System<a class="headerlink" href="#epic-10-booking-system" title="Permanent link">&para;</a></h2>
+<p><strong>Business Value:</strong> Convert qualified leads into booked appointments by presenting a clear call-to-action within the conversation flow.</p>
+<p><strong>Repo Docs Reference:</strong>
+- <code>FEATURE_BREAKDOWN.md</code> §12 (Booking System)
+- <code>STEP_TYPES_SUMMARY.md</code> (<code>handoff_booking_link</code> step type)
+- <code>STEP_TYPES_IMPLEMENTATION.md</code> (Step type configuration)</p>
+<p><strong>Priority:</strong> 🔴 MVP Phase 1 (Link-based only)</p>
+<h3 id="user-stories_9">User Stories<a class="headerlink" href="#user-stories_9" title="Permanent link">&para;</a></h3>
+<h4 id="us-101-booking-link-handoff">US-10.1: Booking Link Handoff<a class="headerlink" href="#us-101-booking-link-handoff" title="Permanent link">&para;</a></h4>
+<p><strong>Description:</strong> As a Visitor, I want to see a booking button during the conversation so that I can schedule an appointment after being qualified.</p>
+<p><strong>Acceptance Criteria (BDD):</strong></p>
+<ul>
+<li>
+<p><strong>Given</strong> the conversation reaches a <code>handoff_booking_link</code> step<br />
+<strong>When</strong> the step is rendered in the widget<br />
+<strong>Then</strong> the Visitor sees a configurable text message and a CTA button with a configurable label</p>
+</li>
+<li>
+<p><strong>Given</strong> the step config <code>{ "type": "handoff_booking_link", "booking_link_key": "default_booking_link" }</code><br />
+<strong>When</strong> the URL is resolved<br />
+<strong>Then</strong> it looks up <code>booking_link_key</code> from workspace settings' <code>booking_links</code> dictionary</p>
+</li>
+<li>
+<p><strong>Given</strong> the booking CTA is displayed<br />
+<strong>When</strong> the widget renders it<br />
+<strong>Then</strong> a <code>booking_link_shown</code> event is logged</p>
+</li>
+<li>
+<p><strong>Given</strong> the Visitor clicks the booking button<br />
+<strong>When</strong> the click is processed<br />
+<strong>Then</strong> the external booking URL opens in a new tab and a <code>booking_link_clicked</code> event is logged</p>
+</li>
+<li>
+<p><strong>Given</strong> the <code>booking_link_key</code> is missing from workspace settings<br />
+<strong>When</strong> the step attempts to resolve the URL<br />
+<strong>Then</strong> a fallback message is displayed (e.g., "Please contact us to schedule an appointment.")</p>
+</li>
+</ul>
+<p><strong>Technical Notes/Dependencies:</strong>
+- Step config example: <code>{ "type": "handoff_booking_link", "text": "Ready to schedule?", "button_label": "Book Now", "booking_link_key": "default_booking_link" }</code>
+- Booking URLs stored in <code>Workspaces.settings.booking_links</code> (JSONB)
+- Events: <code>booking_link_shown</code>, <code>booking_link_clicked</code>
+- Ref: <code>STEP_TYPES_SUMMARY.md</code> for step type behavior
+- Depends on: US-4.3 (Step Execution), US-9.1 (Workspace Settings), US-4.4 (Event Logging)</p>
+<h3 id="out-of-scope_9">Out of Scope<a class="headerlink" href="#out-of-scope_9" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Native booking calendar with availability slots (🟢 Post-MVP, §12.2)</li>
+<li>Calendar integration (Google Calendar, Outlook — 🟢 Post-MVP, §10.1)</li>
+<li>ICS file generation</li>
+<li>Slot locking mechanism</li>
+<li>Booking confirmation emails</li>
+<li>Reschedule/cancel via token links</li>
+</ul>
+<h3 id="open-questions_9">Open Questions<a class="headerlink" href="#open-questions_9" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Should multiple booking links be supported (e.g., per procedure type)?</li>
+<li>Should the booking link open in a new tab, iframe, or in-widget modal?</li>
+</ul>
+<hr />
+<h2 id="cross-epic-dependency-map">Cross-Epic Dependency Map<a class="headerlink" href="#cross-epic-dependency-map" title="Permanent link">&para;</a></h2>
+<h3 id="foundation-chain-must-be-built-first">Foundation Chain (must be built first)<a class="headerlink" href="#foundation-chain-must-be-built-first" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Epic 1: US-1.1 (Workspace) → US-1.2 (Isolation) → US-1.3 (Domains)
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    ↓
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Epic 2: US-2.1 (Auth/JWT) → US-2.2 (RBAC) → US-2.3 (Users)
+</code></pre></div>
+<h3 id="parallel-sprint-tracks">Parallel Sprint Tracks<a class="headerlink" href="#parallel-sprint-tracks" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Track A — Widget &amp; Conversations:
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>  US-1.3 → US-3.1 → US-3.2 → US-3.3 → US-3.4
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>                                  ↓
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>  US-4.1 → US-4.2 → US-4.3 → US-4.4 → US-4.5
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>Track B — CRM:
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>  US-5.1 → US-5.2
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>         → US-5.3
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>         → US-5.4 → US-5.6 → US-5.7
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>         → US-5.5
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>         → US-5.8
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>Track C — Content:
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>  US-6.1 → US-6.3 → US-6.4
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>  US-6.2 ↗
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>Track D — Insights &amp; Ops:
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>  US-7.1 (depends on US-4.4)
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>  US-7.2 (depends on US-5.5)
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>  US-8.1 → US-8.2 (depends on US-5.8)
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>Track E — Configuration:
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>  US-9.1 (depends on US-1.1)
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>  US-9.2 (depends on US-2.2)
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>  US-10.1 (depends on US-4.3, US-9.1)
+</code></pre></div>
+<h3 id="suggested-sprint-sequence">Suggested Sprint Sequence<a class="headerlink" href="#suggested-sprint-sequence" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Sprint</th>
+<th>Focus</th>
+<th>Key Deliverables</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Sprint 1</strong></td>
+<td>Foundation</td>
+<td>Epic 1 (Workspace, Isolation, Domains) + Epic 2 (Auth, RBAC, Users)</td>
+</tr>
+<tr>
+<td><strong>Sprint 2</strong></td>
+<td>Widget + Engine</td>
+<td>Epic 3 (Widget embed, session, fallback) + Epic 4 (Scenario CRUD, publishing, step execution)</td>
+</tr>
+<tr>
+<td><strong>Sprint 3</strong></td>
+<td>CRM + Content</td>
+<td>Epic 5 (Lead CRUD, inbox, pipeline, detail, search, notes, assignment, scoring) + Epic 6 (KB articles, FAQ, search)</td>
+</tr>
+<tr>
+<td><strong>Sprint 4</strong></td>
+<td>Insights + Ops + Booking</td>
+<td>Epic 7 (Funnel, CSV) + Epic 8 (Notifications) + Epic 9 (Settings, Team) + Epic 10 (Booking link)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="global-out-of-scope-all-epics">Global Out of Scope (All Epics)<a class="headerlink" href="#global-out-of-scope-all-epics" title="Permanent link">&para;</a></h2>
+<p>The following modules are explicitly excluded from this PRD iteration:</p>
+<table>
+<thead>
+<tr>
+<th>Module</th>
+<th>Section</th>
+<th>Priority</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Scenario/Bot Builder (Visual)</td>
+<td>§7</td>
+<td>🟢 Post-MVP</td>
+<td>JSON editor sufficient for MVP</td>
+</tr>
+<tr>
+<td>Integrations (Calendar, CRM, Channels)</td>
+<td>§10</td>
+<td>🟢 Post-MVP</td>
+<td>Link-based booking and manual CRM in MVP</td>
+</tr>
+<tr>
+<td>AI Conversation Engine (LLM-powered)</td>
+<td>§4.6</td>
+<td>🟢 Post-MVP</td>
+<td>Deterministic step engine for MVP; LLM-driven conversation later</td>
+</tr>
+<tr>
+<td>Omnichannel Messaging</td>
+<td>§10.3</td>
+<td>🟢 Post-MVP</td>
+<td>Web widget only in MVP</td>
+</tr>
+<tr>
+<td>Password Reset</td>
+<td>§2.3</td>
+<td>🟡 Phase 2</td>
+<td>Deferred to Phase 2</td>
+</tr>
+<tr>
+<td>Branding Configuration</td>
+<td>§11.3</td>
+<td>🟡 Phase 2</td>
+<td>Default branding in MVP</td>
+</tr>
+<tr>
+<td>Lead Source Analytics</td>
+<td>§8.2</td>
+<td>🟡 Phase 2</td>
+<td>Basic funnel sufficient for MVP</td>
+</tr>
+<tr>
+<td>Stage Drop-Off Analysis</td>
+<td>§8.3</td>
+<td>🟡 Phase 2</td>
+<td>Basic funnel sufficient for MVP</td>
+</tr>
+<tr>
+<td>Assignment Notification</td>
+<td>§9.2</td>
+<td>🟡 Phase 2</td>
+<td>Hot lead notification only in MVP</td>
+</tr>
+<tr>
+<td>SLA Reminders</td>
+<td>§9.3</td>
+<td>🟢 Post-MVP</td>
+<td>Deferred</td>
+</tr>
+<tr>
+<td>Native Booking Calendar</td>
+<td>§12.2</td>
+<td>🟢 Post-MVP</td>
+<td>Link-based handoff in MVP</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="global-open-questions">Global Open Questions<a class="headerlink" href="#global-open-questions" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Scoring Logic:</strong> Should MVP use conditional logic (if/else) or a weighted rules engine for lead scoring?</li>
+<li><strong>Pipeline Stages:</strong> Are the 6 stages fixed, or should workspaces be able to customize them?</li>
+<li><strong>Event: <code>chat_started</code>:</strong> Define the exact trigger — first step displayed vs. first user interaction.</li>
+<li><strong>Widget CAPTCHA:</strong> Should the fallback form include anti-spam protection?</li>
+<li><strong>Data Retention:</strong> What is the retention policy for events and conversations?</li>
+<li><strong>Rate Limiting:</strong> What rate limits apply to public widget endpoints (<code>/v1/widget/*</code>)?</li>
+<li><strong>File Storage:</strong> What S3-compatible service will be used for file uploads (LLM grounding)?</li>
+<li><strong>Email Provider:</strong> Which service for transactional emails (SendGrid, SES, Resend)?</li>
+<li><strong>Monitoring:</strong> What observability stack is needed for MVP (error tracking, APM)?</li>
+<li><strong>GDPR:</strong> How does the consent mechanism comply with regional privacy regulations?</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "navigation.expand", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
