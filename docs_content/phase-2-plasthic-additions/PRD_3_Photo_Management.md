@@ -24,7 +24,7 @@ Browser (chatbot widget)
         │
         │  POST /api/v1/patients/{id}/photos
         │  (multipart/form-data)
-        │  X-API-Key: pk_xxx
+        │  Authorization: Bearer {token}
         ↓
 Phlastic Patient Service (AU VPS)
         │
@@ -103,12 +103,12 @@ This step type is available in the scenario builder just like text/buttons/form 
 1. User selects photo(s) + checks consent checkbox + picks photo type per photo
 2. Widget reads patient_service config from workspace settings
    - base_url: e.g. https://patients.phlastic.com.au/api/v1
-   - api_key: pk_xxx (used as X-API-Key header)
+   - auth_token: service JWT (used as Authorization: Bearer header)
 3. Widget retrieves external_patient_id from the current lead record
    (lead must already be submitted — photo step must come AFTER contact form)
 4. For each selected photo:
    a. Widget sends: POST /api/v1/patients/{patient_id}/photos
-      - Headers: X-API-Key: pk_xxx
+      - Headers: Authorization: Bearer {token}
       - Body: multipart/form-data
            file          = <binary>
            type          = face_front (or selected type)
@@ -158,8 +158,8 @@ If for some reason the lead hasn't been submitted yet when the user reaches the 
 
 | Access Type | Method |
 |-------------|--------|
-| Upload | `X-API-Key` in header (from workspace `patient_service.api_key`) |
-| Download | `X-API-Key` OR patient JWT — **no public URLs ever** |
+| Upload | `Authorization: Bearer {token}` header (JWT from workspace `patient_service.auth_token`) |
+| Download | Valid JWT required — **no public URLs ever** |
 | Public access | ❌ — never accessible without authentication |
 
 ---
@@ -183,7 +183,7 @@ If for some reason the lead hasn't been submitted yet when the user reaches the 
 - [ ] Widget shows file picker + consent checkbox when reaching this step
 - [ ] Consent checkbox must be checked before upload button is active (button disabled until checked)
 - [ ] Upload goes **directly to Phlastic API** (verify in browser Network tab: request goes to Phlastic domain, NOT Sellrise domain)
-- [ ] Upload request includes `X-API-Key` header
+- [ ] Upload request includes `Authorization: Bearer {token}` header
 - [ ] Max 5 files enforced (widget prevents adding more)
 - [ ] Max 10 MB per file enforced (widget shows error for larger files)
 - [ ] Only JPEG, PNG, HEIC accepted (widget shows error for other file types)
@@ -196,4 +196,4 @@ If for some reason the lead hasn't been submitted yet when the user reaches the 
 - [ ] Sellrise logs `photo_uploaded` event (with `photo_id`, without photo binary data)
 - [ ] Scenario builder warns if `photo_upload` step is placed before the lead submission step
 - [ ] Photos stored in non-web-accessible directory on Phlastic VPS
-- [ ] `GET /patients/:id/photos/:pid` without API key → 401 (no public access)
+- [ ] `GET /patients/:id/photos/:pid` without JWT → 401 (no public access)

@@ -47,7 +47,7 @@ Add to workspace settings (Sellrise admin panel or config):
   "patient_service": {
     "enabled": true,
     "base_url": "https://patients.phlastic.com.au/api/v1",
-    "api_key": "pk_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "auth_token": "eyJhbGciOiJIUzI1NiIs...",
     "profile_mapping": {
       "step_procedure_interest": "procedure_interest",
       "step_budget": "budget_range",

@@ -102,7 +102,7 @@ Create all tables:
 - [ ] `PATCH /patients/:id/stage` — stage change with event creation
 - [ ] `POST /patients/:id/notes` — add note (creates event)
 - [ ] `GET /health` — health check endpoint
-- [ ] API Key authentication middleware (`X-API-Key` header)
+- [ ] JWT authentication middleware (`Authorization: Bearer {token}` header)
 - [ ] CORS configuration (only Sellrise + Cabinet domains)
 - [ ] Consistent error response format across all endpoints
 
@@ -176,7 +176,7 @@ Create all tables:
 **Estimate:** 1.5 days  
 **Owner:** Iga
 
-- [ ] Add `patient_service` workspace settings (enabled, base_url, api_key, profile_mapping)
+- [ ] Add `patient_service` workspace settings (enabled, base_url, auth_token, profile_mapping)
 - [ ] Add `external_patient_id` column to Sellrise `leads` table
 - [ ] Implement `lead_submitted` event hook → webhook logic
 - [ ] Build payload from lead data + chatbot answers (using profile_mapping)
@@ -525,7 +525,7 @@ Create all tables:
 - [ ] Full end-to-end flow test: chatbot → webhook → Phlastic → CRM → invite → cabinet → onboarding → dashboard
 - [ ] Cross-browser testing (Chrome, Safari, Firefox, mobile browsers)
 - [ ] Load testing: patient list endpoint with large dataset
-- [ ] Security review: API key rotation, JWT expiry, consent gate
+- [ ] Security review: JWT validation, JWT expiry, consent gate
 - [ ] Fix identified bugs from integration testing
 - [ ] Polish: UI/UX consistency pass, error states, empty states
 - [ ] Final acceptance test run for all modules

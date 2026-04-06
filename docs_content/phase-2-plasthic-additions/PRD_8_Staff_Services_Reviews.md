@@ -172,7 +172,7 @@ Your review
 
 Staff manage patient services via CRM / admin (not in patient cabinet).
 
-**Service CRUD endpoints (API key auth):**
+**Service CRUD endpoints (JWT auth):**
 ```
 GET    /patients/:id/services         List patient's services
 POST   /patients/:id/services         Add a service

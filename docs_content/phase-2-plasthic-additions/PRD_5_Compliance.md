@@ -41,7 +41,7 @@ Ensure full compliance with the **Australian Privacy Act 1988 (APP)** through ro
 - [ ] Data export endpoint: export all data for a single patient (JSON)
 - [ ] No patient PII in Sellrise DB
 - [ ] Photos stored encrypted, accessible only via authenticated API
-- [ ] API keys rotatable, minimum 32 characters
+- [ ] JWT tokens validated on every request (signature + expiry check)
 - [ ] `consent_records` table is NEVER deleted (legal requirement)
 
 ---

@@ -61,7 +61,7 @@ Phlastic operates in Australia. Patient data = personal information. These requi
 - [ ] Data export endpoint: export all data for a single patient (JSON)
 - [ ] No patient PII in Sellrise DB
 - [ ] Photos stored encrypted, accessible only via authenticated API
-- [ ] API keys rotatable, minimum 32 characters
+- [ ] JWT tokens validated on every request (signature + expiry check)
 
 ---
 
@@ -364,7 +364,7 @@ new → qualified → consultation_booked → photos_received → doctor_reviewe
 
 ### API Endpoints
 
-**Authentication:** API Key in header `X-API-Key`. One key per Sellrise workspace. Minimum 32 characters.
+**Authentication:** JWT token in `Authorization: Bearer {token}` header. Standard webapp authentication — every request must include a valid JWT.
 
 **Patient Auth (Cabinet):** JWT token in `Authorization: Bearer {token}` header. Issued on login/registration.
 
@@ -504,8 +504,8 @@ Response 201:
 Errors:
 - 400 if consent_given != true (body: {"error": "consent_required"})
 - 400 if missing required fields (body: {"error": "validation_failed", "fields": ["name", "email"]})
-- 401 if no API key
-- 403 if invalid API key
+- 401 if no token provided
+- 403 if invalid or expired token
 ```
 
 **Upsert logic:** If a patient with same `email` + same `sellrise_workspace_id` already exists → UPDATE the existing record (merge new data, don't overwrite existing non-null fields with null). Return 200 instead of 201. Create `patient_updated` event.
@@ -538,7 +538,7 @@ Response 200:
 
 Notes:
 - is_deleted=true patients are EXCLUDED by default
-- Results filtered by workspace (determined from API key)
+- Results filtered by workspace (determined from JWT claims)
 ```
 
 **GET /patients/:id** — Single patient with full details
@@ -631,7 +631,7 @@ Creates events:
 **GET /patients/:id/photos/:pid** — Download photo
 ```
 Response: binary file with correct Content-Type header
-No public URLs — every request must have valid API key or patient JWT
+No public URLs — every request must have a valid JWT
 ```
 
 **DELETE /patients/:id** — Soft delete
@@ -688,8 +688,8 @@ Columns: created_at, name, email, phone, procedure_interest, budget_range, timef
 Error codes:
   consent_required    — 400 — consent_given was false or missing
   validation_failed   — 400 — required fields missing or invalid
-  unauthorized        — 401 — no API key / no JWT provided
-  forbidden           — 403 — invalid API key / invalid JWT
+  unauthorized        — 401 — no JWT provided
+  forbidden           — 403 — invalid or expired JWT
   not_found           — 404 — patient/photo/contract not found
   conflict            — 409 — upsert scenario (informational)
   file_too_large      — 413 — photo exceeds 10MB
@@ -701,7 +701,7 @@ Error codes:
 ```
 Access-Control-Allow-Origin: https://app.sellrise.ai, https://cabinet.phlastic.com.au (Sellrise + Cabinet domains — NOT *)
 Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
-Access-Control-Allow-Headers: Content-Type, X-API-Key, Authorization
+Access-Control-Allow-Headers: Content-Type, Authorization
 ```
 
 ### Module 1 Acceptance Tests
@@ -725,15 +725,15 @@ Access-Control-Allow-Headers: Content-Type, X-API-Key, Authorization
 - [ ] POST /patients/:id/photos with file > 10MB → 413 error
 - [ ] POST /patients/:id/photos with invalid MIME type → 415 error
 - [ ] GET /patients/:id/photos/:pid returns binary file with correct Content-Type
-- [ ] GET /patients/:id/photos/:pid WITHOUT API key → 401 (no public URLs)
+- [ ] GET /patients/:id/photos/:pid WITHOUT JWT → 401 (no public URLs)
 - [ ] DELETE /patients/:id soft-deletes (is_deleted=true, PII anonymized)
 - [ ] POST /patients/:id/hard-delete removes all data + files permanently
 - [ ] POST /patients/:id/hard-delete does NOT delete consent_records
 - [ ] GET /patients/:id/export returns complete JSON with all data
 - [ ] GET /audit-log?patient_id=xxx returns access events
 - [ ] consent_records table has entry for every consent action
-- [ ] Request without X-API-Key → 401
-- [ ] Request with wrong X-API-Key → 403
+- [ ] Request without Authorization header → 401
+- [ ] Request with invalid JWT → 403
 - [ ] CORS allows only Sellrise + Cabinet domains
 - [ ] GET /health returns `{"status":"ok","db":"connected"}`
 - [ ] New patient fields (password_hash, invite_token, account_created, onboarding_completed, etc.) created correctly
@@ -759,7 +759,7 @@ Add to workspace settings (Sellrise admin panel or config):
   "patient_service": {
     "enabled": true,
     "base_url": "https://patients.phlastic.com.au/api/v1",
-    "api_key": "pk_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "auth_token": "eyJhbGciOiJIUzI1NiIs...",
     "profile_mapping": {
       "step_procedure_interest": "procedure_interest",
       "step_budget": "budget_range",
@@ -941,7 +941,7 @@ When chatbot reaches this step, widget displays:
    (lead must be submitted before photos — photo step must come AFTER contact form)
 4. For each photo:
    a. Widget sends POST /api/v1/patients/{patient_id}/photos directly to Phlastic
-   b. Headers: X-API-Key from patient_service config
+   b. Headers: Authorization: Bearer {token} (JWT from patient_service auth)
    c. Body: multipart/form-data (file + type + uploaded_via=chatbot + consent_given=true)
    d. Show progress bar during upload
    e. On success → show green checkmark
@@ -965,7 +965,7 @@ If for some reason the lead hasn't been submitted yet when the user reaches the 
 - [ ] Widget shows file picker + consent checkbox when reaching this step
 - [ ] Consent checkbox must be checked before upload button is active
 - [ ] Upload goes directly to Phlastic API (verify in browser Network tab: request goes to Phlastic domain, not Sellrise)
-- [ ] Upload request includes X-API-Key header
+- [ ] Upload request includes Authorization header with JWT
 - [ ] Max 5 files enforced (widget prevents adding more)
 - [ ] Max 10MB per file enforced (widget shows error for larger files)
 - [ ] Only JPEG, PNG, HEIC accepted (widget shows error for other types)

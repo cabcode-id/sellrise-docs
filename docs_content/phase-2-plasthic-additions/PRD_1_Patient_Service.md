@@ -55,7 +55,7 @@ SYSTEM 2: PHLASTIC PATIENT SERVICE (NEW — separate VPS, AU region)
 | API framework | Node.js / Python / Go (developer's choice) |
 | Database | PostgreSQL or MySQL — **encrypted at rest** |
 | File storage | Local encrypted disk (`/data/photos/`) or S3-compatible in AU region |
-| Auth (staff/API) | API Key (`X-API-Key` header) — min 32 chars, one key per Sellrise workspace |
+| Auth (staff/API) | JWT token (`Authorization: Bearer {token}` header) — standard webapp authentication |
 | Auth (patient) | JWT tokens (access 15 min + refresh 30 days, httpOnly cookie) |
 
 ---
@@ -332,8 +332,8 @@ Immutable legal audit trail — **NEVER deleted**, even on patient hard-delete.
 
 | Context | Method |
 |---------|--------|
-| Staff / Sellrise CRM | `X-API-Key` header — min 32 chars, one key per workspace |
-| Patient Cabinet | `Authorization: Bearer {jwt}` — access token (15 min expiry) |
+| Staff / Sellrise CRM | `Authorization: Bearer {token}` — JWT issued on staff login |
+| Patient Cabinet | `Authorization: Bearer {token}` — JWT issued on patient login (15 min expiry) |
 
 **Base URL:** `https://patients.phlastic.com.au/api/v1`
 
@@ -342,7 +342,7 @@ Immutable legal audit trail — **NEVER deleted**, even on patient hard-delete.
 ```
 Access-Control-Allow-Origin: https://app.sellrise.ai, https://cabinet.phlastic.com.au
 Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
-Access-Control-Allow-Headers: Content-Type, X-API-Key, Authorization
+Access-Control-Allow-Headers: Content-Type, Authorization
 ```
 
 > **Not `*`** — only the two specific domains above.
@@ -492,8 +492,8 @@ POST   /cabinet/community/posts/:id/report  Report a post
 **Error cases:**
 - `400` if `consent_given != true` → `{"error": "consent_required"}`
 - `400` if missing required fields → `{"error": "validation_failed", "fields": ["name", "email"]}`
-- `401` if no API key
-- `403` if invalid API key
+- `401` if no token provided
+- `403` if invalid or expired token
 
 #### `GET /patients` — List patients
 
@@ -513,7 +513,7 @@ Query parameters:
 ```
 
 - `is_deleted=true` patients excluded by default
-- Results filtered by workspace (determined from API key)
+- Results filtered by workspace (determined from JWT claims)
 
 #### `GET /patients/:id` — Single patient (full detail)
 
@@ -609,7 +609,7 @@ Side effects:
 #### `GET /patients/:id/photos/:pid` — Download photo
 
 - Response: binary file with correct `Content-Type` header
-- Requires valid `X-API-Key` or patient JWT — **no public URLs**
+- Requires valid JWT — **no public URLs**
 
 #### `DELETE /patients/:id` — Soft delete
 
@@ -671,8 +671,8 @@ Response: 204 No Content
 |------|-------------|---------|
 | `consent_required` | 400 | `consent_given` was false or missing |
 | `validation_failed` | 400 | Required fields missing or invalid |
-| `unauthorized` | 401 | No API key / no JWT |
-| `forbidden` | 403 | Invalid API key / invalid JWT |
+| `unauthorized` | 401 | No JWT provided |
+| `forbidden` | 403 | Invalid or expired JWT |
 | `not_found` | 404 | Patient/photo/contract not found |
 | `conflict` | 409 | Upsert scenario (informational) |
 | `file_too_large` | 413 | Photo exceeds 10 MB |
@@ -705,7 +705,7 @@ Response: 204 No Content
 - [ ] Data export endpoint: export all data for a single patient (JSON)
 - [ ] No patient PII in Sellrise DB
 - [ ] Photos stored encrypted, accessible only via authenticated API
-- [ ] API keys rotatable, minimum 32 characters
+- [ ] JWT tokens validated on every request (signature + expiry check)
 
 ---
 
@@ -730,15 +730,15 @@ Response: 204 No Content
 - [ ] `POST /patients/:id/photos` with file > 10 MB → 413 error
 - [ ] `POST /patients/:id/photos` with invalid MIME type → 415 error
 - [ ] `GET /patients/:id/photos/:pid` returns binary file with correct `Content-Type`
-- [ ] `GET /patients/:id/photos/:pid` WITHOUT API key → 401 (no public URLs)
+- [ ] `GET /patients/:id/photos/:pid` WITHOUT JWT → 401 (no public URLs)
 - [ ] `DELETE /patients/:id` soft-deletes (`is_deleted=true`, PII anonymized)
 - [ ] `POST /patients/:id/hard-delete` removes all data + files permanently
 - [ ] `POST /patients/:id/hard-delete` does NOT delete `consent_records`
 - [ ] `GET /patients/:id/export` returns complete JSON with all data
 - [ ] `GET /audit-log?patient_id=xxx` returns access events
 - [ ] `consent_records` table has entry for every consent action
-- [ ] Request without `X-API-Key` → 401
-- [ ] Request with wrong `X-API-Key` → 403
+- [ ] Request without Authorization header → 401
+- [ ] Request with invalid JWT → 403
 - [ ] CORS allows only Sellrise + Cabinet domains (not `*`)
 - [ ] `GET /health` returns `{"status":"ok","db":"connected"}`
 - [ ] All new patient fields (`password_hash`, `invite_token`, `account_created`, `onboarding_completed`, etc.) created correctly in DB
