@@ -26,7 +26,7 @@ SYSTEM 2: PHLASTIC PATIENT SERVICE (NEW — separate VPS, AU region)
 └── Compliance: Australian Privacy Act 1988
 ```
 
-**Core rule:** Zero patient PII in Sellrise DB. Sellrise stores only a `external_patient_id` reference. All PII lives exclusively in Phlastic Patient Service.
+**Core rule:** Zero patient PII in Sellrise DB. Sellrise stores only an `external_identities` reference map, with the Phlastic patient ID kept as one entry inside that map. All PII lives exclusively in Phlastic Patient Service.
 
 ---
 

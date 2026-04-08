@@ -8,7 +8,7 @@
 | **System** | System 1: Sellrise (scenario engine + widget) |
 | **Owner** | Iga Narendra (CV Diantha) |
 | **Estimate** | 2–3 days |
-| **Dependencies** | Module 1 (Phlastic API) + Module 2 (webhook, for `external_patient_id`) |
+| **Dependencies** | Module 1 (Phlastic API) + Module 2 (webhook, for `external_identities`) |
 | **Priority** | P1 — Required for pre-consultation photo collection |
 
 ## Goal
@@ -104,7 +104,7 @@ This step type is available in the scenario builder just like text/buttons/form 
 2. Widget reads patient_service config from workspace settings
    - base_url: e.g. https://patients.phlastic.com.au/api/v1
    - auth_token: service JWT (used as Authorization: Bearer header)
-3. Widget retrieves external_patient_id from the current lead record
+3. Widget retrieves the Phlastic patient ID from `external_identities` on the current lead record
    (lead must already be submitted — photo step must come AFTER contact form)
 4. For each selected photo:
    a. Widget sends: POST /api/v1/patients/{patient_id}/photos

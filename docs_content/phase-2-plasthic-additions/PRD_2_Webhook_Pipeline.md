@@ -29,10 +29,10 @@ Integrate Sellrise (System 1) with Phlastic Patient Service (System 2) to ensure
                                             ↓
                                Returns patient_id to Sellrise
                                             ↓
-                    Sellrise stores external_patient_id on lead record
+                 Sellrise stores patient_id in lead.external_identities
 ```
 
-**The rule:** Sellrise DB stores only `external_patient_id` (a UUID reference). Zero patient PII in Sellrise.
+**The rule:** Sellrise DB stores only `external_identities` (a JSON identity map containing external references such as the Phlastic `patient_id`). Zero patient PII in Sellrise.
 
 ---
 
@@ -65,10 +65,10 @@ Add to workspace settings (Sellrise admin panel or config):
 ### 2. New Field on Sellrise `leads` Table
 
 ```sql
-ALTER TABLE leads ADD COLUMN external_patient_id VARCHAR(255) NULL;
+ALTER TABLE leads ADD COLUMN external_identities JSONB NULL DEFAULT '{}';
 ```
 
-This is the **only** new column added to Sellrise DB for this integration. No patient PII.
+This is the **only** new field added to Sellrise DB for this integration. It stores external identity references in a flexible map. No patient PII.
 
 ---
 
@@ -87,7 +87,7 @@ Fires on `lead_submitted` event in Sellrise:
    d. Include consent data from chatbot
 5. POST payload to {base_url}/patients
 6. On success (201 or 200):
-   a. Save returned patient_id as external_patient_id on lead record
+   a. Save returned `patient_id` into `lead.external_identities` using the configured integration identity key
    b. Log: success, timestamp, patient_id
 7. On failure (4xx / 5xx):
    a. Retry up to 3 times with exponential backoff: 1s → 5s → 30s
@@ -150,7 +150,7 @@ Fires on `lead_submitted` event in Sellrise:
 If Phlastic returns `200` (patient already exists with same email + workspace):
 - Do NOT create a duplicate patient
 - Phlastic merges/updates the record
-- Sellrise updates `external_patient_id` with the existing patient ID
+- Sellrise updates the Phlastic entry inside `external_identities` with the existing patient ID
 - Sellrise creates a `patient_updated` event
 
 ---
@@ -220,9 +220,9 @@ POST {base_url}/patients
   201/200      4xx/5xx
    │            │
    ▼            ▼
-Save           Retry (up to 3x)
-external_      1s → 5s → 30s
-patient_id     │
+Save patient_id Retry (up to 3x)
+in external_   1s → 5s → 30s
+identities     │
 on lead        ▼ (after 3 failures)
                Log failure
                Lead still saved
@@ -235,7 +235,7 @@ on lead        ▼ (after 3 failures)
 - [ ] Completed chatbot session with `consent=true` → patient auto-created in Phlastic DB
 - [ ] Completed chatbot session with `consent=false` → webhook NOT fired (no data sent to Phlastic)
 - [ ] `sellrise_lead_id` correctly links the two records (Sellrise lead ↔ Phlastic patient)
-- [ ] Sellrise lead record has `external_patient_id` populated after successful webhook
+- [ ] Sellrise lead record has `external_identities` populated with the returned Phlastic patient ID after successful webhook
 - [ ] `profile_mapping` config correctly maps chatbot step answers to Phlastic patient fields
 - [ ] Repeat submission with same email + same workspace → upsert in Phlastic (no duplicate patient)
 - [ ] Webhook failure → retries 3 times with 1s / 5s / 30s backoff

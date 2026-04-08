@@ -19,13 +19,13 @@ Customize Sellrise CRM to provide a unified view of patient data — fetching li
 
 ## 4.1 — Data Integration Layer
 
-**When a lead has `external_patient_id`:**
+**When a lead has a Phlastic patient ID in `external_identities`:**
 
-1. CRM fetches patient data from Phlastic API: `GET /patients/{external_patient_id}`
+1. CRM fetches patient data from Phlastic API using the patient ID stored in `external_identities`: `GET /patients/{patient_id}`
 2. Response is cached for **30 seconds** (avoid hitting API on every click)
 3. CRM displays unified view: Sellrise lead data + Phlastic patient data merged
 
-**When a lead does NOT have `external_patient_id`:**
+**When a lead does NOT have a Phlastic patient ID in `external_identities`:**
 
 - CRM works exactly as before — no changes, no errors, no API calls to Phlastic
 - This ensures full backward compatibility with non-Phlastic workspaces
@@ -137,7 +137,7 @@ Select multiple leads (checkboxes) → action bar appears:
 | **Assign Owner** | Dropdown to select owner → applies to all selected leads |
 | **Export CSV** | Downloads CSV with columns: `created_at`, name, email, phone, `procedure_interest`, `budget_range`, timeframe, `qualification_score`, `email_status`, stage, owner |
 
-For stage changes and owner changes: update BOTH Sellrise and Phlastic (for leads with `external_patient_id`).
+For stage changes and owner changes: update BOTH Sellrise and Phlastic (for leads whose `external_identities` contains a Phlastic patient ID).
 
 ---
 
@@ -148,7 +148,7 @@ Any stage change in CRM (drag-drop, button, or bulk action) must update both sys
 ```
 1. User changes stage in CRM
 2. Update lead.stage in Sellrise DB
-3. If lead has external_patient_id:
+3. If lead has a Phlastic patient ID in `external_identities`:
    a. PATCH /patients/:id/stage on Phlastic API
    b. If Phlastic API fails → show error toast, rollback Sellrise stage to previous value
 4. Both systems create stage_changed event in their respective event tables
@@ -161,7 +161,7 @@ Any stage change in CRM (drag-drop, button, or bulk action) must update both sys
 On lead detail page, add **Send Cabinet Invite** button.
 
 **Visibility conditions** (all must be true):
-- Patient has `external_patient_id`
+- Patient has a Phlastic patient ID in `external_identities`
 - Patient's `account_created = false`
 - Patient's `email_status != "invalid"`
 
@@ -201,8 +201,8 @@ Contract status shown in timeline: `generated → sent → signed`
 
 ## Acceptance Tests
 
-- [ ] Lead detail page shows all 7 blocks when `external_patient_id` exists
-- [ ] Lead detail page works normally when NO `external_patient_id` (regular lead, no errors)
+- [ ] Lead detail page shows all 7 blocks when a Phlastic patient ID exists in `external_identities`
+- [ ] Lead detail page works normally when NO Phlastic patient ID exists in `external_identities` (regular lead, no errors)
 - [ ] Contact info shows email validation badge (green valid / red invalid / gray unknown)
 - [ ] Photos display as thumbnails grid, clickable for full-size modal
 - [ ] Photo images load from Phlastic API (not from Sellrise storage)
@@ -225,7 +225,7 @@ Contract status shown in timeline: `generated → sent → signed`
 - [ ] Bulk CSV export: downloads file with correct columns and data
 - [ ] Workspace isolation: Phlastic patient data not visible in other workspaces
 - [ ] API failure: if Phlastic API is down, CRM shows Sellrise data + error banner (doesn't crash)
-- [ ] "Send Cabinet Invite" button visible only when: `external_patient_id` exists + `account_created=false` + `email_status != invalid`
+- [ ] "Send Cabinet Invite" button visible only when: a Phlastic patient ID exists in `external_identities` + `account_created=false` + `email_status != invalid`
 - [ ] "Send Cabinet Invite" sends email with correct invite link
 - [ ] After invite sent, event `invite_sent` logged in timeline
 - [ ] "Generate Contract" button visible only when `stage >= doctor_reviewed`

@@ -28,7 +28,7 @@ SYSTEM 2: PHLASTIC PATIENT SERVICE (NEW — separate VPS, AU region)
 └── Compliance: Australian Privacy Act 1988
 ```
 
-**The rule:** Sellrise DB stores chatbot/lead data (scores, sessions, scenarios). Phlastic DB stores patient PII (name, email, phone, medical info, photos). Sellrise CRM calls Phlastic API to display unified view. **Zero patient PII in Sellrise DB** — only a `external_patient_id` reference.
+**The rule:** Sellrise DB stores chatbot/lead data (scores, sessions, scenarios). Phlastic DB stores patient PII (name, email, phone, medical info, photos). Sellrise CRM calls Phlastic API to display unified view. **Zero patient PII in Sellrise DB** — only an `external_identities` reference map.
 
 **What we own vs. don't own:**
 - ✅ **Our scope:** Patient cabinet (full frontend + backend), chatbot triggers, patient data backend, CRM customization
@@ -80,7 +80,7 @@ Phlastic operates in Australia. Patient data = personal information. These requi
    b. Maps chatbot answers → patient profile fields
    c. Stores consent record in Phlastic DB
    d. Returns patient_id to Sellrise
-7. Sellrise stores patient_id as external_patient_id on lead record
+7. Sellrise stores patient_id inside `external_identities` on the lead record
 8. (Optional) Photo upload step → photos go directly from browser to Phlastic API
 ```
 
@@ -90,7 +90,7 @@ Phlastic operates in Australia. Patient data = personal information. These requi
 1. Staff opens Sellrise CRM → lead list
 2. Lead list shows data from Sellrise DB (score, stage, date)
 3. Staff clicks lead → detail page
-4. CRM fetches patient data from Phlastic API (using external_patient_id)
+4. CRM fetches patient data from Phlastic API using the Phlastic patient ID stored in `external_identities`
 5. CRM displays unified view: Sellrise data + Phlastic patient data
 6. Staff updates info → writes to Phlastic API
 7. Staff changes stage → writes to BOTH Sellrise + Phlastic
@@ -775,7 +775,7 @@ Add to workspace settings (Sellrise admin panel or config):
 **2. New field on Sellrise `leads` table**
 
 ```sql
-ALTER TABLE leads ADD COLUMN external_patient_id VARCHAR(255) NULL;
+ALTER TABLE leads ADD COLUMN external_identities JSONB NULL DEFAULT '{}';
 ```
 
 This is the ONLY new column in Sellrise DB. No patient PII.
@@ -793,7 +793,7 @@ This is the ONLY new column in Sellrise DB. No patient PII.
    d. Include consent data from chatbot
 5. POST payload to {base_url}/patients
 6. On success (201/200):
-   a. Save returned patient_id as external_patient_id on lead record
+   a. Save returned patient_id into `external_identities` on the lead record
    b. Log: success, timestamp, patient_id
 7. On failure (4xx/5xx):
    a. Retry up to 3 times with exponential backoff: 1s, 5s, 30s
@@ -858,7 +858,7 @@ Store each webhook attempt:
 - [ ] Completed chatbot session with consent=true → patient auto-created in Phlastic DB
 - [ ] Completed chatbot session with consent=false → webhook NOT fired (no data sent)
 - [ ] sellrise_lead_id correctly links the two records
-- [ ] Sellrise lead record has external_patient_id populated after successful webhook
+- [ ] Sellrise lead record has `external_identities` populated with the returned Phlastic patient ID after successful webhook
 - [ ] profile_mapping config correctly maps chatbot step answers to patient fields
 - [ ] Repeat submission with same email → upsert in Phlastic (no duplicate patient)
 - [ ] Webhook failure → retries 3 times with 1s/5s/30s backoff
@@ -937,7 +937,7 @@ When chatbot reaches this step, widget displays:
 ```
 1. User selects photo(s) + checks consent + picks photo type
 2. Widget reads patient_service config from workspace settings
-3. Widget gets external_patient_id from lead record
+3. Widget gets the Phlastic patient ID from `external_identities` on the lead record
    (lead must be submitted before photos — photo step must come AFTER contact form)
 4. For each photo:
    a. Widget sends POST /api/v1/patients/{patient_id}/photos directly to Phlastic
@@ -979,7 +979,7 @@ If for some reason the lead hasn't been submitted yet when the user reaches the 
 - [ ] Scenario builder warns if photo_upload is placed before lead submission step
 
 **Estimate:** 2-3 days
-**Dependencies:** Module 1 (Phlastic API) + Module 2 (webhook, for external_patient_id)
+**Dependencies:** Module 1 (Phlastic API) + Module 2 (webhook, for `external_identities`)
 
 ---
 
@@ -993,12 +993,12 @@ If for some reason the lead hasn't been submitted yet when the user reaches the 
 
 **4.1 — Data integration layer**
 
-When a lead has `external_patient_id`:
-- CRM fetches patient data from Phlastic API: `GET /patients/{external_patient_id}`
+When a lead has a Phlastic patient ID in `external_identities`:
+- CRM fetches patient data from Phlastic API: `GET /patients/{patient_id}`
 - Caches response for 30 seconds (to avoid hitting API on every click)
 - Displays unified view merging Sellrise lead data + Phlastic patient data
 
-When a lead does NOT have `external_patient_id`:
+When a lead does NOT have a Phlastic patient ID in `external_identities`:
 - CRM works exactly as before — no changes, no errors, no API calls
 
 **4.2 — Enhanced Lead Detail Page (7 blocks)**
@@ -1080,7 +1080,7 @@ Select multiple leads (checkboxes) → action bar appears:
 - **Assign Owner:** dropdown to select owner → applies to all selected
 - **Export CSV:** downloads CSV with columns: created_at, name, email, phone, procedure_interest, budget_range, timeframe, qualification_score, email_status, stage, owner
 
-For stage changes and owner changes: update BOTH Sellrise and Phlastic (for leads with external_patient_id).
+For stage changes and owner changes: update BOTH Sellrise and Phlastic (for leads whose `external_identities` contains a Phlastic patient ID).
 
 **4.6 — Stage Change Sync Logic**
 
@@ -1088,7 +1088,7 @@ Any stage change in CRM must update both systems:
 ```
 1. User changes stage in CRM (drag-drop, button, or bulk action)
 2. Update lead.stage in Sellrise DB
-3. If lead has external_patient_id:
+3. If lead has a Phlastic patient ID in `external_identities`:
    a. PATCH /patients/:id/stage on Phlastic API
    b. If Phlastic API fails: show error toast, rollback Sellrise stage
 4. Both systems create stage_changed event in their respective event tables
@@ -1107,14 +1107,14 @@ On lead detail page, add "Send Cabinet Invite" button:
 ```
 
 Button visible when:
-- Patient has external_patient_id
+- Patient has a Phlastic patient ID in `external_identities`
 - Patient's account_created = false
 - Patient's email_status != "invalid"
 
 ### Module 4 Acceptance Tests
 
-- [ ] Lead detail page shows all 7 blocks when external_patient_id exists
-- [ ] Lead detail page works normally when NO external_patient_id (regular lead, no errors)
+- [ ] Lead detail page shows all 7 blocks when a Phlastic patient ID exists in `external_identities`
+- [ ] Lead detail page works normally when NO Phlastic patient ID exists in `external_identities` (regular lead, no errors)
 - [ ] Contact info shows email validation badge (green/red/gray)
 - [ ] Photos display as thumbnails grid, clickable for full-size modal
 - [ ] Photo images load from Phlastic API (not from Sellrise storage)

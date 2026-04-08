@@ -177,11 +177,11 @@ Create all tables:
 **Owner:** Iga
 
 - [ ] Add `patient_service` workspace settings (enabled, base_url, auth_token, profile_mapping)
-- [ ] Add `external_patient_id` column to Sellrise `leads` table
+- [ ] Add `external_identities` field to Sellrise `leads` table
 - [ ] Implement `lead_submitted` event hook → webhook logic
 - [ ] Build payload from lead data + chatbot answers (using profile_mapping)
 - [ ] `POST` to Phlastic `{base_url}/patients`
-- [ ] On success: save returned `patient_id` as `external_patient_id` on lead
+- [ ] On success: save returned `patient_id` into `external_identities` on lead
 - [ ] On failure: exponential backoff retry (1s → 5s → 30s, max 3 retries)
 - [ ] Webhook call log stored and visible in Sellrise admin
 - [ ] Workspace without `patient_service` config → no webhook fired (backward compatible)
@@ -229,7 +229,7 @@ Create all tables:
 - [ ] Export CSV for selected leads
 
 **Other:**
-- [ ] "Send Cabinet Invite" button (visible when: has external_patient_id + account_created=false + email_status != invalid)
+- [ ] "Send Cabinet Invite" button (visible when: has Phlastic patient ID in `external_identities` + account_created=false + email_status != invalid)
 - [ ] 30-second response cache for Phlastic API calls
 - [ ] Graceful degradation when Phlastic API is unavailable
 
@@ -238,7 +238,7 @@ Create all tables:
 ### Sprint 2 Definition of Done
 
 - [ ] Chatbot lead submission auto-creates patient in Phlastic DB
-- [ ] `external_patient_id` correctly populated on Sellrise lead after webhook
+- [ ] `external_identities` correctly populated on Sellrise lead after webhook
 - [ ] Photo upload from chatbot goes directly to Phlastic (verified via Network tab)
 - [ ] CRM shows unified patient view (Sellrise + Phlastic data)
 - [ ] Stage changes sync between both systems
