@@ -1,6 +1,8 @@
 # Sellrise ↔ PlasthicBE — Integration Setup Commands (English)
 
-> **Context:** SellriseBE runs on port **8000**, PlasthicBE runs on port **8001** (localhost).
+> **Context:** SellriseBE runs on port **8000**, PlasthicBE runs on port **8001** on the same machine.
+> For local server-to-server webhook traffic, use **127.0.0.1** instead of `localhost`.
+> On some Linux setups, `localhost` resolves to IPv6 `::1` first while the API only listens on IPv4, which causes `httpx.ConnectError: [Errno 111] Connection refused` from SellriseBE.
 
 ---
 
@@ -87,7 +89,7 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzZWxscmlzZS13ZWJob29r...
 # Replace <TOKEN> with the output from step 1.3
 TOKEN="<OUTPUT_FROM_GENERATE_SERVICE_TOKEN>"
 
-curl -s -X POST "http://localhost:8001/api/v1/patients" \
+curl -s -X POST "http://127.0.0.1:8001/api/v1/patients" \
   -H "Authorization: Bearer $TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
@@ -153,18 +155,20 @@ UPDATE workspaces
 SET settings = '{
   "patient_service": {
     "enabled": true,
-    "base_url": "http://localhost:8001/api/v1",
+    "base_url": "http://127.0.0.1:8001/api/v1",
     "auth_token": "<SERVICE_JWT>"
   },
   "webhooks": [
     {
       "name": "phlastic",
-      "url": "http://localhost:8001/api/v1/patients",
+      "url": "http://127.0.0.1:8001/api/v1/patients",
       "enabled": true,
       "events": ["lead_submitted"],
       "auth_type": "bearer",
       "auth_token": "<SERVICE_JWT>",
       "response_ref_path": "id",
+      "update_method": "PUT",
+      "update_url_template": "http://127.0.0.1:8001/api/v1/patients/{external_ref}",
       "payload_mapping": {
         "sellrise_lead_id":        "lead.id",
         "sellrise_workspace_id":   "lead.workspace_id",
@@ -198,6 +202,12 @@ WHERE id = '<WORKSPACE_ID>';
 ```
 
 > In Phlastic, `procedure_interest` is a `list[str]`, but Sellrise widget slots are safest stored as a string in `custom_fields.procedure`. The webhook will wrap it into an array using `payload_transforms.wrap_list`.
+>
+> With the config above, Sellrise behaves as follows:
+> 1. First sync: `POST /api/v1/patients` creates the patient.
+> 2. Sellrise stores the returned patient id in `lead.external_identities["phlastic"]`.
+> 3. Later chatbot answers that change the lead profile trigger another webhook run.
+> 4. Because the external identity already exists, Sellrise switches to `PUT /api/v1/patients/{patient_id}` using `update_url_template`.
 
 ---
 
@@ -224,18 +234,20 @@ curl -s -X PATCH "$SELLRISE_URL/v1/workspaces/$WORKSPACE_ID/settings" \
   -d "{
     \"patient_service\": {
       \"enabled\": true,
-      \"base_url\": \"http://localhost:8001/api/v1\",
+      \"base_url\": \"http://127.0.0.1:8001/api/v1\",
       \"auth_token\": \"$SERVICE_JWT\"
     },
     \"webhooks\": [
       {
         \"name\": \"phlastic\",
-        \"url\": \"http://localhost:8001/api/v1/patients\",
+        \"url\": \"http://127.0.0.1:8001/api/v1/patients\",
         \"enabled\": true,
         \"events\": [\"lead_submitted\"],
         \"auth_type\": \"bearer\",
         \"auth_token\": \"$SERVICE_JWT\",
         \"response_ref_path\": \"id\",
+        \"update_method\": \"PUT\",
+        \"update_url_template\": \"http://127.0.0.1:8001/api/v1/patients/{external_ref}\",
         \"payload_mapping\": {
           \"sellrise_lead_id\": \"lead.id\",
           \"sellrise_workspace_id\": \"lead.workspace_id\",
@@ -343,7 +355,9 @@ psql -U postgres -d sellrise -t -A \
 ```
 
 Ensure the output includes:
-- `webhooks` array containing `"url": "http://localhost:8001/api/v1/patients"`
+- `webhooks` array containing `"url": "http://127.0.0.1:8001/api/v1/patients"`
+- `update_method: "PUT"`
+- `update_url_template: "http://127.0.0.1:8001/api/v1/patients/{external_ref}"`
 - `auth_token` containing the correct JWT
 - `payload_mapping` fully populated
 
@@ -379,7 +393,7 @@ cd /path/to/SellriseBE
 
 ```bash
 curl -s http://localhost:8000/health      # SellriseBE
-curl -s http://localhost:8001/api/v1/health  # PlasthicBE
+curl -s http://127.0.0.1:8001/api/v1/health  # PlasthicBE
 ```
 
 Expected responses:
@@ -467,7 +481,44 @@ psql -U postgres -d sellrise \
   -c "SELECT webhook_name, status_code, success, external_ref_returned, response_time_ms, attempt FROM webhook_logs WHERE lead_id = '$LEAD_ID';"
 ```
 
-**Should show:** `success = t`, `status_code = 201`, `external_ref_returned = <patient-uuid>`
+**Should show:** first success row with `status_code = 201`, `external_ref_returned = <patient-uuid>`
+
+### 4.5A Test follow-up answers update the same patient
+
+After the patient has been created, send another widget message that fills missing CRM fields or changes qualification data.
+
+```bash
+LEAD_ID="<LEAD_ID_FROM_STEP_4.1>"
+WORKSPACE_ID="<WORKSPACE_ID>"
+
+curl -s -X POST "http://localhost:8000/v1/widget/message" \
+  -H "Content-Type: application/json" \
+  -d "{
+    \"workspace_id\": \"$WORKSPACE_ID\",
+    \"lead_id\": \"$LEAD_ID\",
+    \"channel\": \"web\",
+    \"message\": \"My budget is 20-25 juta and I want the procedure next month\"
+  }" | python3 -m json.tool
+```
+
+Wait 3-5 seconds, then verify the same patient row was updated instead of creating a new one:
+
+```bash
+psql -U postgres -d phlasticbe -t -A \
+  -c "SELECT id, sellrise_lead_id, budget_range, timeframe, qualification_data FROM patients WHERE sellrise_lead_id = '$LEAD_ID';"
+```
+
+Check Sellrise webhook logs again:
+
+```bash
+psql -U postgres -d sellrise \
+  -c "SELECT webhook_name, method, status_code, success, url, attempt FROM webhook_logs WHERE lead_id = '$LEAD_ID' ORDER BY created_at DESC LIMIT 10;"
+```
+
+**Should show:**
+- initial create request: `method = POST`, `status_code = 201`
+- follow-up sync request(s): `method = PUT`, `status_code = 200`
+- the `url` for update requests should end with `/api/v1/patients/<patient-uuid>`
 
 ---
 
@@ -534,6 +585,24 @@ psql -U postgres -d sellrise -t -A \
 
 If the result is `null` or `[]` → reapply Phase 2 settings.
 
+### Webhook logs show `RequestError: All connection attempts failed`
+
+This usually means the webhook URL is using `localhost` on a machine where SellriseBE resolves it to IPv6 `::1`, while PlasthicBE is listening only on IPv4.
+
+Use this instead in workspace settings:
+
+```json
+"url": "http://127.0.0.1:8001/api/v1/patients",
+"update_url_template": "http://127.0.0.1:8001/api/v1/patients/{external_ref}"
+```
+
+Quick connectivity check from the SellriseBE virtualenv:
+
+```bash
+cd /path/to/SellriseBE
+.venv/bin/python -c "import httpx; print(httpx.get('http://127.0.0.1:8001/api/v1/health', timeout=5).status_code)"
+```
+
 ### Phlastic returns 422 for `procedure_interest`
 
 This commonly means the webhook mapping is reading the wrong key from `lead.custom_fields`.
@@ -560,6 +629,31 @@ lead.custom_fields.procedure
 
 If the lead stores `{"procedure": "DHI hair transplant"}`, the webhook will convert it to `"procedure_interest": ["DHI hair transplant"]` before POSTing to Plasthic.
 
+### Patient is created but follow-up answers do not update PlasthicBE
+
+Check these three conditions in workspace settings:
+
+1. `response_ref_path` must be `id` so Sellrise stores `lead.external_identities["phlastic"]`.
+2. `update_method` must be `PUT`.
+3. `update_url_template` must point to `/api/v1/patients/{external_ref}`.
+
+Verification queries:
+
+```bash
+WORKSPACE_ID="<WORKSPACE_ID>"
+LEAD_ID="<LEAD_ID>"
+
+psql -U postgres -d sellrise -t -A \
+  -c "SELECT external_identities FROM leads WHERE id = '$LEAD_ID';"
+
+psql -U postgres -d sellrise -t -A \
+  -c "SELECT settings->'webhooks'->0 FROM workspaces WHERE id = '$WORKSPACE_ID';" \
+  | python3 -m json.tool
+```
+
+If `external_identities` is empty, Sellrise does not know which patient to update.
+If `update_url_template` is missing, Sellrise can only create via `POST` and will not issue a patient-specific update request.
+
 ---
 
 ## Deployment Checklist (Summary)
@@ -569,9 +663,10 @@ If the lead stores `{"procedure": "DHI hair transplant"}`, the webhook will conv
 [ ] 2. PlasthicBE DATABASE_URL points to the correct DB
 [ ] 3. alembic upgrade head has been run on PlasthicBE
 [ ] 4. Service JWT has been generated from PlasthicBE (scripts/generate_service_token.py)
-[ ] 5. SellriseBE workspace settings updated with token and correct URL
+[ ] 5. SellriseBE workspace settings updated with token, create URL, and update URL template
 [ ] 6. PlasthicBE running on port 8001 (health check: 200 OK)
 [ ] 7. SellriseBE running on port 8000 (health check: 200 OK)
 [ ] 8. End-to-end test: submit lead → verify external_identities → verify patient in phlasticbe
-[ ] 9. Webhook logs show success = true and status_code = 201
+[ ] 9. Follow-up chat answer triggers `PUT /patients/{patient_id}` and updates the same patient row
+[ ] 10. Webhook logs show success = true with create `201` and update `200`
 ```
