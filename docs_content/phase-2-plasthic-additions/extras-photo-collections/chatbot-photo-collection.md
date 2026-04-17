@@ -1,263 +1,266 @@
-# PRD – Chatbot Photo Collection for Pre-Consultation
+# PRD - Chatbot Photo Collection Routing (Sellrise Proxy -> Plasthic)
 
 ## Metadata
 
-- Feature ID: `CHAT-PHOTO-01`
+- Feature ID: `CHAT-PHOTO-ROUTING-02`
 - Priority: `High`
-- Release Focus: `Phase 2 – Pre-Consultation Enhancement`
-- Category: `Chatbot / Widget`
-- Owner: `Product + Backend + Frontend`
+- Release Focus: `Phase 2 - Plasthic Additions`
+- Category: `Integration / Widget / Backend`
+- Owner: `Product + Sellrise BE + Plasthic BE + FE`
 
 ---
 
-## Objective
+## Problem Statement
 
-Enable the chatbot to proactively request and securely collect photos from users prior to an online consultation. Photos help specialists assess the user's needs more accurately, improve surgeon matching, and allow consultants to prepare a more precise plan before the session.
+Today chatbot image files can land in Sellrise storage, while downstream Plasthic workflows (email variant, clinical review) need Plasthic to have those photos as source-of-truth.
 
----
+This creates two risks:
 
-## User Story
-
-**As a visitor** who has expressed clear intent to book a consultation, I want the chatbot to ask me to upload relevant photos so that my assigned consultant can review them in advance and provide better, more personalized recommendations.
-
-**As a CRM operator / consultant**, I want to access photos uploaded by a lead directly within the lead detail view so that I can prepare for the consultation without needing a separate communication channel.
+1. Split-brain state between Sellrise file state and Plasthic medical-photo state.
+2. Pressure to expose arbitrary external upload endpoints in widget config, which increases security risk.
 
 ---
 
-## Trigger Conditions
+## Product Goal
 
-The photo collection prompt **must only appear** when **both** of the following are true:
+Enable one configurable upload routing mode in Sellrise so photo uploads can be proxied server-to-server to Plasthic with minimum setup, while preserving a local fallback mode.
 
-1. **Basic info has been collected** — the conversation has already captured:
-   - Name
-   - Age
-   - Procedure of interest
-   - Budget range
-   - Preferred timeline
+### Success Criteria
 
-2. **Clear consultation intent is confirmed** — the user has:
-   - Explicitly agreed to proceed with a consultation, **or**
-   - Clicked a booking CTA / handoff step
-
-> The photo request must **never** appear during casual browsing or before intent is confirmed. It should feel like a natural, helpful next step — not a data grab.
+- Workspace can choose upload mode without code deployment.
+- In Plasthic mode, photo binary is persisted in Plasthic `photos` table with `uploaded_via = chatbot`.
+- No patient service token is exposed to browser clients.
+- Upload failures do not break the chat session; user gets retry or skip path.
 
 ---
 
-## Conversation Flow
+## Scope
 
-### Step 1 – Photo Request Message
+### In Scope
 
-After intent is confirmed, the chatbot displays:
+1. New routing behavior in Sellrise backend for chatbot photo uploads.
+2. Workspace-level configuration for photo upload destination mode.
+3. Reuse Plasthic existing upload API endpoint for patient photos.
+4. Event logging and observability for routed uploads.
 
-```
-To provide you with the most accurate recommendations, our specialists 
-may need to review a few photos.
+### Out of Scope
 
-We'll ask for:
-  • A front-facing photo
-  • A side profile photo
-  • A close-up of the area you'd like to address
-
-This helps us match you with the right surgeon and give you a more 
-precise plan.
-
-Your photos are completely private and will only be shared with your 
-assigned consultant.
-
-Would you be comfortable uploading them now, or would you prefer to 
-do this later?
-```
-
-**Buttons:**
-- `📎 Upload photos`
-- `Later – skip for now`
+1. Arbitrary endpoint templating from frontend widget settings.
+2. Direct browser upload to unknown third-party endpoints.
+3. New Plasthic database tables.
+4. Full admin media gallery redesign.
 
 ---
 
-### Step 2a – User chooses "Upload photos"
+## Architecture Decision
 
-The chatbot opens a file upload input within the widget and displays:
+### Selected Model (Safe Minimum Setup)
 
-```
-Great! Please upload your photos below.
+- Browser uploads only to Sellrise widget backend.
+- Sellrise backend decides target based on workspace configuration.
+- If route is `patient_service_proxy`, Sellrise forwards multipart upload to Plasthic API.
+- If route is `sellrise_local`, Sellrise stores as current behavior.
 
-We need 3 photos:
-  1. Front-facing photo (face looking straight ahead)
-  2. Side profile photo (left or right side)
-  3. Close-up of the area you'd like to address
+### Rejected Model
 
-Accepted formats: JPG, PNG, HEIC, JPEG
-Maximum: 3 photos, 10 MB each
+- Browser reads configurable endpoint/payload and uploads directly.
 
-Tip: Clear, well-lit photos taken in natural light give consultants 
-the best view.
-```
+Reason for rejection:
 
-On successful upload:
-```
-Thank you! Your photos have been securely saved.
-
-Your consultant will review them before your session.
-```
-
-The conversation then continues to the booking / confirmation step.
+- Hard to secure secrets.
+- Hard to validate destination trust boundaries.
+- Higher risk of data exfiltration and broken contracts.
 
 ---
 
-### Step 2b – User chooses "Later – skip for now"
+## High-Level Flow
 
-The chatbot respects the choice without friction:
-
-```
-No problem! You can always share them later by replying to your 
-consultation confirmation email.
-
-Let's continue with booking your session.
-```
-
-The conversation continues to the booking / confirmation step. The system logs that the user declined and provides a follow-up reminder link in the confirmation email.
+1. User reaches photo step in chatbot.
+2. Widget sends file(s) to Sellrise photo upload endpoint with `workspace_id`, `lead_id`, and metadata.
+3. Sellrise resolves upload mode from workspace settings.
+4. Sellrise resolves `patient_id` via `lead.external_identities`.
+5. If mode is `patient_service_proxy`, Sellrise forwards each file to Plasthic photo API.
+6. Sellrise records lead event `photo_uploaded` with route details and result.
+7. Widget receives unified response and continues flow.
 
 ---
 
-### Step 2c – Upload fails or is incomplete
+## Configuration Design
 
-If the upload encounters an error:
+Use workspace settings object (backend-controlled):
 
+```json
+{
+  "photo_upload": {
+    "mode": "sellrise_local",
+    "timeout_ms": 15000,
+    "retry_count": 1
+  },
+  "patient_service": {
+    "enabled": true,
+    "base_url": "https://plasthic.example.com/api/v1",
+    "auth_token": "server_side_secret"
+  }
+}
 ```
-It looks like something went wrong with the upload. 
 
-Please check your file format (JPG, PNG, HEIC, JPEG) and size (max 10 MB each), 
-then try again — or skip for now and share them later.
-```
+### Allowed Modes
 
-**Buttons:**
-- `Try again`
-- `Skip for now`
+- `sellrise_local`: keep existing storage flow.
+- `patient_service_proxy`: forward to Plasthic.
+
+### Validation Rules
+
+1. `patient_service_proxy` requires `patient_service.enabled`, `base_url`, and `auth_token`.
+2. Unknown mode must fail closed and fallback to `sellrise_local` with warning log.
+3. `auth_token` never returned to widget session payload.
 
 ---
 
-## Functional Requirements
+## API Contract Changes
 
-### Chatbot / Scenario Engine
+## 1) Sellrise Endpoint (widget-facing)
 
-1. A new step type `question_upload` (or `file_upload`) must be added to the step processor to support photo collection as a first-class step within a scenario.
-2. The step type must support configurable options:
-   - `accepted_types`: list of MIME types (e.g., `image/jpeg`, `image/png`, `image/heic`)
-   - `max_files`: integer (default: 3)
-   - `max_size_mb`: integer per file (default: 10)
-   - `required`: boolean (default: `false` — upload is always optional)
-   - `slots`: ordered list of named photo slots (e.g., `front`, `side`, `close_up`) used to label each upload in the CRM
-3. The photo prompt must only be injected into the flow when the trigger conditions (see above) are satisfied. This can be implemented as a `conditional_branch` step that checks for `intent_confirmed = true` and `basic_info_complete = true` before routing to the upload step.
-4. If `required` is `false` and the user skips, the conversation must proceed without blocking.
-5. Uploaded file references (secure URL or storage key) must be stored in the conversation context under a reserved variable, e.g., `uploaded_photos`.
+Use existing widget upload surface or a dedicated chatbot-photo route. Recommended dedicated route for clearer semantics:
 
-### Backend
+- Method: `POST`
+- Path: `/v1/widget/photo-upload`
+- Auth: existing public widget constraints + workspace validation
+- Content-Type: `multipart/form-data`
 
-6. A new endpoint must be created for secure file upload from the widget:
-   - `POST /v1/widget/upload`
-   - Authenticated via widget session token (existing `session_id` mechanism)
-   - Accepts `multipart/form-data`
-   - Returns a list of secure file references (opaque URLs or storage keys, never raw paths)
-7. Files must be stored securely on the VPS in an access-controlled directory with restricted permissions. The original filename is sanitized and stored in the `filename` column of the `lead_attachments` table; the server maintains an internal `storage_key` reference to the file's actual location on disk. Direct file access via path traversal or URL enumeration must be prevented through authentication checks. (put this in chatbot's slot)
-8. Each uploaded file must be linked to the `lead_id` and `session_id` in the database (`lead_attachments` table).
-9. File access must require authenticated operator credentials (with JWT token if accessed in sellrise app, or API key in the request via API) — files must **not** be publicly accessible by URL alone.
-10. Uploaded files must be virus/malware scanned before being made available to operators (use a scanning service such as ClamAV or a cloud equivalent) (SKIPPED for 30/03/2026).
-11. File retention policy must be defined and enforced (e.g., auto-delete after 90 days unless explicitly retained).
-12. Event logging must record `photo_upload_initiated`, `photo_upload_completed`, and `photo_upload_skipped`.
+Request fields:
 
-### CRM / Lead Detail View
+- `workspace_id` (UUID, required)
+- `lead_id` (UUID, required)
+- `file` (one or many files)
+- `photo_type` (optional, default `other`)
+- `consent_given` (boolean, optional)
 
-13. Uploaded photos must be visible in the lead detail view under a new **"Attachments"** section.
-14. Only authenticated operators with access to the lead's workspace may view or download photos.
-- Each attachment entry must display: thumbnail, slot label (Front / Side / Close-up), file name, upload timestamp, and a download button.
-16. CRM operators must be able to delete an attachment (with confirmation prompt).
-
----
-
-## API Contract
-
-### Upload Endpoint
-
-- **Method:** `POST`
-- **Path:** `/v1/widget/upload`
-- **Auth:** Widget session token in header (`X-Widget-Session: <session_id>`)
-- **Content-Type:** `multipart/form-data`
-
-**Request fields:**
-
-| Field | Type | Required | Description |
-|---|---|---|---|
-| `session_id` | string | Yes | Active widget session ID |
-| `lead_id` | string | Yes | Associated lead UUID |
-| `files` | file[] | Yes | One or more image files |
-| `slots` | string[] | No | Ordered slot labels matching each file: `front`, `side`, `close_up` |
-
-**Response (200 OK):**
+Unified response example:
 
 ```json
 {
   "uploaded": [
     {
-      "attachment_id": "uuid",
-      "filename": "photo_001.jpg",
-      "slot": "front",
-      "size_bytes": 2048000,
-      "uploaded_at": "2026-03-30T10:00:00Z"
-    },
-    {
-      "attachment_id": "uuid",
-      "filename": "photo_002.jpg",
-      "slot": "side",
-      "size_bytes": 1800000,
-      "uploaded_at": "2026-03-30T10:00:01Z"
-    },
-    {
-      "attachment_id": "uuid",
-      "filename": "photo_003.jpg",
-      "slot": "close_up",
-      "size_bytes": 2200000,
-      "uploaded_at": "2026-03-30T10:00:02Z"
+      "id": "d8e...",
+      "name": "front.jpg",
+      "mime_type": "image/jpeg",
+      "size": 232143,
+      "destination": "patient_service_proxy"
     }
   ],
-  "skipped": []
+  "errors": []
 }
 ```
 
-**Error responses:**
+## 2) Sellrise -> Plasthic Proxy Call (server-to-server)
 
-| Code | Reason |
-|---|---|
-| 400 | Invalid file type or size exceeded |
-| 401 | Invalid or expired session token |
-| 413 | Total payload too large |
-| 422 | Missing required fields |
+- Method: `POST`
+- Path: `/patients/{patient_id}/photos`
+- Auth: `Authorization: Bearer <patient_service.auth_token>`
+- Form fields:
+  - `upload` (file)
+  - `photo_type`
+  - `uploaded_via = chatbot`
+  - `consent_given`
 
----
-
-## Data Model
-
-### `lead_attachments` Table
-
-| Column | Type | Notes |
-|---|---|---|
-| `id` | UUID | Primary key |
-| `lead_id` | UUID | FK → `leads.id` |
-| `session_id` | UUID | FK → `widget_sessions.id` |
-| `workspace_id` | UUID | FK → `workspaces.id` |
-| `filename` | string | Original filename (sanitized) |
-| `slot` | enum | `front`, `side`, `close_up`, `other` — photo position label |
-| `storage_key` | string | Internal storage reference (not exposed to client) |
-| `file_size_bytes` | integer | |
-| `mime_type` | string | |
-| `scan_status` | enum | `pending`, `clean`, `quarantined` |
-| `uploaded_at` | timestamp | |
-| `deleted_at` | timestamp | Soft delete |
+Plasthic endpoint already exists and should be reused.
 
 ---
 
-## New Step Type: `question_upload`
+## Functional Requirements
 
-To be added to the scenario engine alongside existing step types.
+## Sellrise Backend
+
+1. Add upload routing decision layer before file persistence.
+2. Resolve `patient_id` from lead external identities.
+3. In `patient_service_proxy` mode:
+   - forward file with timeout control,
+   - capture returned photo identifier,
+   - log success/failure event with correlation id.
+4. In failure cases:
+   - return structured error to widget,
+   - allow retry path,
+   - do not crash session.
+5. Keep compatibility: if config missing, default to `sellrise_local`.
+
+## Sellrise Frontend
+
+6. No arbitrary destination field in browser config.
+7. Continue uploading to Sellrise API only.
+8. Render clear state messages: uploading, success, failed with retry.
+
+## Plasthic Backend
+
+9. Reuse existing patient photo upload endpoint and validation.
+10. Persist records with `uploaded_via = chatbot`.
+11. Keep current authorization policy for service/staff JWT.
+
+---
+
+## Non-Functional Requirements
+
+1. Security: No patient service token in browser responses, logs, or local storage.
+2. Reliability: At least one retry on transient upstream failure.
+3. Performance: P95 proxy upload latency <= 4s per photo under normal load.
+4. Auditability: every proxy attempt logged with `workspace_id`, `lead_id`, `patient_id`, `destination`, status.
+
+---
+
+## Risk Register and Mitigations
+
+1. Risk: Missing `patient_id` when webhook mapping not ready.
+   Mitigation: fail gracefully, return actionable error, keep chat progression option.
+2. Risk: Plasthic unavailable.
+   Mitigation: retry once, emit alert, provide skip path to user.
+3. Risk: accidental secret leakage via session payload.
+   Mitigation: strip `patient_service.auth_token` from any widget response object.
+4. Risk: mixed behavior across workspaces.
+   Mitigation: explicit mode field with default and admin-visible config state.
+
+---
+
+## Migration and Rollout Plan
+
+1. Add backend config schema support and safe defaults.
+2. Implement Sellrise proxy upload path behind mode flag.
+3. Validate against staging Plasthic endpoint.
+4. Enable `patient_service_proxy` for one pilot workspace.
+5. Monitor 48h:
+   - upload success rate,
+   - upstream timeout rate,
+   - photo presence in Plasthic.
+6. Expand to all Plasthic workspaces.
+
+---
+
+## Acceptance Criteria
+
+1. With `sellrise_local`, uploads behave exactly as current behavior.
+2. With `patient_service_proxy`, photo appears in Plasthic linked to patient with `uploaded_via = chatbot`.
+3. Widget cannot access patient service auth token.
+4. Upload failures return deterministic error payload and preserve chat continuity.
+5. Logs clearly show route decision and final outcome.
+
+---
+
+## Implementation Checklist
+
+- [ ] Add `photo_upload.mode` handling in Sellrise workspace settings logic.
+- [ ] Add/adjust widget photo upload endpoint to route by mode.
+- [ ] Implement Sellrise proxy uploader service to Plasthic photo API.
+- [ ] Ensure `patient_id` resolution from `external_identities` before proxying.
+- [ ] Add structured events and error metrics.
+- [ ] Add integration tests for both modes and failure fallback.
+- [ ] Confirm `auth_token` never returned from widget session payload.
+
+---
+
+## Open Questions
+
+1. Should missing `patient_id` trigger automatic fallback to `sellrise_local`, or hard-fail with retry only?
+2. Should proxy mode support batch uploads in one request, or sequential single-file forwarding only?
+3. Do we need idempotency keys for duplicate user re-submits of same photo file?
 
 **Schema:**
 
