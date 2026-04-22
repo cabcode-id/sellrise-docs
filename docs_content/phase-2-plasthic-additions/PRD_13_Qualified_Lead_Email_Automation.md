@@ -14,7 +14,7 @@
 
 ## Goal
 
-When chatbot data collection is completed and a lead is marked highly qualified in Sellrise, Sellrise must trigger Phlastic backend to send two emails automatically:
+When chatbot data collection is completed and a lead agrees to in-person consultation, Sellrise must classify the lead as hot and trigger Phlastic backend to send two emails automatically:
 
 1. Customer email: send thank you email to the lead and invite account creation.
 2. Internal email: send new patient enquiry email to the sales team.
@@ -27,12 +27,13 @@ This module ensures fast follow-up and immediate lead routing without manual act
 
 1. Visitor completes chatbot flow.
 2. Sellrise creates/updates lead in CRM.
-3. Sellrise evaluates qualification score and flags lead as highly qualified.
-4. Sellrise calls Phlastic backend email automation endpoint.
-5. Phlastic backend validates request and sends:
+3. Sellrise detects explicit user agreement for in-person consultation.
+4. Sellrise classifies lead as hot.
+5. Sellrise calls Phlastic backend email automation endpoint.
+6. Phlastic backend validates request and sends:
    - customer email using app/email_templates/thank_you_for_enquiry.html
    - internal email using app/email_templates/new_patient_enquiry.html
-6. Phlastic backend logs email outcomes and returns status to Sellrise.
+7. Phlastic backend logs email outcomes and returns status to Sellrise.
 
 ---
 
@@ -41,13 +42,17 @@ This module ensures fast follow-up and immediate lead routing without manual act
 Automation runs only when all conditions are true:
 
 1. Lead exists in Sellrise.
-2. Qualification level is high.
-3. Lead email exists and is valid format.
-4. Lead consent allows operational follow-up communication.
-5. Automation for workspace is enabled.
+2. Lead explicitly agreed to in-person consultation.
+3. Lead classification is hot.
+4. Lead email exists and is valid format.
+5. Lead consent allows operational follow-up communication.
+6. Automation for workspace is enabled.
 
-Suggested qualification gate (configurable):
-- qualification_score >= 80
+Primary classification rule:
+- in_person_consultation_agreed == true -> lead_status = "Hot Lead"
+
+Optional secondary signal (informational only, not required for send):
+- qualification_score may still be stored for analytics.
 
 ---
 
@@ -65,15 +70,18 @@ Suggested qualification gate (configurable):
   "sellrise_workspace_id": "ws_xxx",
   "sellrise_lead_id": "lead_abc123",
   "patient_id": "uuid-if-available",
+   "in_person_consultation_agreed": true,
+   "consultation_preference": "in_person",
+   "consultation_agreed_at": "2026-04-22T10:20:00Z",
   "qualification_score": 87,
-  "qualification_level": "high",
+   "qualification_level": "high",
   "customer_name": "Jane Citizen",
   "customer_email": "jane@example.com",
   "customer_phone": "+61412345678",
   "country": "Australia",
   "procedure": "Rhinoplasty",
   "travel_time": "Within 3 months",
-  "lead_status": "Highly Qualified",
+   "lead_status": "Hot Lead",
   "consent_given": true,
   "crm_lead_url": "https://app.sellrise.ai/workspaces/ws_xxx/leads/lead_abc123"
 }
@@ -143,6 +151,8 @@ Implementation note:
 
 1. Validate auth token and workspace.
 2. Validate mandatory fields and consent flag.
+   - in_person_consultation_agreed must be true
+   - consultation_preference must equal in_person
 3. Normalize fallback values:
    - customer_phone -> Not provided
    - country -> Not provided
@@ -172,7 +182,8 @@ Add or confirm in Phlastic backend environment:
 Add or confirm in Sellrise workspace settings:
 
 - qualified_lead_email_automation.enabled
-- qualified_lead_threshold
+- hot_lead_rule.in_person_consultation_required
+- hot_lead_rule.required_value = true
 - patient_service.base_url
 - patient_service.auth_token
 
@@ -182,7 +193,7 @@ Add or confirm in Sellrise workspace settings:
 
 1. Sellrise retries on non-2xx with backoff: 1s, 5s, 30s.
 2. Request must include idempotency key:
-   - email_auto:{workspace_id}:{lead_id}:{qualification_version}
+   - email_auto:{workspace_id}:{lead_id}:{consultation_agreed_at}
 3. Phlastic must deduplicate by idempotency key within 24h.
 4. Duplicate webhook should not resend the same two emails.
 5. If one email fails:
@@ -223,7 +234,8 @@ Suggested event type in patient_events:
 
 ## Acceptance Criteria
 
-- [ ] High-qualified lead triggers exactly one automation request from Sellrise.
+- [ ] Lead agreeing to in-person consultation is marked as hot lead in Sellrise.
+- [ ] Hot lead triggers exactly one automation request from Sellrise.
 - [ ] Phlastic sends thank_you_for_enquiry.html to the customer.
 - [ ] Phlastic sends new_patient_enquiry.html to all sales recipients.
 - [ ] Customer email includes valid account creation/login link.
@@ -253,6 +265,6 @@ Suggested event type in patient_events:
    - Customer: Thank you for contacting Plasthic
    - Sales: New Plasthic Lead - {{customer_name}}
 4. Add integration test for:
-   - high-qualified trigger sends two emails
+   - in-person consultation agreement trigger sends two emails
    - idempotency prevents duplicate sends
    - missing required variable fails validation with clear error
